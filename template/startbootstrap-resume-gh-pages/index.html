@@ -10,7 +10,7 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:500,600" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -19,16 +19,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Zhaomin Wu</span>
+                <span class="d-block d-lg-none">Clarence Taylor</span>
                 <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publication">Publication</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
@@ -36,63 +35,25 @@
             </div>
         </nav>
         <!-- Page Content-->
-        <div class="container-fluid p-0" onload="read_info();">
+        <div class="container-fluid p-0">
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">
-                        <!-- read data from info object -->
-                        <span id="first-name">First</span>
-                        <span class="text-primary" id="last-name">Last</span>
+                        Clarence
+                        <span class="text-primary">Taylor</span>
                     </h1>
                     <div class="subheading mb-5">
-                        <div>
-                            <span id="address" class=nobr>Address</span> · <span id="phone">Phone</span>·
-                        </div>
-                        <a id="email" href="mailto:name@email.com">name@email.com</a>
+                        3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
+                        <a href="mailto:name@email.com">name@email.com</a>
                     </div>
-                    <p id="about-me" class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
                     <div class="social-icons">
-                        <a id="linkedin" class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        <a id="github" class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-                        <a id="google-scholar" class="social-icon" href="#!"><i class="fab fa-google"></i></a>
-<!--                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>-->
+                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
                     </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div id="edu_list" class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">University of Colorado Boulder</h3>-->
-<!--                            <div class="subheading mb-3">Bachelor of Science</div>-->
-<!--                            <div>Computer Science - Web Development Track</div>-->
-<!--                            <p>GPA: 3.23</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>-->
-<!--                    </div>-->
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">James Buchanan High School</h3>-->
-<!--                            <div class="subheading mb-3">Technology Magnet Program</div>-->
-<!--                            <p>GPA: 3.56</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>-->
-<!--                    </div>-->
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Publication-->
-            <section class="resume-section" id="publication">
-                <div id="pub_list" class="resume-section-content">
-                    <h2 class="mb-5">Publication</h2>
-<!--                    <div>-->
-<!--                        <div class="mb-0 fs-5">This is a title </div>-->
-<!--                        <div class="mb-0">This is a journal</div>-->
-<!--                    </div>-->
                 </div>
             </section>
             <hr class="m-0" />
@@ -131,6 +92,30 @@
                             <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">University of Colorado Boulder</h3>
+                            <div class="subheading mb-3">Bachelor of Science</div>
+                            <div>Computer Science - Web Development Track</div>
+                            <p>GPA: 3.23</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">James Buchanan High School</h3>
+                            <div class="subheading mb-3">Technology Magnet Program</div>
+                            <p>GPA: 3.56</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
                     </div>
                 </div>
             </section>
@@ -235,7 +220,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script type="module" src="js/scripts.js"></script>
-        <script type="module" src="js/loadInfo.js" defer></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
