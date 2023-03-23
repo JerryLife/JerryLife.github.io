@@ -7,7 +7,7 @@ function load_info() {
     document.getElementById("email").innerHTML = info.email;
     document.getElementById("email").href = "mailto:" + info.email;
     document.getElementById("address").innerHTML = info.address;
-    document.getElementById("phone").innerHTML = info.phone;
+    // document.getElementById("phone").innerHTML = info.phone;
     document.getElementById("about-me").innerHTML = info.about_me;
 
     document.getElementById("linkedin").href = info.linkedin;
@@ -113,10 +113,113 @@ function load_publication() {
 }
 
 
+function load_award() {
+    const award_list = document.getElementById("award-list");
+    info.award.forEach((item) => {
+        // award icon and container
+        const li = document.createElement("li");
+        const award_icon = document.createElement("span");
+        award_icon.className = "fa-li";
+        const award_icon_i = document.createElement("i");
+        award_icon_i.className = "fas fa-trophy text-warning";
+        award_icon.appendChild(award_icon_i);
+        li.appendChild(award_icon);
+
+        // award content
+        const award_content = document.createElement("div");
+        award_content.className = "mt-3 fs-6 fw-bold";
+        if (item.event != null) {
+            award_content.innerHTML = `${item.title} - ${item.event}) - ${item.organization}, ${item.year}`;
+        } else {
+            award_content.innerHTML = `${item.title} - ${item.organization}, ${item.year}`;
+        }
+        li.appendChild(award_content);
+
+        const award_comment = document.createElement("div");
+        if (item.description != null) {
+            award_comment.innerHTML = item.description;
+            award_comment.className = "mb-3 fs-light";
+            li.appendChild(award_comment);
+        }
+
+        award_list.appendChild(li);
+    });
+}
+
+
+function load_skill() {
+    // programming language
+    const programming_language = document.getElementById("programming-language");
+
+    const familiar_pl_li = document.createElement("li");
+    familiar_pl_li.innerHTML = "<span class=\"fa-li\"><i class=\"fas fa-check\"></i></span>";
+    familiar_pl_li.innerHTML += "<b>Familiar: </b>";
+    familiar_pl_li.innerHTML += info.skill.programming_language.familiar.join(", ");
+    programming_language.appendChild(familiar_pl_li);
+
+    const used_pl_li = document.createElement("li");
+    used_pl_li.innerHTML = "<span class=\"fa-li\"><i class=\"fas fa-check\"></i></span>";
+    used_pl_li.innerHTML += "<b>Used: </b>";
+    used_pl_li.innerHTML += info.skill.programming_language.used.join(", ");
+    programming_language.appendChild(used_pl_li);
+
+    // tool
+    const tool = document.getElementById("tool");
+
+    const familiar_tool_li = document.createElement("li");
+    familiar_tool_li.innerHTML = "<span class=\"fa-li\"><i class=\"fas fa-check\"></i></span>";
+    familiar_tool_li.innerHTML += "<b>Familiar: </b>";
+    familiar_tool_li.innerHTML += info.skill.tool.familiar.join(", ");
+    tool.appendChild(familiar_tool_li);
+
+    const used_tool_li = document.createElement("li");
+    used_tool_li.innerHTML = "<span class=\"fa-li\"><i class=\"fas fa-check\"></i></span>";
+    used_tool_li.innerHTML += "<b>Used: </b>";
+    used_tool_li.innerHTML += info.skill.tool.used.join(", ");
+    tool.appendChild(used_tool_li);
+
+    // communicating language
+    const communicating_language = document.getElementById("communicating-language");
+    const familiar_cl_li = document.createElement("li");
+    familiar_cl_li.innerHTML = "<span class=\"fa-li\"><i class=\"fas fa-check\"></i></span>";
+    familiar_cl_li.innerHTML += info.skill.language.join(", ");
+    communicating_language.appendChild(familiar_cl_li);
+
+}
+
+function load_service() {
+    // conference
+    const conference_list = document.getElementById("conference-reviewer");
+    info.service.conference.forEach((item) => {
+        const conference_li = document.createElement("li");
+        conference_li.innerHTML += item;
+        conference_list.appendChild(conference_li);
+    });
+
+    // journal
+    const journal_list = document.getElementById("journal-reviewer");
+    info.service.journal.forEach((item) => {
+        const journal_li = document.createElement("li");
+        journal_li.innerHTML += item;
+        journal_list.appendChild(journal_li);
+    });
+
+    // tutorial
+    const tutorial_list = document.getElementById("tutorial");
+    info.service.tutorial.forEach((item) => {
+        const tutorial_li = document.createElement("li");
+        tutorial_li.innerHTML += item;
+        tutorial_list.appendChild(tutorial_li);
+    });
+}
+
 function load_all() {
     load_info();
     load_education();
     load_publication();
+    load_award();
+    load_skill();
+    load_service();
 }
 
 load_all();
