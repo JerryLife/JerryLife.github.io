@@ -55,7 +55,7 @@
             "publication": "36th Conference on Neural Information Processing Systems",
             "year": 2022,
             "pub_abbr": "NeurIPS 2022",
-            "pub_link": null,
+            "pub_link": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/84b744165a0597360caad96b06e69313-Abstract-Conference.html",
             "code_link": "https://github.com/Xtra-Computing/FedSim",
             "pdf_link": "https://arxiv.org/pdf/2106.06312.pdf"
         },
