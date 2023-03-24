@@ -1,4 +1,5 @@
-import info from '../assets/json/info.json' assert {type: 'json'};
+// import info from '../assets/json/info.js' assert {type: 'json'};
+import {info} from "./info.js";
 
 function load_info() {
     // basic info

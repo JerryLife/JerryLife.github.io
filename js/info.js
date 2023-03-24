@@ -1,4 +1,4 @@
-{
+export var info = {
     "first_name": "Zhaomin",
     "last_name": "Wu",
     "email": "zhaomin@u.nus.edu",
