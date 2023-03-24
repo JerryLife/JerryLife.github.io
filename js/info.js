@@ -157,10 +157,10 @@ export var info = {
             "description": "Top 5% among undergraduate students"
         },
         {
-            "title": "Outstanding Graduate Student",
+            "title": "Distinguished Graduate",
             "organization": "Huazhong University of Science and Technology (HUST)",
             "event": null,
-            "description": "Top 40% among graduate students",
+            "description": "Top 40% among undergraduate students",
             "year": 2019
         }
     ],

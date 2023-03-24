@@ -130,7 +130,7 @@ function load_award() {
         const award_content = document.createElement("div");
         award_content.className = "mt-3 fs-6 fw-bold";
         if (item.event != null) {
-            award_content.innerHTML = `${item.title} - ${item.event}) - ${item.organization}, ${item.year}`;
+            award_content.innerHTML = `${item.title} - ${item.event} - ${item.organization}, ${item.year}`;
         } else {
             award_content.innerHTML = `${item.title} - ${item.organization}, ${item.year}`;
         }
