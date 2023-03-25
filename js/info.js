@@ -203,7 +203,7 @@ export var info = {
         },
         "language": [
             "Chinese (native)",
-            "English (fluent)"
+            "English (competent)"
         ]
     },
     "service": {
