@@ -217,7 +217,7 @@ export var info = {
             "Reviewer, IEEE Internet of Things Journal (IoT-J)"
         ],
         "tutorial": [
-            "Tutorial Speaker, International Joint Conference on Artificial Intelligence (IJCAI 2021)"
+            "Tutorial Speaker, International Joint Conference on Artificial Intelligence (IJCAI 2020)"
         ]
     }
 

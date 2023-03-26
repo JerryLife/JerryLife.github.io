@@ -11311,7 +11311,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 h1, .h1 {
