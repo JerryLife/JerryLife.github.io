@@ -89,6 +89,9 @@ function load_publication() {
         if (item.pdf_link != null) {
             title.innerHTML += ` (<a href="${item.pdf_link}">pdf</a>)`;
         }
+        if (item.supp_link != null) {
+            title.innerHTML += ` (<a href="${item.supp_link}">supp</a>)`;
+        }
         if (item.code_link != null) {
             title.innerHTML += ` (<a href="${item.code_link}">code</a>)`;
         }

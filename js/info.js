@@ -34,7 +34,7 @@ export var info = {
             "major": "Science",
             "start_date": "September 2012",
             "end_date": "June 2015",
-            "description": "Score: 644/750"
+            // "description": "Score: 644/750"
         }
     ],
     "publication": [
@@ -44,9 +44,9 @@ export var info = {
             "publication": "ACM SIGMOD International Conference on Management of Data",
             "year": 2023,
             "pub_abbr": "SIGMOD 2023",
-
             "pub_link": null,
-            "code_link": null,
+            "code_link": "https://github.com/Xtra-Computing/DeltaBoost",
+            "supp_link": "https://github.com/Xtra-Computing/DeltaBoost/blob/main/DeltaBoost_Technical_Report.pdf",
             "pdf_link": null
         },
         {
@@ -57,7 +57,8 @@ export var info = {
             "pub_abbr": "NeurIPS 2022",
             "pub_link": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/84b744165a0597360caad96b06e69313-Abstract-Conference.html",
             "code_link": "https://github.com/Xtra-Computing/FedSim",
-            "pdf_link": "https://arxiv.org/pdf/2106.06312.pdf"
+            "supp_link": "https://arxiv.org/pdf/2106.06312.pdf",
+            "pdf_link": "https://proceedings.neurips.cc/paper_files/paper/2022/file/84b744165a0597360caad96b06e69313-Paper-Conference.pdf"
         },
         {
             "title": "Practical vertical federated learning with unsupervised representation learning",
@@ -75,9 +76,9 @@ export var info = {
             "publication": "Sixth Conference on Machine Learning and Systems",
             "year": 2023,
             "pub_abbr": "MLSys 2023",
-            "pub_link": null,
+            "pub_link": "https://proceedings.mlsys.org/paper_files/paper/2023/hash/79c36fe64e04b80fc44845bb9fe73242-Abstract-mlsys2023.html",
             "code_link": "https://github.com/Xtra-Computing/FedTree",
-            "pdf_link": null
+            "pdf_link": "https://proceedings.mlsys.org/paper_files/paper/2023/file/79c36fe64e04b80fc44845bb9fe73242-Paper-mlsys2023.pdf"
         },
         {
             "title": "The oarf benchmark suite: Characterization and implications for federated learning systems",
@@ -212,6 +213,8 @@ export var info = {
             "Program Committee Member, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2022)"
         ],
         "journal": [
+            "Reviewer, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+            "Reviewer, Springer International Journal of Computer Vision (IJCV)",
             "Reviewer, IEEE Transactions on Parallel and Distributed Systems (TPDS)",
             "Reviewer, ACM Transactions on Intelligent Systems and Technology (TIST)",
             "Reviewer, IEEE Internet of Things Journal (IoT-J)"
