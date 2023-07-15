@@ -44,10 +44,10 @@ export var info = {
             "publication": "ACM SIGMOD International Conference on Management of Data",
             "year": 2023,
             "pub_abbr": "SIGMOD 2023",
-            "pub_link": null,
+            "pub_link": "https://dl.acm.org/doi/10.1145/3589313",
             "code_link": "https://github.com/Xtra-Computing/DeltaBoost",
             "supp_link": "https://github.com/Xtra-Computing/DeltaBoost/blob/main/DeltaBoost_Technical_Report.pdf",
-            "pdf_link": null
+            "pdf_link": "https://dl.acm.org/doi/pdf/10.1145/3589313"
         },
         {
             "title": "A Coupled Design of Exploiting Record Similarity for Practical Vertical Federated Learning",
@@ -170,10 +170,10 @@ export var info = {
             "familiar": [
                 "Python",
                 "C",
-                "C++",
-                "Java"
+                "C++"
             ],
             "used": [
+                "Java",
                 "MATLAB",
                 "SQL",
                 "Verilog",
@@ -209,8 +209,10 @@ export var info = {
     },
     "service": {
         "conference": [
-            "Program Committee Member, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2021)",
-            "Program Committee Member, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2022)"
+            "Reviewer, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2021)",
+            "Reviewer, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2022)",
+            "Reviewer, Advances in Neural Information Processing Systems (NeurIPS 2023)",
+            "Artifact Reviewer, ACM SIGMOD Conference (SIGMOD 2023)",
         ],
         "journal": [
             "Reviewer, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
