@@ -204,7 +204,7 @@ export var info = {
         },
         "language": [
             "Chinese (native)",
-            "English (competent)"
+            "English (capable of professional working)"
         ]
     },
     "service": {
