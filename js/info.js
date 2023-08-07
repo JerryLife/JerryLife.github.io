@@ -114,7 +114,14 @@ export var info = {
             "pdf_link": "https://arxiv.org/pdf/1907.09693.pdf"
         }
     ],
-    "award": [
+    "award":[
+        {
+            "title": "Dean's Graduate Research Excellence Award",
+            "organization": "National University of Singapore (NUS)",
+            "event": null,
+            "description": "For senior PhD students who have made significant research achievements during their PhD study",
+            "year": 2023
+        },
         {
             "title": "Meritorious Winner",
             "organization": "Consortium for Mathematics and Its Applications (COMAP)",
