@@ -7,7 +7,7 @@ export var info = {
     "linkedin": "https://www.linkedin.com/in/zhaomin-wu-958159258/",
     "github": "https://github.com/JerryLife",
     "google_scholar": "https://scholar.google.com/citations?user=QjehmgkAAAAJ&hl",
-    "about_me": "I am a Ph.D candidate at the department of computer science in National University of Singapore (NUS), supervised by Prof. Bingsheng He. I obtained my Bachelor degree at Huazhong University of Science at Technology (HUST), supervised by Prof. Kun He. My research interest lies in privacy-preserving machine learning, including federated learning, differential privacy, and machine unlearning.",
+    "about_me": "Zhaomin Wu is a Ph.D candidate at the department of computer science in National University of Singapore (NUS), supervised by Prof. Bingsheng He. He obtained his Bachelor degree at Huazhong University of Science at Technology (HUST), supervised by Prof. Kun He. His research interest lies in privacy-preserving machine learning, including federated learning, differential privacy, and machine unlearning. He received the Dean's Graduate Research Excellence Award in 2023.",
     "education": [
         {
             "school": "National University of Singapore (NUS)",
