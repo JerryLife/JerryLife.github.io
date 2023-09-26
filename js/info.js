@@ -186,7 +186,8 @@ export var info = {
                 "Verilog",
                 "x86 Assembly",
                 "JavaScript",
-                "Standard ML"
+                "Standard ML",
+                "CUDA",
             ]
         },
         "tool": {
@@ -223,6 +224,7 @@ export var info = {
         ],
         "journal": [
             "Reviewer, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+            "Reviewer, IEEE Transactions on Neural Networks and Learning Systems (TNNLS)",
             "Reviewer, Springer International Journal of Computer Vision (IJCV)",
             "Reviewer, IEEE Transactions on Parallel and Distributed Systems (TPDS)",
             "Reviewer, ACM Transactions on Intelligent Systems and Technology (TIST)",
