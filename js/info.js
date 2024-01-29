@@ -39,6 +39,17 @@ export var info = {
     ],
     "publication": [
         {
+            "title": "VertiBench: Advancing Feature Distribution Diversity in Vertical Federated Learning Benchmarks",
+            "authors": "Zhaomin Wu, Junyi Hou, Bingsheng He",
+            "publication": "International Conference on Learning Representations",
+            "year": 2023,
+            "pub_abbr": "ICLR 2024",
+            "pub_link": "https://openreview.net/forum?id=glwwbaeKm2",
+            "code_link": "https://github.com/Xtra-Computing/VertiBench",
+            "supp_link": "https://vertibench.xtra.science/",
+            "pdf_link": "https://openreview.net/pdf?id=glwwbaeKm2"
+        },
+        {
             "title": "DeltaBoost: Gradient Boosting Decision Trees with Efficient Machine Unlearning",
             "authors": "Zhaomin Wu, Junhui Zhu, Qinbin Li, Bingsheng He",
             "publication": "ACM SIGMOD International Conference on Management of Data",
