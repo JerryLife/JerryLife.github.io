@@ -2,7 +2,7 @@ export var info = {
     "first_name": "Zhaomin",
     "last_name": "Wu",
     "email": "zhaomin@u.nus.edu",
-    "address": "Prince George's Park Residences, 1 Prince George's Park, Singapore 118425",
+    "address": "26 Dover Crescent, Singapore 130026",
     "phone": null,
     "linkedin": "https://www.linkedin.com/in/zhaomin-wu-958159258/",
     "github": "https://github.com/JerryLife",
@@ -228,18 +228,20 @@ export var info = {
     },
     "service": {
         "conference": [
-            "Reviewer, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2021)",
-            "Reviewer, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2022)",
+            "Reviewer, ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD 2024)",
             "Reviewer, Advances in Neural Information Processing Systems (NeurIPS 2023)",
             "Artifact Reviewer, ACM SIGMOD Conference (SIGMOD 2023)",
+            "Reviewer, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2021)",
+            "Reviewer, Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2022)",
         ],
         "journal": [
             "Reviewer, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+            "Reviewer, IEEE Transactions on Knowledge and Data Engineering (TKDE)",
             "Reviewer, IEEE Transactions on Neural Networks and Learning Systems (TNNLS)",
             "Reviewer, Springer International Journal of Computer Vision (IJCV)",
             "Reviewer, IEEE Transactions on Parallel and Distributed Systems (TPDS)",
             "Reviewer, ACM Transactions on Intelligent Systems and Technology (TIST)",
-            "Reviewer, IEEE Internet of Things Journal (IoT-J)"
+            "Reviewer, IEEE Internet of Things Journal (IoT-J)",
         ],
         "tutorial": [
             "Tutorial Speaker, International Joint Conference on Artificial Intelligence (IJCAI 2020)"
