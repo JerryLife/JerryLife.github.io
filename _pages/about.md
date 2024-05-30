@@ -6,7 +6,7 @@ permalink: /
 subtitle: <a href='https://ids.nus.edu.sg/'>Institue of Data Science, National University of Singapore</a>. zhaomin@nus.edu.sg
 
 profile:
-  align: right
+  align: top
   image: avatar.jpg
   image_circular: false # crops the image to make it circular
 #  more_info: >

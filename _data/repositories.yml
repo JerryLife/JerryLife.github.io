@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - JerryLife
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - Xtra-Computing/FedSim
+  - Xtra-Computing/DeltaBoost
+  - Xtra-Computing/VertiBench
+  - JerryLife/FedOnce
