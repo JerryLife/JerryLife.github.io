@@ -1,9 +1,9 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 #subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
-subtitle: <a href='https://ids.nus.edu.sg/'>Institue of Data Science, National University of Singapore</a>. zhaomin@nus.edu.sg
+subtitle: <a href='https://www.nus.edu.sg/'>National University of Singapore</a>. zhaomin@nus.edu.sg
 
 profile:
   align: top

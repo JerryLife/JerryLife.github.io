@@ -1,11 +1,11 @@
 ---
 layout: cv
 permalink: /cv/
-title: cv
+title: CV
 nav: true
 nav_order: 5
 cv_pdf: resume/Zhaomin-Wu.pdf
-description: Curriculum Vitae
+description: Cirriculum Vitae
 toc:
   sidebar: left
 ---

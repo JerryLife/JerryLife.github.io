@@ -25,7 +25,7 @@
 <meta name="description" content="Zhaomin Wu is a Research Fellow in Institute of Data Science, National University of Singapore. He obtained his Ph.D. at the department of computer science in National University of Singapore (NUS), supervised by Prof. Bingsheng He. He obtained his Bachelor degree at Huazhong University of Science at Technology (HUST). His research interest lies in privacy-preserving machine learning, including federated learning, differential privacy, and machine unlearning. He received the Dean's Graduate Research Excellence Award in 2023.
 ">
 
-  <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
+  <meta name="keywords" content="federated learning, machine unlearning, differential privacy">
 
 
 
@@ -37,18 +37,18 @@
 
 
 <!-- Bootstrap & MDB -->
-<link rel="stylesheet" href="/home/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
 
 <!-- Bootstrap Table -->
 
 
 <!-- Fonts & Icons -->
-<link defer rel="stylesheet" href="/home/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
 <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
 
 <!-- Code Syntax Highlighting -->
-<link defer rel="stylesheet" href="/home/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
 
 
 
@@ -58,15 +58,15 @@
 
 
 
-  <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="shortcut icon" href="/assets/img/favicon.ico?4e78a919a56fd48a9089bbae370f534d">
 
-<link rel="stylesheet" href="/home/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
-<link rel="canonical" href="http://0.0.0.0:8080/home/news/sigmod-best-artifact/">
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="http://0.0.0.0:8080/news/sigmod-best-artifact/">
 
 <!-- Dark Mode -->
-<script src="/home/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
+<script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
 
-  <link defer rel="stylesheet" href="/home/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
   <script>
     initTheme();
   </script>
@@ -92,7 +92,7 @@
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
     <div class="container">
       
-        <a class="navbar-brand title font-weight-lighter" href="/home/">
+        <a class="navbar-brand title font-weight-lighter" href="/">
           
             
               <span class="font-weight-bold">Zhaomin</span>
@@ -116,7 +116,7 @@
 
           <!-- About -->
           <li class="nav-item ">
-            <a class="nav-link" href="/home/">about
+            <a class="nav-link" href="/">About
               
             </a>
           </li>
@@ -148,7 +148,7 @@
               
                 <li class="nav-item ">
                   
-                  <a class="nav-link" href="/home/publications/">Publications
+                  <a class="nav-link" href="/publications/">Publications
                     
                   </a>
                 </li>
@@ -161,7 +161,7 @@
               
                 <li class="nav-item ">
                   
-                  <a class="nav-link" href="/home/repositories/">repositories
+                  <a class="nav-link" href="/service/">Service
                     
                   </a>
                 </li>
@@ -172,13 +172,22 @@
               
                 <li class="nav-item ">
                   
-                  <a class="nav-link" href="/home/cv/">cv
+                  <a class="nav-link" href="/repositories/">Repositories
                     
                   </a>
                 </li>
               
             
           
+            
+              
+                <li class="nav-item ">
+                  
+                  <a class="nav-link" href="/cv/">CV
+                    
+                  </a>
+                </li>
+              
             
           
             
@@ -261,8 +270,6 @@
   
 
   
-    
-  
 
   
   
@@ -291,15 +298,15 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- Bootsrap & MDB scripts -->
-<script src="/home/assets/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="/home/assets/js/mdb.min.js"></script> -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="/assets/js/mdb.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
 
     
   <!-- Masonry & imagesLoaded -->
   <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
-  <script defer src="/home/assets/js/masonry.js" type="text/javascript"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
 
 
     
@@ -322,7 +329,7 @@
 
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
-  <script defer src="/home/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
 
 
 
@@ -330,12 +337,12 @@
 
 
 <!-- Load Common JS -->
-<script src="/home/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
-<script defer src="/home/assets/js/common.js?b7816bd189846d29eded8745f9c4cf77"></script>
-<script defer src="/home/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?b7816bd189846d29eded8745f9c4cf77"></script>
+<script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->
-<script defer src="/home/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
 
 
 
@@ -364,6 +371,17 @@
     
 
     
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXDFT2399G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-QXDFT2399G');
+  </script>
+
 
 
     
@@ -451,7 +469,7 @@
 
     
 
-    <script src="/home/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+    <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
 <script>
   
     addBackToTop();
@@ -459,7 +477,7 @@
 </script>
 
     
-  <script type="module" src="/home/assets/js/search/ninja-keys.min.js?601a2d3465e2a52bec38b600518d5f70"></script>
+  <script type="module" src="/assets/js/search/ninja-keys.min.js?601a2d3465e2a52bec38b600518d5f70"></script>
   <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
   <script>
     let theme = determineComputedTheme();
@@ -487,80 +505,87 @@
     // add the home and posts menu items
     ninja.data = [{
         id: "nav-about",
-        title: "about",
+        title: "About",
         section: "Navigation",
         handler: () => {
-          window.location.href = "/home/";
+          window.location.href = "/";
         },
       },{id: "nav-publications",
               title: "Publications",
               description: "",
               section: "Navigation",
               handler: () => {
-                window.location.href = "/home/publications/";
+                window.location.href = "/publications/";
+              },
+            },{id: "nav-service",
+              title: "Service",
+              description: "Materials for courses you taught. Replace this text with your description.",
+              section: "Navigation",
+              handler: () => {
+                window.location.href = "/service/";
               },
             },{id: "nav-repositories",
-              title: "repositories",
-              description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
+              title: "Repositories",
+              description: "",
               section: "Navigation",
               handler: () => {
-                window.location.href = "/home/repositories/";
+                window.location.href = "/repositories/";
               },
             },{id: "nav-cv",
-              title: "cv",
-              description: "Curriculum Vitae",
+              title: "CV",
+              description: "Cirriculum Vitae",
               section: "Navigation",
               handler: () => {
-                window.location.href = "/home/cv/";
+                window.location.href = "/cv/";
               },
             },{id: "post-displaying-external-posts-on-your-al-folio-blog",
           title: "Displaying External Posts on Your al-folio Blog",
           description: "",
           section: "Posts",
           handler: () => {
-            window.location.href = "/home/blog/2022/displaying-external-posts-on-your-al-folio-blog/";
+            window.location.href = "/2022/04/23/displaying-external-posts-on-your-al-folio-blog.html";
           },
         },{id: "project-project-1",
           title: "project 1",
           description: "with background image",
           section: "Projects",
           handler: () => {
-            window.location.href = "/home/projects/1_project/";
+            window.location.href = "/projects/1_project/";
           },
         },{id: "project-project-2",
           title: "project 2",
           description: "a project with a background image and giscus comments",
           section: "Projects",
           handler: () => {
-            window.location.href = "/home/projects/2_project/";
+            window.location.href = "/projects/2_project/";
           },
         },{id: "project-project-3-with-very-long-name",
           title: "project 3 with very long name",
           description: "a project that redirects to another website",
           section: "Projects",
           handler: () => {
-            window.location.href = "/home/projects/3_project/";
+            window.location.href = "/projects/3_project/";
           },
         },{id: "project-project-4",
           title: "project 4",
           description: "another without an image",
           section: "Projects",
           handler: () => {
-            window.location.href = "/home/projects/4_project/";
+            window.location.href = "/projects/4_project/";
           },
         },{id: "project-project-5",
           title: "project 5",
           description: "a project with a background image",
           section: "Projects",
           handler: () => {
-            window.location.href = "/home/projects/5_project/";
+            window.location.href = "/projects/5_project/";
           },
         },{id: "project-project-6",
           title: "project 6",
           description: "a project with no image",
           section: "Projects",
           handler: () => {
-            window.location.href = "/home/projects/6_project/";
+            window.location.href = "/projects/6_project/";
           },
         },{
             id: 'socials-email',
@@ -570,18 +595,53 @@
               window.open("mailto:%7A%68%61%6F%6D%69%6E@%6E%75%73.%65%64%75.%73%67", "_blank");
             },
           },{
+            id: 'socials-orcid',
+            title: 'ORCID',
+            section: 'Socials',
+            handler: () => {
+              window.open("https://orcid.org/0000-0002-6463-0031", "_blank");
+            },
+          },{
             id: 'socials-google-scholar',
             title: 'Google Scholar',
             section: 'Socials',
             handler: () => {
-              window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+              window.open("https://scholar.google.com/citations?user=QjehmgkAAAAJ", "_blank");
+            },
+          },{
+            id: 'socials-semantic-scholar',
+            title: 'Semantic Scholar',
+            section: 'Socials',
+            handler: () => {
+              window.open("https://www.semanticscholar.org/author/47039498", "_blank");
+            },
+          },{
+            id: 'socials-researchgate',
+            title: 'ResearchGate',
+            section: 'Socials',
+            handler: () => {
+              window.open("https://www.researchgate.net/profile/Zhaomin-Wu-2/", "_blank");
+            },
+          },{
+            id: 'socials-github',
+            title: 'GitHub',
+            section: 'Socials',
+            handler: () => {
+              window.open("https://github.com/JerryLife", "_blank");
+            },
+          },{
+            id: 'socials-dblp',
+            title: 'DBLP',
+            section: 'Socials',
+            handler: () => {
+              window.open("https://dblp.org/pid/254/0918", "_blank");
             },
           },{
             id: 'socials-rss',
             title: 'RSS Feed',
             section: 'Socials',
             handler: () => {
-              window.open("/home/feed.xml", "_blank");
+              window.open("/feed.xml", "_blank");
             },
           },{
           id: 'light-theme',
