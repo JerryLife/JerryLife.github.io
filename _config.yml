@@ -9,9 +9,9 @@ last_name: Wu
 email: zhaomin@nus.edu.sg
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Zhaomin Wu is a Research Fellow in Institute of Data Science, National University of Singapore. He obtained his Ph.D. at the department of computer science in National University of Singapore (NUS), supervised by Prof. Bingsheng He. He obtained his Bachelor degree at Huazhong University of Science at Technology (HUST). His research interest lies in privacy-preserving machine learning, including federated learning, differential privacy, and machine unlearning. He received the Dean's Graduate Research Excellence Award in 2023.
-#footer_text: >
-#  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-#  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 #  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: federated learning, machine unlearning, differential privacy # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
