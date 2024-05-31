@@ -143,8 +143,6 @@
             
           
             
-          
-            
               
                 <li class="nav-item ">
                   
@@ -194,13 +192,6 @@
           
             
           
-          
-            <!-- Search -->
-            <li class="nav-item">
-              <button id="search-toggle" title="Search" onclick="openSearchModal()">
-                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
-              </button>
-            </li>
           
           
             <!-- Toogle theme mode -->
@@ -260,7 +251,7 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>Our paper “DeltaBoost: Gradient Boosted Trees with Efficient Machine Unlearning” has been awarded the <a href="https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/" rel="external nofollow noopener" target="_blank"><strong>Honorable Mention for the Best Artifact</strong></a> in <strong>SIGMOD</strong> 2023.</p>
+      <p>Our paper “<em>DeltaBoost: Gradient Boosted Trees with Efficient Machine Unlearning</em>” has been awarded the <a href="https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/" rel="external nofollow noopener" target="_blank"><strong>Honorable Mention for the Best Artifact</strong></a> in <strong>SIGMOD 2023</strong>.</p>
 
     </div>
   </article>
@@ -477,201 +468,6 @@
 </script>
 
     
-  <script type="module" src="/assets/js/search/ninja-keys.min.js?601a2d3465e2a52bec38b600518d5f70"></script>
-  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
-  <script>
-    let theme = determineComputedTheme();
-    const ninjaKeys = document.querySelector('ninja-keys');
-
-    if (theme === 'dark') {
-      ninjaKeys.classList.add('dark');
-    } else {
-      ninjaKeys.classList.remove('dark');
-    }
-
-    const openSearchModal = () => {
-      // collapse navbarNav if expanded on mobile
-      const navbarNav = document.querySelector('.navbar-collapse');
-      if (navbarNav.classList.contains('show')) {
-        navbarNav.classList.remove('show');
-      }
-      ninjaKeys.open();
-    };
-  </script>
-  <script>
-    // get the ninja-keys element
-    const ninja = document.querySelector('ninja-keys');
-
-    // add the home and posts menu items
-    ninja.data = [{
-        id: "nav-about",
-        title: "About",
-        section: "Navigation",
-        handler: () => {
-          window.location.href = "/";
-        },
-      },{id: "nav-publications",
-              title: "Publications",
-              description: "",
-              section: "Navigation",
-              handler: () => {
-                window.location.href = "/publications/";
-              },
-            },{id: "nav-service",
-              title: "Service",
-              description: "Materials for courses you taught. Replace this text with your description.",
-              section: "Navigation",
-              handler: () => {
-                window.location.href = "/service/";
-              },
-            },{id: "nav-repositories",
-              title: "Repositories",
-              description: "",
-              section: "Navigation",
-              handler: () => {
-                window.location.href = "/repositories/";
-              },
-            },{id: "nav-cv",
-              title: "CV",
-              description: "Cirriculum Vitae",
-              section: "Navigation",
-              handler: () => {
-                window.location.href = "/cv/";
-              },
-            },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-          title: "Displaying External Posts on Your al-folio Blog",
-          description: "",
-          section: "Posts",
-          handler: () => {
-            window.location.href = "/2022/04/23/displaying-external-posts-on-your-al-folio-blog.html";
-          },
-        },{id: "project-project-1",
-          title: "project 1",
-          description: "with background image",
-          section: "Projects",
-          handler: () => {
-            window.location.href = "/projects/1_project/";
-          },
-        },{id: "project-project-2",
-          title: "project 2",
-          description: "a project with a background image and giscus comments",
-          section: "Projects",
-          handler: () => {
-            window.location.href = "/projects/2_project/";
-          },
-        },{id: "project-project-3-with-very-long-name",
-          title: "project 3 with very long name",
-          description: "a project that redirects to another website",
-          section: "Projects",
-          handler: () => {
-            window.location.href = "/projects/3_project/";
-          },
-        },{id: "project-project-4",
-          title: "project 4",
-          description: "another without an image",
-          section: "Projects",
-          handler: () => {
-            window.location.href = "/projects/4_project/";
-          },
-        },{id: "project-project-5",
-          title: "project 5",
-          description: "a project with a background image",
-          section: "Projects",
-          handler: () => {
-            window.location.href = "/projects/5_project/";
-          },
-        },{id: "project-project-6",
-          title: "project 6",
-          description: "a project with no image",
-          section: "Projects",
-          handler: () => {
-            window.location.href = "/projects/6_project/";
-          },
-        },{
-            id: 'socials-email',
-            title: 'Send email',
-            section: 'Socials',
-            handler: () => {
-              window.open("mailto:%7A%68%61%6F%6D%69%6E@%6E%75%73.%65%64%75.%73%67", "_blank");
-            },
-          },{
-            id: 'socials-orcid',
-            title: 'ORCID',
-            section: 'Socials',
-            handler: () => {
-              window.open("https://orcid.org/0000-0002-6463-0031", "_blank");
-            },
-          },{
-            id: 'socials-google-scholar',
-            title: 'Google Scholar',
-            section: 'Socials',
-            handler: () => {
-              window.open("https://scholar.google.com/citations?user=QjehmgkAAAAJ", "_blank");
-            },
-          },{
-            id: 'socials-semantic-scholar',
-            title: 'Semantic Scholar',
-            section: 'Socials',
-            handler: () => {
-              window.open("https://www.semanticscholar.org/author/47039498", "_blank");
-            },
-          },{
-            id: 'socials-researchgate',
-            title: 'ResearchGate',
-            section: 'Socials',
-            handler: () => {
-              window.open("https://www.researchgate.net/profile/Zhaomin-Wu-2/", "_blank");
-            },
-          },{
-            id: 'socials-github',
-            title: 'GitHub',
-            section: 'Socials',
-            handler: () => {
-              window.open("https://github.com/JerryLife", "_blank");
-            },
-          },{
-            id: 'socials-dblp',
-            title: 'DBLP',
-            section: 'Socials',
-            handler: () => {
-              window.open("https://dblp.org/pid/254/0918", "_blank");
-            },
-          },{
-            id: 'socials-rss',
-            title: 'RSS Feed',
-            section: 'Socials',
-            handler: () => {
-              window.open("/feed.xml", "_blank");
-            },
-          },{
-          id: 'light-theme',
-          title: 'Change theme to light',
-          description: 'Change the theme of the site to Light',
-          section: 'Theme',
-          handler: () => {
-            setThemeSetting("light");
-          },
-        },
-        {
-          id: 'dark-theme',
-          title: 'Change theme to dark',
-          description: 'Change the theme of the site to Dark',
-          section: 'Theme',
-          handler: () => {
-            setThemeSetting("dark");
-          },
-        },
-        {
-          id: 'system-theme',
-          title: 'Use system default theme',
-          description: 'Change the theme of the site to System Default',
-          section: 'Theme',
-          handler: () => {
-            setThemeSetting("system");
-          },
-        },];
-  </script>
-
 
   </body>
 </html>

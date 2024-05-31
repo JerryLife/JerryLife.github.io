@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "DeltaBoost: Gradient Boosted Trees with Efficient Machine Unlearning" has been awarded the [**Honorable Mention for the Best Artifact**](https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/) in **SIGMOD** 2023. 
+Our paper "_DeltaBoost: Gradient Boosted Trees with Efficient Machine Unlearning_" has been awarded the [**Honorable Mention for the Best Artifact**](https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/) in **SIGMOD 2023**. 

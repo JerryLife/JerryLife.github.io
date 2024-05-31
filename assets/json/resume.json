@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Zhaomin Wu",
-    "label": "Research Fellow",
+    "position": "Research Fellow in National University of Singapore",
     "image": "",
     "email": "zhaomin@nus.edu.sg",
     "url": "zhaominwu.com"
@@ -162,9 +162,9 @@
       "summary": "Teaching science and conducting social studies, including home visits, in underprivileged areas."
     },
     {
-      "organization": "Student Union of Department of Computer Science and Technology, Huazhong University of Science and Technology",
+      "organization": "Department of Computer Science and Technology, Huazhong University of Science and Technology",
       "location": "Wuhan, China",
-      "position": "President",
+      "position": "President of Student Union",
       "startDate": "2017-04",
       "endDate": "2018-04",
       "summary": "Organizing department and university-level activities and events for students, and managing the department's public media channels."

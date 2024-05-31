@@ -2,11 +2,39 @@
 layout: page
 permalink: /service/
 title: Service
-description: Materials for courses you taught. Replace this text with your description.
+description: Professional services in academic communities
 nav: true
 nav_order: 3
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Conference Reviewers
 
-Organize your courses by years, topics, or universities, however you like!
+- 2024
+  - Reviewer, NeurIPS 2024
+  - Reviewer, KDD 2024
+- 2023
+  - Reviewer, NeurIPS 2023
+  - Artifact Reviewer, SIGMOD 2023
+- 2022
+  - Reviewer, PAKDD 2022
+- 2021
+  - Reviewer, PAKDD 2021
+
+## Journal Reviewers
+
+- 2024
+  - Reviewer, TNNLS
+- 2023
+  - Reviewer, TPAMI
+  - Reviewer, TKDE
+  - Reviewer, TNNLS
+  - Reviewer, IJCV
+  - Reviewer, IoT-J
+- 2022
+  - Reviewer, TPDS 2022
+  - Reviewer, TIST 2022
+
+## Tutorial
+
+- 2020
+  - Tutorial Speaker, IJCAI 2020
