@@ -53,6 +53,20 @@
       "summary": "For senior PhD students who have made significant research achievements during their PhD study."
     },
     {
+      "title": "Outstanding undergraduate thesis",
+      "date": "2019",
+      "awarder": "Department of Computer Science and Technology, Huazhong University of Science and Technology (HUST)",
+      "url": "",
+      "summary": "Top 5% among undergraduate students."
+    },
+    {
+      "title": "Distinguished Graduate",
+      "date": "2019",
+      "awarder": "Huazhong University of Science and Technology (HUST)",
+      "url": "",
+      "summary": "Top 40% among undergraduate students."
+    },
+    {
       "title": "Meritorious Winner in Mathematical Contest in Modeling (MCM/ICM)",
       "date": "2018",
       "awarder": "Consortium for Mathematics and Its Applications (COMAP)",
@@ -60,16 +74,16 @@
       "summary": "Top 10% among all participants worldwide."
     },
     {
-      "title": "Outstanding Students",
-      "date": "2016",
-      "awarder": "Huazhong University of Science and Technology (HUST)",
+      "title": "National Scholarship",
+      "date": "2017",
+      "awarder": "Ministry of Education of China",
       "url": "",
       "summary": "Top 1% among undergraduate students."
     },
     {
-      "title": "National Scholarship",
-      "date": "2017",
-      "awarder": "Ministry of Education of China",
+      "title": "Outstanding Students",
+      "date": "2016",
+      "awarder": "Huazhong University of Science and Technology (HUST)",
       "url": "",
       "summary": "Top 1% among undergraduate students."
     },
@@ -86,20 +100,6 @@
       "awarder": "Huazhong University of Science and Technology (HUST)",
       "url": "",
       "summary": "Top 5% among undergraduate students."
-    },
-    {
-      "title": "Outstanding undergraduate thesis",
-      "date": "2019",
-      "awarder": "Department of Computer Science and Technology, Huazhong University of Science and Technology (HUST)",
-      "url": "",
-      "summary": "Top 5% among undergraduate students."
-    },
-    {
-      "title": "Distinguished Graduate",
-      "date": "2019",
-      "awarder": "Huazhong University of Science and Technology (HUST)",
-      "url": "",
-      "summary": "Top 40% among undergraduate students."
     }
   ],
   "skills": [

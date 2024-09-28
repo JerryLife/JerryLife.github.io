@@ -20,5 +20,3 @@ social: false # includes social icons at the bottom of the page
 ---
 
 Dr. Zhaomin Wu (吴肇敏) is currently a postdoctoral research fellow at the Institute of Data Science, National University of Singapore. He obtained his Ph.D. from the Department of Computer Science at the National University of Singapore (NUS) in 2024, supervised by Prof. [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/). He earned his Bachelor's degree at Huazhong University of Science and Technology (HUST) in 2019. His research interests are focused on privacy-preserving machine learning, including federated learning, machine unlearning, and differential privacy. In 2023, he received the Dean's Graduate Research Excellence Award from NUS.
-
-_I am actively seeking for PostDoc opportunities in the United States._
