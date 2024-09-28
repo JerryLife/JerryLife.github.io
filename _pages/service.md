@@ -9,7 +9,8 @@ nav_order: 3
 
 ## Conference Reviewers
 
-- 2024
+- 2024 
+  - Reviewer, ICLR 2024
   - Reviewer, NeurIPS 2024
   - Reviewer, KDD 2024
 - 2023

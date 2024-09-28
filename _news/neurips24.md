@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We have one paper accepted by NeurIPS 2024!
+We have one paper _Federated Transformer_ accepted by **NeurIPS 2024**!
