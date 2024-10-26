@@ -25,6 +25,7 @@ nav_order: 3
 ## Journal Reviewers
 
 - 2024
+  - Reviewer, TKDD
   - Reviewer, JPDC
   - Reviewer, TNNLS
 - 2023
