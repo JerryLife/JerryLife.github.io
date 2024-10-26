@@ -7,7 +7,7 @@ nav: true
 nav_order: 3
 ---
 
-## Conference Reviewers
+### Conference Reviewers
 
 - 2024
   - Reviewer, AISTATS 2024
@@ -22,7 +22,7 @@ nav_order: 3
 - 2021
   - Reviewer, PAKDD 2021
 
-## Journal Reviewers
+### Journal Reviewers
 
 - 2024
   - Reviewer, TKDD
@@ -38,7 +38,7 @@ nav_order: 3
   - Reviewer, TPDS 2022
   - Reviewer, TIST 2022
 
-## Tutorial
+### Tutorial
 
 - 2020
   - Tutorial Speaker, IJCAI 2020
