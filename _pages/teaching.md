@@ -20,9 +20,10 @@ nav_order: 6
 ### Mentorship
 
 _Thank all the collaborators for their hard work and dedication!_
-
+* [Haodong Zhao](https://dongdongzhaoup.github.io/) - Visiting Ph.D. Student, Shanghai Jiao Tong University, 2024 - 2025
+* [Zhen Qin](https://zhenqincn.github.io/) - Visiting Ph.D. Student, Zhe Jiang University, 2024 - 2025
 * [Jizhou Guo](https://scholar.google.com/citations?user=fcBDdsYAAAAJ) - Research Intern, Shanghai Jiao Tong University, 2024
 * [Junyi Hou](https://profile.junyi.dev/) - Research Intern, NUS, 2023 - 2024
-* Junhui Zhu - Research Intern, NUS, 2022
+* [Junhui Zhu](https://jzhu.xyz/) - Research Intern, NUS, 2022
 
 
