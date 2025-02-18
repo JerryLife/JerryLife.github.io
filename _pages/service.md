@@ -9,6 +9,9 @@ nav_order: 3
 
 ### Conference Reviewers
 
+- 2025
+  - Reviewer, ICML 2025
+  - Reviewer, NeurIPS 2025
 - 2024
   - Reviewer, AISTATS 2024
   - Reviewer, ICLR 2024
