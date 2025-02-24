@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have received the **Dean's Research Achievement Award** from School of Computing, NUS. 🎉
+I have received the [**Dean's Graduate Research Excellence Award**](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/) from School of Computing, NUS.

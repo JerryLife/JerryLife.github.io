@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We have one paper _VertiBench_ accepted by **ICLR 2024**!
+We have one paper _VertiBench: Advancing Feature Distribution Diversity in Vertical Federated Learning Benchmarks_ accepted by **ICLR 2024**!
