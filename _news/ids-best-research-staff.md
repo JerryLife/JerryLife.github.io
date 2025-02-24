@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have received the **Best Research Staff Award** from Institute of Data Science, NUS. 🎉
+I have received the **Best Research Staff Award** from Institute of Data Science, NUS.
