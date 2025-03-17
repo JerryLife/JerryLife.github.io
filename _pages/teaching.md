@@ -19,7 +19,9 @@ nav_order: 6
 
 ### Mentorship
 
-_Thank all the collaborators for their hard work and dedication!_
+_It is my honor to work with many talented students and colleagues!_
+
+* [Ziyang Wang](https://www.linkedin.com/in/ziyang-wang-4a600b348/) - Research Intern, NUS, 2024 - 2025
 * [Haodong Zhao](https://dongdongzhaoup.github.io/) - Visiting Ph.D. Student, Shanghai Jiao Tong University, 2024 - 2025
 * [Zhen Qin](https://zhenqincn.github.io/) - Visiting Ph.D. Student, Zhe Jiang University, 2024 - 2025
 * [Jizhou Guo](https://scholar.google.com/citations?user=fcBDdsYAAAAJ) - Research Intern, Shanghai Jiao Tong University, 2024
