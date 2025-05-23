@@ -20,13 +20,7 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
-social: false # includes social icons at the bottom of the page
+  limit: 10 # leave blank to include all the news in the `_news` folder
 ---
 
 Dr. Zhaomin Wu (吴肇敏) is a postdoctoral research fellow at the Institute of Data Science, National University of Singapore. He completed his Ph.D. in Computer Science at the National University of Singapore (NUS) in 2024 advised by Prof. [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2019.
