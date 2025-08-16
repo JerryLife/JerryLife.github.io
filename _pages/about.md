@@ -1,17 +1,18 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+#subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Research Fellow. <a href='https://www.nus.edu.sg/'>National University of Singapore</a>. zhaomin@nus.edu.sg
 
 profile:
-  align: right
-  image: prof_pic.jpg
+  align: top
+  image: avatar.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+#  more_info: >
+#    <p>555 your office number</p>
+#    <p>123 your address street</p>
+#    <p>Your City, State 12345</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -19,16 +20,9 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 10 # leave blank to include all the news in the `_news` folder
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Dr. Zhaomin Wu (吴肇敏) is a postdoctoral research fellow at the Institute of Data Science, National University of Singapore. He completed his Ph.D. in Computer Science at the National University of Singapore (NUS) in 2024 advised by Prof. [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2019.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Dr. Wu's research focuses on privacy-preserving machine learning and data mining, with specific interests in federated learning, machine unlearning, and knowledge transfer. He has been honored with the Dean's Graduate Research Excellence Award and an Honorable Mention for Best Ph.D. Thesis Award. His work has been published in top-tier conferences and journals, including NeurIPS, ICLR, SIGMOD, ACL, AAAI, MLSys, and TKDE.
