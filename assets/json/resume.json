@@ -39,67 +39,81 @@
   ],
   "awards": [
     {
+      "title": "Best Research Staff Award",
+      "date": "2025",
+      "awarder": "Institute of Data Science (IDS), National University of Singapore (NUS)",
+      "url": "",
+      "summary": "2 among IDS employees in the year."
+    },
+    {
       "title": "Honorable Mention for Best PhD Thesis Award",
-      "date": "2023",
+      "date": "2024",
       "awarder": "School of Computing (SoC), National University of Singapore (NUS)",
       "url": "",
-      "summary": "Top 5 among PhD applicants"
+      "summary": "5 among all PhD candidates in the graduation year."
+    },
+    {
+      "title": "SIGMOD Honorable Mention for Best Artifact",
+      "date": "2023",
+      "awarder": "ACM Special Interest Group on Management of Data (SIGMOD)",
+      "url": "",
+      "summary": "3 among all submissions to SIGMOD 2023."
     },
     {
       "title": "Dean's Graduate Research Excellence Award",
       "date": "2023",
       "awarder": "National University of Singapore (NUS)",
       "url": "",
-      "summary": "For senior PhD students who have made significant research achievements during their PhD study."
+      "summary": "10 among graduate students in the School of Computing (SoC)."
     },
     {
       "title": "Outstanding undergraduate thesis",
       "date": "2019",
       "awarder": "Department of Computer Science and Technology, Huazhong University of Science and Technology (HUST)",
       "url": "",
-      "summary": "Top 5% among undergraduate students."
+      "summary": "5% among undergraduate students."
     },
     {
       "title": "Distinguished Graduate",
       "date": "2019",
       "awarder": "Huazhong University of Science and Technology (HUST)",
       "url": "",
-      "summary": "Top 40% among undergraduate students."
+      "summary": "40% among undergraduate students."
     },
     {
       "title": "Meritorious Winner in Mathematical Contest in Modeling (MCM/ICM)",
       "date": "2018",
       "awarder": "Consortium for Mathematics and Its Applications (COMAP)",
       "url": "",
-      "summary": "Top 10% among all participants worldwide."
+      "summary": "10% among all participants worldwide."
     },
     {
       "title": "National Scholarship",
       "date": "2017",
       "awarder": "Ministry of Education of China",
       "url": "",
-      "summary": "Top 1% among undergraduate students."
+      "summary": "1% among undergraduate students."
     },
     {
       "title": "Outstanding Students",
       "date": "2016",
       "awarder": "Huazhong University of Science and Technology (HUST)",
       "url": "",
-      "summary": "Top 1% among undergraduate students."
+      "summary": "1% among undergraduate students."
     },
     {
       "title": "Third Prize in National College Students Connected Smarter System Innovation Competition",
       "date": "2016",
       "awarder": "Ministry of Education of China and Chinese Institute of Electronics",
       "url": "",
-      "summary": "Top 10% among all participants nationwide."
+      "summary": "10% among all participants nationwide."
     },
     {
       "title": "Merit Student",
       "date": "2015",
       "awarder": "Huazhong University of Science and Technology (HUST)",
       "url": "",
-      "summary": "Top 5% among undergraduate students."
+      "summary": "5% among undergraduate students."
     }
   ],
   "skills": [
