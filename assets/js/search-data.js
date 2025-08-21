@@ -23,12 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/service/";
           },
-        },{id: "nav-repositories",
-          title: "Repositories",
-          description: "",
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "Teaching experience and mentorship",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/repositories/";
+            window.location.href = "/teaching/";
           },
         },{id: "nav-cv",
           title: "CV",
@@ -36,6 +36,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
+          },
+        },{id: "nav-repositories",
+          title: "Repositories",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
           },
         },{id: "post-a-post-with-plotly-js",
         
@@ -405,18 +412,7 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-i-have-received-the-dean-s-graduate-research-excellence-award-from-school-of-computing-nus-for-academic-year-2022-2023",
+            },},{id: "news-i-have-received-the-dean-s-graduate-research-excellence-award-from-school-of-computing-nus-for-academic-year-2022-2023",
           title: 'I have received the Dean’s Graduate Research Excellence Award from School of Computing,...',
           description: "",
           section: "News",},{id: "news-we-have-one-paper-vertibench-advancing-feature-distribution-diversity-in-vertical-federated-learning-benchmarks-accepted-by-iclr-2024",
@@ -431,17 +427,23 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-been-awarded-phd-thesis-award-honorable-mention-by-the-school-of-computing-soc-nus",
           title: 'I have been awarded PhD Thesis Award Honorable Mention by the School of...',
           description: "",
-          section: "News",},{id: "news-we-have-one-paper-federated-transformer-multi-party-vertical-federated-learning-on-practical-fuzzily-linked-data-accepted-by-neurips-2024",
-          title: 'We have one paper Federated Transformer: Multi-Party Vertical Federated Learning on Practical Fuzzily...',
+          section: "News",},{id: "news-one-paper-accepted-in-neurips-2024-zhaomin-wu-junyi-hou-yiqun-diao-and-bingsheng-he-federated-transformer-multi-party-vertical-federated-learning-on-practical-fuzzily-linked-data",
+          title: 'One paper accepted in NeurIPS 2024. Zhaomin Wu, Junyi Hou, Yiqun Diao, and...',
           description: "",
           section: "News",},{id: "news-i-have-received-the-best-research-staff-award-from-institute-of-data-science-nus",
           title: 'I have received the Best Research Staff Award from Institute of Data Science,...',
           description: "",
-          section: "News",},{id: "news-i-am-invited-to-give-a-spotlight-talk-bridging-private-data-silo-with-machine-learning-at-the-nus-open-house-2025",
-          title: 'I am invited to give a spotlight talk “Bridging Private Data Silo with...',
+          section: "News",},{id: "news-i-give-an-invited-talk-bridging-private-data-silo-with-machine-learning-at-the-nus-open-house-2025",
+          title: 'I give an invited talk “Bridging Private Data Silo with Machine Learning” at...',
           description: "",
-          section: "News",},{id: "news-one-paper-accepted-in-acl-2025",
-          title: 'One paper accepted in ACL 2025.',
+          section: "News",},{id: "news-one-paper-accepted-in-acl-2025-zhen-qin-zhaomin-wu-bingsheng-he-shuiguang-deng-federated-data-efficient-instruction-tuning-for-large-language-models",
+          title: 'One paper accepted in ACL 2025. Zhen Qin, Zhaomin Wu, Bingsheng He, Shuiguang...',
+          description: "",
+          section: "News",},{id: "news-i-give-an-invited-talk-entitled-towards-practical-vertical-federated-learning-systems-on-behalf-of-prof-bingsheng-he-at-the-dasfaa-2025-trust-day",
+          title: 'I give an invited talk entitled “Towards Practical Vertical Federated Learning Systems” on...',
+          description: "",
+          section: "News",},{id: "news-one-paper-accepted-in-emnlp-2025-zhaomin-wu-jizhou-guo-junyi-hou-bingsheng-he-lixin-fan-qiang-yang-model-based-large-language-model-customization-as-service",
+          title: 'One paper accepted in EMNLP 2025. Zhaomin Wu*, Jizhou Guo*, Junyi Hou, Bingsheng...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
