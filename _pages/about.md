@@ -20,9 +20,9 @@ social: false # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 10 # leave blank to include all the news in the `_news` folder
+  limit: 5 # leave blank to include all the news in the `_news` folder
 ---
 
-Dr. Zhaomin Wu (吴肇敏) is a postdoctoral research fellow at the Institute of Data Science, National University of Singapore. He completed his Ph.D. in Computer Science at the National University of Singapore (NUS) in 2024 advised by Prof. [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2019.
+Dr. Zhaomin Wu is a Research Fellow at the Department of Computer Science, National University of Singapore (NUS). He completed his Ph.D. in Computer Science at the National University of Singapore (NUS) in 2024 advised by Prof. [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor's degree from Huazhong University of Science and Technology (HUST) in 2019.
 
-Dr. Wu's research focuses on privacy-preserving machine learning and data mining, with specific interests in federated learning, machine unlearning, and knowledge transfer. He has been honored with the Dean's Graduate Research Excellence Award and an Honorable Mention for Best Ph.D. Thesis Award. His work has been published in top-tier conferences and journals, including NeurIPS, ICLR, SIGMOD, ACL, AAAI, MLSys, and TKDE.
+Dr. Wu's research focuses on trustworthy machine learning, with specific interests in vertical federated learning, machine unlearning, and trustworthy large language models. His work has been recognized with awards such as the [SIGMOD Honorable Mention for Best Artifact](https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/) (2023), the [Dean’s Graduate Research Excellence Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/) (NUS, 2023), an [Honorable Mention for Best Ph.D. Thesis Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/) (NUS, 2024), and the [Best Research Staff Award](https://ids.nus.edu.sg/gathering25.html) (NUS, 2025). His publications appear in top-tier venues including NeurIPS, ICLR, SIGMOD, ACL, EMNLP, AAAI, MLSys, and TKDE.

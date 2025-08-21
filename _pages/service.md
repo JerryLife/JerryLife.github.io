@@ -27,7 +27,10 @@ nav_order: 3
   - Reviewer, PAKDD 2021
 
 ### Journal Reviewers
-
+- 2025
+  - Reviewer, TDSC
+  - Reviewer, TPDS
+  - Reviewer, TAI
 - 2024
   - Reviewer, TKDD
   - Reviewer, JPDC
@@ -39,8 +42,8 @@ nav_order: 3
   - Reviewer, IJCV
   - Reviewer, IoT-J
 - 2022
-  - Reviewer, TPDS 2022
-  - Reviewer, TIST 2022
+  - Reviewer, TPDS
+  - Reviewer, TIST
 
 ### Tutorial
 
