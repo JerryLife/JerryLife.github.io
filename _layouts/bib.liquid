@@ -1,6 +1,34 @@
 ---
 ---
-<div class="row">
+{%- comment -%}
+  Check if the first author or corresponding author matches the site owner.
+  First author: site owner is first in the author list.
+  Corresponding author: site owner has † symbol after their name.
+{%- endcomment -%}
+{%- assign is_first_author = false -%}
+{%- assign is_corresponding_author = false -%}
+{%- if entry.author_array.size > 0 -%}
+  {%- comment -%} Check first author {%- endcomment -%}
+  {%- assign first_author = entry.author_array[0] -%}
+  {%- assign first_author_last = first_author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+  {%- if site.scholar.last_name contains first_author_last -%}
+    {%- if site.scholar.first_name contains first_author.first -%}
+      {%- assign is_first_author = true -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- comment -%} Check corresponding author (marked with †) {%- endcomment -%}
+  {%- for author in entry.author_array -%}
+    {%- if author.last contains '†' -%}
+      {%- assign author_last_clean = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+      {%- if site.scholar.last_name contains author_last_clean -%}
+        {%- if site.scholar.first_name contains author.first -%}
+          {%- assign is_corresponding_author = true -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+<div class="row{% if is_first_author %} first-author{% endif %}{% if is_corresponding_author %} corresponding-author{% endif %}">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
