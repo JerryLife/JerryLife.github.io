@@ -904,6 +904,19 @@ footer.sticky-bottom {
   .first-author.corresponding-author {
     background: linear-gradient(135deg, var(--global-first-author-bg-color) 0%, var(--global-corresponding-author-bg-color) 100%);
   }
+
+  // Disable author highlights in selected papers section (front page)
+  &.selected-papers {
+
+    .first-author,
+    .corresponding-author,
+    .first-author.corresponding-author {
+      background: none;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 // Rouge Color Customization
