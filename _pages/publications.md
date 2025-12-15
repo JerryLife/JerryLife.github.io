@@ -105,6 +105,13 @@ nav_order: 3
 .publications.filter-venue-tbd ol.bibliography > li > .row:not(.venue-tbd) { display: none; }
 .publications.filter-venue-tist ol.bibliography > li > .row:not(.venue-tist) { display: none; }
 .publications.filter-venue-tkde ol.bibliography > li > .row:not(.venue-tkde) { display: none; }
+
+/* Fix alignment: ensure all rows have consistent padding/margin */
+.publications ol.bibliography li .row {
+  padding: 0.75rem;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
 </style>
 
 <div id="pub-stats-container" class="pub-stats">
