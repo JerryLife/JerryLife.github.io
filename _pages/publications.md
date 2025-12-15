@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Publications and Preprints. (*Equal contribution; †Corresponding author)
+description: Publications and Preprints.
 nav: true
 nav_order: 3
 ---
@@ -14,6 +14,18 @@ nav_order: 3
   font-size: 1.1em;
   margin-bottom: 1.5rem;
   color: var(--global-text-color-light);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0;
+  align-items: center;
+}
+.pub-stats .stat-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.pub-stats .divider {
+  margin: 0 0.5rem;
 }
 .pub-stats .filter-btn {
   cursor: pointer;
@@ -44,8 +56,13 @@ nav_order: 3
 </style>
 
 <div class="pub-stats">
-  <span class="filter-btn first-author-label" id="filter-first-author" onclick="toggleFilter('first-author')">First Author</span>: 10 &nbsp;|&nbsp;
-  <span class="filter-btn corresponding-author-label" id="filter-corresponding-author" onclick="toggleFilter('corresponding-author')">Corresponding Author</span>: 2
+  <span class="stat-item">
+    <span class="filter-btn first-author-label" id="filter-first-author" onclick="toggleFilter('first-author')">*First Author</span>: 10
+  </span>
+  <span class="divider">|</span>
+  <span class="stat-item">
+    <span class="filter-btn corresponding-author-label" id="filter-corresponding-author" onclick="toggleFilter('corresponding-author')">†Corresponding Author</span>: 2
+  </span>
 </div>
 
 <script>
