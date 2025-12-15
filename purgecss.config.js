@@ -19,5 +19,10 @@ module.exports = {
     /^venue-bar-/,
     // Venue filter hiding rules
     /^filter-venue-/,
+    // Award trophy icon
+    "award-trophy",
+    // Font Awesome classes
+    /^fa-/,
+    "fa-solid",
   ],
 };
