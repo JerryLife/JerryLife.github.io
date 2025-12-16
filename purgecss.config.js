@@ -13,5 +13,16 @@ module.exports = {
     "active",
     // Selected papers section
     "selected-papers",
+    // Venue filter button classes (dynamically generated)
+    /^venue-/,
+    // Venue bar classes (dynamically generated in bib.liquid)
+    /^venue-bar-/,
+    // Venue filter hiding rules
+    /^filter-venue-/,
+    // Award trophy icon
+    "award-trophy",
+    // Font Awesome classes
+    /^fa-/,
+    "fa-solid",
   ],
 };

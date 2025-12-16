@@ -28,17 +28,26 @@
     {%- endif -%}
   {%- endfor -%}
 {%- endif -%}
-<div class="row{% if is_first_author %} first-author{% endif %}{% if is_corresponding_author %} corresponding-author{% endif %}">
+{%- comment -%} Extract venue from abbr (e.g., "KDD 2026" -> "kdd") {%- endcomment -%}
+{%- assign venue_class = "" -%}
+{%- if entry.abbr -%}
+  {%- assign abbr_parts = entry.abbr | split: ' ' -%}
+  {%- assign venue_name = abbr_parts[0] | downcase -%}
+  {%- assign venue_class = " venue-" | append: venue_name -%}
+{%- endif -%}
+<div class="row{% if is_first_author %} first-author{% endif %}{% if is_corresponding_author %} corresponding-author{% endif %}{{ venue_class }}">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
+        {%- assign abbr_parts = entry.abbr | split: ' ' -%}
+        {%- assign venue_bar_class = abbr_parts[0] | downcase | prepend: 'venue-bar-' -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
           {% if site.data.venues[entry.abbr].color != blank %}
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
           {%- endif -%}
           <abbr
-            class="badge rounded w-100"
+            class="badge rounded w-100 {{ venue_bar_class }}"
             {% if venue_style %}
               {{ venue_style }}
             {% endif -%}
@@ -50,8 +59,13 @@
             {% endif %}
           </abbr>
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          <abbr class="badge rounded w-100 {{ venue_bar_class }}">{{ entry.abbr }}</abbr>
         {% endif %}
+      {% endif %}
+      {% if entry.award_name %}
+        <div class="award-trophy" title="{{ entry.award_name }}">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
       {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
