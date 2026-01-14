@@ -84,6 +84,7 @@ nav_order: 3
 .venue-stats .venue-tbd { background-color: #4f46e5; color: white; }
 .venue-stats .venue-tist { background-color: #0d9488; color: white; }
 .venue-stats .venue-tkde { background-color: #be185d; color: white; }
+.venue-stats .venue-www { background-color: #ca8a04; color: white; }
 
 /* Hide non-matching papers when filter is active */
 .publications.filter-first-author ol.bibliography > li > .row:not(.first-author) {
@@ -105,6 +106,7 @@ nav_order: 3
 .publications.filter-venue-tbd ol.bibliography > li > .row:not(.venue-tbd) { display: none; }
 .publications.filter-venue-tist ol.bibliography > li > .row:not(.venue-tist) { display: none; }
 .publications.filter-venue-tkde ol.bibliography > li > .row:not(.venue-tkde) { display: none; }
+.publications.filter-venue-www ol.bibliography > li > .row:not(.venue-www) { display: none; }
 
 /* Fix alignment: ensure all rows have consistent padding/margin */
 .publications ol.bibliography li .row {
