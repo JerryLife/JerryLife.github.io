@@ -88,7 +88,7 @@ ninja.data = [{
           section: "News",},{id: "news-one-paper-accepted-in-www-2026-yicheng-zhang-zhen-qin-zhaomin-wu-jian-hou-shuiguang-deng-personalized-federated-fine-tuning-for-llms-via-data-driven-heterogeneous-model-architectures",
           title: 'One paper accepted in WWW 2026. Yicheng Zhang, Zhen Qin, Zhaomin Wu, Jian...',
           description: "",
-          section: "News",},{id: "news-i-was-invited-to-give-a-keynote-entitled-bridging-data-silos-with-practical-federated-learning-at-the-aaai-2025-flca-workshop",
+          section: "News",},{id: "news-i-was-invited-to-give-a-keynote-entitled-bridging-data-silos-with-practical-federated-learning-at-the-aaai-2026-flca-workshop",
           title: 'I was invited to give a keynote entitled “Bridging Data Silos with Practical...',
           description: "",
           section: "News",},{id: "projects-project-1",
