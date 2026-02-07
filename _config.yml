@@ -307,7 +307,7 @@ filtered_bibtex_keywords:
     annotation,
     arxiv,
     award,
-    award_name,
+    award_text,
     bibtex_show,
     blog,
     code,

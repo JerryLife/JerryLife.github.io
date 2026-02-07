@@ -62,8 +62,8 @@
           <abbr class="badge rounded w-100 {{ venue_bar_class }}">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
-      {% if entry.award_name %}
-        <div class="award-trophy" title="{{ entry.award_name }}">
+      {% if entry.award %}
+        <div class="award-trophy" title="{{ entry.award }}">
           <i class="fa-solid fa-trophy"></i>
         </div>
       {% endif %}
@@ -231,7 +231,7 @@
     <div class="links">
       {% if entry.award %}
         <a class="award btn btn-sm z-depth-0" role="button">
-          {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
+          {{ entry.award }}
         </a>
       {% endif %}
       {% if entry.abstract %}
@@ -381,10 +381,10 @@
       {% endif %}
     {% endif %}
 
-    {% if entry.award %}
+    {% if entry.award_text %}
       <!-- Hidden Award block -->
       <div class="award hidden d-print-inline">
-        <p>{{ entry.award | markdownify }}</p>
+        <p>{{ entry.award_text | markdownify }}</p>
       </div>
     {% endif %}
 
