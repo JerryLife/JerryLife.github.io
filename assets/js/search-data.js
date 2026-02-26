@@ -95,7 +95,7 @@ ninja.data = [{
           title: 'Two papers accepted to ICLR 2026 for oral (1%) presentation. [Oral] Zhaomin Wu,...',
           description: "",
           section: "News",},{id: "news-one-paper-accepted-in-icde-2026-zhaomin-wu-ziyang-wang-bingsheng-he-wikidbgraph-large-scale-database-graph-of-wikidata-for-collaborative-learning",
-          title: 'One paper accepted in ICDE 2026. Zhaomin Wu, Ziyang Wang, Bingsheng He. WikiDBGraph:...',
+          title: 'One paper accepted in ICDE 2026. Zhaomin Wu*, Ziyang Wang*, Bingsheng He. WikiDBGraph:...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
