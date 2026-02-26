@@ -64,6 +64,7 @@ nav_order: 3
   transition: all 0.2s ease;
   border: 2px solid transparent;
   font-size: 0.9em;
+  color: white;
 }
 .venue-stats .venue-btn:hover {
   opacity: 0.8;
@@ -71,42 +72,9 @@ nav_order: 3
 .venue-stats .venue-btn.active {
   border-color: var(--global-theme-color);
 }
-/* Venue colors - distinct from first/corresponding author colors */
-.venue-stats .venue-kdd { background-color: #7c3aed; color: white; }
-.venue-stats .venue-emnlp { background-color: #0891b2; color: white; }
-.venue-stats .venue-acl { background-color: #059669; color: white; }
-.venue-stats .venue-neurips { background-color: #dc2626; color: white; }
-.venue-stats .venue-iclr { background-color: #ea580c; color: white; }
-.venue-stats .venue-sigmod { background-color: #2563eb; color: white; }
-.venue-stats .venue-mlsys { background-color: #9333ea; color: white; }
-.venue-stats .venue-aaai { background-color: #0284c7; color: white; }
-.venue-stats .venue-arxiv { background-color: #6b7280; color: white; }
-.venue-stats .venue-tbd { background-color: #4f46e5; color: white; }
-.venue-stats .venue-tist { background-color: #0d9488; color: white; }
-.venue-stats .venue-tkde { background-color: #be185d; color: white; }
-.venue-stats .venue-www { background-color: #ca8a04; color: white; }
-
-/* Hide non-matching papers when filter is active */
-.publications.filter-first-author ol.bibliography > li > .row:not(.first-author) {
+.publications ol.bibliography > li > .row.is-hidden-by-filter {
   display: none;
 }
-.publications.filter-corresponding-author ol.bibliography > li > .row:not(.corresponding-author) {
-  display: none;
-}
-/* Venue filter hiding rules */
-.publications.filter-venue-kdd ol.bibliography > li > .row:not(.venue-kdd) { display: none; }
-.publications.filter-venue-emnlp ol.bibliography > li > .row:not(.venue-emnlp) { display: none; }
-.publications.filter-venue-acl ol.bibliography > li > .row:not(.venue-acl) { display: none; }
-.publications.filter-venue-neurips ol.bibliography > li > .row:not(.venue-neurips) { display: none; }
-.publications.filter-venue-iclr ol.bibliography > li > .row:not(.venue-iclr) { display: none; }
-.publications.filter-venue-sigmod ol.bibliography > li > .row:not(.venue-sigmod) { display: none; }
-.publications.filter-venue-mlsys ol.bibliography > li > .row:not(.venue-mlsys) { display: none; }
-.publications.filter-venue-aaai ol.bibliography > li > .row:not(.venue-aaai) { display: none; }
-.publications.filter-venue-arxiv ol.bibliography > li > .row:not(.venue-arxiv) { display: none; }
-.publications.filter-venue-tbd ol.bibliography > li > .row:not(.venue-tbd) { display: none; }
-.publications.filter-venue-tist ol.bibliography > li > .row:not(.venue-tist) { display: none; }
-.publications.filter-venue-tkde ol.bibliography > li > .row:not(.venue-tkde) { display: none; }
-.publications.filter-venue-www ol.bibliography > li > .row:not(.venue-www) { display: none; }
 
 /* Fix alignment: ensure all rows have consistent padding/margin */
 .publications ol.bibliography li .row {
@@ -130,7 +98,21 @@ document.addEventListener("DOMContentLoaded", function() {
   generatePubStats();
 });
 
-const venueFilters = ['kdd', 'emnlp', 'acl', 'neurips', 'iclr', 'sigmod', 'mlsys', 'aaai', 'arxiv', 'tbd', 'tist', 'tkde'];
+const venueColorMap = {
+{% for venue in site.data.venues %}
+  "{{ venue[0] | slugify }}": "{{ venue[1].color | default: '' }}"{% unless forloop.last %},{% endunless %}
+{% endfor %}
+};
+
+const activeFilter = {
+  type: null,
+  value: null,
+};
+
+function getVenueButtonStyle(code) {
+  const backgroundColor = venueColorMap[code] || "var(--global-theme-color)";
+  return `background-color: ${backgroundColor}; color: white;`;
+}
 
 function generatePubStats() {
   const allRows = document.querySelectorAll('.publications ol.bibliography li .row');
@@ -198,78 +180,74 @@ function generatePubStats() {
   sortedVenues.forEach(code => {
     const data = venueCounts[code];
     venuesHtml += `
-      <span class="venue-btn venue-${code}" id="filter-venue-${code}" onclick="toggleVenueFilter('${code}')">
+      <span
+        class="venue-btn"
+        id="filter-venue-${code}"
+        style="${getVenueButtonStyle(code)}"
+        onclick="toggleFilter('venue', '${code}')"
+      >
         ${data.name}: ${data.count}
       </span>
     `;
-    
-    // Ensure we track this venue for filtering clear logic if it wasn't in our hardcoded list
-    if (!venueFilters.includes(code)) {
-      venueFilters.push(code);
-    }
   });
   document.getElementById('venue-stats-container').innerHTML = venuesHtml;
+  updateFilterUI();
+  applyFilters();
 }
 
-function toggleFilter(filterType) {
-  const pubContainer = document.querySelector('.publications');
-  const btn = document.getElementById('filter-' + filterType);
-  
-  // If button doesn't exist (yet), return
-  if (!btn) return;
+function toggleFilter(filterType, value = null) {
+  const isSameFilter = activeFilter.type === filterType && activeFilter.value === value;
 
-  const otherFilterType = filterType === 'first-author' ? 'corresponding-author' : 'first-author';
-  const otherBtn = document.getElementById('filter-' + otherFilterType);
-  
-  // Check if this filter is already active
-  const isActive = pubContainer.classList.contains('filter-' + filterType);
-  
-  // Remove all filters (author and venue)
-  pubContainer.classList.remove('filter-first-author', 'filter-corresponding-author');
-  venueFilters.forEach(v => pubContainer.classList.remove('filter-venue-' + v));
-  
-  // Update UI states
-  if (btn) btn.classList.remove('active');
-  if (otherBtn) otherBtn.classList.remove('active');
-  venueFilters.forEach(v => {
-    const vBtn = document.getElementById('filter-venue-' + v);
-    if (vBtn) vBtn.classList.remove('active');
-  });
-  
-  // If wasn't active, apply this filter
-  if (!isActive) {
-    pubContainer.classList.add('filter-' + filterType);
-    if (btn) btn.classList.add('active');
+  if (isSameFilter) {
+    activeFilter.type = null;
+    activeFilter.value = null;
+  } else {
+    activeFilter.type = filterType;
+    activeFilter.value = value;
+  }
+
+  updateFilterUI();
+  applyFilters();
+}
+
+function updateFilterUI() {
+  const allFilterButtons = document.querySelectorAll(
+    '#pub-stats-container .filter-btn, #venue-stats-container .venue-btn'
+  );
+  allFilterButtons.forEach(btn => btn.classList.remove('active'));
+
+  if (activeFilter.type === 'first-author' || activeFilter.type === 'corresponding-author') {
+    const authorBtn = document.getElementById('filter-' + activeFilter.type);
+    if (authorBtn) {
+      authorBtn.classList.add('active');
+    }
+    return;
+  }
+
+  if (activeFilter.type === 'venue' && activeFilter.value) {
+    const venueBtn = document.getElementById('filter-venue-' + activeFilter.value);
+    if (venueBtn) {
+      venueBtn.classList.add('active');
+    }
   }
 }
 
-function toggleVenueFilter(venue) {
-  const pubContainer = document.querySelector('.publications');
-  const btn = document.getElementById('filter-venue-' + venue);
-  
-  // Check if this filter is already active
-  const isActive = pubContainer.classList.contains('filter-venue-' + venue);
-  
-  // Remove all filters (author and venue)
-  pubContainer.classList.remove('filter-first-author', 'filter-corresponding-author');
-  venueFilters.forEach(v => pubContainer.classList.remove('filter-venue-' + v));
-  
-  // Remove active class from all buttons
-  const authBtn1 = document.getElementById('filter-first-author');
-  const authBtn2 = document.getElementById('filter-corresponding-author');
-  if (authBtn1) authBtn1.classList.remove('active');
-  if (authBtn2) authBtn2.classList.remove('active');
-  
-  venueFilters.forEach(v => {
-    const vBtn = document.getElementById('filter-venue-' + v);
-    if (vBtn) vBtn.classList.remove('active');
+function applyFilters() {
+  const allRows = document.querySelectorAll('.publications ol.bibliography li .row');
+
+  allRows.forEach(row => {
+    let visible = true;
+
+    if (activeFilter.type === 'first-author') {
+      visible = row.classList.contains('first-author');
+    } else if (activeFilter.type === 'corresponding-author') {
+      visible = row.classList.contains('corresponding-author');
+    } else if (activeFilter.type === 'venue' && activeFilter.value) {
+      visible = row.classList.contains('venue-' + activeFilter.value);
+    }
+
+    row.classList.toggle('is-hidden-by-filter', !visible);
   });
-  
-  // If wasn't active, apply this filter
-  if (!isActive) {
-    pubContainer.classList.add('filter-venue-' + venue);
-    if (btn) btn.classList.add('active');
-  }
 }
 </script>
 

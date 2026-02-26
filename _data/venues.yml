@@ -7,3 +7,45 @@
 
 "Vision":
   color: "#009f36"
+
+"KDD":
+  color: "#7c3aed"
+
+"EMNLP":
+  color: "#0891b2"
+
+"ACL":
+  color: "#059669"
+
+"NeurIPS":
+  color: "#dc2626"
+
+"ICLR":
+  color: "#ea580c"
+
+"SIGMOD":
+  color: "#2563eb"
+
+"MLSys":
+  color: "#9333ea"
+
+"AAAI":
+  color: "#0284c7"
+
+"arXiv":
+  color: "#6b7280"
+
+"TBD":
+  color: "#4f46e5"
+
+"TIST":
+  color: "#0d9488"
+
+"TKDE":
+  color: "#be185d"
+
+"WWW":
+  color: "#eab308"
+
+"ICDE":
+  color: "#10b981"

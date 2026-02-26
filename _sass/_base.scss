@@ -749,67 +749,15 @@ footer.sticky-bottom {
           margin-bottom: 0.5rem;
           padding: 0.5rem 0.5rem;
           font-size: 1rem;
-          color: var(--global-card-bg-color) !important;
+          color: #fff !important;
 
-          a {
-            color: white;
+          a,
+          div {
+            color: #fff !important;
 
             &:hover {
               text-decoration: none;
             }
-          }
-
-          // Venue-specific bar colors
-          &.venue-bar-kdd {
-            background-color: #7c3aed !important;
-          }
-
-          &.venue-bar-emnlp {
-            background-color: #0891b2 !important;
-          }
-
-          &.venue-bar-acl {
-            background-color: #059669 !important;
-          }
-
-          &.venue-bar-neurips {
-            background-color: #dc2626 !important;
-          }
-
-          &.venue-bar-iclr {
-            background-color: #ea580c !important;
-          }
-
-          &.venue-bar-sigmod {
-            background-color: #2563eb !important;
-          }
-
-          &.venue-bar-mlsys {
-            background-color: #9333ea !important;
-          }
-
-          &.venue-bar-aaai {
-            background-color: #0284c7 !important;
-          }
-
-          &.venue-bar-arxiv {
-            background-color: #6b7280 !important;
-          }
-
-          &.venue-bar-tbd {
-            background-color: #4f46e5 !important;
-          }
-
-          &.venue-bar-tist {
-            background-color: #0d9488 !important;
-          }
-
-          &.venue-bar-tkde {
-            background-color: #be185d !important;
-          }
-
-          &.venue-bar-www {
-            background-color: #ca8a04 !important;
           }
         }
 
