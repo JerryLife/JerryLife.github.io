@@ -19,22 +19,22 @@
     },
     {
       "institution": "Huazhong University of Science and Technology",
-        "location": "Wuhan, China",
-        "url": "https://www.hust.edu.cn/",
-        "area": "Computer Science and Technology",
-        "studyType": "Bachelor of Engineering",
-        "startDate": "2015-09-01",
-        "endDate": "2019-06-30",
-        "score": "GPA: 3.91/4.0; Rank: 10/281"
+      "location": "Wuhan, China",
+      "url": "https://www.hust.edu.cn/",
+      "area": "Computer Science and Technology",
+      "studyType": "Bachelor of Engineering",
+      "startDate": "2015-09-01",
+      "endDate": "2019-06-30",
+      "score": "GPA: 3.91/4.0; Rank: 10/281"
     },
     {
       "institution": "No.1 Middle School affiliated to Central China Normal University",
-        "location": "Wuhan, China",
-        "url": "https://www.hzsdyfz.com.cn/",
-        "area": "Science",
-        "studyType": "High School",
-        "startDate": "2012-09-01",
-        "endDate": "2015-06-30"
+      "location": "Wuhan, China",
+      "url": "https://www.hzsdyfz.com.cn/",
+      "area": "Science",
+      "studyType": "High School",
+      "startDate": "2012-09-01",
+      "endDate": "2015-06-30"
     }
   ],
   "awards": [
@@ -44,6 +44,13 @@
       "awarder": "National Research Foundation (NRF), Singapore",
       "url": "",
       "summary": "S$250,000 grant for four years."
+    },
+    {
+      "title": "Google Cloud Research Credit Award",
+      "date": "2026",
+      "awarder": "Google",
+      "url": "",
+      "summary": "US$5,000 in Google Cloud research credits."
     },
     {
       "title": "Best Research Staff Award",
