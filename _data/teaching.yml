@@ -1,0 +1,58 @@
+teaching_assistant:
+  - course: Programming Methodology
+    code: CS1010E
+    term: Fall 2019
+  - course: Data Structures and Algorithms
+    code: CS2040S
+    term: Spring 2020
+  - course: Big Data Systems for Data Science
+    code: CS4225
+    term: Fall 2020
+  - course: Programming Methodology (II)
+    code: CS2030
+    term: Spring 2021
+  - course: Neural Networks and Deep Learning
+    code: CS5242
+    term: Fall 2021
+  - course: Software Testing
+    code: CS4218
+    term: Spring 2022
+  - course: Introduction to Operating Systems
+    code: CS2106
+    term: Fall 2022
+
+mentorship:
+  - name: Ziyang Wang
+    url: https://www.linkedin.com/in/ziyang-wang-4a600b348/
+    role: Master Student
+    institution: NUS
+    period: "2024 - 2025"
+  - name: Haodong Zhao
+    url: https://dongdongzhaoup.github.io/
+    role: Visiting Ph.D. Student
+    institution: Shanghai Jiao Tong University
+    period: "2024 - 2025"
+  - name: Zhen Qin
+    url: https://zhenqincn.github.io/
+    role: Visiting Ph.D. Student
+    institution: Zhe Jiang University
+    period: "2024 - 2025"
+    notes:
+      - Now an Assistant Professor at Zhe Jiang University (ZJU)
+  - name: Jizhou Guo
+    url: https://scholar.google.com/citations?user=fcBDdsYAAAAJ
+    role: Research Intern
+    institution: Shanghai Jiao Tong University
+    period: "2024"
+  - name: Junyi Hou
+    url: https://profile.junyi.dev/
+    role: Research Intern
+    institution: NUS
+    period: "2023 - 2024"
+    notes:
+      - Now a Ph.D. student at National University of Singapore (NUS)
+  - name: Junhui Zhu
+    url: https://jzhu.xyz/
+    role: Research Intern
+    institution: NUS
+    period: "2022"

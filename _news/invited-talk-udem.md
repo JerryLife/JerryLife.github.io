@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Invited Talk** "[When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration]" at **Université de Montréal (UdeM) and Mila**, hosted by Prof. Bang Liu.
+**Invited talk** "When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration" at **Université de Montréal (UdeM) and Mila**, hosted by Prof. Bang Liu.
