@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-talk",
+          title: "Talk",
+          description: "Invited talks, keynotes, and seminars.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/talk/";
+          },
         },{id: "nav-service",
           title: "Service",
           description: "Professional services in academic communities",
@@ -63,8 +70,8 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-received-the-best-research-staff-award-from-institute-of-data-science-nus",
           title: 'I have received the Best Research Staff Award from Institute of Data Science,...',
           description: "",
-          section: "News",},{id: "news-i-delivered-an-invited-talk-bridging-private-data-silo-with-machine-learning-at-the-nus-open-house-2025",
-          title: 'I delivered an invited talk “Bridging Private Data Silo with Machine Learning” at...',
+          section: "News",},{id: "news-invited-talk-bridging-private-data-silo-with-machine-learning-at-the-nus-open-house-2025",
+          title: 'Invited talk “Bridging Private Data Silo with Machine Learning” at the NUS Open...',
           description: "",
           section: "News",},{id: "news-one-paper-accepted-in-acl-2025-zhen-qin-zhaomin-wu-bingsheng-he-shuiguang-deng-federated-data-efficient-instruction-tuning-for-large-language-models",
           title: 'One paper accepted in ACL 2025. Zhen Qin, Zhaomin Wu, Bingsheng He, Shuiguang...',
@@ -95,6 +102,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-i-have-received-the-google-cloud-research-credit-award-with-us-5-000-in-google-cloud-research-credits-to-support-my-research",
           title: 'I have received the Google Cloud Research Credit Award, with US$5,000 in Google...',
+          description: "",
+          section: "News",},{id: "news-invited-talk-when-data-and-models-stay-hidden-toward-trustworthy-ai-collaboration-at-université-de-montréal-udem-and-mila-hosted-by-prof-bang-liu",
+          title: 'Invited Talk “[When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration]” at...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
