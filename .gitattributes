@@ -1,2 +1,16 @@
-# Force LF line endings, needed for Docker to work on Windows
-*.sh text eol=lf
+# Normalize text files to LF across platforms.
+* text=auto eol=lf
+
+# Preserve binary assets.
+*.gif binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.mp3 binary
+*.mp4 binary
+*.pdf binary
+*.png binary
+*.ttf binary
+*.webp binary
+*.woff binary
+*.woff2 binary

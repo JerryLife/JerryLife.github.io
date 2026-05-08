@@ -1,0 +1,24 @@
+- date: 2026-05-06
+  type: Invited Talk
+  venue: Université de Montréal (UdeM) and Mila
+  title: "When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration"
+  note: Hosted by Prof. Bang Liu
+
+- date: 2026-01-26
+  type: Keynote
+  venue: AAAI 2026 FLCA Workshop
+  title: "Bridging Data Silos with Practical Federated Learning"
+  url: https://sites.google.com/view/flca/keynotes
+
+- date: 2025-05-29
+  type: Invited Talk
+  venue: DASFAA 2025 Trust Day
+  title: "Towards Practical Vertical Federated Learning Systems"
+  url: https://dasfaa2025.github.io/#/program/trust-day
+  note: On behalf of Prof. Bingsheng He
+
+- date: 2025-02-25
+  type: Invited Talk
+  venue: NUS Open House 2025
+  title: "Bridging Private Data Silo with Machine Learning"
+  url: https://researchweek.comp.nus.edu.sg/computing/

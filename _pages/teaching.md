@@ -4,7 +4,7 @@ permalink: /teaching/
 title: Teaching
 description: Teaching experience and mentorship
 nav: true
-nav_order: 4
+nav_order: 6
 ---
 
 ### Teaching Assistant
@@ -21,7 +21,7 @@ nav_order: 4
 
 _It is my honor to work with many talented students and colleagues!_
 
-* [Ziyang Wang](https://www.linkedin.com/in/ziyang-wang-4a600b348/) - Research Intern, NUS, 2024 - 2025
+* [Ziyang Wang](https://www.linkedin.com/in/ziyang-wang-4a600b348/) - Master Student, NUS, 2024 - 2025
 * [Haodong Zhao](https://dongdongzhaoup.github.io/) - Visiting Ph.D. Student, Shanghai Jiao Tong University, 2024 - 2025
 * [Zhen Qin](https://zhenqincn.github.io/) - Visiting Ph.D. Student, Zhe Jiang University, 2024 - 2025
   * Now an Assistant Professor at Zhe Jiang University (ZJU)
@@ -29,5 +29,3 @@ _It is my honor to work with many talented students and colleagues!_
 * [Junyi Hou](https://profile.junyi.dev/) - Research Intern, NUS, 2023 - 2024
   * Now a Ph.D. student at National University of Singapore (NUS)
 * [Junhui Zhu](https://jzhu.xyz/) - Research Intern, NUS, 2022
-
-

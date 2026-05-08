@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have passed my **Ph.D. defense**! 🎉 
+I have passed my **Ph.D. defense**! 🎉

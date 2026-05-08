@@ -1,0 +1,98 @@
+- title: Conference Reviewers
+  years:
+    - year: 2026
+      items:
+        - name: ICML 2026
+          role: Reviewer
+        - name: NeurIPS 2026
+          role: Reviewer
+    - year: 2025
+      items:
+        - name: AAAI 2025
+          role: Reviewer
+        - name: EMNLP 2025
+          role: Reviewer
+        - name: ICLR 2025
+          role: Reviewer
+        - name: ICML 2025
+          role: Reviewer
+        - name: NeurIPS 2025
+          role: Reviewer
+    - year: 2024
+      items:
+        - name: AISTATS 2024
+          role: Reviewer
+        - name: ICLR 2024
+          role: Reviewer
+        - name: NeurIPS 2024
+          role: Reviewer
+        - name: KDD 2024
+          role: Reviewer
+    - year: 2023
+      items:
+        - name: NeurIPS 2023
+          role: Reviewer
+        - name: SIGMOD 2023
+          role: Artifact Reviewer
+    - year: 2022
+      items:
+        - name: PAKDD 2022
+          role: Reviewer
+    - year: 2021
+      items:
+        - name: PAKDD 2021
+          role: Reviewer
+
+- title: Journal Reviewers
+  years:
+    - year: 2026
+      items:
+        - name: ACM Computing Survey
+          role: Reviewer
+        - name: TPDS
+          role: Reviewer
+        - name: TKDE
+          role: Reviewer
+    - year: 2025
+      items:
+        - name: TDSC
+          role: Reviewer
+        - name: TPDS
+          role: Reviewer
+        - name: TKDE
+          role: Reviewer
+        - name: TAI
+          role: Reviewer
+    - year: 2024
+      items:
+        - name: TKDD
+          role: Reviewer
+        - name: JPDC
+          role: Reviewer
+        - name: TNNLS
+          role: Reviewer
+    - year: 2023
+      items:
+        - name: TPAMI
+          role: Reviewer
+        - name: TKDE
+          role: Reviewer
+        - name: TNNLS
+          role: Reviewer
+        - name: IJCV
+          role: Reviewer
+        - name: IoT-J
+          role: Reviewer
+    - year: 2022
+      items:
+        - name: TPDS
+          role: Reviewer
+        - name: TIST
+          role: Reviewer
+
+- title: Tutorial
+  years:
+    - year: 2020
+      items:
+        - name: IJCAI 2020
+          role: Tutorial Speaker
