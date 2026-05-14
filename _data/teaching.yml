@@ -22,6 +22,22 @@ teaching_assistant:
     term: Fall 2022
 
 mentorship:
+  - name: Jiayi Li
+    role: Master Student
+    institution: NUS
+    period: "2025 - 2026"
+  - name: Ziyang Qiu
+    role: Master Student
+    institution: NUS
+    period: "2025 - 2026"
+  - name: Lifan Hu
+    role: Undergraduate Student
+    institution: NUS
+    period: "2025 - 2026"
+  - name: Qian Yu
+    role: Undergraduate Student
+    institution: NUS
+    period: "2025 - 2026"
   - name: Ziyang Wang
     url: https://www.linkedin.com/in/ziyang-wang-4a600b348/
     role: Master Student
@@ -41,18 +57,18 @@ mentorship:
       - Now an Assistant Professor at Zhe Jiang University (ZJU)
   - name: Jizhou Guo
     url: https://scholar.google.com/citations?user=fcBDdsYAAAAJ
-    role: Research Intern
+    role: Undergraduate Student
     institution: Shanghai Jiao Tong University
     period: "2024"
   - name: Junyi Hou
     url: https://profile.junyi.dev/
-    role: Research Intern
+    role: Master Student
     institution: NUS
     period: "2023 - 2024"
     notes:
       - Now a Ph.D. student at National University of Singapore (NUS)
   - name: Junhui Zhu
     url: https://jzhu.xyz/
-    role: Research Intern
+    role: Master Student
     institution: NUS
     period: "2022"

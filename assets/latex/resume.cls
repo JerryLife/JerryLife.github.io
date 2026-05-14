@@ -16,8 +16,23 @@
 \usepackage{array}
 \usepackage{ifthen}
 \usepackage{textcase}
+\usepackage{xcolor}
 
 \pagestyle{empty}
+
+\newdimen\cvRemainingSpace
+\newdimen\cvRequestedSpace
+\newcommand{\cvNeedspace}[1]{%
+  \par
+  \begingroup
+    \cvRemainingSpace=\pagegoal
+    \advance\cvRemainingSpace by -\pagetotal
+    \cvRequestedSpace=#1\relax
+    \ifdim\cvRequestedSpace>\cvRemainingSpace
+      \vfil\break
+    \fi
+  \endgroup
+}
 
 %----------------------------------------------------------------------------------------
 % Headings
@@ -75,6 +90,7 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSection}[1]{
+  \cvNeedspace{7\baselineskip}
   \sectionskip
   \nopagebreak[4]
   \MakeUppercase{\bf #1}
@@ -92,6 +108,7 @@
 }
 
 \newenvironment{rSectionTiny}[2]{
+  \cvNeedspace{7\baselineskip}
   \sectionskip
   \nopagebreak[4]
   \noindent
@@ -123,6 +140,73 @@
   }{
   \end{list}
   \vspace{0.5em}
+}
+
+\newcommand{\cvSubheading}[1]{%
+  \cvNeedspace{2\baselineskip}
+  \noindent{\bf #1}\par\vspace{-0.2em}
+  \nopagebreak[4]
+}
+
+\newcommand{\yearSeparator}[1]{%
+  \cvNeedspace{4\baselineskip}
+  \par\smallskip
+  \noindent\begingroup
+    \bfseries\textcolor{black!50}{#1}%
+    \hspace{0.75em}%
+    \textcolor{black!18}{\leaders\hrule height 0.3pt\hfill}%
+  \endgroup
+  \par\smallskip
+}
+
+\newcommand{\publicationYear}[1]{\yearSeparator{#1}}
+\newcommand{\serviceYear}[1]{\yearSeparator{#1}}
+\newcommand{\honorGroup}[1]{\yearSeparator{#1}}
+\newcommand{\talkYear}[1]{\yearSeparator{#1}}
+\newcommand{\teachingGroup}[1]{\yearSeparator{#1}}
+
+\newcommand{\serviceLine}[2]{%
+  \noindent\textbf{#1}: #2\par\vspace{-0.3em}%
+}
+
+\newcommand{\talkEntry}[4]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.78\linewidth}@{\extracolsep{\fill}}r@{}}
+    \textbf{#1}: ``#2'' & #4
+  \end{tabular*}\\
+  #3\par\vspace{0.1em}%
+}
+
+\newcommand{\talkEntryWithUrl}[5]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.78\linewidth}@{\extracolsep{\fill}}r@{}}
+    \textbf{#1}: ``\href{#5}{#2}'' & #4
+  \end{tabular*}\\
+  #3\par\vspace{0.1em}%
+}
+
+\newcommand{\honorEntry}[3]{%
+  \noindent$\bullet$ \textbf{#1} \hfill #2\\
+  #3\par\vspace{0.1em}%
+}
+
+\newcommand{\teachingEntry}[2]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.78\linewidth}@{\extracolsep{\fill}}r@{}}
+    #1 & #2
+  \end{tabular*}\par\vspace{-0.3em}%
+}
+
+\newcommand{\mentoredStudentEntry}[3]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.78\linewidth}@{\extracolsep{\fill}}r@{}}
+    #1 & #2
+  \end{tabular*}%
+  \ifthenelse{\equal{#3}{}}{%
+    \par\vspace{-0.5\parskip}%
+  }{%
+    \\\noindent\hspace*{0.6em}{\em Current: #3}\par\vspace{-0.7\parskip}%
+  }%
 }
 
 \def\namesize{\huge}
