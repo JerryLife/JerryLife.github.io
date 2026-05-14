@@ -39,6 +39,13 @@
   ],
   "awards": [
     {
+      "title": "ICML 2026 Gold Reviewer Award",
+      "date": "2026",
+      "awarder": "International Conference on Machine Learning (ICML)",
+      "url": "",
+      "summary": "Top 25% among reviewers."
+    },
+    {
       "title": "NRF Postdoctoral Award",
       "date": "2026",
       "awarder": "National Research Foundation (NRF), Singapore",
