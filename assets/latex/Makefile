@@ -4,7 +4,7 @@ OUT_DIR := ../pdf
 BUILD_DIR := build
 SOURCES := main.tex resume.cls $(wildcard sections/*.tex)
 
-.PHONY: all clean
+.PHONY: all clean watch
 
 all: $(OUT_DIR)/$(JOB).pdf
 
@@ -18,3 +18,6 @@ $(OUT_DIR) $(BUILD_DIR):
 
 clean:
 	rm -rf $(BUILD_DIR)
+
+watch:
+	../../build_cv_pdf.sh watch

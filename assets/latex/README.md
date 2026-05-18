@@ -8,4 +8,10 @@ Build from this directory:
 make
 ```
 
+Rebuild automatically whenever a LaTeX source file changes:
+
+```bash
+make watch
+```
+
 The original uploaded archive is preserved under `archive/`.
