@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have received the **Google Cloud Research Credit Award**, with **US$5,000** in Google Cloud research credits to support my research.
+I have received the **Google Cloud Research Credit Award**, with **USD 5,000** in Google Cloud research credits to support my research.

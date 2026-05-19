@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have received the **NRF Postdoctoral Award** from the National Research Foundation 🏆, with **S$250,000** over four years to support my research on **AI-powered psychological counselling systems**.
+I have received the **NRF Postdoctoral Award** from the National Research Foundation 🏆, which provides four-year salary support and an independent **SGD 250,000** research grant to support my research on **AI-powered psychological counselling systems**.
