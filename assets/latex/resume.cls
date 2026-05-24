@@ -165,7 +165,7 @@
 }
 
 \newcommand{\publicationYear}[1]{%
-  \cvNeedspace{2\baselineskip}
+  \cvNeedspace{4\baselineskip}
   \par\vspace{0.15em}
   \noindent\begingroup
     \bfseries\textcolor{black!50}{#1}%
