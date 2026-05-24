@@ -102,7 +102,7 @@
   \begin{list}{}{
     \setlength{\leftmargin}{0.6em}
   }
-  \item[]
+  \item[]\small
 }{
   \end{list}
 }
@@ -114,7 +114,7 @@
   \noindent
   \MakeUppercase{\bf #1}
   \nopagebreak[4]
-  \hspace{0.1em}
+  \hspace{0.6em}
   \noindent {\rSectionSupplementalTextFixedSize #2}
   \nopagebreak[4]
   \sectionlineskip
@@ -124,7 +124,7 @@
   \begin{list}{}{
     \setlength{\leftmargin}{0.6em}
   }
-  \item[]
+  \item[]\small
 }{
   \end{list}
 }
@@ -143,9 +143,14 @@
 }
 
 \newcommand{\cvSubheading}[1]{%
-  \cvNeedspace{2\baselineskip}
-  \noindent{\bf #1}\par\vspace{-0.2em}
-  \nopagebreak[4]
+  \cvNeedspace{3\baselineskip}
+  \par\vspace{0.1em}
+  \noindent\begingroup
+    \bfseries\textcolor{black!50}{#1}%
+    \hspace{0.75em}%
+    \textcolor{black!18}{\leaders\hrule height 0.3pt\hfill}%
+  \endgroup
+  \par\vspace{0.1em}
 }
 
 \newcommand{\yearSeparator}[1]{%
@@ -159,7 +164,16 @@
   \par\smallskip
 }
 
-\newcommand{\publicationYear}[1]{\yearSeparator{#1}}
+\newcommand{\publicationYear}[1]{%
+  \cvNeedspace{2\baselineskip}
+  \par\vspace{0.15em}
+  \noindent\begingroup
+    \bfseries\textcolor{black!50}{#1}%
+    \hspace{0.75em}%
+    \textcolor{black!18}{\leaders\hrule height 0.3pt\hfill}%
+  \endgroup
+  \par\vspace{0.15em}
+}
 \newcommand{\serviceYear}[1]{\yearSeparator{#1}}
 \newcommand{\honorGroup}[1]{\yearSeparator{#1}}
 \newcommand{\talkYear}[1]{\yearSeparator{#1}}
@@ -187,7 +201,7 @@
 
 \newcommand{\honorEntry}[3]{%
   \noindent$\bullet$ \textbf{#1} \hfill #2\\
-  #3\par\vspace{0.1em}%
+  #3\par\vspace{-0.2em}%
 }
 
 \newcommand{\teachingEntry}[2]{%
@@ -211,6 +225,6 @@
 
 \def\namesize{\huge}
 \def\addressskip{\smallskip}
-\def\sectionlineskip{\medskip}
-\def\nameskip{\bigskip}
+\def\sectionlineskip{\smallskip}
+\def\nameskip{\medskip}
 \def\sectionskip{\medskip}
