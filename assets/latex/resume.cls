@@ -174,7 +174,16 @@
   \endgroup
   \par\vspace{0.15em}
 }
-\newcommand{\serviceYear}[1]{\yearSeparator{#1}}
+\newcommand{\serviceYear}[1]{%
+  \cvNeedspace{3\baselineskip}
+  \par\vspace{0.15em}
+  \noindent\begingroup
+    \bfseries\textcolor{black!50}{#1}%
+    \hspace{0.75em}%
+    \textcolor{black!18}{\leaders\hrule height 0.3pt\hfill}%
+  \endgroup
+  \par\vspace{0.05em}
+}
 \newcommand{\honorGroup}[1]{\yearSeparator{#1}}
 \newcommand{\talkYear}[1]{\yearSeparator{#1}}
 \newcommand{\teachingGroup}[1]{\yearSeparator{#1}}
