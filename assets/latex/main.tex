@@ -5,35 +5,70 @@
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
 \usepackage{textcase}
 \usepackage{fancyhdr}
 \usepackage{helvet}
+\usepackage{fontawesome5}
 \usepackage[colorlinks=true, urlcolor=black, linkcolor=black]{hyperref}
 
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \newcommand{\red}[1]{\textcolor{red}{\textbf{\emph{#1}}}}
+\newsavebox{\cvlinkbox}
+\newcommand{\cvheaderplainlink}[2]{\href{#1}{\textcolor{black}{#2}}}
+\newcommand{\cvheaderlink}[2]{%
+  \href{#1}{\textcolor{black}{%
+    \sbox{\cvlinkbox}{#2}%
+    \leavevmode\rlap{\raisebox{-0.55ex}{\rule{\wd\cvlinkbox}{0.25pt}}}%
+    \usebox{\cvlinkbox}%
+  }}%
+}
+\newcommand{\cvplainlink}[2]{\href{#1}{\textcolor{blue}{#2}}}
+\newcommand{\cvlink}[2]{%
+  \href{#1}{\textcolor{blue}{%
+    \sbox{\cvlinkbox}{#2}%
+    \leavevmode\rlap{\raisebox{-0.55ex}{\rule{\wd\cvlinkbox}{0.25pt}}}%
+    \usebox{\cvlinkbox}%
+  }}%
+}
 
 \name{Zhaomin Wu}
-\address{3 Research Link, \#04-06, 117602, Singapore}
-\address{\\ zhaomin@nus.edu.sg \quad \\ www.zhaominwu.com}
+\address{{\footnotesize \faIcon{envelope}\ \cvheaderplainlink{mailto:zhaomin@nus.edu.sg}{zhaomin@nus.edu.sg} \hspace{0.8em}
+\faIcon{globe}\ \cvheaderlink{https://www.zhaominwu.com}{zhaominwu.com} \hspace{0.8em}
+\faIcon{graduation-cap}\ \cvheaderlink{https://scholar.google.com/citations?user=QjehmgkAAAAJ}{Google Scholar}}}
+
+\fancypagestyle{cvfooter}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+  \cfoot{\normalfont\thepage}%
+}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+  \cfoot{\normalfont\thepage}%
+}
 
 \begin{document}
+\pagestyle{cvfooter}
+\setcounter{page}{1}
 
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\cfoot{\normalfont\thepage}
-\setcounter{page}{2}
+\begin{CJK*}{UTF8}{gbsn}
 
 \input{sections/bio}
 \input{sections/education}
 \input{sections/employment}
-\input{sections/publications}
+\input{sections/selected_publications}
 \input{sections/honors}
+\input{sections/research_impact}
 \input{sections/talks}
-\input{sections/service}
 \input{sections/teaching}
+\input{sections/publications}
+\input{sections/service}
 \input{sections/language}
 
+\end{CJK*}
+\thispagestyle{cvfooter}
 \end{document}
