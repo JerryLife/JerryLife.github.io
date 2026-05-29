@@ -13,6 +13,7 @@
 \LoadClass[11pt,letterpaper]{article}
 \usepackage{mathpazo}
 \usepackage[parfill]{parskip}
+\setlength{\parskip}{0.4em}
 \usepackage{array}
 \usepackage{ifthen}
 \usepackage{textcase}
@@ -208,6 +209,10 @@
   #3\par\vspace{0.1em}%
 }
 
+\newcommand{\talkOneLine}[2]{%
+  \noindent #1~(#2)\par\vspace{0.15em}%
+}
+
 \newcommand{\honorEntry}[3]{%
   \noindent$\bullet$ \textbf{#1} \hfill #2\\
   #3\par\vspace{-0.2em}%
@@ -230,6 +235,14 @@
   }{%
     \\\noindent\hspace*{0.6em}{\em Current: #3}\par\vspace{-0.7\parskip}%
   }%
+}
+
+\newcommand{\mentoredGroupEntry}[3]{%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}p{0.78\linewidth}@{\extracolsep{\fill}}r@{}}
+    #1 & #2
+  \end{tabular*}%
+  \\\noindent\hspace*{0.6em}{\em Representative:} #3\par\vspace{-0.9\parskip}%
 }
 
 \def\namesize{\huge}
