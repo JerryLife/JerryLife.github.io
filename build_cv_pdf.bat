@@ -27,10 +27,10 @@ if not exist "%OUT_DIR%" mkdir "%OUT_DIR%"
 
 pushd "%LATEX_DIR%" >nul
 
-"%PDFLATEX%" -interaction=nonstopmode -halt-on-error -jobname=%JOB% -output-directory=build main.tex
+"%PDFLATEX%" -interaction=nonstopmode -halt-on-error -jobname=%JOB% -output-directory=build %JOB%.tex
 if errorlevel 1 goto :build_failed
 
-"%PDFLATEX%" -interaction=nonstopmode -halt-on-error -jobname=%JOB% -output-directory=build main.tex
+"%PDFLATEX%" -interaction=nonstopmode -halt-on-error -jobname=%JOB% -output-directory=build %JOB%.tex
 if errorlevel 1 goto :build_failed
 
 copy /Y "build\%JOB%.pdf" "%OUTPUT_PDF%" >nul
