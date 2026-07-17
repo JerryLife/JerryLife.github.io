@@ -101,7 +101,13 @@ ninja.data = [
     {%- endif -%}
   {%- endfor -%}
   {%- if site.socials_in_search -%}
-    {%- for social in site.data.socials -%}
+    {%- assign generated_social_links = site.data.generated.content.profile.socials -%}
+    {%- if generated_social_links and generated_social_links.size > 0 -%}
+      {%- assign social_links = generated_social_links -%}
+    {%- else -%}
+      {%- assign social_links = site.data.content.profile.socials -%}
+    {%- endif -%}
+    {%- for social in social_links -%}
       {%- case social[0] -%}
         {%- when "acm_id" -%}
           {%- assign social_id = "social-acm" -%}

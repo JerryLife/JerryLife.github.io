@@ -1,0 +1,22 @@
+schema_version: 1
+entries:
+  - institution: National University of Singapore (NUS)
+    location: Singapore
+    url: https://www.nus.edu.sg/
+    area: Computer Science
+    study_type: Ph.D.
+    start_date: 2019-07
+    end_date: 2024-05
+    score: Honorable Mention for Best Ph.D. Thesis
+    advisor: Prof. Bingsheng He
+    courses: []
+  - institution: Huazhong University of Science and Technology (HUST)
+    location: China
+    url: https://www.hust.edu.cn/
+    area: Computer Science and Technology
+    study_type: B.Eng.
+    start_date: 2015-09
+    end_date: 2019-06
+    score: 'GPA: 3.92/4.0, Rank: 10/281'
+    credential_note: ACM class
+    courses: []

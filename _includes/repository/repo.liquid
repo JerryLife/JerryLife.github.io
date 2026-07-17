@@ -1,5 +1,6 @@
 {% assign repo_url = include.repository | split: '/' %}
-{% if site.data.repositories.github_users contains repo_url.first %}
+{% assign cms_repositories = site.data.generated.content.site.repositories %}
+{% if cms_repositories.github_users contains repo_url.first %}
   {% assign show_owner = false %}
 {% else %}
   {% assign show_owner = true %}
@@ -25,8 +26,8 @@
     {% comment %} https://github.com/anuraghazra/github-readme-stats?tab=readme-ov-file#available-locales {% endcomment %}
 {% endcase %}
 
-{% if site.data.repositories.repo_description_lines_max %}
-  {% assign max_lines = site.data.repositories.repo_description_lines_max %}
+{% if cms_repositories.repo_description_lines_max %}
+  {% assign max_lines = cms_repositories.repo_description_lines_max %}
 {% else %}
   {% assign max_lines = 2 %}
 {% endif %}

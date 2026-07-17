@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const venueColorMap = {
-{% for venue in site.data.venues %}
+{% for venue in site.data.generated.content.site.venues %}
   "{{ venue[0] | slugify }}": "{{ venue[1].color | default: '' }}"{% unless forloop.last %},{% endunless %}
 {% endfor %}
 };
@@ -257,6 +257,14 @@ function applyFilters() {
 
 <div class="publications">
 
-{% bibliography %}
+  <section id="publication-list">
+    <h2>Publications</h2>
+    {% bibliography --file publications.bib %}
+  </section>
+
+  <section id="preprints">
+    <h2>Preprints</h2>
+    {% bibliography --file preprints.bib %}
+  </section>
 
 </div>

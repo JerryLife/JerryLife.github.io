@@ -28,6 +28,10 @@ nav_order: 6
   color: var(--global-text-color-light);
   margin: -0.25rem 0 0.9rem;
 }
+.teaching-intro > :last-child,
+.teaching-notes p {
+  margin-bottom: 0;
+}
 .teaching-list {
   border-bottom: 1px solid var(--global-divider-color);
 }
@@ -90,53 +94,55 @@ nav_order: 6
 }
 </style>
 
-<div class="teaching-page">
-  <section class="teaching-section">
-    <h3>Teaching Assistant</h3>
-    <div class="teaching-list">
-      {% for item in site.data.teaching.teaching_assistant %}
-        <article class="teaching-row">
-          <div class="teaching-when">{{ item.term }}</div>
-          <div>
-            <h4 class="teaching-title">{{ item.course }}</h4>
-            <div class="teaching-meta">
-              <span class="teaching-tag teaching-code">{{ item.code }}</span>
-            </div>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
+{% assign generated_teaching_sections = site.data.generated.content.teaching.sections %}
 
-  <section class="teaching-section">
-    <h3>Mentorship</h3>
-    <p class="teaching-intro">It is my honor to work with many talented students and colleagues.</p>
-    <div class="teaching-list">
-      {% for person in site.data.teaching.mentorship %}
-        <article class="teaching-row">
-          <div class="teaching-when">{{ person.period }}</div>
-          <div>
-            <h4 class="teaching-title">
-              {% if person.url %}
-                <a href="{{ person.url }}" target="_blank" rel="noopener noreferrer">{{ person.name }}</a>
-              {% else %}
-                {{ person.name }}
-              {% endif %}
-            </h4>
-            <div class="teaching-meta">
-              <span class="teaching-tag">{{ person.role }}</span>
-              <span class="teaching-tag">{{ person.institution }}</span>
-            </div>
-            {% if person.notes %}
-              <ul class="teaching-notes">
-                {% for note in person.notes %}
-                  <li>{{ note }}</li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
+<div class="teaching-page">
+  {% if generated_teaching_sections and generated_teaching_sections.size > 0 %}
+    {% for section in generated_teaching_sections %}
+      <section class="teaching-section">
+        <h3>{{ section.title }}</h3>
+        {% if section.intro %}
+          <div class="teaching-intro">{{ section.intro | markdownify }}</div>
+        {% endif %}
+        <div class="teaching-list">
+          {% for item in section.entries %}
+            {% assign entry_title = item.course | default: item.title | default: item.name %}
+            {% assign entry_period = item.term | default: item.period %}
+            <article class="teaching-row">
+              <div class="teaching-when">{{ entry_period }}</div>
+              <div>
+                <h4 class="teaching-title">
+                  {% if item.url and item.url != '' %}
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ entry_title }}</a>
+                  {% else %}
+                    {{ entry_title }}
+                  {% endif %}
+                </h4>
+                {% if item.code or item.role or item.institution %}
+                  <div class="teaching-meta">
+                    {% if item.code %}
+                      <span class="teaching-tag teaching-code">{{ item.code }}</span>
+                    {% endif %}
+                    {% if item.role %}
+                      <span class="teaching-tag">{{ item.role }}</span>
+                    {% endif %}
+                    {% if item.institution %}
+                      <span class="teaching-tag">{{ item.institution }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if item.notes %}
+                  <ul class="teaching-notes">
+                    {% for note in item.notes %}
+                      <li>{{ note | markdownify }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  {% endif %}
 </div>

@@ -33,18 +33,39 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
-            <a href="{{ content.url }}">{{ content.position }}</a>
+          <h6 class="title font-weight-bold ml-1 ml-md-4 mb-3">
+            {% if content.url != blank %}
+              <a href="{{ content.url }}">{{ content.name }}</a>
+            {% else %}
+              {{ content.name }}
+            {% endif %}
           </h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.name }}</h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
-          <ul class="items">
-            {% for item in content.highlights %}
-              <li>
-                <span class="item">{{ item }}</span>
-              </li>
-            {% endfor %}
-          </ul>
+          {% for subjob in content.subjobs %}
+            <div class="ml-1 ml-md-4{% unless forloop.first %} mt-3{% endunless %}">
+              {% if subjob.startDate %}
+                {% assign subjob_start = subjob.startDate | split: '-' | slice: 0, 2 | join: '.' %}
+                {% assign subjob_end = subjob.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
+                {% assign subjob_date = subjob_start | append: ' - ' | append: subjob_end %}
+              {% else %}
+                {% assign subjob_date = '' %}
+              {% endif %}
+              <h6 class="font-weight-bold mb-1" style="font-size: 0.95rem">
+                {{ subjob.position }}{% if subjob_date != '' %}<span class="font-weight-normal text-muted"> | {{ subjob_date }}</span>{% endif %}
+              </h6>
+              {% if subjob.summary != blank %}
+                <div style="font-size: 0.95rem; font-style: italic">{{ subjob.summary | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              {% if subjob.highlights and subjob.highlights.size > 0 %}
+                <ul class="items">
+                  {% for item in subjob.highlights %}
+                    <li>
+                      <span class="item">{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endfor %}
         </div>
       </div>
     </li>

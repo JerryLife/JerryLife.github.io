@@ -1,0 +1,76 @@
+schema_version: 1
+seo:
+  description: >-
+    Zhaomin Wu is a Research Fellow in Institute of Data Science, National University of Singapore.
+    He obtained his Ph.D. at the department of computer science in National University of Singapore
+    (NUS), supervised by Prof. Bingsheng He. He obtained his Bachelor degree at Huazhong University
+    of Science at Technology (HUST). His research interest lies in privacy-preserving machine learning,
+    including federated learning, differential privacy, and machine unlearning. He received the Dean's
+    Graduate Research Excellence Award in 2023.
+  keywords: federated learning, machine unlearning, differential privacy
+footer_text: >-
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with
+  <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by
+  <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+repositories:
+  github_users: []
+  github_repos:
+    - Xtra-Computing/FeT
+    - Xtra-Computing/FedSim
+    - Xtra-Computing/DeltaBoost
+    - Xtra-Computing/VertiBench
+    - JerryLife/FedOnce
+    - Xtra-Computing/FedTree
+  repo_description_lines_max: 2
+venues:
+  - abbreviation: AJP
+    url: https://aapt.scitation.org/journal/ajp
+    color: '#00369f'
+  - abbreviation: PhysRev
+    url: https://journals.aps.org/
+    color: ''
+  - abbreviation: Vision
+    url: ''
+    color: '#009f36'
+  - abbreviation: KDD
+    url: ''
+    color: '#7c3aed'
+  - abbreviation: EMNLP
+    url: ''
+    color: '#0891b2'
+  - abbreviation: ACL
+    url: ''
+    color: '#059669'
+  - abbreviation: NeurIPS
+    url: ''
+    color: '#dc2626'
+  - abbreviation: ICLR
+    url: ''
+    color: '#ea580c'
+  - abbreviation: SIGMOD
+    url: ''
+    color: '#2563eb'
+  - abbreviation: MLSys
+    url: ''
+    color: '#9333ea'
+  - abbreviation: AAAI
+    url: ''
+    color: '#0284c7'
+  - abbreviation: arXiv
+    url: ''
+    color: '#6b7280'
+  - abbreviation: TBD
+    url: ''
+    color: '#4f46e5'
+  - abbreviation: TIST
+    url: ''
+    color: '#0d9488'
+  - abbreviation: TKDE
+    url: ''
+    color: '#be185d'
+  - abbreviation: WWW
+    url: ''
+    color: '#eab308'
+  - abbreviation: ICDE
+    url: ''
+    color: '#10b981'

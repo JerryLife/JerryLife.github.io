@@ -18,10 +18,9 @@ The project is structured as follows, focusing on the main components that you w
 │   └── 📄 papers.bib: bibliography in BibTeX format
 ├── 📂 _books/: contains the bookshelf pages
 ├── 📄 _config.yml: the configuration file of the template
-├── 📂 _data/: contains some of the data used in the template
-│   ├── 📄 cv.yml: CV in YAML format, used when assets/json/resume.json is not found
-│   ├── 📄 repositories.yml: users and repositories info in YAML format
-│   └── 📄 socials.yml: your social media and contact info in YAML format
+├── 📂 _data/: contains editable semantic content and generated site data
+│   ├── 📂 content/: Profile, Service, Teaching, Mentoring, Site Settings, and CV files
+│   └── 📂 generated/: derived Jekyll view model (do not edit by hand)
 ├── 📂 _includes/: contains code parts that are included in the main HTML file
 │   └── 📄 news.liquid: defines the news section layout in the about page
 ├── 📂 _layouts/: contains the layouts to choose from in the frontmatter of the Markdown files
@@ -49,13 +48,7 @@ All changes made to this file are only visible after you rebuild the website. Th
 
 ## Modifying the CV information
 
-There are currently 2 different ways of generating the CV page content. The first one is by using a json file located in [assets/json/resume.json](assets/json/resume.json). It is a [known standard](https://jsonresume.org/) for creating a CV programmatically. The second one, currently used as a fallback when the json file is not found, is by using a yml file located in [\_data/cv.yml](_data/cv.yml). This was the original way of creating the CV page content and since it is more human readable than a json file we decided to keep it as an option.
-
-What this means is, if there is no resume data defined in [\_config.yml](_config.yml) and loaded via a json file, it will load the contents of [\_data/cv.yml](_data/cv.yml). If you want to use the [\_data/cv.yml](_data/cv.yml) file as the source of your CV, you must delete the [assets/json/resume.json](assets/json/resume.json) file.
-
-## Modifying the user and repository information
-
-The user and repository information is defined in [\_data/repositories.yml](_data/repositories.yml). You can add as many users and repositories as you want. Both informations are used in the `repositories` section.
+This site generates the CV page from the semantic sources under [\_data/content/](_data/content/). Edit `profile.yml`, independent files under `cv/`, the individual files under `service/`, `teaching.yml`, `mentoring.yml`, `talks.yml`, and one BibTeX file per publication; the build script writes [assets/json/resume.json](assets/json/resume.json), the Jekyll view model, and the PDF LaTeX fragments. It automatically separates arXiv venue records into the generated Preprints list. Do not edit generated outputs directly.
 
 ## Creating new pages
 
@@ -89,7 +82,7 @@ To access the collections, you can use the `site.COLLECTION_NAME` variable in yo
 
 ## Adding a new publication
 
-To add publications create a new entry in the [\_bibliography/papers.bib](_bibliography/papers.bib) file. You can find the BibTeX entry of a publication in Google Scholar by clicking on the quotation marks below the publication title, then clicking on "BibTeX", or also in the conference page itself. By default, the publications will be sorted by year and the most recent will be displayed first. You can change this behavior and more in the `Jekyll Scholar` section in [\_config.yml](_config.yml) file.
+To add a publication, create one BibTeX file under [\_data/content/publications/](_data/content/publications/). The filename must exactly match its citation key, for example `wu2026llmdna.bib` containing `@inproceedings{wu2026llmdna, ...}`. The build script generates [\_bibliography/papers.bib](_bibliography/papers.bib), `publications.bib`, and `preprints.bib`; do not edit those outputs directly. Records whose publication venue is arXiv are automatically rendered in Preprints. You can find a BibTeX entry in Google Scholar by clicking the quotation marks below the publication title, then "BibTeX", or on the conference page itself. By default, publications are sorted by year with the most recent first. You can change this behavior in the `Jekyll Scholar` section in [\_config.yml](_config.yml).
 
 You can add extra information to a publication, like a PDF file in the `assets/pdfs/` directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `annotation`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `html`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
 
@@ -156,7 +149,7 @@ A variety of beautiful theme colors have been selected for you to choose from. T
 
 ## Adding social media information
 
-You can add your social media links by adding the specified information in the [\_data/socials.yml](_data/socials.yml) file. This information will appear at the bottom of the `About` page and in the search results by default, but this could be changed to appear at the header of the page by setting `enable_navbar_social: true` and doesn't appear in the search by setting `socials_in_search: false`, both in [\_config.yml](_config.yml).
+You can add social media links in [\_data/content/profile.yml](_data/content/profile.yml), under `socials`. This information appears on the About page and in search results by default; display behavior remains configurable in [\_config.yml](_config.yml).
 
 ## Adding a newsletter
 

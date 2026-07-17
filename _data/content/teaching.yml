@@ -1,0 +1,27 @@
+schema_version: 1
+cv_section_title: Teaching & Mentorship
+sections:
+  - kind: teaching_assistant
+    title: Teaching Assistant, NUS
+    entries:
+      - course: Programming Methodology
+        code: CS1010E
+        term: Fall 2019
+      - course: Data Structures and Algorithms
+        code: CS2040S
+        term: Spring 2020
+      - course: Big Data Systems for Data Science
+        code: CS4225
+        term: Fall 2020
+      - course: Programming Methodology II
+        code: CS2030
+        term: Spring 2021
+      - course: Neural Networks and Deep Learning
+        code: CS5242
+        term: Fall 2021
+      - course: Software Testing
+        code: CS4218
+        term: Spring 2022
+      - course: Introduction to Operating Systems
+        code: CS2106
+        term: Fall 2022

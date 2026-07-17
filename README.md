@@ -1,4 +1,116 @@
-# al-folio
+# Zhaomin Wu Website
+
+## Content CMS and CV Generation
+
+This public repository uses Decap CMS, a Cloudflare Worker, and GitHub Actions to manage content. The CMS edits only semantic source files; the website, Publications page, and downloadable PDF are generated from the same data. The `CV` navigation item opens the PDF directly. The original `/cv/` HTML page is retained but has no public navigation link and is excluded from the sitemap. Existing content has been migrated to these files, so the first build does not clear it.
+
+### CMS Content Model
+
+Sign in to the [site CMS](https://www.zhaominwu.com/admin/) with the permitted GitHub account. Each Publish operation commits directly to `main`; GitHub Actions validates the data, generates derived artifacts, compiles the PDF, and deploys the site.
+
+| CMS area | Editable content | Source file |
+| --- | --- | --- |
+| `News` | Markdown news items | `_news/*.md` |
+| `Website Profile` | Name, website biography, avatar, social links, and shared identity information | `_data/content/profile.yml` |
+| `Publications` | One complete `.bib` record per publication | `_data/content/publications/*.bib` |
+| `Service` | Conference Reviewers, Journal Reviewers, Recognition, and Tutorial Speaker; each is edited independently | `_data/content/service/*.yml` |
+| `Teaching & Mentoring` | One entry containing separate Teaching and Mentoring editors for courses and student lists | `_data/content/teaching.yml`, `_data/content/mentoring.yml` |
+| `Talks` | Invited talks, keynotes, tutorials, and seminars | `_data/content/talks.yml` |
+| `Site Settings` | SEO, footer text, and publication venue badges | `_data/content/site.yml` |
+| `CV` | CV Profile, main jobs and subjobs, education, awards, skills, languages, volunteer work, Publication Display, Research Impact, and custom CV sections; each is an independent second-level entry | `_data/content/cv/*.yml` |
+
+Each `Publication` must contain exactly one complete BibTeX record. Its citation key and filename must match exactly and use lowercase `firstauthorYYYYshorttitle` form, for example `@inproceedings{wu2026llmdna, ...}` in `wu2026llmdna.bib`; underscores, hyphens, DOIs, DBLP identifiers, and numeric-only keys are not allowed. The CMS and build validate this convention. `selected = {true}` controls only the Selected Publications section on the home page. `cv_selected = {true}` controls only Selected Publications in the HTML CV and PDF, while `cv_order` controls its order. The build automatically separates records into `Publications` and `Preprints` from their arXiv venue and generates the website and CV/PDF lists, so no separate lists need manual maintenance.
+
+`Teaching & Mentoring` is one CMS entry with independent `Teaching` and `Mentoring` items. Teaching supports Teaching Assistant, Instructor, Guest Lecture, and other teaching experience; Mentoring maintains student lists, links, notes, destinations, and CV summary groups. Both generate their corresponding website and CV sections. `Work Experience` uses main jobs and subjobs: roles at the same institution belong under one main job, while a different institution requires a new main job. `CV Profile` belongs to the `CV` collection; shared identity data such as name, email, and avatar lives only in `Website Profile` to avoid duplication.
+
+### Local CMS
+
+By default, `http://localhost:8080/admin/` cannot read unpushed local files because the GitHub backend reads remote `main`. The project enables Decap's local backend. In another WSL terminal at the repository root, run the following command so the local CMS reads from and writes to the current working tree without pushing:
+
+```sh
+BIND_HOST=localhost npx decap-server
+```
+
+Keep that process running, then force-refresh `http://localhost:8080/admin/`. The local proxy uses `http://localhost:8081/api/v1` only for development; the production CMS continues to use Cloudflare OAuth and GitHub `main`.
+
+The Docker preview automatically regenerates website data after a local CMS save. To also rebuild the local PDF automatically, start the watcher once in a third WSL terminal:
+
+```sh
+PYTHON=python3 ./build_cv_pdf.sh watch
+```
+
+The watcher rebuilds the website data and PDF whenever `_data/content/` or a publication `.bib` file changes. It modifies only the current working tree and never commits or pushes. Production CMS publishes run this entire validation, generation, compilation, and deployment flow automatically in GitHub Actions.
+
+### Generated Artifacts
+
+| Generated output | Purpose |
+| --- | --- |
+| `_data/generated/content.yml` | Jekyll view model for About, Service, Teaching, Talks, and CV |
+| `_bibliography/papers.bib`, `_bibliography/publications.bib`, `_bibliography/preprints.bib` | Automatically generated bibliographies for Jekyll Scholar |
+| `assets/json/resume.json` | JSON Resume data for the retained HTML CV page |
+| `assets/latex/generated/*.tex` | Generated LaTeX fragments for the PDF CV |
+| `assets/pdf/ZhaominWu.pdf` | Public downloadable PDF |
+
+Do not edit these derived artifacts manually. For a one-off local validation and build, run:
+
+```sh
+python3 -m pip install -r requirements.txt
+python3 scripts/build_cv_content.py validate
+python3 scripts/build_cv_content.py build
+make -C assets/latex
+```
+
+`./build_cv_pdf.sh watch` watches YAML, BibTeX, and LaTeX files and recompiles continuously. On Windows, use `build_cv_pdf.bat`.
+
+### Cloudflare OAuth Configuration
+
+The Cloudflare Worker performs the GitHub OAuth exchange. The static site, repository, and GitHub Actions do not store the OAuth client secret. See [cloudflare/README.md](cloudflare/README.md) for the complete deployment guide.
+
+The production Worker URL is `https://zhaominwu-cms-auth.jerrylifewzm.workers.dev`. The GitHub OAuth App callback URL must be exactly:
+
+```text
+https://zhaominwu-cms-auth.jerrylifewzm.workers.dev/callback
+```
+
+Before a routine deployment of an existing Worker, confirm only the secret names and explicitly retain Dashboard bindings:
+
+```sh
+cd cloudflare
+npx wrangler secret list
+npx wrangler deploy --keep-vars
+```
+
+The expected secret names are `GITHUB_CLIENT_SECRET` and `OAUTH_STATE_SECRET`. `GITHUB_CLIENT_ID` is a non-secret Cloudflare Dashboard Worker Variable. Do not place the values of any of these three bindings in the repository or in chat.
+
+When creating the Worker for the first time, create local configuration from the template, set the `GITHUB_CLIENT_ID` variable in the Dashboard, and use `wrangler secret put` for the two secrets:
+
+```sh
+cd cloudflare
+cp wrangler.toml.example wrangler.toml
+npx wrangler secret put GITHUB_CLIENT_SECRET
+npx wrangler secret put OAUTH_STATE_SECRET
+npx wrangler deploy --keep-vars
+```
+
+The non-secret production values in `wrangler.toml` should be:
+
+```toml
+CMS_REPOSITORY = "JerryLife/JerryLife.github.io"
+CMS_BRANCH = "main"
+CMS_ALLOWED_ORIGINS = "https://www.zhaominwu.com,https://zhaominwu.com"
+```
+
+`OAUTH_STATE_SECRET` must contain at least 32 random characters. Do not put either secret in Git, `admin/config.yml`, or GitHub Actions Secrets. Actions Secrets are unavailable to the browser login flow and cannot replace a Worker Secret. After deployment, use the following command to confirm that the Worker source is live:
+
+```sh
+curl --fail https://zhaominwu-cms-auth.jerrylifewzm.workers.dev/health
+```
+
+The expected response is `Decap CMS OAuth proxy is running.`. The Worker restricts allowed site origins, the GitHub login, repository write permission, and the `main` branch.
+
+## Upstream Theme
+
+This site is based on al-folio.
 
 <div align="center">
 
@@ -231,7 +343,13 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
 
 <!--ts-->
 
-- [al-folio](#al-folio)
+- [Zhaomin Wu Website](#zhaomin-wu-website)
+  - [Content CMS and CV Generation](#content-cms-and-cv-generation)
+    - [CMS Content Model](#cms-content-model)
+    - [Local CMS](#local-cms)
+    - [Generated Artifacts](#generated-artifacts)
+    - [Cloudflare OAuth Configuration](#cloudflare-oauth-configuration)
+  - [Upstream Theme](#upstream-theme)
   - [User community](#user-community)
   - [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
     - [Desktop](#desktop)
@@ -292,9 +410,7 @@ This template has a built-in light/dark mode. It detects the user preferred colo
 
 ### CV
 
-There are currently 2 different ways of generating the CV page content. The first one is by using a json file located in [assets/json/resume.json](assets/json/resume.json). It is a [known standard](https://jsonresume.org/) for creating a CV programmatically. The second one, currently used as a fallback when the json file is not found, is by using a yml file located in [\_data/cv.yml](_data/cv.yml). This was the original way of creating the CV page content and since it is more human readable than a json file we decided to keep it as an option.
-
-What this means is, if there is no resume data defined in [\_config.yml](_config.yml) and loaded via a json file, it will load the contents of [\_data/cv.yml](_data/cv.yml) as fallback.
+The editable content model is split by ownership: [profile.yml](_data/content/profile.yml), [site.yml](_data/content/site.yml), the independent [CV files](_data/content/cv/), the separate [Service files](_data/content/service/), [teaching.yml](_data/content/teaching.yml), [mentoring.yml](_data/content/mentoring.yml), [talks.yml](_data/content/talks.yml), and one BibTeX file per publication under [_data/content/publications/](_data/content/publications/). The build script validates these sources, automatically separates arXiv preprints, generates the JSON Resume data and LaTeX fragments, and compiles the downloadable PDF. Do not edit [assets/json/resume.json](assets/json/resume.json) directly.
 
 [![CV Preview](readme_preview/cv.png)](https://alshedivat.github.io/al-folio/cv/)
 
@@ -310,7 +426,7 @@ You can create a people page if you want to feature more than one person. Each p
 
 ### Publications
 
-Your publications' page is generated automatically from your BibTex bibliography. Simply edit [\_bibliography/papers.bib](_bibliography/papers.bib). You can also add new `*.bib` files and customize the look of your publications however you like by editing [\_pages/publications.md](_pages/publications.md). By default, the publications will be sorted by year and the most recent will be displayed first. You can change this behavior and more in the `Jekyll Scholar` section in [\_config.yml](_config.yml) file.
+Your publications' page is generated automatically from the single-record files in [_data/content/publications/](_data/content/publications/). Add one `*.bib` file for each publication through the CMS; the build script writes the merged [\_bibliography/papers.bib](_bibliography/papers.bib), plus generated `publications.bib` and `preprints.bib` lists for Jekyll Scholar. A record goes into `Preprints` only when its publication venue is arXiv; an arXiv PDF link alone does not move an accepted paper. You can customize the presentation in [\_pages/publications.md](_pages/publications.md). By default, publications are sorted by year with the most recent first. You can change this behavior in the `Jekyll Scholar` section in [\_config.yml](_config.yml).
 
 You can add extra information to a publication, like a PDF file in the [assets/pdf/](assets/pdf/) directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `html`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
 
@@ -362,43 +478,6 @@ Photo formatting is made simple using [Bootstrap's grid system](https://getboots
 ---
 
 ### Other features
-
-#### GitHub's repositories and user stats
-
-**al-folio** uses [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) and [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy) to display GitHub repositories and user stats on the `/repositories/` page.
-
-[![Repositories Preview](readme_preview/repositories.png)](https://alshedivat.github.io/al-folio/repositories/)
-
-Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories to the `/repositories/` page.
-
-You may also use the following codes for displaying this in any other pages.
-
-```html
-<!-- code for GitHub users -->
-{% if site.data.repositories.github_users %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %} {% include repository/repo_user.liquid username=user %} {% endfor %}
-</div>
-{% endif %}
-
-<!-- code for GitHub trophies -->
-{% if site.repo_trophies.enabled %} {% for user in site.data.repositories.github_users %} {% if site.data.repositories.github_users.size > 1 %}
-<h4>{{ user }}</h4>
-{% endif %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-</div>
-{% endfor %} {% endif %}
-
-<!-- code for GitHub repositories -->
-{% if site.data.repositories.github_repos %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %} {% include repository/repo.liquid repository=repo %} {% endfor %}
-</div>
-{% endif %}
-```
-
----
 
 #### Theming
 

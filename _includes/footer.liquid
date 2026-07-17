@@ -1,8 +1,8 @@
+{% assign profile_name = site.data.generated.content.profile.basics.name %}
+{% assign cms_footer_text = site.data.generated.content.site.footer_text | default: site.footer_text %}
 {% capture footer_contents %}
   &copy; Copyright {{ site.time | date: '%Y' }}
-  {{ site.first_name }}
-  {{ site.middle_name }}
-  {{ site.last_name }}. {{ site.footer_text }}
+  {{ profile_name | default: site.first_name }}{% unless profile_name %} {{ site.middle_name }} {{ site.last_name }}{% endunless %}. {{ cms_footer_text }}
   {% if site.impressum_path %}
     <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
   {% endif %}

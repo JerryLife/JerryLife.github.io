@@ -1,0 +1,6 @@
+schema_version: 1
+entries:
+  - id: future_section
+    title: Additional Information
+    body: Add Markdown content here when an additional CV section is needed.
+    enabled: false

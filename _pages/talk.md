@@ -80,6 +80,9 @@ nav_order: 4
 .talk-host {
   margin-left: 0;
 }
+.talk-venue p {
+  margin-bottom: 0;
+}
 @media (max-width: 576px) {
   .talk-item {
     grid-template-columns: 1fr;
@@ -108,8 +111,15 @@ nav_order: 4
 }
 </style>
 
-<div class="talk-list">
-  {% assign talks = site.data.talk | sort: "date" | reverse %}
+{% assign generated_talks = site.data.generated.content.talks.entries %}
+{% if generated_talks and generated_talks.size > 0 %}
+  {% assign talks = generated_talks %}
+{% else %}
+  {% assign talks = site.data.content.talks.entries | sort: "date" | reverse %}
+{% endif %}
+
+{% if talks and talks.size > 0 %}
+  <div class="talk-list">
   {% for talk in talks %}
     <article class="talk-item">
       <time class="talk-date" datetime="{{ talk.date | date: '%Y-%m-%d' }}">
@@ -130,9 +140,10 @@ nav_order: 4
           {% endif %}
         </h3>
         {% if talk.note %}
-          <p class="talk-venue"><span class="talk-host">{{ talk.note }}</span></p>
+          <div class="talk-venue talk-host">{{ talk.note | markdownify }}</div>
         {% endif %}
       </div>
     </article>
   {% endfor %}
-</div>
+  </div>
+{% endif %}

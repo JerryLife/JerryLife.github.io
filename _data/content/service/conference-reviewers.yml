@@ -1,0 +1,48 @@
+schema_version: 1
+title: Conference Reviewers
+entries:
+  - year: 2026
+    name: ICML
+    role: Reviewer
+  - year: 2026
+    name: NeurIPS
+    role: Reviewer
+  - year: 2025
+    name: ICLR
+    role: Reviewer
+  - year: 2025
+    name: ICML
+    role: Reviewer
+  - year: 2025
+    name: NeurIPS
+    role: Reviewer
+  - year: 2025
+    name: AAAI
+    role: Reviewer
+  - year: 2025
+    name: EMNLP
+    role: Reviewer
+  - year: 2024
+    name: ICLR
+    role: Reviewer
+  - year: 2024
+    name: NeurIPS
+    role: Reviewer
+  - year: 2024
+    name: KDD
+    role: Reviewer
+  - year: 2024
+    name: AISTATS
+    role: Reviewer
+  - year: 2023
+    name: NeurIPS
+    role: Reviewer
+  - year: 2023
+    name: SIGMOD (artifact)
+    role: Reviewer
+  - year: 2022
+    name: PAKDD
+    role: Reviewer
+  - year: 2021
+    name: PAKDD
+    role: Reviewer

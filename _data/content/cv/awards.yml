@@ -1,0 +1,100 @@
+schema_version: 1
+entries:
+  - title: Singapore NRF Postdoctoral Award
+    date: '2026'
+    awarder: National Research Foundation, Singapore
+    url: ''
+    summary: Principal Investigator with four-year salary support and an **independent SGD 250,000 research grant**; an exceptionally competitive national-level fellowship.
+    category: grant
+  - title: Google Cloud Research Credit Award
+    date: '2026'
+    awarder: Google
+    url: ''
+    summary: USD 5,000 cloud credits for research computing.
+    category: grant
+  - title: Best Research Staff Award
+    date: '2025'
+    awarder: NUS Institute of Data Science (2/~50)
+    url: ''
+    summary: ''
+    category: honor
+  - title: Honorable Mention for Best Ph.D. Thesis Award
+    date: '2024'
+    awarder: NUS School of Computing (5/~150)
+    url: ''
+    summary: ''
+    category: honor
+  - title: SIGMOD Honorable Mention for Best Artifact
+    date: '2023'
+    awarder: ACM Special Interest Group on Management of Data (SIGMOD)
+    url: ''
+    summary: 3 among all submissions to SIGMOD 2023.
+    category: honor
+  - title: Dean's Graduate Research Excellence Award
+    date: '2023'
+    awarder: NUS School of Computing (10/~150)
+    url: ''
+    summary: ''
+    category: honor
+  - title: Outstanding Undergraduate Thesis
+    date: '2019'
+    awarder: HUST
+    url: ''
+    summary: top 5%.
+    category: earlier_honor
+  - title: Distinguished Graduate
+    date: '2019'
+    awarder: Huazhong University of Science and Technology (HUST)
+    url: ''
+    summary: 40% among undergraduate students.
+    category: earlier_honor
+  - title: Meritorious Winner, Mathematical Contest in Modeling
+    date: '2018'
+    awarder: COMAP
+    url: ''
+    summary: top 10% worldwide.
+    category: earlier_honor
+  - title: National Scholarship
+    date: '2017'
+    awarder: Ministry of Education of China
+    url: ''
+    summary: top 1% at HUST.
+    category: earlier_honor
+  - title: Outstanding Student
+    date: '2016'
+    awarder: HUST
+    url: ''
+    summary: top 1%.
+    category: earlier_honor
+  - title: Third Prize in National College Students Connected Smarter System Innovation Competition
+    date: '2016'
+    awarder: Ministry of Education of China and Chinese Institute of Electronics
+    url: ''
+    summary: 10% among all participants nationwide.
+    category: earlier_honor
+  - title: Merit Student
+    date: '2016'
+    awarder: HUST
+    url: ''
+    summary: top 5%.
+    category: earlier_honor
+display:
+  grants:
+    title: Grants & Fellowships
+    include_titles:
+      - Singapore NRF Postdoctoral Award
+      - Google Cloud Research Credit Award
+  honors:
+    title: Selected Honors & Recognition
+    include_titles:
+      - Honorable Mention for Best Ph.D. Thesis Award
+      - Best Research Staff Award
+      - Dean's Graduate Research Excellence Award
+  undergraduate_honors:
+    title: Earlier Academic Honors
+    include_titles:
+      - National Scholarship
+      - Outstanding Student
+      - Outstanding Undergraduate Thesis
+      - Meritorious Winner, Mathematical Contest in Modeling
+      - Merit Student

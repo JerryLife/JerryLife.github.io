@@ -1,0 +1,41 @@
+schema_version: 1
+entries:
+  - name: Programming Languages (Familiar)
+    keywords:
+      - Python
+      - C
+      - C++
+    level: ''
+    icon: ''
+  - name: Tools (Familiar)
+    keywords:
+      - PyTorch
+      - Linux Command Line
+      - LaTeX
+      - Microsoft Office
+    level: ''
+    icon: ''
+  - name: Programming Languages (Used)
+    keywords:
+      - Java
+      - MATLAB
+      - SQL
+      - Verilog
+      - x86 Assembly
+      - JavaScript
+      - Standard ML
+      - CUDA
+    level: ''
+    icon: ''
+  - name: Tools (Used)
+    keywords:
+      - TensorFlow
+      - LightGBM
+      - XGBoost
+      - Qt
+      - JavaFX
+      - Win32 API
+      - Apache Cassandra
+      - MongoDB
+    level: ''
+    icon: ''

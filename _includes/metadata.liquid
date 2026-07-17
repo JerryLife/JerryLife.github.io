@@ -14,7 +14,18 @@
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 {% endif %}
 
-{% capture author_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% assign cms_profile = site.data.generated.content.profile %}
+{% assign cms_site = site.data.generated.content.site %}
+{% if cms_profile and cms_profile.socials %}
+  {% assign cms_socials = cms_profile.socials %}
+{% else %}
+  {% assign cms_socials = site.data.content.profile.socials %}
+{% endif %}
+{% assign cms_basics = cms_profile.basics %}
+{% assign cms_description = cms_site.seo.description | default: site.description %}
+{% assign cms_keywords = cms_site.seo.keywords | default: site.keywords %}
+{% capture fallback_author_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% assign author_name = cms_basics.name | default: fallback_author_name %}
 
 <!-- Standard metadata -->
 <meta charset="utf-8">
@@ -39,9 +50,9 @@
   {% endif %}
 </title>
 <meta name="author" content="{{ author_name }}">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-{% if page.keywords or site.keywords %}
-  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ cms_description }}{% endif %}">
+{% if page.keywords or cms_keywords %}
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ cms_keywords }}{% endif %}">
 {% endif %}
 
 {% assign is_blog_post = false %}
@@ -57,7 +68,7 @@
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ cms_description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
@@ -66,13 +77,13 @@
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ cms_description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
-  {% if site.x_username %}
-    <meta name="twitter:site" content="@{{ site.x_username }}">
-    <meta name="twitter:creator" content="@{{ site.x_username }}">
+  {% if cms_socials.x_username %}
+    <meta name="twitter:site" content="@{{ cms_socials.x_username }}">
+    <meta name="twitter:creator" content="@{{ cms_socials.x_username }}">
   {% endif %}
 {% endif %}
 
@@ -80,7 +91,7 @@
   <!-- Schema.org -->
   {% comment %} Social links generator for "sameAs schema" {% endcomment %}
   {% assign sameaslinks = '' | split: ',' %}
-  {% for social in site.data.socials %}
+  {% for social in cms_socials %}
     {% case social[0] %}
       {% when 'acm_id' %}
         {% capture link %}https://dl.acm.org/profile/{{ social[1] }}/{% endcapture %}
@@ -232,7 +243,7 @@
         },
         "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
+        "description": "{% if page.description %}{{ page.description }}{% else %}{{ cms_description }}{% endif %}",
         "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},

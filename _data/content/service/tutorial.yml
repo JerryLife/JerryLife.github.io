@@ -1,0 +1,6 @@
+schema_version: 1
+title: Tutorial Speaker
+entries:
+  - year: 2020
+    name: IJCAI 2020
+    role: Tutorial Speaker

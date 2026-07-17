@@ -1,0 +1,43 @@
+schema_version: 1
+basics:
+  name: Zhaomin Wu
+  label: Research Fellow in National University of Singapore
+  email: zhaomin@nus.edu.sg
+  url: https://www.zhaominwu.com
+  image: avatar.jpg
+  summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
+  profiles:
+  - network: Google Scholar
+    url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
+web_about:
+  subtitle: Research Fellow. <a href='https://www.nus.edu.sg/'>National University
+    of Singapore</a>. zhaomin@nus.edu.sg
+  body: 'Dr. Zhaomin Wu (吴肇敏) is a Research Fellow at the Department of Computer Science,
+    National University of Singapore (NUS). He completed his Ph.D. in Computer Science
+    at the National University of Singapore (NUS) in 2024 advised by Prof. [Bingsheng
+    He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor''s degree from
+    Huazhong University of Science and Technology (HUST) in 2019.
+
+
+    Dr. Wu''s research focuses on trustworthy machine learning, with specific interests
+    in trustworthy AI, federated learning, and machine unlearning. His work has been
+    recognized with awards such as the NRF Postdoctoral Award (2026), the [Best Research
+    Staff Award](https://ids.nus.edu.sg/gathering25.html) (NUS, 2025), an [Honorable
+    Mention for Best Ph.D. Thesis Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/)
+    (NUS, 2024), the [SIGMOD Honorable Mention for Best Artifact](https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/)
+    (2023), and the [Dean’s Graduate Research Excellence Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/)
+    (NUS, 2023). His publications appear in top-tier venues including NeurIPS, ICLR,
+    SIGMOD, ICDE, KDD, WWW, ACL, EMNLP, AAAI, MLSys, and TKDE.
+
+    '
+  image: avatar.jpg
+  align: top
+  image_circular: false
+socials:
+  dblp_url: https://dblp.org/pid/254/0918
+  email: zhaomin@nus.edu.sg
+  github_username: JerryLife
+  linkedin_username: zhaomin-wu-958159258
+  orcid_id: 0000-0002-6463-0031
+  rss_icon: true
+  scholar_userid: QjehmgkAAAAJ

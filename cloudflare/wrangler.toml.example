@@ -1,0 +1,36 @@
+# Copy this file to wrangler.toml before deploying:
+#   cp wrangler.toml.example wrangler.toml
+#
+# Do not put OAuth secret material in this file. `GITHUB_CLIENT_ID` is a
+# non-secret Dashboard variable; `GITHUB_CLIENT_SECRET` and
+# `OAUTH_STATE_SECRET` remain Cloudflare Worker Secrets.
+
+name = "zhaominwu-cms-auth"
+main = "src/index.ts"
+compatibility_date = "2026-07-16"
+preview_urls = false
+# Preserve any Dashboard-managed variables that are not declared below.
+keep_vars = true
+
+# The default workers.dev URL is suitable for an initial deployment. For a
+# custom domain, uncomment the following two lines and replace the values.
+# route = { pattern = "cms-auth.example.com", zone_name = "example.com", custom_domain = true }
+# workers_dev = false
+
+[vars]
+# GitHub login that is permitted to receive a CMS access token.
+CMS_ALLOWED_GITHUB_LOGIN = "JerryLife"
+
+# The public repository and branch that Decap CMS is permitted to manage.
+CMS_REPOSITORY = "JerryLife/JerryLife.github.io"
+CMS_BRANCH = "main"
+
+# One or more exact CMS origins, separated by commas. HTTP is permitted only
+# for localhost and 127.0.0.1 during local development.
+CMS_ALLOWED_ORIGINS = "https://www.zhaominwu.com,https://zhaominwu.com"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true

@@ -1,0 +1,19 @@
+schema_version: 2
+entries:
+  - main_job:
+      name: National University of Singapore (NUS)
+      location: Singapore
+      url: https://www.nus.edu.sg/
+    subjobs:
+      - position: NRF Postdoctoral Fellow
+        start_date: 2026-04
+        end_date: ''
+        summary: ''
+        highlights:
+          - '**Principal Investigator (PI)** of an NRF-funded postdoctoral project at Department of Computer Science.'
+      - position: Research Fellow
+        start_date: 2024-05
+        end_date: 2026-03
+        summary: Institute of Data Science / Department of Computer Science;
+        highlights:
+          - 'Project PIs: Prof. Ng See Kiong, Prof. Bingsheng He.'

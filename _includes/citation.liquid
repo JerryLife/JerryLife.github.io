@@ -4,8 +4,13 @@
 
 If you found this useful, please cite this as:
 
+{% assign profile_name = site.data.generated.content.profile.basics.name %}
+{% capture fallback_citation_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% assign citation_name = profile_name | default: fallback_citation_name %}
+{% assign citation_key = citation_name | split: ' ' | last | downcase %}
+
 {% capture citation_quote -%}
-> {{ site.last_name }}, {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} ({{ page.date | date: "%b %Y" }}). {{ page.title }}. {% if site.title != 'blank' %}{{ site.title }}. {% endif %}{{ site.url }}.
+> {{ citation_name }} ({{ page.date | date: "%b %Y" }}). {{ page.title }}. {% if site.title != 'blank' %}{{ site.title }}. {% endif %}{{ site.url }}.
 {%- endcapture %}
 {{ citation_quote | markdownify }}
 
@@ -13,9 +18,9 @@ If you found this useful, please cite this as:
 
 {% capture citation_code -%}
 ```bibtex
-@article{ {{- site.last_name | downcase }}{{ page.date | date: "%Y" }}{{ page.title | slugify }},
+@article{ {{- citation_key }}{{ page.date | date: "%Y" }}{{ page.title | slugify }},
   title   = { {{- page.title -}} },
-  author  = { {{- site.last_name }}, {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif -%}},
+  author  = { {{- citation_name -}}},
   {%- if site.title != 'blank' %}journal = { {{- site.title -}} },{% endif %}
   year    = { {{- page.date | date: "%Y" -}} },
   month   = { {{- page.date | date: "%b" -}} },

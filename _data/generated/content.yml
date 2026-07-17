@@ -1,0 +1,1103 @@
+profile:
+  schema_version: 1
+  basics:
+    name: Zhaomin Wu
+    label: Research Fellow in National University of Singapore
+    email: zhaomin@nus.edu.sg
+    url: https://www.zhaominwu.com
+    image: avatar.jpg
+    summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
+    profiles:
+    - network: Google Scholar
+      url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
+  web_about:
+    subtitle: Research Fellow. <a href='https://www.nus.edu.sg/'>National University
+      of Singapore</a>. zhaomin@nus.edu.sg
+    body: 'Dr. Zhaomin Wu (吴肇敏) is a Research Fellow at the Department of Computer
+      Science, National University of Singapore (NUS). He completed his Ph.D. in Computer
+      Science at the National University of Singapore (NUS) in 2024 advised by Prof.
+      [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor''s
+      degree from Huazhong University of Science and Technology (HUST) in 2019.
+
+
+      Dr. Wu''s research focuses on trustworthy machine learning, with specific interests
+      in trustworthy AI, federated learning, and machine unlearning. His work has
+      been recognized with awards such as the NRF Postdoctoral Award (2026), the [Best
+      Research Staff Award](https://ids.nus.edu.sg/gathering25.html) (NUS, 2025),
+      an [Honorable Mention for Best Ph.D. Thesis Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/)
+      (NUS, 2024), the [SIGMOD Honorable Mention for Best Artifact](https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/)
+      (2023), and the [Dean’s Graduate Research Excellence Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/)
+      (NUS, 2023). His publications appear in top-tier venues including NeurIPS, ICLR,
+      SIGMOD, ICDE, KDD, WWW, ACL, EMNLP, AAAI, MLSys, and TKDE.
+
+      '
+    image: avatar.jpg
+    align: top
+    image_circular: false
+  socials:
+    dblp_url: https://dblp.org/pid/254/0918
+    email: zhaomin@nus.edu.sg
+    github_username: JerryLife
+    linkedin_username: zhaomin-wu-958159258
+    orcid_id: 0000-0002-6463-0031
+    rss_icon: true
+    scholar_userid: QjehmgkAAAAJ
+site:
+  seo:
+    description: Zhaomin Wu is a Research Fellow in Institute of Data Science, National
+      University of Singapore. He obtained his Ph.D. at the department of computer
+      science in National University of Singapore (NUS), supervised by Prof. Bingsheng
+      He. He obtained his Bachelor degree at Huazhong University of Science at Technology
+      (HUST). His research interest lies in privacy-preserving machine learning, including
+      federated learning, differential privacy, and machine unlearning. He received
+      the Dean's Graduate Research Excellence Award in 2023.
+    keywords: federated learning, machine unlearning, differential privacy
+  footer_text: Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
+    with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted
+    by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  repositories:
+    github_users: []
+    github_repos:
+    - Xtra-Computing/FeT
+    - Xtra-Computing/FedSim
+    - Xtra-Computing/DeltaBoost
+    - Xtra-Computing/VertiBench
+    - JerryLife/FedOnce
+    - Xtra-Computing/FedTree
+    repo_description_lines_max: 2
+  venues:
+    AJP:
+      url: https://aapt.scitation.org/journal/ajp
+      color: '#00369f'
+    PhysRev:
+      url: https://journals.aps.org/
+      color: ''
+    Vision:
+      url: ''
+      color: '#009f36'
+    KDD:
+      url: ''
+      color: '#7c3aed'
+    EMNLP:
+      url: ''
+      color: '#0891b2'
+    ACL:
+      url: ''
+      color: '#059669'
+    NeurIPS:
+      url: ''
+      color: '#dc2626'
+    ICLR:
+      url: ''
+      color: '#ea580c'
+    SIGMOD:
+      url: ''
+      color: '#2563eb'
+    MLSys:
+      url: ''
+      color: '#9333ea'
+    AAAI:
+      url: ''
+      color: '#0284c7'
+    arXiv:
+      url: ''
+      color: '#6b7280'
+    TBD:
+      url: ''
+      color: '#4f46e5'
+    TIST:
+      url: ''
+      color: '#0d9488'
+    TKDE:
+      url: ''
+      color: '#be185d'
+    WWW:
+      url: ''
+      color: '#eab308'
+    ICDE:
+      url: ''
+      color: '#10b981'
+service:
+  groups:
+  - title: Conference Reviewers
+    kind: conference-reviewers
+    years:
+    - year: '2026'
+      items:
+      - name: ICML
+        role: Reviewer
+        url: ''
+      - name: NeurIPS
+        role: Reviewer
+        url: ''
+    - year: '2025'
+      items:
+      - name: AAAI
+        role: Reviewer
+        url: ''
+      - name: EMNLP
+        role: Reviewer
+        url: ''
+      - name: ICLR
+        role: Reviewer
+        url: ''
+      - name: ICML
+        role: Reviewer
+        url: ''
+      - name: NeurIPS
+        role: Reviewer
+        url: ''
+    - year: '2024'
+      items:
+      - name: AISTATS
+        role: Reviewer
+        url: ''
+      - name: ICLR
+        role: Reviewer
+        url: ''
+      - name: KDD
+        role: Reviewer
+        url: ''
+      - name: NeurIPS
+        role: Reviewer
+        url: ''
+    - year: '2023'
+      items:
+      - name: NeurIPS
+        role: Reviewer
+        url: ''
+      - name: SIGMOD (artifact)
+        role: Reviewer
+        url: ''
+    - year: '2022'
+      items:
+      - name: PAKDD
+        role: Reviewer
+        url: ''
+    - year: '2021'
+      items:
+      - name: PAKDD
+        role: Reviewer
+        url: ''
+  - title: Journal Reviewers
+    kind: journal-reviewers
+    years:
+    - year: '2026'
+      items:
+      - name: ACM Computing Surveys
+        role: Reviewer
+        url: ''
+      - name: TKDE
+        role: Reviewer
+        url: ''
+      - name: TMC
+        role: Reviewer
+        url: ''
+      - name: TPDS
+        role: Reviewer
+        url: ''
+    - year: '2025'
+      items:
+      - name: TAI
+        role: Reviewer
+        url: ''
+      - name: TDSC
+        role: Reviewer
+        url: ''
+      - name: TKDE
+        role: Reviewer
+        url: ''
+      - name: TPDS
+        role: Reviewer
+        url: ''
+    - year: '2024'
+      items:
+      - name: JPDC
+        role: Reviewer
+        url: ''
+      - name: TKDD
+        role: Reviewer
+        url: ''
+      - name: TNNLS
+        role: Reviewer
+        url: ''
+    - year: '2023'
+      items:
+      - name: IJCV
+        role: Reviewer
+        url: ''
+      - name: IoT-J
+        role: Reviewer
+        url: ''
+      - name: TKDE
+        role: Reviewer
+        url: ''
+      - name: TNNLS
+        role: Reviewer
+        url: ''
+      - name: TPAMI
+        role: Reviewer
+        url: ''
+    - year: '2022'
+      items:
+      - name: TIST
+        role: Reviewer
+        url: ''
+      - name: TPDS
+        role: Reviewer
+        url: ''
+  - title: Recognition
+    kind: recognition
+    years:
+    - year: '2026'
+      items:
+      - name: ICML 2026 Gold Reviewer Award
+        role: top 25% among reviewers.
+        url: ''
+  - title: Tutorial Speaker
+    kind: tutorial
+    years:
+    - year: '2020'
+      items:
+      - name: IJCAI 2020
+        role: Tutorial Speaker
+        url: ''
+teaching:
+  sections:
+  - kind: teaching_assistant
+    title: Teaching Assistant, NUS
+    entries:
+    - course: Programming Methodology
+      code: CS1010E
+      term: Fall 2019
+    - course: Data Structures and Algorithms
+      code: CS2040S
+      term: Spring 2020
+    - course: Big Data Systems for Data Science
+      code: CS4225
+      term: Fall 2020
+    - course: Programming Methodology II
+      code: CS2030
+      term: Spring 2021
+    - course: Neural Networks and Deep Learning
+      code: CS5242
+      term: Fall 2021
+    - course: Software Testing
+      code: CS4218
+      term: Spring 2022
+    - course: Introduction to Operating Systems
+      code: CS2106
+      term: Fall 2022
+  - kind: mentoring
+    title: Mentorship
+    intro: It is my honor to work with many talented students and colleagues.
+    entries:
+    - name: Jiayi Li
+      role: Master Student
+      institution: NUS
+      period: 2025 - 2026
+    - name: Ziyang Qiu
+      role: Master Student
+      institution: NUS
+      period: 2025 - 2026
+    - name: Lifan Hu
+      role: Undergraduate Student
+      institution: NUS
+      period: 2025 - 2026
+    - name: Qian Yu
+      role: Undergraduate Student
+      institution: NUS
+      period: 2025 - 2026
+    - name: Ziyang Wang
+      url: https://www.linkedin.com/in/ziyang-wang-4a600b348/
+      role: Master Student
+      institution: NUS
+      period: 2024 - 2025
+    - name: Haodong Zhao
+      url: https://dongdongzhaoup.github.io/
+      role: Visiting Ph.D. Student
+      institution: Shanghai Jiao Tong University
+      period: 2024 - 2025
+    - name: Zhen Qin
+      url: https://zhenqincn.github.io/
+      role: Visiting Ph.D. Student
+      institution: Zhe Jiang University
+      period: 2024 - 2025
+      notes:
+      - Now an Assistant Professor at Zhe Jiang University (ZJU)
+      outcome: Assistant Professor, ZJU
+    - name: Jizhou Guo
+      url: https://scholar.google.com/citations?user=fcBDdsYAAAAJ
+      role: Undergraduate Student
+      institution: Shanghai Jiao Tong University
+      period: '2024'
+      outcome: Ph.D. offers from NUS and UIUC
+    - name: Junyi Hou
+      url: https://profile.junyi.dev/
+      role: Master Student
+      institution: NUS
+      period: 2023 - 2024
+      notes:
+      - Now a Ph.D. student at National University of Singapore (NUS)
+      outcome: Ph.D. student, NUS
+    - name: Junhui Zhu
+      url: https://jzhu.xyz/
+      role: Master Student
+      institution: NUS
+      period: '2022'
+talks:
+  entries:
+  - date: '2026-07-08'
+    type: Invited talk
+    venue: Hong Kong Baptist University
+    title: Managing Data and Model Silos for Real-World AI Systems
+    note: Hosted by **Prof. Amelie Chi Zhou**.
+  - date: '2026-05-06'
+    type: Invited talk
+    venue: Université de Montréal (UdeM) and Mila
+    title: 'When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration'
+    note: Hosted by **Prof. Bang Liu**.
+  - date: '2026-01-26'
+    type: Keynote
+    venue: AAAI 2026 FLCA Workshop
+    title: Bridging Data Silos with Practical Federated Learning
+    url: https://sites.google.com/view/flca/keynotes
+  - date: '2025-05-29'
+    type: Invited talk
+    venue: DASFAA 2025 Trust Day
+    title: Towards Practical Vertical Federated Learning Systems
+    url: https://dasfaa2025.github.io/#/program/trust-day
+    note: ', on behalf of Prof. Bingsheng He.'
+  - date: '2025-02-25'
+    type: Invited talk
+    venue: NUS Open House
+    title: Bridging Private Data Silo with Machine Learning
+    url: https://researchweek.comp.nus.edu.sg/computing/
+cv:
+  profile:
+    schema_version: 1
+    title: Research Profile
+    body: 'I am an NRF Postdoctoral Fellow in Computer Science at the National University
+      of Singapore. My research develops trustworthy AI systems, with a focus on federated
+      learning, machine unlearning, multi-agent systems, and AI for Psychology. My
+      work has appeared in ICLR, NeurIPS, SIGMOD, ACL, KDD, and related venues, including
+      two ICLR 2026 Oral papers and a SIGMOD 2023 Honorable Mention for Best Artifact.
+      As of May 2026, my work has received 2,710 citations on Google Scholar.
+
+      '
+  research_impact:
+    schema_version: 1
+    title: Research Impact
+    supplemental: platform metrics recorded in May 2026
+    groups:
+    - title: Open-Source Systems and Benchmarks
+      items:
+      - name: FedTree
+        url: https://github.com/Xtra-Computing/FedTree
+        venue: MLSys'23
+        description: an open-source federated learning system for tree-based models;
+          it supports reproducible and privacy-preserving GBDT training across parties.
+          152 GitHub stars and 41 forks.
+      - name: VertiBench
+        url: https://github.com/Xtra-Computing/VertiBench
+        venue: ICLR'24
+        description: a public benchmark for systematically evaluating vertical federated
+          learning under varying feature-diversity settings; it standardizes evaluation
+          beyond single synthetic data splits and is released as an installable PyPI
+          package.
+      - name: WikiDBGraph
+        url: https://huggingface.co/datasets/Jerrylife/WikiDBGraph
+        venue: ICDE'26
+        description: a large-scale database graph of Wikidata for collaborative learning;
+          it releases 100,000 database nodes and 17 million edges for database-silo
+          learning research.
+      - name: LLM DNA
+        url: https://github.com/Xtra-Computing/LLM-DNA
+        venue: ICLR'26 Oral
+        description: an open-source toolkit for extracting functional DNA signatures
+          and tracing LLM evolution from model behavior, with a public project website
+          and PyPI package.
+      - name: OARF
+        url: https://github.com/Xtra-Computing/OARF
+        venue: ACM TIST'22
+        description: a benchmark suite for characterizing federated learning systems;
+          it provides reusable workloads for system-level FL comparison.
+    - title: Publicity and Public Outreach
+      items:
+      - name: 'LLM DNA: Tracing Model Evolution via Functional Representations'
+        url: https://openreview.net/forum?id=UIxHaAqFqQ
+        venue: ICLR'26 Oral
+        description: 'Media article by [XinZhiYuan](https://mp.weixin.qq.com/s/p-F7qQzDRgwOQTfl1WIL8A)
+          (新智元): "Testing DNA for Large Models: Hidden Lineage from Fine-tuning and
+          Distillation Can No Longer Hide" (给大模型验DNA，微调、蒸馏的隐藏血缘藏不住了); reposted by
+          [Sina Finance](https://finance.sina.com.cn/wm/2026-04-25/doc-inhvtmsy2295805.shtml)
+          (新浪财经), [Sohu](https://m.sohu.com/a/1014548704_473283) (搜狐), [BAAI Hub](https://hub.baai.ac.cn/view/54249)
+          (智源社区). Public outreach hosted by [NICE Academic](https://www.bilibili.com/video/BV1ysZeBjEnS/)
+          (NICE学术) on Bilibili: "Doing Paternity Testing for Large Models: LLM DNA
+          and Model Evolution Graph" (给大模型做亲子鉴定：LLM 的 DNA 与模型演化图谱).'
+      - name: 'Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts'
+        url: https://openreview.net/forum?id=PDBBYwd1LY
+        venue: ICLR'26 Oral
+        description: 'Media article by [JiQiZhiXin](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651030890&idx=2&sn=838a7b44f749aa0170dc92b1af554ec4)
+          (机器之心): "ICLR 2026 Oral: Large Models Can Still `Lie` Without Prompt Induction"
+          (ICLR 2026 Oral | 没人诱导，大模型也会骗人); reposted by [AITNT](https://www.aitntnews.com/newDetail.html?newId=24550).'
+      - name: Mining Intrinsic Rewards from LLM Hidden States for Efficient Best-of-N
+          Sampling
+        url: https://dl.acm.org/doi/10.1145/3770854.3780302
+        venue: KDD'26
+        description: 'Media article by [XinZhiYuan](https://mp.weixin.qq.com/s/ka5bndnjGxux3qyOnz6Yeg)
+          (新智元): "Reward Models Are Changing: 0.005% Parameters, Faster Inference,
+          Stronger Performance" (奖励模型变天！0.005%参数量推理速度翻倍，性能还更强); reposted by [Sina
+          Finance](https://finance.sina.com.cn/stock/t/2026-01-23/doc-inhihniy2053260.shtml)
+          (新浪财经), [Sohu](https://m.sohu.com/a/979238835_473283) (搜狐), [BAAI Hub](https://hub.baai.ac.cn/view/52063)
+          (智源社区), [Tencent Cloud Developer Community](https://cloud.tencent.com/developer/article/2623954)
+          (腾讯云开发者社区).'
+    paragraphs: []
+  selected_publications:
+    title: Selected Publications
+    entries:
+    - key: wu2026llmdna
+      title: 'LLM DNA: Tracing Model Evolution via Functional Representations'
+      authors: Zhaomin Wu, Haodong Zhao, Ziyang Wang, Jizhou Guo, Qian Wang, Bingsheng
+        He
+      short_authors: Z. Wu, H. Zhao, Z. Wang, J. Guo, Q. Wang, B. He
+      year: '2026'
+      venue: ICLR 2026
+      details: In The Fourteenth International Conference on Learning Representations
+        (ICLR)
+      url: https://openreview.net/forum?id=UIxHaAqFqQ
+      highlight: Oral presentation, top 1% of submissions.
+      summary: Covered by [XinZhiYuan](https://mp.weixin.qq.com/s/p-F7qQzDRgwOQTfl1WIL8A),
+        [Sina Finance](https://finance.sina.com.cn/wm/2026-04-25/doc-inhvtmsy2295805.shtml),
+        [Sohu](https://m.sohu.com/a/1014548704_473283), [BAAI Hub](https://hub.baai.ac.cn/view/54249),
+        and [NICE Academic](https://www.bilibili.com/video/BV1ysZeBjEnS/); NICE Academic
+        video recorded 1,000+ views.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2026deception
+      title: 'Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts'
+      authors: Zhaomin Wu, Mingzhe Du, See-Kiong Ng, Bingsheng He
+      short_authors: Z. Wu, M. Du, S.-K. Ng, B. He
+      year: '2026'
+      venue: ICLR 2026
+      details: In The Fourteenth International Conference on Learning Representations
+        (ICLR)
+      url: https://openreview.net/forum?id=PDBBYwd1LY
+      highlight: Oral presentation, top 1% of submissions.
+      summary: Covered by [JiQiZhiXin](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651030890&idx=2&sn=838a7b44f749aa0170dc92b1af554ec4)
+        and [AITNT](https://www.aitntnews.com/newDetail.html?newId=24550); AITNT post
+        recorded 6,500+ clicks.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2023deltaboost
+      title: 'DeltaBoost: Gradient Boosting Decision Trees with Efficient Machine
+        Unlearning'
+      authors: Zhaomin Wu, Junhui Zhu, Qinbin Li, Bingsheng He
+      short_authors: Z. Wu, J. Zhu, Q. Li, B. He
+      year: '2023'
+      venue: SIGMOD 2023
+      details: Proc. ACM Manag. Data
+      url: https://doi.org/10.1145/3589313
+      highlight: Honorable Mention for Best Artifact, one of 3 selected from ~600
+        SIGMOD submissions.
+      summary: The first GBDT-like model to support efficient machine unlearning.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2024vertibench
+      title: 'VertiBench: Advancing Feature Distribution Diversity in Vertical Federated
+        Learning Benchmarks'
+      authors: Zhaomin Wu, Junyi Hou, Bingsheng He
+      short_authors: Z. Wu, J. Hou, B. He
+      year: '2024'
+      venue: ICLR 2024
+      details: In The Twelfth International Conference on Learning Representations
+      url: https://openreview.net/forum?id=glwwbaeKm2
+      highlight: ''
+      summary: The first benchmark to systematically evaluate vertical federated learning
+        under varying feature-distribution settings.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2022coupledvfl
+      title: A Coupled Design of Exploiting Record Similarity for Practical Vertical
+        Federated Learning
+      authors: Zhaomin Wu, Qinbin Li, Bingsheng He
+      short_authors: Z. Wu, Q. Li, B. He
+      year: '2022'
+      venue: NeurIPS 2022
+      details: In Advances in Neural Information Processing Systems
+      url: https://proceedings.neurips.cc/paper_files/paper/2022/file/84b744165a0597360caad96b06e69313-Paper-Conference.pdf
+      highlight: ''
+      summary: Enables practical vertical federated learning by exploiting inter-party
+        record similarity instead of exact identifier matching.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+  publications:
+    title: Full Publication List
+    entries:
+    - key: guo2026intrinsicrewards
+      title: Mining Intrinsic Rewards from LLM Hidden States for Efficient Best-of-N
+        Sampling
+      authors: Jizhou Guo, Zhaomin Wu†, Hanchen Yang, Philip S. Yu
+      short_authors: J. Guo, Z. Wu†, H. Yang, P. S. Yu
+      year: '2026'
+      venue: KDD 2026
+      details: In Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery
+        and Data Mining (KDD)
+      url: https://dl.acm.org/doi/10.1145/3770854.3780302
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: wu2026deception
+      title: 'Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts'
+      authors: Zhaomin Wu, Mingzhe Du, See-Kiong Ng, Bingsheng He
+      short_authors: Z. Wu, M. Du, S.-K. Ng, B. He
+      year: '2026'
+      venue: ICLR 2026
+      details: In The Fourteenth International Conference on Learning Representations
+        (ICLR)
+      url: https://openreview.net/forum?id=PDBBYwd1LY
+      highlight: Oral presentation, top 1% of submissions.
+      summary: Covered by [JiQiZhiXin](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651030890&idx=2&sn=838a7b44f749aa0170dc92b1af554ec4)
+        and [AITNT](https://www.aitntnews.com/newDetail.html?newId=24550); AITNT post
+        recorded 6,500+ clicks.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2026llmdna
+      title: 'LLM DNA: Tracing Model Evolution via Functional Representations'
+      authors: Zhaomin Wu, Haodong Zhao, Ziyang Wang, Jizhou Guo, Qian Wang, Bingsheng
+        He
+      short_authors: Z. Wu, H. Zhao, Z. Wang, J. Guo, Q. Wang, B. He
+      year: '2026'
+      venue: ICLR 2026
+      details: In The Fourteenth International Conference on Learning Representations
+        (ICLR)
+      url: https://openreview.net/forum?id=UIxHaAqFqQ
+      highlight: Oral presentation, top 1% of submissions.
+      summary: Covered by [XinZhiYuan](https://mp.weixin.qq.com/s/p-F7qQzDRgwOQTfl1WIL8A),
+        [Sina Finance](https://finance.sina.com.cn/wm/2026-04-25/doc-inhvtmsy2295805.shtml),
+        [Sohu](https://m.sohu.com/a/1014548704_473283), [BAAI Hub](https://hub.baai.ac.cn/view/54249),
+        and [NICE Academic](https://www.bilibili.com/video/BV1ysZeBjEnS/); NICE Academic
+        video recorded 1,000+ views.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2026wikidbgraph
+      title: 'WikiDBGraph: Large-Scale Database Graph of Wikidata for Collaborative
+        Learning'
+      authors: Zhaomin Wu*, Ziyang Wang*, Bingsheng He
+      short_authors: Z. Wu*, Z. Wang*, B. He
+      year: '2026'
+      venue: ICDE 2026
+      details: In Proceedings of the 42th International Conference on Data Engineering
+      url: https://arxiv.org/pdf/2505.16635
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: zhang2026personalizedfed
+      title: Personalized Federated Fine-Tuning for LLMs via Data-Driven Heterogeneous
+        Model Architectures
+      authors: Yicheng Zhang, Zhen Qin, Zhaomin Wu, Shuiguang Deng†
+      short_authors: Y. Zhang, Z. Qin, Z. Wu, S. Deng†
+      year: '2026'
+      venue: WWW 2026
+      details: In Proceedings of the ACM on Web Conference 2026
+      url: https://dl.acm.org/doi/10.1145/3774904.3792147
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: qin2025instructiontuning
+      title: Federated Data-Efficient Instruction Tuning for Large Language Models
+      authors: Zhen Qin, Zhaomin Wu†, Bingsheng He, Shuiguang Deng†
+      short_authors: Z. Qin, Z. Wu†, B. He, S. Deng†
+      year: '2025'
+      venue: ACL 2025
+      details: 'In Findings of the Association for Computational Linguistics: ACL
+        2025'
+      url: https://aclanthology.org/2025.findings-acl.803/
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: wu2025llmcustomization
+      title: Model-based Large Language Model Customization as Service
+      authors: Zhaomin Wu*, Jizhou Guo*, Junyi Hou, Bingsheng He, Lixin Fan, Qiang
+        Yang
+      short_authors: Z. Wu*, J. Guo*, J. Hou, B. He, L. Fan, Q. Yang
+      year: '2025'
+      venue: EMNLP 2025
+      details: In Proceedings of the 2025 Conference on Empirical Methods in Natural
+        Language Processing (EMNLP)
+      url: https://aclanthology.org/2025.emnlp-main.248.pdf
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: wu2024federatedtransformer
+      title: 'Federated Transformer: Multi-Party Vertical Federated Learning on Practical
+        Fuzzily Linked Data'
+      authors: Zhaomin Wu, Junyi Hou, Yiqun Diao, Bingsheng He
+      short_authors: Z. Wu, J. Hou, Y. Diao, B. He
+      year: '2024'
+      venue: NeurIPS 2024
+      details: In Advances in Neural Information Processing Systems
+      url: https://openreview.net/forum?id=FqWyzyErVT
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: wu2024vertibench
+      title: 'VertiBench: Advancing Feature Distribution Diversity in Vertical Federated
+        Learning Benchmarks'
+      authors: Zhaomin Wu, Junyi Hou, Bingsheng He
+      short_authors: Z. Wu, J. Hou, B. He
+      year: '2024'
+      venue: ICLR 2024
+      details: In The Twelfth International Conference on Learning Representations
+      url: https://openreview.net/forum?id=glwwbaeKm2
+      highlight: ''
+      summary: The first benchmark to systematically evaluate vertical federated learning
+        under varying feature-distribution settings.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: li2023fedtree
+      title: 'FedTree: A Federated Learning System for Trees'
+      authors: Qinbin Li, Zhaomin Wu, Yanzheng Cai, Yuxuan Han, Ching Man Yung, Tianyuan
+        Fu, Bingsheng He
+      short_authors: Q. Li, Z. Wu, Y. Cai, Y. Han, C. M. Yung, T. Fu, B. He
+      year: '2023'
+      venue: MLSys 2023
+      details: In Proceedings of Machine Learning and Systems
+      url: https://proceedings.mlsys.org/paper_files/paper/2023/file/3430e7055936cb8e26451ed49fce84a6-Paper-mlsys2023.pdf
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: wu2023deltaboost
+      title: 'DeltaBoost: Gradient Boosting Decision Trees with Efficient Machine
+        Unlearning'
+      authors: Zhaomin Wu, Junhui Zhu, Qinbin Li, Bingsheng He
+      short_authors: Z. Wu, J. Zhu, Q. Li, B. He
+      year: '2023'
+      venue: SIGMOD 2023
+      details: Proc. ACM Manag. Data
+      url: https://doi.org/10.1145/3589313
+      highlight: Honorable Mention for Best Artifact, one of 3 selected from ~600
+        SIGMOD submissions.
+      summary: The first GBDT-like model to support efficient machine unlearning.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: hu2022oarf
+      title: 'The OARF Benchmark Suite: Characterization and Implications for Federated
+        Learning Systems'
+      authors: Sixu Hu, Yuan Li, Xu Liu, Qinbin Li, Zhaomin Wu, Bingsheng He
+      short_authors: S. Hu, Y. Li, X. Liu, Q. Li, Z. Wu, B. He
+      year: '2022'
+      venue: TIST 2022
+      details: ACM Trans. Intell. Syst. Technol.
+      url: https://doi.org/10.1145/3510540
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: li2022flsurvey
+      title: 'A Survey on Federated Learning Systems: Vision, Hype and Reality for
+        Data Privacy and Protection'
+      authors: Qinbin Li, Zeyi Wen, Zhaomin Wu, Sixu Hu, Naibo Wang, Yuan Li, Xu Liu,
+        Bingsheng He
+      short_authors: Q. Li, Z. Wen, Z. Wu, S. Hu, N. Wang, Y. Li, X. Liu, B. He
+      year: '2022'
+      venue: TKDE 2022
+      details: IEEE Transactions on Knowledge & Data Engineering
+      url: https://doi.org/10.1109/TKDE.2021.3124599
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: wu2022coupledvfl
+      title: A Coupled Design of Exploiting Record Similarity for Practical Vertical
+        Federated Learning
+      authors: Zhaomin Wu, Qinbin Li, Bingsheng He
+      short_authors: Z. Wu, Q. Li, B. He
+      year: '2022'
+      venue: NeurIPS 2022
+      details: In Advances in Neural Information Processing Systems
+      url: https://proceedings.neurips.cc/paper_files/paper/2022/file/84b744165a0597360caad96b06e69313-Paper-Conference.pdf
+      highlight: ''
+      summary: Enables practical vertical federated learning by exploiting inter-party
+        record similarity instead of exact identifier matching.
+      selected: true
+      cv_selected: true
+      is_preprint: false
+    - key: wu2022fedonce
+      title: Practical Vertical Federated Learning with Unsupervised Representation
+        Learning
+      authors: Zhaomin Wu, Qinbin Li, Bingsheng He
+      short_authors: Z. Wu, Q. Li, B. He
+      year: '2022'
+      venue: TBD 2022
+      details: IEEE Transactions on Big Data
+      url: https://doi.org/10.1109/TBDATA.2022.3180117
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+    - key: li2020ppgbdt
+      title: Privacy-Preserving Gradient Boosting Decision Trees
+      authors: Qinbin Li, Zhaomin Wu, Zeyi Wen, Bingsheng He
+      short_authors: Q. Li, Z. Wu, Z. Wen, B. He
+      year: '2020'
+      venue: AAAI 2020
+      details: In The Thirty-Fourth AAAI Conference on Artificial Intelligence
+      url: https://doi.org/10.1609/aaai.v34i01.5422
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
+  preprints:
+    title: Preprints
+    entries:
+    - key: zhao2026protegofed
+      title: 'ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed
+        Poisoned Data'
+      authors: Haodong Zhao, Jinming Hu, Zhaomin Wu†, Zongru Wu, Wei Du, Junyi Hou,
+        Caibei Zhao, Zhuosheng Zhang, Bingsheng He, Gongshen Liu†
+      short_authors: H. Zhao, J. Hu, Z. Wu†, Z. Wu, W. Du, J. Hou, C. Zhao, Z. Zhang,
+        B. He, G. Liu†
+      year: '2026'
+      venue: arXiv 2026
+      details: arXiv preprint arXiv:2603.00516
+      url: https://arxiv.org/pdf/2603.00516
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
+    - key: wu2025relationaltabular
+      title: Learning Relational Tabular Data without Shared Features
+      authors: Zhaomin Wu, Shida Wang, Ziyang Wang, Bingsheng He
+      short_authors: Z. Wu, S. Wang, Z. Wang, B. He
+      year: '2025'
+      venue: arXiv 2025
+      details: arXiv preprint arXiv:2502.10125
+      url: https://arxiv.org/pdf/2502.10125
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
+    - key: wu2025vflpractice
+      title: 'Vertical Federated Learning in Practice: The Good, the Bad, and the
+        Ugly'
+      authors: Zhaomin Wu, Zhen Qin, Junyi Hou, Haodong Zhao, Qinbin Li, Bingsheng
+        He, Lixin Fan
+      short_authors: Z. Wu, Z. Qin, J. Hou, H. Zhao, Q. Li, B. He, L. Fan
+      year: '2025'
+      venue: arXiv 2025
+      details: arXiv preprint arXiv:2502.08160
+      url: https://arxiv.org/pdf/2502.08160
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
+    - key: zhao2025disagreements
+      title: 'Disagreements in Reasoning: How a Model''s Thinking Process Dictates
+        Persuasion in Multi-Agent Systems'
+      authors: Haodong Zhao, Jidong Li, Zhaomin Wu†, Tianjie Ju, Zhuosheng Zhang,
+        Bingsheng He, Gongshen Liu†
+      short_authors: H. Zhao, J. Li, Z. Wu†, T. Ju, Z. Zhang, B. He, G. Liu†
+      year: '2025'
+      venue: arXiv 2025
+      details: arXiv preprint arXiv:2509.21054
+      url: https://arxiv.org/pdf/2509.21054
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
+  talks:
+    title: Invited Talks & Keynotes
+    entries:
+    - date: '2026-07-08'
+      type: Invited talk
+      venue: Hong Kong Baptist University
+      title: Managing Data and Model Silos for Real-World AI Systems
+      note: Hosted by **Prof. Amelie Chi Zhou**.
+    - date: '2026-05-06'
+      type: Invited talk
+      venue: Université de Montréal (UdeM) and Mila
+      title: 'When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration'
+      note: Hosted by **Prof. Bang Liu**.
+    - date: '2026-01-26'
+      type: Keynote
+      venue: AAAI 2026 FLCA Workshop
+      title: Bridging Data Silos with Practical Federated Learning
+      url: https://sites.google.com/view/flca/keynotes
+    - date: '2025-05-29'
+      type: Invited talk
+      venue: DASFAA 2025 Trust Day
+      title: Towards Practical Vertical Federated Learning Systems
+      url: https://dasfaa2025.github.io/#/program/trust-day
+      note: ', on behalf of Prof. Bingsheng He.'
+    - date: '2025-02-25'
+      type: Invited talk
+      venue: NUS Open House
+      title: Bridging Private Data Silo with Machine Learning
+      url: https://researchweek.comp.nus.edu.sg/computing/
+  teaching:
+    title: Teaching & Mentorship
+    sections:
+    - kind: teaching_assistant
+      title: Teaching Assistant, NUS
+      entries:
+      - course: Programming Methodology
+        code: CS1010E
+        term: Fall 2019
+      - course: Data Structures and Algorithms
+        code: CS2040S
+        term: Spring 2020
+      - course: Big Data Systems for Data Science
+        code: CS4225
+        term: Fall 2020
+      - course: Programming Methodology II
+        code: CS2030
+        term: Spring 2021
+      - course: Neural Networks and Deep Learning
+        code: CS5242
+        term: Fall 2021
+      - course: Software Testing
+        code: CS4218
+        term: Spring 2022
+      - course: Introduction to Operating Systems
+        code: CS2106
+        term: Fall 2022
+    - kind: mentoring
+      title: Mentorship
+      intro: It is my honor to work with many talented students and colleagues.
+      entries:
+      - name: Jiayi Li
+        role: Master Student
+        institution: NUS
+        period: 2025 - 2026
+      - name: Ziyang Qiu
+        role: Master Student
+        institution: NUS
+        period: 2025 - 2026
+      - name: Lifan Hu
+        role: Undergraduate Student
+        institution: NUS
+        period: 2025 - 2026
+      - name: Qian Yu
+        role: Undergraduate Student
+        institution: NUS
+        period: 2025 - 2026
+      - name: Ziyang Wang
+        url: https://www.linkedin.com/in/ziyang-wang-4a600b348/
+        role: Master Student
+        institution: NUS
+        period: 2024 - 2025
+      - name: Haodong Zhao
+        url: https://dongdongzhaoup.github.io/
+        role: Visiting Ph.D. Student
+        institution: Shanghai Jiao Tong University
+        period: 2024 - 2025
+      - name: Zhen Qin
+        url: https://zhenqincn.github.io/
+        role: Visiting Ph.D. Student
+        institution: Zhe Jiang University
+        period: 2024 - 2025
+        notes:
+        - Now an Assistant Professor at Zhe Jiang University (ZJU)
+        outcome: Assistant Professor, ZJU
+      - name: Jizhou Guo
+        url: https://scholar.google.com/citations?user=fcBDdsYAAAAJ
+        role: Undergraduate Student
+        institution: Shanghai Jiao Tong University
+        period: '2024'
+        outcome: Ph.D. offers from NUS and UIUC
+      - name: Junyi Hou
+        url: https://profile.junyi.dev/
+        role: Master Student
+        institution: NUS
+        period: 2023 - 2024
+        notes:
+        - Now a Ph.D. student at National University of Singapore (NUS)
+        outcome: Ph.D. student, NUS
+      - name: Junhui Zhu
+        url: https://jzhu.xyz/
+        role: Master Student
+        institution: NUS
+        period: '2022'
+  service:
+    title: Professional Service & Recognition
+    groups:
+    - title: Conference Reviewers
+      kind: conference-reviewers
+      years:
+      - year: '2026'
+        items:
+        - name: ICML
+          role: Reviewer
+          url: ''
+        - name: NeurIPS
+          role: Reviewer
+          url: ''
+      - year: '2025'
+        items:
+        - name: AAAI
+          role: Reviewer
+          url: ''
+        - name: EMNLP
+          role: Reviewer
+          url: ''
+        - name: ICLR
+          role: Reviewer
+          url: ''
+        - name: ICML
+          role: Reviewer
+          url: ''
+        - name: NeurIPS
+          role: Reviewer
+          url: ''
+      - year: '2024'
+        items:
+        - name: AISTATS
+          role: Reviewer
+          url: ''
+        - name: ICLR
+          role: Reviewer
+          url: ''
+        - name: KDD
+          role: Reviewer
+          url: ''
+        - name: NeurIPS
+          role: Reviewer
+          url: ''
+      - year: '2023'
+        items:
+        - name: NeurIPS
+          role: Reviewer
+          url: ''
+        - name: SIGMOD (artifact)
+          role: Reviewer
+          url: ''
+      - year: '2022'
+        items:
+        - name: PAKDD
+          role: Reviewer
+          url: ''
+      - year: '2021'
+        items:
+        - name: PAKDD
+          role: Reviewer
+          url: ''
+    - title: Journal Reviewers
+      kind: journal-reviewers
+      years:
+      - year: '2026'
+        items:
+        - name: ACM Computing Surveys
+          role: Reviewer
+          url: ''
+        - name: TKDE
+          role: Reviewer
+          url: ''
+        - name: TMC
+          role: Reviewer
+          url: ''
+        - name: TPDS
+          role: Reviewer
+          url: ''
+      - year: '2025'
+        items:
+        - name: TAI
+          role: Reviewer
+          url: ''
+        - name: TDSC
+          role: Reviewer
+          url: ''
+        - name: TKDE
+          role: Reviewer
+          url: ''
+        - name: TPDS
+          role: Reviewer
+          url: ''
+      - year: '2024'
+        items:
+        - name: JPDC
+          role: Reviewer
+          url: ''
+        - name: TKDD
+          role: Reviewer
+          url: ''
+        - name: TNNLS
+          role: Reviewer
+          url: ''
+      - year: '2023'
+        items:
+        - name: IJCV
+          role: Reviewer
+          url: ''
+        - name: IoT-J
+          role: Reviewer
+          url: ''
+        - name: TKDE
+          role: Reviewer
+          url: ''
+        - name: TNNLS
+          role: Reviewer
+          url: ''
+        - name: TPAMI
+          role: Reviewer
+          url: ''
+      - year: '2022'
+        items:
+        - name: TIST
+          role: Reviewer
+          url: ''
+        - name: TPDS
+          role: Reviewer
+          url: ''
+    - title: Recognition
+      kind: recognition
+      years:
+      - year: '2026'
+        items:
+        - name: ICML 2026 Gold Reviewer Award
+          role: top 25% among reviewers.
+          url: ''
+    - title: Tutorial Speaker
+      kind: tutorial
+      years:
+      - year: '2020'
+        items:
+        - name: IJCAI 2020
+          role: Tutorial Speaker
+          url: ''
+  sections:
+  - id: future_section
+    title: Additional Information
+    body: Add Markdown content here when an additional CV section is needed.
+    enabled: false

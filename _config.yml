@@ -311,6 +311,11 @@ filtered_bibtex_keywords:
     bibtex_show,
     blog,
     code,
+    cv_highlight,
+    cv_order,
+    cv_selected,
+    cv_summary,
+    cv_url,
     google_scholar_id,
     html,
     inspirehep_id,
@@ -635,11 +640,11 @@ jsonresume:
   - work
   - education
   - publications
+  - preprints
   - projects
   - volunteer
   - awards
   - certificates
-  - skills
   - languages
   - interests
   - references

@@ -1,0 +1,137 @@
+{% assign semantic_cv = site.data.generated.content.cv %}
+
+{% if semantic_cv %}
+  {% if semantic_cv.profile and semantic_cv.profile.body %}
+    <a class="anchor" id="research-profile"></a>
+    <div class="card mt-3 p-3">
+      <h3 class="card-title font-weight-medium">{{ semantic_cv.profile.title }}</h3>
+      <div class="card-text font-weight-light">{{ semantic_cv.profile.body | markdownify }}</div>
+    </div>
+  {% endif %}
+
+  {% if semantic_cv.selected_publications and semantic_cv.selected_publications.entries.size > 0 %}
+    <a class="anchor" id="selected-publications"></a>
+    <div class="card mt-3 p-3">
+      <h3 class="card-title font-weight-medium">{{ semantic_cv.selected_publications.title }}</h3>
+      <ul class="card-text font-weight-light list-group list-group-flush">
+        {% for publication in semantic_cv.selected_publications.entries %}
+          <li class="list-group-item">
+            <h6 class="title font-weight-bold mb-1">
+              {% if publication.url %}
+                <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
+              {% else %}
+                {{ publication.title }}
+              {% endif %}
+            </h6>
+            <div class="small">{{ publication.short_authors }}</div>
+            <div class="small font-italic">{{ publication.venue }} ({{ publication.year }})</div>
+            {% if publication.highlight %}<div class="small text-danger">{{ publication.highlight }}</div>{% endif %}
+            {% if publication.summary %}<div class="small text-muted">{{ publication.summary | markdownify }}</div>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if semantic_cv.research_impact %}
+    <a class="anchor" id="research-impact"></a>
+    <div class="card mt-3 p-3">
+      <h3 class="card-title font-weight-medium">{{ semantic_cv.research_impact.title }}</h3>
+      {% if semantic_cv.research_impact.supplemental %}
+        <p class="card-text text-muted small">{{ semantic_cv.research_impact.supplemental }}</p>
+      {% endif %}
+      {% for group in semantic_cv.research_impact.groups %}
+        <h6 class="font-weight-bold mt-3">{{ group.title }}</h6>
+        <ul class="card-text font-weight-light mb-0">
+          {% for item in group.items %}
+            <li>
+              {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ item.name }}</strong></a>{% else %}<strong>{{ item.name }}</strong>{% endif %}
+              {% if item.venue %}<span class="font-italic">({{ item.venue }})</span>{% endif %}
+              {% if item.description %}<div class="small text-muted">{{ item.description | markdownify }}</div>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+      {% for paragraph in semantic_cv.research_impact.paragraphs %}
+        <div class="card-text font-weight-light mt-3">{{ paragraph | markdownify }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if semantic_cv.talks.entries.size > 0 %}
+    <a class="anchor" id="talks"></a>
+    <div class="card mt-3 p-3">
+      <h3 class="card-title font-weight-medium">{{ semantic_cv.talks.title }}</h3>
+      <ul class="card-text font-weight-light list-group list-group-flush">
+        {% for talk in semantic_cv.talks.entries %}
+          <li class="list-group-item">
+            <div class="font-weight-bold">
+              {% if talk.url %}<a href="{{ talk.url }}" target="_blank" rel="noopener noreferrer">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
+            </div>
+            <div class="small">{{ talk.type }} at {{ talk.venue }} | {{ talk.date | date: '%b %Y' }}</div>
+            {% if talk.note %}<div class="small text-muted">{{ talk.note | markdownify }}</div>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if semantic_cv.teaching.sections.size > 0 %}
+    <a class="anchor" id="teaching"></a>
+    <div class="card mt-3 p-3">
+      <h3 class="card-title font-weight-medium">{{ semantic_cv.teaching.title }}</h3>
+      {% for section in semantic_cv.teaching.sections %}
+        <h6 class="font-weight-bold mt-3">{{ section.title }}</h6>
+        {% if section.intro %}<div class="small text-muted mb-2">{{ section.intro | markdownify }}</div>{% endif %}
+        <ul class="card-text font-weight-light list-group list-group-flush">
+          {% for item in section.entries %}
+            <li class="list-group-item">
+              {% if section.kind == 'mentoring' %}
+                <div class="font-weight-bold">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</div>
+                <div class="small">{{ item.role }}{% if item.institution %}, {{ item.institution }}{% endif %} | {{ item.period }}</div>
+                {% if item.outcome %}<div class="small text-muted">{{ item.outcome | markdownify }}</div>{% endif %}
+                {% if item.notes %}<ul class="small text-muted mb-0">{% for note in item.notes %}<li>{{ note | markdownify }}</li>{% endfor %}</ul>{% endif %}
+              {% elsif section.kind == 'other' %}
+                <div class="font-weight-bold">{{ item.title }}</div>
+                <div class="small">{{ item.period }}</div>
+              {% else %}
+                <div class="font-weight-bold">{{ item.course }}{% if item.code %} ({{ item.code }}){% endif %}</div>
+                <div class="small">{{ item.role | default: section.title }}{% if item.institution %}, {{ item.institution }}{% endif %} | {{ item.term }}</div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if semantic_cv.service.groups.size > 0 %}
+    <a class="anchor" id="service"></a>
+    <div class="card mt-3 p-3">
+      <h3 class="card-title font-weight-medium">{{ semantic_cv.service.title }}</h3>
+      {% for group in semantic_cv.service.groups %}
+        <h6 class="font-weight-bold mt-3">{{ group.title }}</h6>
+        <ul class="card-text font-weight-light list-group list-group-flush">
+          {% for year in group.years %}
+            <li class="list-group-item">
+              <strong>{{ year.year }}</strong>:
+              {% for item in year.items %}
+                {% if item.url and item.url != '' %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if item.role %} <span class="text-muted">({{ item.role }})</span>{% endif %}{% unless forloop.last %}; {% endunless %}
+              {% endfor %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for section in semantic_cv.sections %}
+    {% if section.enabled != false and section.title and section.body %}
+      <a class="anchor" id="{{ section.id | default: section.title | slugify }}"></a>
+      <div class="card mt-3 p-3">
+        <h3 class="card-title font-weight-medium">{{ section.title }}</h3>
+        <div class="card-text font-weight-light">{{ section.body | markdownify }}</div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}

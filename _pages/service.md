@@ -57,6 +57,10 @@ nav_order: 5
   color: var(--global-text-color-light);
   font-size: 0.9rem;
 }
+.service-empty {
+  color: var(--global-text-color-light);
+  margin: 1.5rem 0;
+}
 @media (max-width: 576px) {
   .service-row {
     grid-template-columns: 1fr;
@@ -68,27 +72,35 @@ nav_order: 5
 }
 </style>
 
+{% assign service_sections = site.data.generated.content.service.groups %}
+
 <div class="service-page">
-  {% for section in site.data.service %}
-    <section class="service-section">
-      <h3>{{ section.title }}</h3>
-      <div class="service-list">
-        {% for group in section.years %}
-          <div class="service-row">
-            <div class="service-year">{{ group.year }}</div>
-            <div class="service-items">
-              {% for item in group.items %}
-                <span class="service-item">
-                  <strong>{{ item.name }}</strong>
-                  {% if item.role %}
-                    <span class="service-role">{{ item.role }}</span>
-                  {% endif %}
-                </span>
-              {% endfor %}
+  {% if service_sections and service_sections.size > 0 %}
+    {% for section in service_sections %}
+      <section class="service-section">
+        <h3>{{ section.title }}</h3>
+        <div class="service-list">
+          {% for group in section.years %}
+            <div class="service-row">
+              <div class="service-year">{{ group.year }}</div>
+              <div class="service-items">
+                {% for item in group.items %}
+                  <span class="service-item">
+                    {% if item.url and item.url != '' %}
+                      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ item.name }}</strong></a>
+                    {% else %}
+                      <strong>{{ item.name }}</strong>
+                    {% endif %}
+                    {% if item.role %}
+                      <span class="service-role">{{ item.role }}</span>
+                    {% endif %}
+                  </span>
+                {% endfor %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
-      </div>
-    </section>
-  {% endfor %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  {% endif %}
 </div>

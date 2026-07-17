@@ -1,4 +1,10 @@
-{% for social in site.data.socials %}
+{% assign generated_social_links = site.data.generated.content.profile.socials %}
+{% if generated_social_links and generated_social_links.size > 0 %}
+  {% assign social_links = generated_social_links %}
+{% else %}
+  {% assign social_links = site.data.content.profile.socials %}
+{% endif %}
+{% for social in social_links %}
   {% case social[0] %}
     {% when 'acm_id' %}
       <a href="https://dl.acm.org/profile/{{ social[1] }}/" title="ACM DL"><i class="ai ai-acm"></i></a>

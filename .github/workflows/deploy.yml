@@ -1,22 +1,29 @@
-name: Deploy site
+name: Build and deploy site
 
 on:
   push:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
+      - "_data/**"
+      - "_news/**"
+      - "_pages/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_layouts/**"
+      - "_includes/**"
       - "**.bib"
       - "**.html"
       - "**.js"
       - "**.liquid"
-      - "**/*.md"
+      - "**.md"
       - "**.yml"
+      - "scripts/**"
       - "Gemfile"
       - "Gemfile.lock"
+      - "requirements.txt"
+      - "purgecss.config.js"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -32,20 +39,27 @@ on:
       - "!README.md"
   pull_request:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
+      - "_data/**"
+      - "_news/**"
+      - "_pages/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_layouts/**"
+      - "_includes/**"
       - "**.bib"
       - "**.html"
       - "**.js"
       - "**.liquid"
-      - "**/*.md"
+      - "**.md"
       - "**.yml"
+      - "scripts/**"
       - "Gemfile"
       - "Gemfile.lock"
+      - "requirements.txt"
+      - "purgecss.config.js"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -62,44 +76,130 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: site-build-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    # available images: https://github.com/actions/runner-images#available-images
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Ruby 💎
+
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Setup Python 🐍
+
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-          cache: "pip" # caching pip dependencies
-      - name: Update _config.yml ⚙️
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          pip3 install --upgrade -r requirements.txt
+
+      - name: Validate editable content
+        run: python3 scripts/build_cv_content.py validate
+
+      - name: Render derived CV content
+        run: python3 scripts/build_cv_content.py build
+
+      - name: Compile PDF resume
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: ZhaominWu.tex
+          working_directory: assets/latex
+          texlive_version: 2025
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Stage PDF for the site
+        run: |
+          test -f assets/latex/ZhaominWu.pdf
+          cp assets/latex/ZhaominWu.pdf assets/pdf/ZhaominWu.pdf
+
+      - name: Update generated site configuration
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
-      - name: Install and Build 🔧
+
+      - name: Build Jekyll site
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
-      - name: Purge unused CSS 🧹
+
+      - name: Purge unused CSS
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
-      - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
+
+      - name: Upload derived CV artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-derived-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            assets/json/resume.json
+            _data/generated/content.yml
+            _bibliography/papers.bib
+            _bibliography/publications.bib
+            _bibliography/preprints.bib
+            assets/latex/generated/
+            assets/pdf/ZhaominWu.pdf
+
+      - name: Upload built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-site-${{ github.sha }}
+          if-no-files-found: error
+          path: _site/
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download derived CV artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: cv-derived-${{ github.sha }}
+          path: .
+
+      - name: Commit generated CV artifacts
+        run: |
+          git add -A -- assets/json/resume.json _data/generated/content.yml _bibliography/papers.bib _bibliography/publications.bib _bibliography/preprints.bib assets/latex/generated assets/pdf/ZhaominWu.pdf
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: regenerate CV artifacts"
+          git push
+
+      - name: Download built site
+        uses: actions/download-artifact@v4
+        with:
+          name: built-site-${{ github.sha }}
+          path: _site
+
+      - name: Deploy site
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site

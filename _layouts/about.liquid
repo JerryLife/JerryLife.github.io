@@ -1,25 +1,42 @@
 ---
 layout: default
 ---
+{% assign content_view = site.data.generated.content %}
+{% assign generated_profile = content_view.profile %}
+{% if generated_profile and generated_profile.basics %}
+  {% assign profile_content = generated_profile %}
+{% else %}
+  {% assign profile_content = site.data.content.profile %}
+{% endif %}
+{% assign profile_basics = profile_content.basics %}
+{% assign web_about = profile_content.web_about %}
+
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+      {% if profile_basics.name %}
+        {% assign name_parts = profile_basics.name | split: ' ' %}
+        <span class="font-weight-bold">{{ name_parts.first }}</span>{% for name_part in name_parts offset: 1 %} {{ name_part }}{% endfor %}
+      {% elsif site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
       {% else %}
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    {% if web_about.subtitle %}
+      <p class="desc">{{ web_about.subtitle }}</p>
+    {% elsif page.subtitle %}
+      <p class="desc">{{ page.subtitle }}</p>
+    {% endif %}
   </header>
 
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
+    {% if web_about.image or page.profile %}
+      <div class="profile float-{% if web_about.align == 'left' or page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% assign profile_image = web_about.image | default: page.profile.image %}
+        {% if profile_image %}
+          {% assign profile_image_path = profile_image | prepend: 'assets/img/' %}
+          {% if web_about.image_circular or page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
             {% assign profile_image_class = 'img-fluid z-depth-1
@@ -28,17 +45,24 @@ layout: default
           {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
       30vw, 95vw"{% endcapture %}
           {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile_basics.name
             cache_bust=true
           %}
         {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% assign profile_more_info = web_about.more_info | default: page.profile.more_info %}
+        {% if profile_more_info %}
+          <div class="more-info">{{ profile_more_info }}</div>
         {% endif %}
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix">
+      {% if web_about.body %}
+        {{ web_about.body | markdownify }}
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}

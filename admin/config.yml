@@ -1,0 +1,882 @@
+# This site is served statically by GitHub Pages. The OAuth exchange is handled
+# by a separate Cloudflare Worker, so no client secret is exposed in this repo.
+backend:
+  name: github
+  repo: JerryLife/JerryLife.github.io
+  branch: main
+  # Use the Worker origin only; do not include a trailing slash or `/auth`.
+  base_url: https://zhaominwu-cms-auth.jerrylifewzm.workers.dev
+  auth_endpoint: auth
+  site_domain: www.zhaominwu.com
+
+# On localhost, Decap switches to the local proxy so the editor reads and writes
+# this working tree instead of the remote GitHub branch. Production keeps the
+# GitHub backend above.
+local_backend:
+  url: http://localhost:8081/api/v1
+  allowed_hosts: [localhost, 127.0.0.1]
+
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
+collections:
+  - name: news
+    label: News
+    label_singular: News item
+    folder: _news
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}} - {{title}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: false
+        default: News item
+      - label: Date
+        name: date
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+      - label: Show inline on the news list
+        name: inline
+        widget: boolean
+        default: true
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: post
+      - label: Related posts
+        name: related_posts
+        widget: hidden
+        default: false
+      - label: Content
+        name: body
+        widget: markdown
+
+  - name: publications
+    label: Publications
+    label_singular: Publication
+    folder: _data/content/publications
+    create: true
+    extension: bib
+    format: bibtex
+    slug: "{{citation_key}}"
+    identifier_field: citation_key
+    summary: "{{citation_key}}"
+    fields:
+      - label: Citation key
+        name: citation_key
+        widget: hidden
+        default: publication
+      - label: BibTeX entry
+        name: body
+        widget: code
+        default_language: bibtex
+        output_code_only: true
+        hint: Paste exactly one complete BibTeX publication entry. Its key and filename must use lowercase firstauthorYYYYshorttitle, for example wu2026llmdna.bib; no underscores, punctuation, DOI, or DBLP keys. Use selected = {true} for the website home-page selection, and cv_selected = {true} with cv_order = {1}, {2}, ... for the CV selection; these are independent. arXiv records are classified as Preprints automatically.
+
+  - name: service
+    label: Service
+    files:
+      - name: conference-reviewers
+        label: Conference Reviewers
+        file: _data/content/service/conference-reviewers.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - { label: Section title, name: title, widget: string }
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.year}} - {{fields.name}}"
+            fields:
+              - label: Year
+                name: year
+                widget: number
+                value_type: int
+                min: 1900
+                max: 2100
+                step: 1
+              - { label: Conference, name: name, widget: string }
+              - label: Role
+                name: role
+                widget: string
+                required: false
+                default: Reviewer
+              - label: URL
+                name: url
+                widget: string
+                required: false
+      - name: journal-reviewers
+        label: Journal Reviewers
+        file: _data/content/service/journal-reviewers.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - { label: Section title, name: title, widget: string }
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.year}} - {{fields.name}}"
+            fields:
+              - label: Year
+                name: year
+                widget: number
+                value_type: int
+                min: 1900
+                max: 2100
+                step: 1
+              - { label: Journal, name: name, widget: string }
+              - label: Role
+                name: role
+                widget: string
+                required: false
+                default: Reviewer
+              - label: URL
+                name: url
+                widget: string
+                required: false
+      - name: recognition
+        label: Recognition
+        file: _data/content/service/recognition.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - { label: Section title, name: title, widget: string }
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.year}} - {{fields.name}}"
+            fields:
+              - label: Year
+                name: year
+                widget: number
+                value_type: int
+                min: 1900
+                max: 2100
+                step: 1
+              - { label: Recognition, name: name, widget: string }
+              - { label: Detail, name: role, widget: string, required: false }
+              - { label: URL, name: url, widget: string, required: false }
+      - name: tutorial
+        label: Tutorial Speaker
+        file: _data/content/service/tutorial.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - { label: Section title, name: title, widget: string }
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.year}} - {{fields.name}}"
+            fields:
+              - label: Year
+                name: year
+                widget: number
+                value_type: int
+                min: 1900
+                max: 2100
+                step: 1
+              - { label: Tutorial, name: name, widget: string }
+              - { label: Role, name: role, widget: string, required: false, default: Tutorial Speaker }
+              - { label: URL, name: url, widget: string, required: false }
+
+  - name: teaching-mentoring
+    label: Teaching & Mentoring
+    files:
+      - name: teaching
+        label: Teaching
+        file: _data/content/teaching.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: CV section title
+            name: cv_section_title
+            widget: string
+          - label: Teaching sections
+            name: sections
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - label: Teaching role
+                name: kind
+                widget: select
+                options:
+                  - { label: Teaching assistant, value: teaching_assistant }
+                  - { label: Instructor, value: instructor }
+                  - { label: Guest lecture, value: guest_lecture }
+                  - { label: Other, value: other }
+              - label: Section title
+                name: title
+                widget: string
+              - label: Entries
+                name: entries
+                widget: list
+                required: false
+                collapsed: true
+                summary: "{{fields.course}} - {{fields.term}}"
+                fields:
+                  - label: Course
+                    name: course
+                    widget: string
+                    required: false
+                  - label: Course code
+                    name: code
+                    widget: string
+                    required: false
+                  - label: Term
+                    name: term
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                    hint: Use for a non-course teaching activity.
+                  - label: Period
+                    name: period
+                    widget: string
+                    required: false
+                  - label: Institution
+                    name: institution
+                    widget: string
+                    required: false
+                  - label: Teaching role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: URL
+                    name: url
+                    widget: string
+                    required: false
+                  - label: Notes
+                    name: notes
+                    required: false
+                    widget: list
+                    field:
+                      label: Note
+                      name: note
+                      widget: string
+      - name: mentoring
+        label: Mentoring
+        file: _data/content/mentoring.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Section title
+            name: title
+            widget: string
+          - label: Introduction
+            name: intro
+            widget: markdown
+            required: false
+          - label: CV section title
+            name: cv_title
+            widget: string
+            required: false
+          - label: CV summary groups
+            name: cv_groups
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Group title, name: title, widget: string }
+              - { label: Group detail, name: detail, widget: string }
+              - { label: Period, name: period, widget: string }
+              - { label: Representative outcome, name: representative, widget: string }
+          - label: Students
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.name}} - {{fields.role}}"
+            fields:
+              - label: Student name
+                name: name
+                widget: string
+              - label: Student role
+                name: role
+                widget: string
+                hint: For example, Master Student or Visiting Ph.D. Student.
+              - label: Institution
+                name: institution
+                widget: string
+              - label: Period
+                name: period
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+                required: false
+              - label: Notes
+                name: notes
+                required: false
+                widget: list
+                field:
+                  label: Note
+                  name: note
+                  widget: string
+              - label: Outcome
+                name: outcome
+                widget: string
+                required: false
+
+  - name: talks
+    label: Talks
+    files:
+      - name: talks
+        label: Talks
+        file: _data/content/talks.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: CV section
+            name: cv
+            widget: object
+            collapsed: true
+            fields:
+              - label: Section title
+                name: title
+                widget: string
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.date}} - {{fields.title}}"
+            fields:
+              - label: Date
+                name: date
+                widget: datetime
+                date_format: YYYY-MM-DD
+                time_format: false
+                format: YYYY-MM-DD
+              - label: Type
+                name: type
+                widget: select
+                options:
+                  - { label: Invited talk, value: Invited talk }
+                  - { label: Keynote, value: Keynote }
+                  - { label: Tutorial, value: Tutorial }
+                  - { label: Seminar, value: Seminar }
+                  - { label: Other, value: Other }
+              - label: Title
+                name: title
+                widget: string
+              - label: Venue
+                name: venue
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+                required: false
+              - label: Note
+                name: note
+                widget: markdown
+                required: false
+
+  - name: profile
+    label: Website Profile
+    files:
+      - name: profile
+        label: Website Profile & Identity
+        file: _data/content/profile.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Basics
+            name: basics
+            widget: object
+            fields:
+              - label: Full name
+                name: name
+                widget: string
+              - label: Professional title
+                name: label
+                widget: string
+                required: false
+              - label: Resume position override
+                name: position
+                widget: string
+                required: false
+              - label: Email
+                name: email
+                widget: string
+                required: false
+              - label: Phone
+                name: phone
+                widget: string
+                required: false
+              - label: Website
+                name: url
+                widget: string
+                required: false
+              - label: Profile image
+                name: image
+                widget: string
+                required: false
+                hint: Filename under assets/img, for example avatar.jpg.
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Short profile
+                name: summary
+                widget: markdown
+                required: false
+              - label: Profiles
+                name: profiles
+                widget: list
+                required: false
+                collapsed: true
+                summary: "{{fields.network}}"
+                fields:
+                  - label: Network
+                    name: network
+                    widget: string
+                  - label: Username or handle
+                    name: username
+                    widget: string
+                    required: false
+                  - label: URL
+                    name: url
+                    widget: string
+                    required: false
+          - label: Website about content
+            name: web_about
+            widget: object
+            collapsed: true
+            fields:
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Content
+                name: body
+                widget: markdown
+                required: false
+              - label: Profile image filename
+                name: image
+                widget: string
+                required: false
+                hint: Filename under assets/img, for example avatar.jpg.
+              - label: Image alignment
+                name: align
+                widget: select
+                options: [top, left, right]
+                required: false
+              - label: Circular image
+                name: image_circular
+                widget: boolean
+                default: false
+          - label: Social links
+            name: socials
+            widget: object
+            collapsed: true
+            fields:
+              - label: DBLP profile URL
+                name: dblp_url
+                widget: string
+                required: false
+              - label: Email
+                name: email
+                widget: string
+                required: false
+              - label: GitHub username
+                name: github_username
+                widget: string
+                required: false
+              - label: LinkedIn username
+                name: linkedin_username
+                widget: string
+                required: false
+              - label: ORCID ID
+                name: orcid_id
+                widget: string
+                required: false
+              - label: Show RSS icon
+                name: rss_icon
+                widget: boolean
+                default: true
+              - label: Google Scholar user ID
+                name: scholar_userid
+                widget: string
+                required: false
+
+  - name: site_settings
+    label: Site Settings
+    files:
+      - name: site
+        label: Site Settings
+        file: _data/content/site.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: SEO
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - label: Description
+                name: description
+                widget: text
+              - label: Keywords
+                name: keywords
+                widget: string
+                required: false
+          - label: Footer text
+            name: footer_text
+            widget: text
+            required: false
+            hint: Supports the existing HTML links used in the footer.
+          - label: Publication venue badges
+            name: venues
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.abbreviation}}"
+            fields:
+              - label: Venue abbreviation
+                name: abbreviation
+                widget: string
+              - label: Venue URL
+                name: url
+                widget: string
+                required: false
+              - label: Badge color
+                name: color
+                widget: color
+                allowInput: true
+                required: false
+
+  - name: cv
+    label: CV
+    files:
+      - name: cv_profile
+        label: CV Profile
+        file: _data/content/cv/profile.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Section title
+            name: title
+            widget: string
+          - label: Content
+            name: body
+            widget: markdown
+      - name: work
+        label: Work Experience
+        file: _data/content/cv/work.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 2
+          - label: Main jobs
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.main_job.name}}"
+            fields:
+              - label: Main job
+                name: main_job
+                widget: object
+                fields:
+                  - { label: Organization, name: name, widget: string }
+                  - { label: Location, name: location, widget: string, required: false }
+                  - { label: URL, name: url, widget: string, required: false }
+              - label: Subjobs
+                name: subjobs
+                widget: list
+                collapsed: true
+                summary: "{{fields.position}}"
+                fields:
+                  - { label: Position, name: position, widget: string }
+                  - { label: Start date, name: start_date, widget: string, required: false }
+                  - { label: End date, name: end_date, widget: string, required: false }
+                  - { label: Summary, name: summary, widget: markdown, required: false }
+                  - label: Highlights
+                    name: highlights
+                    widget: list
+                    required: false
+                    field: { label: Highlight, name: highlight, widget: string }
+      - name: education
+        label: Education
+        file: _data/content/cv/education.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.study_type}} - {{fields.institution}}"
+            fields:
+              - { label: Institution, name: institution, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Location, name: location, widget: string, required: false }
+              - { label: Degree, name: study_type, widget: string }
+              - { label: Field of study, name: area, widget: string, required: false }
+              - { label: Start date, name: start_date, widget: string, required: false }
+              - { label: End date, name: end_date, widget: string, required: false }
+              - { label: Score or GPA, name: score, widget: string, required: false }
+              - { label: Advisor, name: advisor, widget: string, required: false }
+              - { label: Credential note, name: credential_note, widget: string, required: false }
+              - label: Courses
+                name: courses
+                widget: list
+                required: false
+                field: { label: Course, name: course, widget: string }
+      - name: awards
+        label: Awards & Recognition
+        file: _data/content/cv/awards.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.date}} - {{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Date, name: date, widget: string, required: false }
+              - { label: Awarder, name: awarder, widget: string, required: false }
+              - label: Category
+                name: category
+                widget: select
+                options: [grant, honor, earlier_honor]
+                required: false
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Description, name: summary, widget: markdown, required: false }
+          - label: PDF section display
+            name: display
+            widget: object
+            collapsed: true
+            fields:
+              - label: Grants and fellowships
+                name: grants
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - label: Included award titles
+                    name: include_titles
+                    widget: list
+                    required: false
+                    field: { label: Award title, name: title, widget: string }
+              - label: Selected honors
+                name: honors
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - label: Included award titles
+                    name: include_titles
+                    widget: list
+                    required: false
+                    field: { label: Award title, name: title, widget: string }
+              - label: Earlier academic honors
+                name: undergraduate_honors
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - label: Included award titles
+                    name: include_titles
+                    widget: list
+                    required: false
+                    field: { label: Award title, name: title, widget: string }
+      - name: skills
+        label: Skills
+        file: _data/content/cv/skills.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Skill group, name: name, widget: string }
+              - label: Keywords
+                name: keywords
+                widget: list
+                required: false
+                field: { label: Keyword, name: keyword, widget: string }
+              - { label: Level, name: level, widget: string, required: false }
+              - { label: Icon, name: icon, widget: string, required: false }
+      - name: languages
+        label: Languages
+        file: _data/content/cv/languages.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.language}}"
+            fields:
+              - { label: Language, name: language, widget: string }
+              - { label: Fluency, name: fluency, widget: string, required: false }
+              - { label: Icon, name: icon, widget: string, required: false }
+      - name: volunteer
+        label: Volunteer Experience
+        file: _data/content/cv/volunteer.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.position}} at {{fields.organization}}"
+            fields:
+              - { label: Organization, name: organization, widget: string }
+              - { label: Position, name: position, widget: string }
+              - { label: URL, name: url, widget: string, required: false }
+              - { label: Location, name: location, widget: string, required: false }
+              - { label: Start date, name: start_date, widget: string, required: false }
+              - { label: End date, name: end_date, widget: string, required: false }
+              - { label: Summary, name: summary, widget: markdown, required: false }
+              - label: Highlights
+                name: highlights
+                widget: list
+                required: false
+                field: { label: Highlight, name: highlight, widget: string }
+      - name: publication_display
+        label: Publication Display
+        file: _data/content/cv/publication-display.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Display settings
+            name: display
+            widget: object
+            collapsed: true
+            fields:
+              - label: Selected publications
+                name: selected_publications
+                widget: object
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - { label: Supplemental note, name: supplemental, widget: string, required: false }
+              - label: Full publication list
+                name: publications
+                widget: object
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - { label: Supplemental note, name: supplemental, widget: string, required: false }
+              - label: Preprints
+                name: preprints
+                widget: object
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - { label: Supplemental note, name: supplemental, widget: string, required: false }
+      - name: research_impact
+        label: Research Impact
+        file: _data/content/cv/research-impact.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - { label: Section title, name: title, widget: string }
+          - { label: Supplemental note, name: supplemental, widget: string, required: false }
+          - label: Groups
+            name: groups
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Group title, name: title, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                required: false
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Venue, name: venue, widget: string, required: false }
+                  - { label: URL, name: url, widget: string, required: false }
+                  - { label: Description, name: description, widget: markdown, required: false }
+          - label: Paragraphs
+            name: paragraphs
+            widget: list
+            required: false
+            field: { label: Paragraph, name: paragraph, widget: markdown }
+      - name: custom_sections
+        label: Custom CV Sections
+        file: _data/content/cv/sections.yml
+        fields:
+          - label: Schema version
+            name: schema_version
+            widget: hidden
+            default: 1
+          - label: Sections
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Stable ID, name: id, widget: string, required: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Content, name: body, widget: markdown }
+              - { label: Enabled, name: enabled, widget: boolean, default: true }

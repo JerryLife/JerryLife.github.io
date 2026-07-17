@@ -1,0 +1,57 @@
+schema_version: 1
+title: Journal Reviewers
+entries:
+  - year: 2026
+    name: ACM Computing Surveys
+    role: Reviewer
+  - year: 2026
+    name: TPDS
+    role: Reviewer
+  - year: 2026
+    name: TKDE
+    role: Reviewer
+  - year: 2026
+    name: TMC
+    role: Reviewer
+  - year: 2025
+    name: TDSC
+    role: Reviewer
+  - year: 2025
+    name: TPDS
+    role: Reviewer
+  - year: 2025
+    name: TKDE
+    role: Reviewer
+  - year: 2025
+    name: TAI
+    role: Reviewer
+  - year: 2024
+    name: TKDD
+    role: Reviewer
+  - year: 2024
+    name: JPDC
+    role: Reviewer
+  - year: 2024
+    name: TNNLS
+    role: Reviewer
+  - year: 2023
+    name: TPAMI
+    role: Reviewer
+  - year: 2023
+    name: TKDE
+    role: Reviewer
+  - year: 2023
+    name: TNNLS
+    role: Reviewer
+  - year: 2023
+    name: IJCV
+    role: Reviewer
+  - year: 2023
+    name: IoT-J
+    role: Reviewer
+  - year: 2022
+    name: TPDS
+    role: Reviewer
+  - year: 2022
+    name: TIST
+    role: Reviewer

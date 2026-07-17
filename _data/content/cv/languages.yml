@@ -1,0 +1,8 @@
+schema_version: 1
+entries:
+  - language: Chinese
+    fluency: Native speaker
+    icon: ''
+  - language: English
+    fluency: Professional working proficiency
+    icon: ''

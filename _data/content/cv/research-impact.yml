@@ -1,0 +1,61 @@
+schema_version: 1
+title: Research Impact
+supplemental: platform metrics recorded in May 2026
+groups:
+  - title: Open-Source Systems and Benchmarks
+    items:
+      - name: FedTree
+        url: https://github.com/Xtra-Computing/FedTree
+        venue: MLSys'23
+        description: an open-source federated learning system for tree-based models; it supports reproducible and privacy-preserving GBDT training across parties. 152 GitHub stars and 41 forks.
+      - name: VertiBench
+        url: https://github.com/Xtra-Computing/VertiBench
+        venue: ICLR'24
+        description: a public benchmark for systematically evaluating vertical federated learning under varying feature-diversity settings; it standardizes evaluation beyond single synthetic data splits and is released as an installable PyPI package.
+      - name: WikiDBGraph
+        url: https://huggingface.co/datasets/Jerrylife/WikiDBGraph
+        venue: ICDE'26
+        description: a large-scale database graph of Wikidata for collaborative learning; it releases 100,000 database nodes and 17 million edges for database-silo learning research.
+      - name: LLM DNA
+        url: https://github.com/Xtra-Computing/LLM-DNA
+        venue: ICLR'26 Oral
+        description: an open-source toolkit for extracting functional DNA signatures and tracing LLM evolution from model behavior, with a public project website and PyPI package.
+      - name: OARF
+        url: https://github.com/Xtra-Computing/OARF
+        venue: ACM TIST'22
+        description: a benchmark suite for characterizing federated learning systems; it provides reusable workloads for system-level FL comparison.
+  - title: Publicity and Public Outreach
+    items:
+      - name: 'LLM DNA: Tracing Model Evolution via Functional Representations'
+        url: https://openreview.net/forum?id=UIxHaAqFqQ
+        venue: ICLR'26 Oral
+        description: >-
+          Media article by [XinZhiYuan](https://mp.weixin.qq.com/s/p-F7qQzDRgwOQTfl1WIL8A) (新智元):
+          "Testing DNA for Large Models: Hidden Lineage from Fine-tuning and Distillation Can No Longer Hide"
+          (给大模型验DNA，微调、蒸馏的隐藏血缘藏不住了); reposted by
+          [Sina Finance](https://finance.sina.com.cn/wm/2026-04-25/doc-inhvtmsy2295805.shtml) (新浪财经),
+          [Sohu](https://m.sohu.com/a/1014548704_473283) (搜狐),
+          [BAAI Hub](https://hub.baai.ac.cn/view/54249) (智源社区). Public outreach hosted by
+          [NICE Academic](https://www.bilibili.com/video/BV1ysZeBjEnS/) (NICE学术) on Bilibili:
+          "Doing Paternity Testing for Large Models: LLM DNA and Model Evolution Graph"
+          (给大模型做亲子鉴定：LLM 的 DNA 与模型演化图谱).
+      - name: 'Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts'
+        url: https://openreview.net/forum?id=PDBBYwd1LY
+        venue: ICLR'26 Oral
+        description: >-
+          Media article by [JiQiZhiXin](https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651030890&idx=2&sn=838a7b44f749aa0170dc92b1af554ec4) (机器之心):
+          "ICLR 2026 Oral: Large Models Can Still `Lie` Without Prompt Induction"
+          (ICLR 2026 Oral | 没人诱导，大模型也会骗人); reposted by
+          [AITNT](https://www.aitntnews.com/newDetail.html?newId=24550).
+      - name: Mining Intrinsic Rewards from LLM Hidden States for Efficient Best-of-N Sampling
+        url: https://dl.acm.org/doi/10.1145/3770854.3780302
+        venue: KDD'26
+        description: >-
+          Media article by [XinZhiYuan](https://mp.weixin.qq.com/s/ka5bndnjGxux3qyOnz6Yeg) (新智元):
+          "Reward Models Are Changing: 0.005% Parameters, Faster Inference, Stronger Performance"
+          (奖励模型变天！0.005%参数量推理速度翻倍，性能还更强); reposted by
+          [Sina Finance](https://finance.sina.com.cn/stock/t/2026-01-23/doc-inhihniy2053260.shtml) (新浪财经),
+          [Sohu](https://m.sohu.com/a/979238835_473283) (搜狐),
+          [BAAI Hub](https://hub.baai.ac.cn/view/52063) (智源社区),
+          [Tencent Cloud Developer Community](https://cloud.tencent.com/developer/article/2623954) (腾讯云开发者社区).
+paragraphs: []

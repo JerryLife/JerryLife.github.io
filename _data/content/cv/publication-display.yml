@@ -1,0 +1,11 @@
+schema_version: 1
+display:
+  selected_publications:
+    title: Selected Publications
+    supplemental: ''
+  publications:
+    title: Full Publication List
+    supplemental: '*Equal contribution, †Corresponding author'
+  preprints:
+    title: Preprints
+    supplemental: '*Equal contribution, †Corresponding author'

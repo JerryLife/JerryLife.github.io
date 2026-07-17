@@ -24,18 +24,18 @@ build_pdf() {
 }
 
 snapshot_sources() {
-  (
-    cd "$LATEX_DIR"
-    find . -maxdepth 2 -type f \( -name '*.tex' -o -name '*.cls' \) -print0 \
-      | sort -z \
-      | xargs -0 stat -c '%Y %n'
-  )
+  {
+    find "$LATEX_DIR" -maxdepth 2 -type f \( -name '*.tex' -o -name '*.cls' -o -name 'Makefile' \) -print0
+    find "$ROOT_DIR/_data/content" -maxdepth 2 -type f -name '*.yml' -print0
+    find "$ROOT_DIR/_data/content/publications" -maxdepth 1 -type f -name '*.bib' -print0
+    printf '%s\0' "$ROOT_DIR/scripts/build_cv_content.py"
+  } | sort -z | xargs -0 stat -c '%Y %n'
 }
 
 watch_pdf() {
   local previous_snapshot current_snapshot
 
-  echo "Watching $LATEX_DIR for LaTeX changes. Press Ctrl+C to stop."
+  echo "Watching CV content and LaTeX sources. Press Ctrl+C to stop."
   build_pdf
   previous_snapshot="$(snapshot_sources)"
 

@@ -1,0 +1,71 @@
+schema_version: 1
+title: Mentorship
+intro: It is my honor to work with many talented students and colleagues.
+cv_title: Mentored Students
+cv_groups:
+  - title: Undergraduate mentees
+    detail: 3 students from NUS and SJTU
+    period: 2024 -- 2026
+    representative: Jizhou Guo (SJTU) --- Ph.D. offers from NUS and UIUC
+  - title: Master's mentees
+    detail: 5 students from NUS
+    period: 2022 -- 2026
+    representative: Junyi Hou (NUS) --- Ph.D. student, NUS
+  - title: Visiting Ph.D. mentees
+    detail: 2 students from SJTU and ZJU
+    period: 2024 -- 2025
+    representative: Zhen Qin (ZJU) --- Assistant Professor, ZJU
+entries:
+  - name: Jiayi Li
+    role: Master Student
+    institution: NUS
+    period: 2025 - 2026
+  - name: Ziyang Qiu
+    role: Master Student
+    institution: NUS
+    period: 2025 - 2026
+  - name: Lifan Hu
+    role: Undergraduate Student
+    institution: NUS
+    period: 2025 - 2026
+  - name: Qian Yu
+    role: Undergraduate Student
+    institution: NUS
+    period: 2025 - 2026
+  - name: Ziyang Wang
+    url: https://www.linkedin.com/in/ziyang-wang-4a600b348/
+    role: Master Student
+    institution: NUS
+    period: 2024 - 2025
+  - name: Haodong Zhao
+    url: https://dongdongzhaoup.github.io/
+    role: Visiting Ph.D. Student
+    institution: Shanghai Jiao Tong University
+    period: 2024 - 2025
+  - name: Zhen Qin
+    url: https://zhenqincn.github.io/
+    role: Visiting Ph.D. Student
+    institution: Zhe Jiang University
+    period: 2024 - 2025
+    notes:
+      - Now an Assistant Professor at Zhe Jiang University (ZJU)
+    outcome: Assistant Professor, ZJU
+  - name: Jizhou Guo
+    url: https://scholar.google.com/citations?user=fcBDdsYAAAAJ
+    role: Undergraduate Student
+    institution: Shanghai Jiao Tong University
+    period: '2024'
+    outcome: Ph.D. offers from NUS and UIUC
+  - name: Junyi Hou
+    url: https://profile.junyi.dev/
+    role: Master Student
+    institution: NUS
+    period: 2023 - 2024
+    notes:
+      - Now a Ph.D. student at National University of Singapore (NUS)
+    outcome: Ph.D. student, NUS
+  - name: Junhui Zhu
+    url: https://jzhu.xyz/
+    role: Master Student
+    institution: NUS
+    period: '2022'

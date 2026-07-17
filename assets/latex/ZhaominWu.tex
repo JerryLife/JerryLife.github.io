@@ -5,11 +5,21 @@
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc} 
-\usepackage{CJKutf8}
+\newif\ifcvhascjk
+\IfFileExists{CJKutf8.sty}{%
+  \cvhascjktrue
+  \usepackage{CJKutf8}%
+}{%
+  \cvhascjkfalse
+}
 \usepackage{textcase}
 \usepackage{fancyhdr}
 \usepackage{helvet}
-\usepackage{fontawesome5}
+\IfFileExists{fontawesome5.sty}{%
+  \usepackage{fontawesome5}%
+}{%
+  \newcommand{\faIcon}[1]{}%
+}
 \usepackage[colorlinks=true, urlcolor=black, linkcolor=black]{hyperref}
 
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
@@ -33,10 +43,7 @@
   }}%
 }
 
-\name{Zhaomin Wu}
-\address{{\footnotesize \faIcon{envelope}\ \cvheaderplainlink{mailto:zhaomin@nus.edu.sg}{zhaomin@nus.edu.sg} \hspace{0.8em}
-\faIcon{globe}\ \cvheaderlink{https://www.zhaominwu.com}{zhaominwu.com} \hspace{0.8em}
-\faIcon{graduation-cap}\ \cvheaderlink{https://scholar.google.com/citations?user=QjehmgkAAAAJ}{Google Scholar}}}
+\input{generated/header}
 
 \fancypagestyle{cvfooter}{%
   \fancyhf{}%
@@ -55,21 +62,31 @@
 \pagestyle{cvfooter}
 \setcounter{page}{1}
 
-\begin{CJK*}{UTF8}{gbsn}
+\ifcvhascjk
+  \begin{CJK*}{UTF8}{gbsn}
+\fi
 
-  \input{sections/bio}
-  \input{sections/employment}
-  \input{sections/education}
-  \input{sections/grants}
-  \input{sections/honors}
-  \input{sections/selected_publications}
-  \input{sections/research_impact}
-  \input{sections/talks}
-  \input{sections/teaching}
-  \input{sections/publications}
-  \input{sections/undergraduate_honors}
-  \input{sections/service}
+  \input{generated/bio}
+  \input{generated/employment}
+  \input{generated/education}
+  \input{generated/grants}
+  \input{generated/honors}
+  \input{generated/selected_publications}
+  \ifcvhascjk
+    \input{generated/research_impact_cjk}
+  \else
+    \input{generated/research_impact}
+  \fi
+  \input{generated/talks}
+  \input{generated/teaching}
+  \input{generated/publications}
+  \input{generated/preprints}
+  \input{generated/undergraduate_honors}
+  \input{generated/service}
+  \input{generated/sections}
 
-\end{CJK*}
+\ifcvhascjk
+  \end{CJK*}
+\fi
 \thispagestyle{cvfooter}
 \end{document}

@@ -10,5 +10,6 @@ _config_local.yml
 Gemfile.lock
 assets/libs/
 node_modules/
+scripts/__pycache__/
 vendor
 .idea

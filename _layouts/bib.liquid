@@ -1,5 +1,10 @@
 ---
 ---
+{%- assign profile_socials = site.data.generated.content.profile.socials -%}
+{%- assign cms_venues = site.data.generated.content.site.venues -%}
+{%- unless profile_socials -%}
+  {%- assign profile_socials = site.data.content.profile.socials -%}
+{%- endunless -%}
 {%- comment -%}
   Check if the first author or corresponding author matches the site owner.
   First author: site owner is first in the author list.
@@ -42,10 +47,10 @@
         {%- assign abbr_parts = entry.abbr | split: ' ' -%}
         {%- assign venue_bar_class = abbr_parts[0] | slugify | prepend: 'venue-bar-' -%}
         {%- assign venue_short = abbr_parts[0] -%}
-        {%- if site.data.venues[venue_short] -%}
+        {%- if cms_venues[venue_short] -%}
           {% assign venue_style = null %}
-          {% if site.data.venues[venue_short].color != blank %}
-            {% assign venue_style = site.data.venues[venue_short].color | prepend: 'style="background-color: ' | append: ' !important; color: #fff !important;"' %}
+          {% if cms_venues[venue_short].color != blank %}
+            {% assign venue_style = cms_venues[venue_short].color | prepend: 'style="background-color: ' | append: ' !important; color: #fff !important;"' %}
           {%- endif -%}
           <abbr
             class="badge rounded w-100 {{ venue_bar_class }}"
@@ -53,8 +58,8 @@
               {{ venue_style }}
             {% endif -%}
           >
-            {% if site.data.venues[venue_short].url %}
-              <a href="{{ site.data.venues[venue_short].url }}">{{ entry.abbr }}</a>
+            {% if cms_venues[venue_short].url != blank %}
+              <a href="{{ cms_venues[venue_short].url }}">{{ entry.abbr }}</a>
             {% else %}
               <div style="color: #fff !important;">{{- entry.abbr -}}</div>
             {% endif %}
@@ -356,13 +361,13 @@
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.data.socials.scholar_userid }}&citation_for_view={{ site.data.socials.scholar_userid }}:{{ entry.google_scholar_id }}"
+              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ profile_socials.scholar_userid }}&citation_for_view={{ profile_socials.scholar_userid }}:{{ entry.google_scholar_id }}"
               aria-label="Google Scholar link"
               role="button"
             >
               <img
-                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+                src="https://img.shields.io/badge/scholar-{% google_scholar_citations profile_socials.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
+                alt="{% google_scholar_citations profile_socials.scholar_userid entry.google_scholar_id %} Google Scholar citations"
               >
             </a>
           {% endif %}

@@ -8,6 +8,22 @@ set "OUT_DIR=%REPO_DIR%assets\pdf"
 set "JOB=ZhaominWu"
 set "OUTPUT_PDF=%OUT_DIR%\%JOB%.pdf"
 
+set "PYTHON="
+for /f "delims=" %%I in ('where python 2^>nul') do (
+  if not defined PYTHON set "PYTHON=%%I"
+)
+if not defined PYTHON (
+  for /f "delims=" %%I in ('where py 2^>nul') do (
+    if not defined PYTHON set "PYTHON=%%I"
+  )
+)
+if not defined PYTHON (
+  echo Error: Python 3 was not found on PATH.
+  echo Install Python 3 and the dependencies in requirements.txt.
+  pause
+  exit /b 1
+)
+
 set "PDFLATEX="
 for /f "delims=" %%I in ('where pdflatex 2^>nul') do (
   if not defined PDFLATEX set "PDFLATEX=%%I"
@@ -26,6 +42,9 @@ if not exist "%BUILD_DIR%" mkdir "%BUILD_DIR%"
 if not exist "%OUT_DIR%" mkdir "%OUT_DIR%"
 
 pushd "%LATEX_DIR%" >nul
+
+"%PYTHON%" "%REPO_DIR%scripts\build_cv_content.py" build
+if errorlevel 1 goto :build_failed
 
 "%PDFLATEX%" -interaction=nonstopmode -halt-on-error -jobname=%JOB% -output-directory=build %JOB%.tex
 if errorlevel 1 goto :build_failed
