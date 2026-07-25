@@ -114,8 +114,16 @@ jobs:
       - name: Render derived CV content
         run: python3 scripts/build_cv_content.py build
 
+      # pdfTeX stamps /CreationDate, /ModDate and /ID from the wall clock, so an
+      # unpinned build produces a different PDF byte-for-byte on every run.
+      - name: Pin reproducible build timestamp
+        run: echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> "$GITHUB_ENV"
+
       - name: Compile PDF resume
         uses: xu-cheng/latex-action@v4
+        env:
+          SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
+          FORCE_SOURCE_DATE: "1"
         with:
           root_file: ZhaominWu.tex
           working_directory: assets/latex
@@ -175,6 +183,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Download derived CV artifacts
         uses: actions/download-artifact@v4
@@ -182,16 +192,37 @@ jobs:
           name: cv-derived-${{ github.sha }}
           path: .
 
+      # Bookkeeping only: never let it block the deployment below. `main` can
+      # advance while this run is building (the "Update TOCs" workflow pushes
+      # after any root *.md change), which makes a plain `git push` a
+      # non-fast-forward rejection. Rebase and retry, then give up quietly.
       - name: Commit generated CV artifacts
+        continue-on-error: true
         run: |
+          set -u
           git add -A -- assets/json/resume.json _data/generated/content.yml _bibliography/papers.bib _bibliography/publications.bib _bibliography/preprints.bib assets/latex/generated assets/pdf/ZhaominWu.pdf
           if git diff --cached --quiet; then
+            echo "Generated artifacts unchanged; nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: regenerate CV artifacts"
-          git push
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${{ github.ref_name }}"; then
+              echo "Pushed regenerated CV artifacts on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt; rebasing onto the latest branch tip."
+            git fetch origin "${{ github.ref_name }}"
+            if ! git rebase "origin/${{ github.ref_name }}"; then
+              git rebase --abort || true
+              echo "::warning::Could not rebase regenerated CV artifacts; skipping this bookkeeping commit."
+              exit 0
+            fi
+          done
+          echo "::warning::Could not push regenerated CV artifacts after 3 attempts; the site is still deployed below."
+          exit 0
 
       - name: Download built site
         uses: actions/download-artifact@v4
