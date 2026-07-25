@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Site Content Manager</title>
+  </head>
+  <body>
+    <noscript>This content manager requires JavaScript.</noscript>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
+    <script>
+      (function () {
+        var citationKeyPattern = /^[a-z]+(?:19|20)\d{2}[a-z][a-z0-9]*$/;
+
+        function skipWhitespaceAndComments(source, index) {
+          while (index < source.length) {
+            while (index < source.length && /\s/.test(source[index])) {
+              index += 1;
+            }
+            if (source[index] !== "%") {
+              return index;
+            }
+            while (index < source.length && source[index] !== "\n") {
+              index += 1;
+            }
+          }
+          return index;
+        }
+
+        function hasOnlyWhitespaceAndComments(source, index) {
+          return skipWhitespaceAndComments(source, index) === source.length;
+        }
+
+        function parseSingleBibTeXEntry(raw) {
+          var source = String(raw || "").replace(/^\uFEFF/, "");
+          var index = skipWhitespaceAndComments(source, 0);
+          if (source[index] !== "@") {
+            return null;
+          }
+
+          index += 1;
+          var typeStart = index;
+          while (index < source.length && /[A-Za-z0-9_-]/.test(source[index])) {
+            index += 1;
+          }
+          var type = source.slice(typeStart, index).toLowerCase();
+          if (!type || /^(comment|preamble|string)$/.test(type)) {
+            return null;
+          }
+
+          while (index < source.length && /\s/.test(source[index])) {
+            index += 1;
+          }
+          var opening = source[index];
+          if (opening !== "{" && opening !== "(") {
+            return null;
+          }
+          var closing = opening === "{" ? "}" : ")";
+          index += 1;
+
+          while (index < source.length && /\s/.test(source[index])) {
+            index += 1;
+          }
+          var keyStart = index;
+          while (index < source.length && source[index] !== ",") {
+            if (/\s|[{}()]/.test(source[index])) {
+              return null;
+            }
+            index += 1;
+          }
+          var citationKey = source.slice(keyStart, index);
+          if (!citationKey || source[index] !== ",") {
+            return null;
+          }
+
+          var outerDepth = 1;
+          var braceDepth = 0;
+          var inQuote = false;
+          var escaped = false;
+          index += 1;
+          for (; index < source.length; index += 1) {
+            var character = source[index];
+            if (opening === "(" && inQuote) {
+              if (escaped) {
+                escaped = false;
+              } else if (character === "\\") {
+                escaped = true;
+              } else if (character === '"') {
+                inQuote = false;
+              }
+              continue;
+            }
+            if (opening === "(" && character === '"') {
+              inQuote = true;
+              continue;
+            }
+            if (character === "\\") {
+              index += 1;
+              continue;
+            }
+            if (character === "%" && (index === 0 || /\s/.test(source[index - 1]))) {
+              while (index < source.length && source[index] !== "\n") {
+                index += 1;
+              }
+              continue;
+            }
+
+            if (opening === "{") {
+              if (character === "{") {
+                outerDepth += 1;
+              } else if (character === closing) {
+                outerDepth -= 1;
+              }
+            } else if (character === "{") {
+              braceDepth += 1;
+            } else if (character === "}" && braceDepth > 0) {
+              braceDepth -= 1;
+            } else if (braceDepth === 0 && character === "(") {
+              outerDepth += 1;
+            } else if (braceDepth === 0 && character === closing) {
+              outerDepth -= 1;
+            }
+
+            if (outerDepth === 0) {
+              break;
+            }
+          }
+
+          if (outerDepth !== 0 || inQuote || !hasOnlyWhitespaceAndComments(source, index + 1)) {
+            return null;
+          }
+          return { citationKey: citationKey, type: type };
+        }
+
+        CMS.registerCustomFormat("bibtex", "bib", {
+          fromFile: function (raw) {
+            var entry = parseSingleBibTeXEntry(raw);
+            return {
+              citation_key: entry ? entry.citationKey : "invalid-bibtex",
+              body: String(raw || ""),
+            };
+          },
+          toFile: function (data) {
+            return String((data && data.body) || "");
+          },
+        });
+
+        CMS.registerEventListener({
+          name: "preSave",
+          handler: function (event) {
+            var entry = event.entry;
+            if (entry.get("collection") !== "publications") {
+              return undefined;
+            }
+            var parsed = parseSingleBibTeXEntry(entry.getIn(["data", "body"]));
+            if (!parsed) {
+              throw new Error("Enter exactly one complete BibTeX publication entry.");
+            }
+            if (!citationKeyPattern.test(parsed.citationKey)) {
+              throw new Error(
+                "Use a lowercase firstauthorYYYYshorttitle citation key without underscores or punctuation, for example wu2026llmdna."
+              );
+            }
+            return entry.get("data").set("citation_key", parsed.citationKey);
+          },
+        });
+
+        CMS.init();
+      })();
+    </script>
+  </body>
+</html>
