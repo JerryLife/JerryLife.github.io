@@ -778,6 +778,20 @@ cv:
   preprints:
     title: Preprints
     entries:
+    - key: wang2026crossalpha
+      title: 'CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research
+        (with LLM Agents)'
+      authors: Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He
+      short_authors: Q. Wang, Z. Tong, N. Chen, Z. Wu, B. He
+      year: '2026'
+      venue: arXiv preprint arXiv:2605.29286
+      details: arXiv preprint arXiv:2605.29286
+      url: ''
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
     - key: zhao2026protegofed
       title: 'ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed
         Poisoned Data'

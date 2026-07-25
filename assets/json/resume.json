@@ -379,6 +379,13 @@
   ],
   "preprints": [
     {
+      "name": "CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research (with LLM Agents)",
+      "publisher": "arXiv preprint arXiv:2605.29286",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": "Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He. arXiv preprint arXiv:2605.29286"
+    },
+    {
       "name": "ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed Poisoned Data",
       "publisher": "arXiv 2026",
       "releaseDate": "2026-01-01",
