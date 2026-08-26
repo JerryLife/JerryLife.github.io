@@ -554,6 +554,19 @@ cv:
       selected: false
       cv_selected: false
       is_preprint: false
+    - key: wang2026crossalpha
+      title: 'CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research'
+      authors: Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He
+      short_authors: Q. Wang, Z. Tong, N. Chen, Z. Wu, B. He
+      year: '2026'
+      venue: EMNLP 2026
+      details: In EMNLP 2026 Findings
+      url: https://openreview.net/forum?id=nNZ2BEfGUb
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
     - key: wu2026deception
       title: 'Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts'
       authors: Zhaomin Wu, Mingzhe Du, See-Kiong Ng, Bingsheng He
@@ -617,14 +630,27 @@ cv:
       selected: false
       cv_selected: false
       is_preprint: false
+    - key: zhao2026reasoning
+      title: Reasoning or Rambling? Exploring the Effect of Thinking on Agent Persuasion
+      authors: Haodong Zhao, Jidong Li, Zhaomin Wu, Tianjie Ju, Zhuosheng Zhang, Bingsheng
+        He, Gongshen Liu
+      short_authors: H. Zhao, J. Li, Z. Wu, T. Ju, Z. Zhang, B. He, G. Liu
+      year: '2026'
+      venue: EMNLP 2026
+      details: In EMNLP 2026 Findings
+      url: https://openreview.net/forum?id=g7pOyKiWO5
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
     - key: qin2025instructiontuning
       title: Federated Data-Efficient Instruction Tuning for Large Language Models
       authors: Zhen Qin, Zhaomin Wu†, Bingsheng He, Shuiguang Deng†
       short_authors: Z. Qin, Z. Wu†, B. He, S. Deng†
       year: '2025'
       venue: ACL 2025
-      details: 'In Findings of the Association for Computational Linguistics: ACL
-        2025'
+      details: In ACL 2025 Findings
       url: https://aclanthology.org/2025.findings-acl.803/
       highlight: ''
       summary: ''
@@ -778,20 +804,6 @@ cv:
   preprints:
     title: Preprints
     entries:
-    - key: wang2026crossalpha
-      title: 'CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research
-        (with LLM Agents)'
-      authors: Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He
-      short_authors: Q. Wang, Z. Tong, N. Chen, Z. Wu, B. He
-      year: '2026'
-      venue: arXiv preprint arXiv:2605.29286
-      details: arXiv preprint arXiv:2605.29286
-      url: ''
-      highlight: ''
-      summary: ''
-      selected: false
-      cv_selected: false
-      is_preprint: true
     - key: zhao2026protegofed
       title: 'ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed
         Poisoned Data'

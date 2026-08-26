@@ -272,6 +272,13 @@
       "summary": "Jizhou Guo, Zhaomin Wu†, Hanchen Yang, Philip S. Yu. In Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
     },
     {
+      "name": "CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research",
+      "publisher": "EMNLP 2026",
+      "releaseDate": "2026-01-01",
+      "url": "https://openreview.net/forum?id=nNZ2BEfGUb",
+      "summary": "Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He. In EMNLP 2026 Findings"
+    },
+    {
       "name": "Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts",
       "publisher": "ICLR 2026",
       "releaseDate": "2026-01-01",
@@ -300,11 +307,18 @@
       "summary": "Yicheng Zhang, Zhen Qin, Zhaomin Wu, Shuiguang Deng†. In Proceedings of the ACM on Web Conference 2026"
     },
     {
+      "name": "Reasoning or Rambling? Exploring the Effect of Thinking on Agent Persuasion",
+      "publisher": "EMNLP 2026",
+      "releaseDate": "2026-01-01",
+      "url": "https://openreview.net/forum?id=g7pOyKiWO5",
+      "summary": "Haodong Zhao, Jidong Li, Zhaomin Wu, Tianjie Ju, Zhuosheng Zhang, Bingsheng He, Gongshen Liu. In EMNLP 2026 Findings"
+    },
+    {
       "name": "Federated Data-Efficient Instruction Tuning for Large Language Models",
       "publisher": "ACL 2025",
       "releaseDate": "2025-01-01",
       "url": "https://aclanthology.org/2025.findings-acl.803/",
-      "summary": "Zhen Qin, Zhaomin Wu†, Bingsheng He, Shuiguang Deng†. In Findings of the Association for Computational Linguistics: ACL 2025"
+      "summary": "Zhen Qin, Zhaomin Wu†, Bingsheng He, Shuiguang Deng†. In ACL 2025 Findings"
     },
     {
       "name": "Model-based Large Language Model Customization as Service",
@@ -378,13 +392,6 @@
     }
   ],
   "preprints": [
-    {
-      "name": "CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research (with LLM Agents)",
-      "publisher": "arXiv preprint arXiv:2605.29286",
-      "releaseDate": "2026-01-01",
-      "url": "",
-      "summary": "Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He. arXiv preprint arXiv:2605.29286"
-    },
     {
       "name": "ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed Poisoned Data",
       "publisher": "arXiv 2026",

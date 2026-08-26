@@ -564,8 +564,22 @@ def publication_url(fields: dict[str, Any]) -> str:
     return f"https://doi.org/{doi}" if doi else ""
 
 
-def publication_details(entry_type: str, fields: dict[str, Any]) -> str:
+def is_acl_findings(fields: dict[str, Any]) -> bool:
     venue = bibtex_text(fields.get("booktitle") or fields.get("journal"))
+    return "findings of the association for computational linguistics" in venue.lower()
+
+
+def publication_venue(fields: dict[str, Any]) -> str:
+    venue = bibtex_text(fields.get("booktitle") or fields.get("journal"))
+    if is_acl_findings(fields):
+        abbr = bibtex_text(fields.get("abbr"))
+        if abbr:
+            return f"{abbr} Findings"
+    return venue
+
+
+def publication_details(entry_type: str, fields: dict[str, Any]) -> str:
+    venue = publication_venue(fields)
     if not venue:
         return ""
     return f"In {venue}" if entry_type.lower() in {"inproceedings", "incollection", "conference"} else venue
@@ -997,11 +1011,12 @@ def legacy_publication_details(publication: dict[str, Any]) -> str:
     if publication["cv_full_details"]:
         return latex_escape(publication["cv_full_details"])
     fields = publication["fields"]
-    venue = bibtex_text(fields.get("booktitle") or fields.get("journal"))
+    venue = publication_venue(fields)
     if not venue:
         return publication["year"]
     prefix = "In " if publication["entry_type"].lower() in {"inproceedings", "incollection", "conference"} else ""
-    return f"{prefix}{latex_escape(venue)}, {publication['year']}"
+    details = f"{prefix}{latex_escape(venue)}"
+    return details if is_acl_findings(fields) else f"{details}, {publication['year']}"
 
 
 def sorted_publications(publications: list[dict[str, Any]]) -> list[dict[str, Any]]:
