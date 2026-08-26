@@ -113,7 +113,7 @@ ninja.data = [{
           title: 'Invited talk “Managing Data and Model Silos for Real-World AI Systems” at Hong...',
           description: "",
           section: "News",},{id: "news-two-papers-accepted-to-emnlp-2026-findings-haodong-zhao-jidong-li-zhaomin-wu-tianjie-ju-zhuosheng-zhang-bingsheng-he-gongshen-liu-reasoning-or-rambling-exploring-the-effect-of-thinking-on-agent-persuasion-qian-wang-zhongyi-tong-nuo-chen-zhaomin-wu-bingsheng-he-crossalpha-an-annual-report-benchmark-for-cross-market-factor-research",
-          title: 'Two papers accepted to EMNLP 2026 Findings. Haodong Zhao, Jidong Li, Zhaomin Wu,...',
+          title: 'Two papers accepted to EMNLP 2026 Findings. Haodong Zhao, Jidong Li, Zhaomin Wu†,...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
