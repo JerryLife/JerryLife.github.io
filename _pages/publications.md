@@ -115,7 +115,9 @@ function getVenueButtonStyle(code) {
 }
 
 function generatePubStats() {
-  const allRows = document.querySelectorAll('.publications ol.bibliography li .row');
+  // The summary only covers peer-reviewed publications. Preprints remain in
+  // the list below, but do not contribute to author or venue statistics.
+  const allRows = document.querySelectorAll('#publication-list ol.bibliography li .row');
   let firstAuthorCount = 0;
   let corrAuthorCount = 0;
   const venueCounts = {}; // { 'kdd': { count: 0, name: 'KDD' } }

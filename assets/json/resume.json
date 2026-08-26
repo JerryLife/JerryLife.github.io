@@ -311,7 +311,7 @@
       "publisher": "EMNLP 2026",
       "releaseDate": "2026-01-01",
       "url": "https://openreview.net/forum?id=g7pOyKiWO5",
-      "summary": "Haodong Zhao, Jidong Li, Zhaomin Wu, Tianjie Ju, Zhuosheng Zhang, Bingsheng He, Gongshen Liu. In EMNLP 2026 Findings"
+      "summary": "Haodong Zhao, Jidong Li, Zhaomin Wu†, Tianjie Ju, Zhuosheng Zhang, Bingsheng He, Gongshen Liu†. In EMNLP 2026 Findings"
     },
     {
       "name": "Federated Data-Efficient Instruction Tuning for Large Language Models",

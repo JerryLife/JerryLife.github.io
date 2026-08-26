@@ -632,9 +632,9 @@ cv:
       is_preprint: false
     - key: zhao2026reasoning
       title: Reasoning or Rambling? Exploring the Effect of Thinking on Agent Persuasion
-      authors: Haodong Zhao, Jidong Li, Zhaomin Wu, Tianjie Ju, Zhuosheng Zhang, Bingsheng
-        He, Gongshen Liu
-      short_authors: H. Zhao, J. Li, Z. Wu, T. Ju, Z. Zhang, B. He, G. Liu
+      authors: Haodong Zhao, Jidong Li, Zhaomin Wu†, Tianjie Ju, Zhuosheng Zhang,
+        Bingsheng He, Gongshen Liu†
+      short_authors: H. Zhao, J. Li, Z. Wu†, T. Ju, Z. Zhang, B. He, G. Liu†
       year: '2026'
       venue: EMNLP 2026
       details: In EMNLP 2026 Findings
