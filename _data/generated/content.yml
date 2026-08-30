@@ -848,21 +848,6 @@ cv:
       selected: false
       cv_selected: false
       is_preprint: true
-    - key: zhao2025disagreements
-      title: 'Disagreements in Reasoning: How a Model''s Thinking Process Dictates
-        Persuasion in Multi-Agent Systems'
-      authors: Haodong Zhao, Jidong Li, Zhaomin Wu†, Tianjie Ju, Zhuosheng Zhang,
-        Bingsheng He, Gongshen Liu†
-      short_authors: H. Zhao, J. Li, Z. Wu†, T. Ju, Z. Zhang, B. He, G. Liu†
-      year: '2025'
-      venue: arXiv 2025
-      details: arXiv preprint arXiv:2509.21054
-      url: https://arxiv.org/pdf/2509.21054
-      highlight: ''
-      summary: ''
-      selected: false
-      cv_selected: false
-      is_preprint: true
   talks:
     title: Invited Talks & Keynotes
     entries:
