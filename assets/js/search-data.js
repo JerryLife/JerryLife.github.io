@@ -94,7 +94,7 @@ ninja.data = [{
           section: "News",},{id: "news-two-papers-accepted-to-iclr-2026-for-oral-1-presentation-oral-zhaomin-wu-haodong-zhao-ziyang-wang-jizhou-guo-qian-wang-bingsheng-he-llm-dna-tracing-model-evolution-via-functional-representations-oral-zhaomin-wu-mingzhe-du-ng-see-kiong-bingsheng-he-beyond-prompt-induced-lies-investigating-llm-deception-on-benign-prompts",
           title: 'Two papers accepted to ICLR 2026 for oral (1%) presentation. [Oral] Zhaomin Wu,...',
           description: "",
-          section: "News",},{id: "news-one-paper-accepted-in-icde-2026-zhaomin-wu-ziyang-wang-bingsheng-he-wikidbgraph-large-scale-database-graph-of-wikidata-for-collaborative-learning",
+          section: "News",},{id: "news-one-paper-accepted-in-icde-2026-zhaomin-wu-ziyang-wang-bingsheng-he-wikidbgraph-a-data-management-benchmark-suite-for-collaborative-learning-over-database-silos",
           title: 'One paper accepted in ICDE 2026. Zhaomin Wu*, Ziyang Wang*, Bingsheng He. WikiDBGraph:...',
           description: "",
           section: "News",},{id: "news-i-have-received-the-nrf-postdoctoral-award-from-the-national-research-foundation-which-provides-four-year-salary-support-and-an-independent-sgd-250-000-research-grant-to-support-my-research-on-ai-powered-psychological-counselling-systems",
