@@ -603,8 +603,8 @@ cv:
       cv_selected: true
       is_preprint: false
     - key: wu2026wikidbgraph
-      title: 'WikiDBGraph: Large-Scale Database Graph of Wikidata for Collaborative
-        Learning'
+      title: 'WikiDBGraph: A Data Management Benchmark Suite for Collaborative Learning
+        over Database Silos'
       authors: Zhaomin Wu*, Ziyang Wang*, Bingsheng He
       short_authors: Z. Wu*, Z. Wang*, B. He
       year: '2026'
