@@ -193,6 +193,9 @@ service:
       - name: TMC
         role: Reviewer
         url: ''
+      - name: TPAMI
+        role: Reviewer
+        url: ''
       - name: TPDS
         role: Reviewer
         url: ''
@@ -1036,6 +1039,9 @@ cv:
           role: Reviewer
           url: ''
         - name: TMC
+          role: Reviewer
+          url: ''
+        - name: TPAMI
           role: Reviewer
           url: ''
         - name: TPDS
