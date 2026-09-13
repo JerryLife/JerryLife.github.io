@@ -1,8 +1,21 @@
 # Zhaomin Wu Website
 
+## Faculty Redesign Backup
+
+The faculty redesign is maintained on `faculty-website-redesign`. Pushing this branch backs up the source on GitHub without updating the existing website. The deployment job only runs for `main`, including manual workflow runs. A source branch does not provide a separately hosted preview website.
+
+To continue the redesign from another existing checkout:
+
+```sh
+git fetch origin
+git switch --track origin/faculty-website-redesign
+```
+
+After the branch is set up locally, use `git pull --ff-only` to receive its latest changes. Commit and push edits to this same branch; publishing the redesign still requires a separate decision to merge it into `main`.
+
 ## Content CMS and CV Generation
 
-This public repository uses Decap CMS, a Cloudflare Worker, and GitHub Actions to manage content. The CMS edits only semantic source files; the website, Publications page, and downloadable PDF are generated from the same data. The `CV` navigation item opens the PDF directly. The original `/cv/` HTML page is retained but has no public navigation link and is excluded from the sitemap. Existing content has been migrated to these files, so the first build does not clear it.
+This public repository uses Decap CMS, a Cloudflare Worker, and GitHub Actions to manage content. The CMS edits only semantic source files; the website, Publications page, and downloadable PDF are generated from the same data. The `CV` navigation item opens the PDF in a new browser tab. The original `/cv/` HTML page is retained but has no public navigation link and is excluded from the sitemap. Existing content has been migrated to these files, so the first build does not clear it.
 
 ### CMS Content Model
 
@@ -12,6 +25,8 @@ Sign in to the [site CMS](https://www.zhaominwu.com/admin/) with the permitted G
 | --- | --- | --- |
 | `News` | Markdown news items | `_news/*.md` |
 | `Website Profile` | Name, website biography, avatar, social links, and shared identity information | `_data/content/profile.yml` |
+| `Homepage Research & Honors` | Research directions, selected honors, and the supervision introduction | `_data/content/home.yml` |
+| `Supervision` | Confirmed openings, mentoring approach, and application guidance | `_data/content/supervision.yml` |
 | `Publications` | One complete `.bib` record per publication | `_data/content/publications/*.bib` |
 | `Service` | Conference Reviewers, Journal Reviewers, Recognition, and Tutorial Speaker; each is edited independently | `_data/content/service/*.yml` |
 | `Teaching & Mentoring` | One entry containing separate Teaching and Mentoring editors for courses and student lists | `_data/content/teaching.yml`, `_data/content/mentoring.yml` |
@@ -19,11 +34,17 @@ Sign in to the [site CMS](https://www.zhaominwu.com/admin/) with the permitted G
 | `Site Settings` | SEO, footer text, and publication venue badges | `_data/content/site.yml` |
 | `CV` | CV Profile, main jobs and subjobs, education, awards, skills, languages, volunteer work, Publication Display, Research Impact, and custom CV sections; each is an independent second-level entry | `_data/content/cv/*.yml` |
 
-Each `Publication` must contain exactly one complete BibTeX record. Its citation key and filename must match exactly and use lowercase `firstauthorYYYYshorttitle` form, for example `@inproceedings{wu2026llmdna, ...}` in `wu2026llmdna.bib`; underscores, hyphens, DOIs, DBLP identifiers, and numeric-only keys are not allowed. The CMS and build validate this convention. `selected = {true}` controls only the Selected Publications section on the home page. `cv_selected = {true}` controls only Selected Publications in the HTML CV and PDF, while `cv_order` controls its order. The build automatically separates records into `Publications` and `Preprints` from their arXiv venue. Preprints remain on the website Publications page but are intentionally omitted from the HTML and PDF CVs.
+Each `Publication` must contain exactly one complete BibTeX record. Its citation key and filename must match exactly and use lowercase `firstauthorYYYYshorttitle` form, for example `@inproceedings{wu2026llmdna, ...}` in `wu2026llmdna.bib`; underscores, hyphens, DOIs, DBLP identifiers, and numeric-only keys are not allowed. The CMS and build validate this convention. `cv_selected = {true}` and `cv_order` are the shared source for Selected Publications on the Publications page, in the retained HTML CV, and in the PDF. The legacy `selected` field is retained for compatibility and does not control the redesigned homepage. The build automatically separates records into peer-reviewed publications and preprints from their arXiv venue. Preprints remain on the website Publications page but are intentionally omitted from the HTML and PDF CVs.
 
-For ACL-family Findings papers, keep the official proceedings title in `booktitle` and the concise conference-year label in `abbr` (for example, `ACL 2025`). The website and CV automatically render the final venue as `ACL 2025 Findings` without repeating the year, while the leading venue badge remains `ACL 2025`.
+Selected entries use `preview` (a filename under `assets/img/publication_preview/`), descriptive `preview_alt`, and a short `selected_reason` explaining the work's place in the research narrative. The rationale appears as a sentence without a label. These website-only fields do not change CV copy. Use a representative figure from the work itself; do not add generic thumbnails or paper first-page screenshots. Figure provenance is recorded in `assets/img/publication_preview/SOURCES.md`. `code` and `website` provide optional Code and Website links. Existing `cv_summary` and `cv_highlight` remain CV content.
 
-`Teaching & Mentoring` is one CMS entry with independent `Teaching` and `Mentoring` items. Teaching supports Teaching Assistant, Instructor, Guest Lecture, and other teaching experience; Mentoring maintains student lists, links, notes, destinations, and CV summary groups. Both generate their corresponding website and CV sections. `Work Experience` uses main jobs and subjobs: roles at the same institution belong under one main job, while a different institution requires a new main job. `CV Profile` belongs to the `CV` collection; shared identity data such as name, email, and avatar lives only in `Website Profile` to avoid duplication.
+The full publication list has only a role filter: All, First / Co-first, Corresponding, and Other. Roles are derived from the author list: the first listed author or an author marked `*` / `∗` counts as first/co-first, and `†` denotes corresponding authorship. A paper may match both first and corresponding roles; Other means neither. The same filter applies to the separate preprints section, while Selected Publications always remain visible. Awards are displayed as text in both lists. Every role button and Bib toggle supports keyboard access; hiding empty year groups keeps the filtered list compact.
+
+For ACL-family Findings papers, keep the official proceedings title in `booktitle` and the concise conference-year label in `abbr` (for example, `ACL 2025`). The website and CV automatically render the final venue as `ACL 2025 Findings` without repeating the year. Publication venues are plain text rather than badges.
+
+`Teaching & Mentoring` is one CMS entry with independent `Teaching` and `Mentoring` items. The Teaching page renders only `kind: instructor` sections; TA and other history remain in the source and CV. The Supervision page reads the shared mentoring list, including links, periods, and outcomes. Its openings editor displays only published entries with `status: open`; do not add unconfirmed positions or funding. `Work Experience` uses main jobs and subjobs: roles at the same institution belong under one main job, while a different institution requires a new main job. `CV Profile` belongs to the `CV` collection; shared identity data such as name, email, and avatar lives only in `Website Profile` to avoid duplication.
+
+Homepage research directions store publication citation keys; their conference/arXiv badges use shared venue metadata and link to individual entries on the Publications page. The website contact email comes from `profile.socials.email`, independently of the retained CV contact details. The homepage shows the latest 10 news items in reverse date order. Add an optional `summary` to a news item's front matter for a concise homepage sentence; the full original item stays in the News archive. Most homepage honors reference the CV award title, preserving one source for award names and dates. Website biography and recruitment copy can describe an upcoming appointment without changing the existing CV. The legacy `/talk/`, `/news/`, and `/cv/` routes remain available.
 
 ### Local CMS
 
@@ -48,7 +69,7 @@ The watcher rebuilds the website data and PDF whenever `_data/content/` or a pub
 | Generated output | Purpose |
 | --- | --- |
 | `_data/generated/content.yml` | Jekyll view model for About, Service, Teaching, Talks, and CV |
-| `_bibliography/papers.bib`, `_bibliography/publications.bib`, `_bibliography/preprints.bib` | Automatically generated bibliographies for Jekyll Scholar |
+| `_bibliography/papers.bib`, `_bibliography/publications.bib`, `_bibliography/preprints.bib`, `_bibliography/selected.bib` | Automatically generated bibliographies for Jekyll Scholar; Selected uses the CV selection and ordering |
 | `assets/json/resume.json` | JSON Resume data for the retained HTML CV page |
 | `assets/latex/generated/*.tex` | Generated LaTeX fragments for the PDF CV |
 | `assets/pdf/ZhaominWu.pdf` | Public downloadable PDF |

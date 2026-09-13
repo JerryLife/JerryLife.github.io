@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I have been awarded [**PhD Thesis Award Honorable Mention**](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/) by the School of Computing (SoC), NUS.
+I received an [**Honorable Mention for the Best Ph.D. Thesis Award**](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/) from the NUS School of Computing.

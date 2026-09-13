@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Invited talk** "Managing Data and Model Silos for Real-World AI Systems" at **Hong Kong Baptist University**, hosted by Prof. Amelie Chi Zhou.
+**Invited talk:** "Managing Data and Model Silos for Real-World AI Systems" at **Hong Kong Baptist University**.

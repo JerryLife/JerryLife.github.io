@@ -2,7 +2,7 @@ schema_version: 1
 basics:
   name: Zhaomin Wu
   label: Research Fellow in National University of Singapore
-  email: zhaomin@nus.edu.sg
+  email: zhaominwu1@gmail.com
   url: https://www.zhaominwu.com
   image: avatar.jpg
   summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
@@ -10,32 +10,18 @@ basics:
   - network: Google Scholar
     url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
 web_about:
-  subtitle: Research Fellow. <a href='https://www.nus.edu.sg/'>National University
-    of Singapore</a>. zhaomin@nus.edu.sg
-  body: 'Dr. Zhaomin Wu (吴肇敏) is a Research Fellow at the Department of Computer Science,
-    National University of Singapore (NUS). He completed his Ph.D. in Computer Science
-    at the National University of Singapore (NUS) in 2024 advised by Prof. [Bingsheng
-    He](https://www.comp.nus.edu.sg/~hebs/). He received his Bachelor''s degree from
-    Huazhong University of Science and Technology (HUST) in 2019.
+  subtitle: >-
+    Incoming Assistant Professor (tenure-track) · January 2027<br>Department of Computer Science<br><a href='https://www.hkbu.edu.hk/'>Hong Kong Baptist University</a>
+  body: |
+    My research connects fragmented knowledge to solve real-world problems. I use benchmarking to identify practical challenges, then design methods, algorithms, and systems to address them and deploy the solutions in practice. This approach underpins my work on federated learning across data silos and multi-agent systems that connect knowledge distributed across models. I see future AI agents as individuals whose behavior and social interactions deserve study. I aim to use psychology to understand agents and their communities, and in turn use agents to advance psychology and social science research.
 
-
-    Dr. Wu''s research focuses on trustworthy machine learning, with specific interests
-    in trustworthy AI, federated learning, and machine unlearning. His work has been
-    recognized with awards such as the NRF Postdoctoral Award (2026), the [Best Research
-    Staff Award](https://ids.nus.edu.sg/gathering25.html) (NUS, 2025), an [Honorable
-    Mention for Best Ph.D. Thesis Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/)
-    (NUS, 2024), the [SIGMOD Honorable Mention for Best Artifact](https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/)
-    (2023), and the [Dean’s Graduate Research Excellence Award](https://www.comp.nus.edu.sg/programmes/pg/awards/deans-research/)
-    (NUS, 2023). His publications appear in top-tier venues including NeurIPS, ICLR,
-    SIGMOD, ICDE, KDD, WWW, ACL, EMNLP, AAAI, MLSys, and TKDE.
-
-    '
+    I am a Research Fellow at the National University of Singapore (NUS) and a recipient of the Singapore NRF Postdoctoral Award (2026). I received my Ph.D. in Computer Science from NUS in 2024, advised by [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/), and my B.Eng. from Huazhong University of Science and Technology in 2019. My work has appeared at leading venues in machine learning, databases, and data mining, such as NeurIPS, ICLR, SIGMOD, KDD, and ACL. I will join Hong Kong Baptist University (HKBU) as a tenure-track Assistant Professor in **January 2027**.
   image: avatar.jpg
   align: top
   image_circular: false
 socials:
   dblp_url: https://dblp.org/pid/254/0918
-  email: zhaomin@nus.edu.sg
+  email: zhaominwu1@gmail.com
   github_username: JerryLife
   linkedin_username: zhaomin-wu-958159258
   orcid_id: 0000-0002-6463-0031

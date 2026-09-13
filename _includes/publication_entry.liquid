@@ -1,0 +1,76 @@
+{%- assign paper = include.entry -%}
+{%- assign is_first_author = false -%}
+{%- assign is_corresponding_author = false -%}
+{%- for author in paper.author_array -%}
+  {%- assign clean_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+  {%- if site.scholar.last_name contains clean_last and site.scholar.first_name contains author.first -%}
+    {%- if forloop.first or author.last contains '*' or author.last contains '∗' -%}
+      {%- assign is_first_author = true -%}
+    {%- endif -%}
+    {%- if author.last contains '†' -%}
+      {%- assign is_corresponding_author = true -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign paper_link = paper.url | default: paper.pdf -%}
+{%- if paper_link == blank and paper.doi -%}
+  {%- assign paper_link = paper.doi | prepend: 'https://doi.org/' -%}
+{%- endif -%}
+{%- if paper_link != blank -%}
+  {%- unless paper_link contains '://' -%}
+    {%- assign paper_link = paper_link | prepend: '/assets/pdf/' | relative_url -%}
+  {%- endunless -%}
+{%- endif -%}
+{%- assign paper_venue = paper.abbr | default: paper.journal | default: paper.booktitle -%}
+{%- if paper.booktitle contains 'Findings of the Association for Computational Linguistics' -%}
+  {%- assign paper_venue = paper_venue | append: ' Findings' -%}
+{%- endif -%}
+{%- unless paper_venue contains paper.year -%}
+  {%- assign paper_venue = paper_venue | append: ' ' | append: paper.year -%}
+{%- endunless -%}
+{%- assign paper_highlight = paper.award | default: paper.cvfullhighlight | default: paper.cv_full_highlight -%}
+{%- assign paper_highlight = paper_highlight | replace: 'ICLR 2026 Oral', 'Oral Presentation' | replace: '(Oral, ', 'Oral Presentation (' -%}
+{%- assign paper_id = paper.key -%}
+{%- if include.selected -%}
+  {%- assign paper_id = paper.key | prepend: 'selected-' -%}
+{%- endif -%}
+<article id="{{ paper_id }}" class="publication-entry{% if include.selected %} publication-entry-selected{% endif %}{% if is_first_author %} first-author{% endif %}{% if is_corresponding_author %} corresponding-author{% endif %}" aria-labelledby="{{ paper_id }}-title">
+  {% if include.selected and paper.preview %}
+    {% assign figure_path = paper.preview %}
+    {% unless figure_path contains '://' %}
+      {% assign figure_path = figure_path | prepend: '/assets/img/publication_preview/' | relative_url %}
+    {% endunless %}
+    <a class="publication-figure" href="{{ figure_path }}" aria-label="View full figure for {{ paper.title | strip_html | escape }}">
+      <img src="{{ figure_path }}" alt="{{ paper.preview_alt | default: paper.title | strip_html | escape }}" loading="lazy" decoding="async">
+    </a>
+  {% endif %}
+  <div class="publication-body">
+    {% if include.selected %}<h3{% else %}<h4{% endif %} id="{{ paper_id }}-title" class="publication-title">{% if paper_link != blank %}<a href="{{ paper_link }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if include.selected %}</h3>{% else %}</h4>{% endif %}
+    <p class="publication-authors">
+      {%- for author in paper.author_array -%}
+        {%- assign clean_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {%- if site.scholar.last_name contains clean_last and site.scholar.first_name contains author.first -%}
+          <strong>{{ author.first }} {{ author_last_html }}</strong>
+        {%- else -%}
+          {{ author.first }} {{ author_last_html }}
+        {%- endif -%}
+        {%- unless forloop.last -%}, {% endunless -%}
+      {%- endfor -%}
+    </p>
+    <div class="publication-metadata">
+      <span class="publication-venue">{{ paper_venue }}</span>
+      {% unless include.selected %}{% include publication_links.liquid paper=paper paper_link=paper_link paper_id=paper_id %}{% endunless %}
+    </div>
+    {% if paper_highlight != blank %}<p class="publication-highlight">{{ paper_highlight }}</p>{% endif %}
+    {% if include.selected %}
+      {% if paper.selected_reason %}<p class="publication-reason">{{ paper.selected_reason }}</p>{% endif %}
+      {% include publication_links.liquid paper=paper paper_link=paper_link paper_id=paper_id %}
+    {% endif %}
+    {% if paper.bibtex_show %}
+      <div id="{{ paper_id }}-bib" class="publication-bib" hidden>
+        <pre><code>{{ paper.bibtex | hideCustomBibtex | escape }}</code></pre>
+      </div>
+    {% endif %}
+  </div>
+</article>

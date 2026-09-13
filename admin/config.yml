@@ -202,7 +202,7 @@ collections:
               - { label: URL, name: url, widget: string, required: false }
 
   - name: teaching-mentoring
-    label: Teaching & Mentoring
+    label: Teaching & Supervision
     files:
       - name: teaching
         label: Teaching
@@ -221,6 +221,7 @@ collections:
             required: false
             collapsed: true
             summary: "{{fields.title}}"
+            hint: Only Instructor sections appear on the Teaching page. Other teaching history remains available to the CV.
             fields:
               - label: Teaching role
                 name: kind
@@ -282,7 +283,7 @@ collections:
                       name: note
                       widget: string
       - name: mentoring
-        label: Mentoring
+        label: Mentoring (Supervision page)
         file: _data/content/mentoring.yml
         fields:
           - label: Schema version
@@ -348,6 +349,38 @@ collections:
                 widget: string
                 required: false
 
+      - name: supervision
+        label: Research Inquiries & Opportunities
+        file: _data/content/supervision.yml
+        fields:
+          - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - label: Current openings
+            name: openings_summary
+            widget: markdown
+            hint: Summarize confirmed vacancies, institution, and onsite requirements in one paragraph.
+          - label: Guiding principles
+            name: principles
+            widget: list
+            field: { label: Principle, name: principle, widget: text }
+          - label: What I look for
+            name: criteria
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - label: Inquiry guidance
+            name: contact
+            widget: object
+            fields:
+              - { label: Email subject, name: subject, widget: string }
+              - { label: Required materials and instructions, name: introduction, widget: markdown }
+              - label: Questions to address
+                name: questions
+                widget: list
+                field: { label: Question, name: question, widget: string }
+          - { label: Mentoring introduction, name: mentoring_intro, widget: text }
+
   - name: talks
     label: Talks
     files:
@@ -407,6 +440,35 @@ collections:
   - name: profile
     label: Website Profile
     files:
+      - name: home
+        label: Homepage Research & Honors
+        file: _data/content/home.yml
+        fields:
+          - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - { label: Hero research line, name: eyebrow, widget: string }
+          - label: Research directions
+            name: directions
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Stable ID, name: id, widget: string }
+              - { label: Title, name: title, widget: string }
+              - label: Publication citation keys
+                name: publications
+                widget: list
+                hint: Conference/arXiv badges link to these papers on the Publications page; venue labels come from the shared publication data.
+                field: { label: Citation key, name: key, widget: string }
+          - label: Selected honors
+            name: honors
+            widget: list
+            summary: "{{fields.source_title}}{{fields.title}}"
+            hint: Use the exact CV award title to reuse its title, date, and URL. For an independent highlight, leave that blank and provide a year and title.
+            fields:
+              - { label: CV award title, name: source_title, widget: string, required: false }
+              - { label: Year, name: year, widget: string, required: false }
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Detail, name: detail, widget: string, required: false }
+          - { label: Working with me, name: working_with_me, widget: text }
       - name: profile
         label: Website Profile & Identity
         file: _data/content/profile.yml

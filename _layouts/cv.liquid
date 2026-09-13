@@ -12,6 +12,7 @@ layout: default
           {% else %}
             href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
           {% endif %}
+          aria-label="Open CV (PDF) in a new tab"
           target="_blank"
           rel="noopener noreferrer"
           class="float-right"

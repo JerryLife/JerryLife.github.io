@@ -1,19 +1,20 @@
 <!-- jQuery -->
+{% if faculty_core_page %}
+  <script defer src="{{ '/assets/js/link-arrows.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
 <script
-  src="{{ site.third_party_libraries.jquery.url.js }}"
+  src="{{ '/assets/js/jquery.min.js' | relative_url }}"
   integrity="{{ site.third_party_libraries.jquery.integrity.js }}"
   crossorigin="anonymous"
 ></script>
 
 <!-- Bootsrap & MDB scripts -->
 <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
-<script
-  src="{{ site.third_party_libraries.mdb.url.js }}"
-  integrity="{{ site.third_party_libraries.mdb.integrity.js }}"
-  crossorigin="anonymous"
-></script>
+{% unless faculty_core_page %}
+  <script src="{{ site.third_party_libraries.mdb.url.js }}" integrity="{{ site.third_party_libraries.mdb.integrity.js }}" crossorigin="anonymous"></script>
+{% endunless %}
 
-{% if site.enable_masonry %}
+{% if site.enable_masonry and faculty_core_page == false %}
   <!-- Masonry & imagesLoaded -->
   <script
     defer
@@ -152,7 +153,7 @@
   <script src="{{ '/assets/js/tooltips-setup.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
-{% if site.enable_medium_zoom %}
+{% if site.enable_medium_zoom and faculty_core_page == false %}
   <!-- Medium Zoom JS -->
   <script
     defer
@@ -188,14 +189,14 @@
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>
 
 <!-- Badges -->
-{% if site.enable_publication_badges.altmetric %}
+{% if site.enable_publication_badges.altmetric and faculty_core_page == false %}
   <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 {% endif %}
-{% if site.enable_publication_badges.dimensions %}
+{% if site.enable_publication_badges.dimensions and faculty_core_page == false %}
   <script async src="https://badge.dimensions.ai/badge.js"></script>
 {% endif %}
 
-{% if site.enable_math %}
+{% if site.enable_math and faculty_core_page == false %}
   <!-- MathJax -->
   <script
     defer

@@ -66,6 +66,7 @@ SITE_VIEW_OUTPUT = REPOSITORY_ROOT / "_data" / "generated" / "content.yml"
 MERGED_BIBLIOGRAPHY_OUTPUT = REPOSITORY_ROOT / "_bibliography" / "papers.bib"
 PUBLICATIONS_BIBLIOGRAPHY_OUTPUT = REPOSITORY_ROOT / "_bibliography" / "publications.bib"
 PREPRINTS_BIBLIOGRAPHY_OUTPUT = REPOSITORY_ROOT / "_bibliography" / "preprints.bib"
+SELECTED_BIBLIOGRAPHY_OUTPUT = REPOSITORY_ROOT / "_bibliography" / "selected.bib"
 LATEX_OUTPUT_DIRECTORY = REPOSITORY_ROOT / "assets" / "latex" / "generated"
 
 LATEX_ESCAPE_MAP = {
@@ -1453,6 +1454,12 @@ def build(profile: dict[str, Any], settings: dict[str, Any], cv_profile: dict[st
         MERGED_BIBLIOGRAPHY_OUTPUT: merged_bibliography(publications),
         PUBLICATIONS_BIBLIOGRAPHY_OUTPUT: merged_bibliography([item for item in publications if not item["is_preprint"]]),
         PREPRINTS_BIBLIOGRAPHY_OUTPUT: merged_bibliography([item for item in publications if item["is_preprint"]]),
+        SELECTED_BIBLIOGRAPHY_OUTPUT: merged_bibliography(
+            sorted(
+                (item for item in publications if item["cv_selected"]),
+                key=lambda item: (item["cv_order"], -int(item["year"]), item["key"].lower()),
+            )
+        ),
     }
     for path, content in outputs.items():
         if write_if_changed(path, content):

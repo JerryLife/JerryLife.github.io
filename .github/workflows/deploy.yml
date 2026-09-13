@@ -164,6 +164,7 @@ jobs:
             _bibliography/papers.bib
             _bibliography/publications.bib
             _bibliography/preprints.bib
+            _bibliography/selected.bib
             assets/latex/generated/
             assets/pdf/ZhaominWu.pdf
 
@@ -175,7 +176,9 @@ jobs:
           path: _site/
 
   deploy:
-    if: github.event_name != 'pull_request'
+    # Backup and preview branches must never publish to the production site,
+    # including when this workflow is started manually.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -200,7 +203,7 @@ jobs:
         continue-on-error: true
         run: |
           set -u
-          git add -A -- assets/json/resume.json _data/generated/content.yml _bibliography/papers.bib _bibliography/publications.bib _bibliography/preprints.bib assets/latex/generated assets/pdf/ZhaominWu.pdf
+          git add -A -- assets/json/resume.json _data/generated/content.yml _bibliography/papers.bib _bibliography/publications.bib _bibliography/preprints.bib _bibliography/selected.bib assets/latex/generated assets/pdf/ZhaominWu.pdf
           if git diff --cached --quiet; then
             echo "Generated artifacts unchanged; nothing to commit."
             exit 0

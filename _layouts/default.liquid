@@ -1,3 +1,6 @@
+{% assign faculty_routes = '/|/publications/|/supervision/|/teaching/|/service/|/cv/|/news/|/talk/' | split: '|' %}
+{% assign faculty_core_page = false %}
+{% if faculty_routes contains page.permalink %}{% assign faculty_core_page = true %}{% endif %}
 <!doctype html>
 <html lang="{{ site.lang }}">
   <!-- Head -->
@@ -16,12 +19,13 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body class="faculty-site {% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <a class="faculty-skip-link" href="#main-content">Skip to content</a>
     <!-- Header -->
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
+    <main id="main-content" class="container faculty-main" tabindex="-1">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
@@ -45,7 +49,7 @@
       {% else %}
         {{ content }}
       {% endif %}
-    </div>
+    </main>
 
     <!-- Footer -->
     {% include footer.liquid %}

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Keynote** "[Bridging Data Silos with Practical Federated Learning](https://sites.google.com/view/flca/keynotes)" at the **AAAI 2026 FLCA Workshop**.
+**Keynote:** "[Bridging Data Silos with Practical Federated Learning](https://sites.google.com/view/flca/keynotes)" at the **AAAI 2026 FLCA Workshop**.

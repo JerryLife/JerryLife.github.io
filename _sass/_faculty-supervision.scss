@@ -1,0 +1,258 @@
+.faculty-supervision,
+.faculty-teaching {
+  color: var(--faculty-ink);
+
+  h2 {
+    font-size: clamp(1.45rem, 2.6vw, 1.85rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    scroll-margin-top: 6.5rem;
+  }
+
+  .faculty-text-link {
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+}
+
+.faculty-supervision-intro {
+  padding: 25px 30px;
+  border-left: 3px solid #b2995f;
+  background: var(--faculty-warm);
+
+  h2 {
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    margin-bottom: 1.3rem;
+  }
+
+  .faculty-lead {
+    font-size: 1.12rem;
+    line-height: 1.7;
+  }
+
+  > p {
+    color: var(--faculty-muted);
+  }
+}
+
+.faculty-supervision-section {
+  border-top: 1px solid var(--faculty-line);
+  margin-top: 3.2rem;
+  padding-top: 2.5rem;
+}
+
+.faculty-supervision-principles {
+  margin: 1.2rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--faculty-muted);
+
+  li { padding-left: 0.25rem; }
+  li + li { margin-top: 0.7rem; }
+}
+
+.faculty-mentoring-values {
+  display: grid;
+  gap: 1.8rem 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.8rem 0;
+
+  dt {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  dd {
+    color: var(--faculty-muted);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+.faculty-inquiry {
+  display: grid;
+  gap: 2rem 3rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.faculty-inquiry-title h2 {
+  margin-bottom: 1rem;
+}
+
+.faculty-contact-email {
+  font-size: 0.96rem;
+  overflow-wrap: anywhere;
+}
+
+.faculty-inquiry-details {
+  font-size: 0.96rem;
+
+  ol {
+    padding-left: 1.3rem;
+  }
+
+  li {
+    padding-left: 0.2rem;
+    margin-bottom: 0.55rem;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.faculty-mentoring-intro,
+.faculty-section-heading > p {
+  color: var(--faculty-muted);
+}
+
+.faculty-section-heading > p {
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+}
+
+.faculty-mentoring-intro {
+  margin-bottom: 1.75rem;
+}
+
+.faculty-mentee-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faculty-mentee {
+  border-top: 1px solid var(--faculty-line);
+  display: grid;
+  gap: 0.4rem 1.5rem;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  padding: 1.25rem 0;
+
+  &:last-child {
+    border-bottom: 1px solid var(--faculty-line);
+  }
+
+  h3 {
+    font-size: 1.04rem;
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+
+    a {
+      color: var(--faculty-ink);
+
+      &:hover {
+        color: var(--global-theme-color);
+      }
+    }
+
+    span {
+      color: var(--faculty-muted);
+      font-size: 0.8rem;
+    }
+  }
+
+  p {
+    font-size: 0.92rem;
+    margin: 0.3rem 0 0;
+  }
+}
+
+.faculty-mentee-period,
+.faculty-course-period {
+  color: var(--faculty-muted);
+  font-size: 0.87rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.faculty-mentee-meta,
+.faculty-mentee-topic {
+  color: var(--faculty-muted);
+}
+
+.faculty-mentee-outcome span {
+  font-weight: 600;
+}
+
+.faculty-teaching {
+  padding-top: 0.75rem;
+}
+
+.faculty-teaching-note {
+  border-top: 1px solid var(--faculty-line);
+  margin-top: 1.5rem;
+  max-width: 780px;
+  padding-top: 1.5rem;
+
+  p {
+    color: var(--faculty-muted);
+    line-height: 1.75;
+  }
+}
+
+.faculty-course-list {
+  margin-top: 1.5rem;
+}
+
+.faculty-course {
+  border-top: 1px solid var(--faculty-line);
+  display: grid;
+  gap: 0.6rem 1.5rem;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  padding: 1.5rem 0;
+
+  h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  .faculty-course-period {
+    margin: 0;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid var(--faculty-line);
+  }
+}
+
+.faculty-course-code {
+  color: var(--faculty-accent);
+}
+
+.faculty-course-institution,
+.faculty-course-notes {
+  color: var(--faculty-muted);
+  font-size: 0.93rem;
+}
+
+.faculty-course-notes {
+  padding-left: 1.1rem;
+
+  p {
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .faculty-supervision-intro {
+    padding: 25px 22px;
+  }
+
+  .faculty-mentoring-values,
+  .faculty-inquiry {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .faculty-supervision-section {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .faculty-mentee,
+  .faculty-course {
+    grid-template-columns: 1fr;
+  }
+}

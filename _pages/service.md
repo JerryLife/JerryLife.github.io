@@ -4,7 +4,7 @@ permalink: /service/
 title: Service
 description: Professional services in academic communities
 nav: true
-nav_order: 5
+nav_order: 4
 ---
 
 <style>

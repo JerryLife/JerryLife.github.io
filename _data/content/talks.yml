@@ -6,12 +6,10 @@ entries:
   type: Invited talk
   venue: Hong Kong Baptist University
   title: Managing Data and Model Silos for Real-World AI Systems
-  note: Hosted by **Prof. Amelie Chi Zhou**.
 - date: 2026-05-06
   type: Invited talk
   venue: Université de Montréal (UdeM) and Mila
   title: 'When Data and Models Stay Hidden: Toward Trustworthy AI Collaboration'
-  note: Hosted by **Prof. Bang Liu**.
 - date: 2026-01-26
   type: Keynote
   venue: AAAI 2026 FLCA Workshop

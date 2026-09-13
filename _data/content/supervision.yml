@@ -1,0 +1,34 @@
+schema_version: 1
+openings_summary: >-
+  I have openings for **Postdocs**, **Ph.D. students**,
+  and **Research Assistants (RAs)** at Hong Kong Baptist University.
+  All positions require working **onsite**.
+principles:
+  - A professor's success is measured primarily by their students' success, beyond publications and grants.
+  - Students work with their supervisors, not for them, as partners in research.
+criteria:
+  - title: Responsible
+    description: Honesty and reliability in honoring commitments.
+  - title: Proactive
+    description: Initiative in seeking advisors' input and sharing updates.
+  - title: Persistent
+    description: Resilience through setbacks and openness to advice.
+  - title: Curious
+    description: An eagerness to explore the unknown and understand why.
+contact:
+  subject: 'HKBU Application - [Position] Name'
+  introduction: |
+    Please email me your **CV**, **academic transcript**, and a **research description (under 100 words)**. Include your research area, intended start date, and expected duration in the email.
+
+    I only consider applicants who can commit to more than six months.
+
+    Subject format: **HKBU Application - [Position] Name**. Use PhD, RA, or Postdoc for the position.
+
+    Example: HKBU Application - [PhD] Alex Chen
+  questions:
+    - Briefly describe your research background (if any) and your favorite work (a paper, thesis, or project).
+    - Why would you like to work with me?
+    - Which of my research directions or papers connects most closely with your interests?
+mentoring_intro: >-
+  I have mentored undergraduate, master's, and visiting Ph.D. students
+  at the National University of Singapore.

@@ -6,7 +6,7 @@ cv_groups:
   - title: Undergraduate mentees
     detail: 3 students from NUS and SJTU
     period: 2024 -- 2026
-    representative: Jizhou Guo (SJTU) --- Ph.D. offers from NUS and UIUC
+    representative: Jizhou Guo (SJTU) --- Researcher at Rednote
   - title: Master's mentees
     detail: 5 students from NUS
     period: 2022 -- 2026
@@ -25,10 +25,12 @@ entries:
     institution: NUS
     period: 2025 - 2026
   - name: Lifan Hu
+    url: https://scholar.google.com/citations?user=Y6A6w3QAAAAJ&hl=en
     role: Undergraduate Student
     institution: NUS
     period: 2025 - 2026
   - name: Qian Yu
+    url: https://www.linkedin.com/in/yuqiannemo/
     role: Undergraduate Student
     institution: NUS
     period: 2025 - 2026
@@ -55,7 +57,9 @@ entries:
     role: Undergraduate Student
     institution: Shanghai Jiao Tong University
     period: '2024'
-    outcome: Ph.D. offers from NUS and UIUC
+    notes:
+      - Researcher at Rednote
+    outcome: Researcher at Rednote
   - name: Junyi Hou
     url: https://profile.junyi.dev/
     role: Master Student

@@ -1,104 +1,83 @@
 ---
 layout: default
 ---
-{% assign content_view = site.data.generated.content %}
-{% assign generated_profile = content_view.profile %}
-{% if generated_profile and generated_profile.basics %}
-  {% assign profile_content = generated_profile %}
-{% else %}
-  {% assign profile_content = site.data.content.profile %}
-{% endif %}
-{% assign profile_basics = profile_content.basics %}
-{% assign web_about = profile_content.web_about %}
-
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if profile_basics.name %}
-        {% assign name_parts = profile_basics.name | split: ' ' %}
-        <span class="font-weight-bold">{{ name_parts.first }}</span>{% for name_part in name_parts offset: 1 %} {{ name_part }}{% endfor %}
-      {% elsif site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    {% if web_about.subtitle %}
-      <p class="desc">{{ web_about.subtitle }}</p>
-    {% elsif page.subtitle %}
-      <p class="desc">{{ page.subtitle }}</p>
-    {% endif %}
+{% assign profile = site.data.content.profile %}
+{% assign home = site.data.content.home %}
+{% assign research_publications = site.data.generated.content.cv.publications.entries %}
+<article class="faculty-home">
+  <header class="faculty-hero">
+    <div class="faculty-hero-copy">
+      <h1>{{ profile.basics.name }} <span class="faculty-chinese" lang="zh">吴肇敏</span></h1>
+      <div class="faculty-affiliation">{{ profile.web_about.subtitle }}</div>
+      <div class="faculty-bio">{{ profile.web_about.body | markdownify }}</div>
+      <div class="faculty-contact" aria-label="Contact and profiles">
+        <span class="faculty-email">Email: {{ profile.socials.email }}</span>
+        <a href="https://scholar.google.com/citations?user={{ profile.socials.scholar_userid }}">Google Scholar <span aria-hidden="true">↗</span></a>
+        <a href="{{ '/assets/pdf/ZhaominWu.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open CV (PDF) in a new tab">CV <span class="faculty-file-type">PDF</span> <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <figure class="faculty-portrait">
+      <img src="{{ profile.web_about.image | prepend: '/assets/img/' | relative_url }}" alt="Portrait of {{ profile.basics.name }}" width="792" height="792" fetchpriority="high">
+    </figure>
   </header>
 
-  <article>
-    {% if web_about.image or page.profile %}
-      <div class="profile float-{% if web_about.align == 'left' or page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% assign profile_image = web_about.image | default: page.profile.image %}
-        {% if profile_image %}
-          {% assign profile_image_path = profile_image | prepend: 'assets/img/' %}
-          {% if web_about.image_circular or page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile_basics.name
-            cache_bust=true
-          %}
-        {% endif %}
-        {% assign profile_more_info = web_about.more_info | default: page.profile.more_info %}
-        {% if profile_more_info %}
-          <div class="more-info">{{ profile_more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
-
-    <div class="clearfix">
-      {% if web_about.body %}
-        {{ web_about.body | markdownify }}
-      {% else %}
-        {{ content }}
-      {% endif %}
+  <section class="faculty-working" aria-labelledby="working-heading">
+    <div class="faculty-working-heading">
+      <h2 id="working-heading">We are hiring!</h2>
+      <a class="faculty-button" href="{{ '/supervision/#openings-heading' | relative_url }}">Openings <span aria-hidden="true">→</span></a>
     </div>
+    {{ home.working_with_me | markdownify }}
+  </section>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+  <section class="faculty-section faculty-research" aria-labelledby="research-heading">
+    <div class="faculty-section-heading">
+      <h2 id="research-heading">Research Directions</h2>
+      <a class="faculty-text-link" href="{{ '/publications/' | relative_url }}">Explore publications <span aria-hidden="true">→</span></a>
+    </div>
+    {% include research_path.liquid %}
+    <div class="faculty-directions">
+      {% for direction in home.directions %}
+        <article class="faculty-direction" id="{{ direction.id }}">
+          <h3>{{ direction.title }}</h3>
+          <p class="faculty-direction-description">{{ direction.description | escape }}</p>
+          {% for subcategory in direction.subcategories %}
+            <div class="faculty-research-subcategory">
+              <h4>{{ subcategory.title | escape }}</h4>
+              <div class="faculty-publication-badges" aria-label="{{ subcategory.title | escape }} publications in {{ direction.title | escape }}">
+                {% for publication_key in subcategory.publications %}
+                  {% assign research_paper = research_publications | where: 'key', publication_key | first %}
+                  {% if research_paper %}
+                    <a class="faculty-publication-badge" href="{{ '/publications/' | relative_url }}#{{ research_paper.key }}" title="{{ research_paper.title | escape }}" aria-label="{{ research_paper.venue | escape }}: {{ research_paper.title | escape }}">{{ research_paper.venue }} <span aria-hidden="true">↗</span></a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
 
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+  <section class="faculty-section" aria-labelledby="recent-news-heading">
+    <div class="faculty-section-heading"><h2 id="recent-news-heading">Recent News</h2></div>
+    {% include news.liquid limit=10 compact=true %}
+    <a class="faculty-text-link faculty-section-link" href="{{ '/news/' | relative_url }}">View all news <span aria-hidden="true">→</span></a>
+  </section>
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
+  <section class="faculty-section" aria-labelledby="honors-heading">
+    <div class="faculty-section-heading"><h2 id="honors-heading">Selected Honors</h2></div>
+    <ul class="faculty-honors">
+      {% for honor in home.honors %}
+        {% if honor.source_title %}
+          {% assign award = site.data.content.cv.awards.entries | where: 'title', honor.source_title | first %}
+          {% if award %}
+            <li><span class="faculty-honor-year">{{ award.date }}</span><div><strong>{{ award.title }}</strong><span class="faculty-honor-detail">{{ honor.detail }}</span></div></li>
+          {% endif %}
+        {% else %}
+          <li><span class="faculty-honor-year">{{ honor.year }}</span><div><strong>{{ honor.title }}</strong><span class="faculty-honor-detail">{{ honor.detail }}</span></div></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
-  </article>
-</div>
+</article>

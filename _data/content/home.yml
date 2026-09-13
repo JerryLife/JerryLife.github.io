@@ -1,0 +1,66 @@
+schema_version: 1
+directions:
+  - id: learning
+    title: Federated Learning
+    description: Learning from private data without sharing it.
+    subcategories:
+      - title: Effective learning
+        publications:
+          - zhang2026personalizedfed
+          - wu2024federatedtransformer
+          - wu2022coupledvfl
+      - title: Efficient learning
+        publications:
+          - qin2025instructiontuning
+          - li2023fedtree
+          - wu2022fedonce
+      - title: Benchmarks & surveys
+        publications:
+          - wu2026wikidbgraph
+          - wu2024vertibench
+          - hu2022oarf
+          - li2022flsurvey
+      - title: Unlearning & privacy
+        publications:
+          - wu2023deltaboost
+          - li2020ppgbdt
+  - id: ai-systems
+    title: Multi-Agent Systems
+    description: Helping AI agents work together safely.
+    subcategories:
+      - title: Model indexing
+        publications:
+          - wu2026llmdna
+      - title: Model connection & reuse
+        publications:
+          - guo2026intrinsicrewards
+          - wu2025llmcustomization
+      - title: Safety
+        publications:
+          - zhao2026reasoning
+  - id: ai-x
+    title: AI + X
+    description: Using AI to understand behavior and finance.
+    subcategories:
+      - title: Psychology
+        publications:
+          - wu2026deception
+          - zhao2026reasoning
+      - title: Finance
+        publications:
+          - wang2026crossalpha
+honors:
+  - source_title: Singapore NRF Postdoctoral Award
+    detail: National Research Foundation, Singapore
+  - year: '2026'
+    title: Two ICLR Oral Presentations
+    detail: LLM DNA and LLM deception
+  - source_title: Honorable Mention for Best Ph.D. Thesis Award
+    detail: NUS School of Computing
+  - source_title: SIGMOD Honorable Mention for Best Artifact
+    detail: DeltaBoost · Top 3
+  - source_title: Dean's Graduate Research Excellence Award
+    detail: NUS School of Computing
+working_with_me: >-
+  I am recruiting **Postdocs**, **Ph.D. Students**, and **Research Assistants**
+  to work onsite at HKBU in relevant fields.
