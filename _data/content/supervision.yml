@@ -2,7 +2,10 @@ schema_version: 1
 openings_summary: >-
   I have openings for **Postdocs**, **Ph.D. students**,
   and **Research Assistants (RAs)** at Hong Kong Baptist University.
-  All positions require working **onsite**.
+requirements:
+  - '**Location:** Work onsite at HKBU.'
+  - '**Duration:** At least 6 months for RAs and 2 years for postdocs.'
+  - '**English:** professional work efficiency ([HKBU admission requirements](https://gs.hkbu.edu.hk/admission/research-postgraduate-programmes/application/admission-requirements)).'
 principles:
   - A professor's success is measured primarily by their students' success, beyond publications and grants.
   - Students work with their supervisors, not for them, as partners in research.
@@ -19,8 +22,6 @@ contact:
   subject: 'HKBU Application - [Position] Name'
   introduction: |
     Please email me your **CV**, **academic transcript**, and a **research description (under 100 words)**. Include your research area, intended start date, and expected duration in the email.
-
-    I only consider applicants who can commit to more than six months.
 
     Subject format: **HKBU Application - [Position] Name**. Use PhD, RA, or Postdoc for the position.
 

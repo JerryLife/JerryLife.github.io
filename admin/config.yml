@@ -357,7 +357,12 @@ collections:
           - label: Current openings
             name: openings_summary
             widget: markdown
-            hint: Summarize confirmed vacancies, institution, and onsite requirements in one paragraph.
+            hint: Summarize confirmed vacancies and institution in one paragraph.
+          - label: Basic requirements
+            name: requirements
+            widget: list
+            hint: Keep three concise items for all applicants covering onsite work, minimum duration by role, and English proficiency linked to the university requirements.
+            field: { label: Requirement, name: requirement, widget: markdown }
           - label: Guiding principles
             name: principles
             widget: list
@@ -467,7 +472,11 @@ collections:
               - { label: CV award title, name: source_title, widget: string, required: false }
               - { label: Year, name: year, widget: string, required: false }
               - { label: Title, name: title, widget: string, required: false }
-              - { label: Detail, name: detail, widget: string, required: false }
+              - label: Selectivity
+                name: detail
+                widget: string
+                required: false
+                hint: Explain how selective the honor is, using verified counts or approximate rates where available.
           - { label: Working with me, name: working_with_me, widget: text }
       - name: profile
         label: Website Profile & Identity

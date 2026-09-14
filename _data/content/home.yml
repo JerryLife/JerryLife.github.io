@@ -51,16 +51,22 @@ directions:
           - wang2026crossalpha
 honors:
   - source_title: Singapore NRF Postdoctoral Award
-    detail: National Research Foundation, Singapore
+    detail: Highly selective national award in Singapore
   - year: '2026'
     title: Two ICLR Oral Presentations
-    detail: LLM DNA and LLM deception
+    # ICLR's final fact sheet reports 224 orals / 19,525 submissions (~1.15%).
+    # https://media.iclr.cc/Conferences/ICLR2026/ICLR2026_Fact_Sheet.pdf
+    detail: Top ~1% of 19,525 submissions
   - source_title: Honorable Mention for Best Ph.D. Thesis Award
-    detail: NUS School of Computing
+    # Approximate selection pool retained from cv/awards.yml (5/~150).
+    detail: Top ~3% (5 of ~150)
   - source_title: SIGMOD Honorable Mention for Best Artifact
-    detail: DeltaBoost · Top 3
+    # One best artifact and two honorable mentions for SIGMOD 2023 artifacts.
+    # https://sigmod.org/sigmod-awards/sigmod-best-artifact-award/
+    detail: One of only 3 artifacts recognized
   - source_title: Dean's Graduate Research Excellence Award
-    detail: NUS School of Computing
+    # Approximate selection pool retained from cv/awards.yml (10/~150).
+    detail: Top ~7% (10 of ~150)
 working_with_me: >-
   I am recruiting **Postdocs**, **Ph.D. Students**, and **Research Assistants**
   to work onsite at HKBU in relevant fields.

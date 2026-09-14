@@ -27,6 +27,14 @@ nav_order: 2
 
   <section class="faculty-supervision-section" aria-labelledby="qualities-heading">
     <h2 id="qualities-heading">What I look for</h2>
+    {% if supervision.requirements.size > 0 %}
+      <div class="faculty-requirements">
+        <h3>Basic requirements</h3>
+        <ul>
+          {% for requirement in supervision.requirements %}<li>{{ requirement | markdownify }}</li>{% endfor %}
+        </ul>
+      </div>
+    {% endif %}
     <dl class="faculty-mentoring-values">
       {% for criterion in supervision.criteria %}
         <div>
