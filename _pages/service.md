@@ -7,99 +7,42 @@ nav: true
 nav_order: 4
 ---
 
-<style>
-.service-page {
-  margin-top: 1.25rem;
-}
-.service-section {
-  margin-top: 2rem;
-}
-.service-section:first-child {
-  margin-top: 0;
-}
-.service-section h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--global-divider-color);
-}
-.service-list {
-  border-bottom: 1px solid var(--global-divider-color);
-}
-.service-row {
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr);
-  column-gap: 1.25rem;
-  padding: 0.85rem 0;
-  border-top: 1px solid var(--global-divider-color);
-}
-.service-year {
-  color: var(--global-theme-color);
-  font-weight: 600;
-  line-height: 1.7;
-}
-.service-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-.service-item {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.35rem;
-  border: 1px solid var(--global-divider-color);
-  border-radius: 0.45rem;
-  padding: 0.25rem 0.55rem;
-  line-height: 1.35;
-}
-.service-role {
-  color: var(--global-text-color-light);
-  font-size: 0.9rem;
-}
-.service-empty {
-  color: var(--global-text-color-light);
-  margin: 1.5rem 0;
-}
-@media (max-width: 576px) {
-  .service-row {
-    grid-template-columns: 1fr;
-    row-gap: 0.45rem;
-  }
-  .service-year {
-    line-height: 1.3;
-  }
-}
-</style>
-
 {% assign service_sections = site.data.generated.content.service.groups %}
 
 <div class="service-page">
   {% if service_sections and service_sections.size > 0 %}
     {% for section in service_sections %}
-      <section class="service-section">
-        <h3>{{ section.title }}</h3>
-        <div class="service-list">
+      {% assign repeated_role = '' %}
+      {% if section.kind == 'conference-reviewers' or section.kind == 'journal-reviewers' %}
+        {% assign repeated_role = 'Reviewer' %}
+      {% elsif section.kind == 'tutorial' %}
+        {% assign repeated_role = 'Tutorial Speaker' %}
+      {% endif %}
+      <section class="service-section" aria-labelledby="service-{{ section.kind }}">
+        <h2 id="service-{{ section.kind }}">{{ section.title | escape }}</h2>
+        <dl class="service-list">
           {% for group in section.years %}
             <div class="service-row">
-              <div class="service-year">{{ group.year }}</div>
-              <div class="service-items">
-                {% for item in group.items %}
-                  <span class="service-item">
-                    {% if item.url and item.url != '' %}
-                      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ item.name }}</strong></a>
-                    {% else %}
-                      <strong>{{ item.name }}</strong>
-                    {% endif %}
-                    {% if item.role %}
-                      <span class="service-role">{{ item.role }}</span>
-                    {% endif %}
-                  </span>
-                {% endfor %}
-              </div>
+              <dt class="service-year">{{ group.year | escape }}</dt>
+              <dd>
+                <ul class="service-items" role="list">
+                  {% for item in group.items %}
+                    <li class="service-item">
+                      {% if item.url and item.url != '' %}
+                        <a class="service-name" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{{ item.name | escape }}</a>
+                      {% else %}
+                        <span class="service-name">{{ item.name | escape }}</span>
+                      {% endif %}
+                      {% if item.role != blank and item.role != repeated_role %}
+                        <span class="service-role">— {{ item.role | escape }}</span>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </dd>
             </div>
           {% endfor %}
-        </div>
+        </dl>
       </section>
     {% endfor %}
   {% endif %}
