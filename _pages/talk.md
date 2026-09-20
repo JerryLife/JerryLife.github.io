@@ -116,6 +116,7 @@ content_key: talk
 {% endif %}
 
 {% if talks and talks.size > 0 %}
+
   <div class="talk-list">
   {% for talk in talks %}
     <article class="talk-item">
