@@ -9,14 +9,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>Home</a>
+            <a class="nav-link" href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>{{ site.data.content.pages.home.title | escape }}</a>
           </li>
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for item in sorted_pages %}
             {% if item.nav and item.autogen == null %}
               {% assign nav_url = item.nav_url | default: item.url %}
               <li class="nav-item {% if page.url == item.url %}active{% endif %}">
-                <a class="nav-link" href="{{ nav_url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}{% if item.nav_url contains '.pdf' %} target="_blank" rel="noopener noreferrer" aria-label="Open CV (PDF) in a new tab"{% endif %}>{{ item.title }}</a>
+                <a class="nav-link" href="{{ nav_url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}{% if item.nav_url contains '.pdf' %} target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.content.pages.home.cv_open_label | escape }}"{% endif %}>{{ item.title }}</a>
               </li>
             {% endif %}
           {% endfor %}

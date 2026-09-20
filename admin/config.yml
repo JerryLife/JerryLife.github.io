@@ -82,6 +82,30 @@ collections:
   - name: service
     label: Service
     files:
+      - name: area-chairs
+        label: Area Chair
+        file: _data/content/service/area-chairs.yml
+        fields:
+          - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - { label: Section title, name: title, widget: string }
+          - label: Entries
+            name: entries
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.year}} - {{fields.name}}"
+            fields:
+              - label: Conference year
+                name: year
+                widget: number
+                hint: Use the conference edition year, even if reviewing starts in the previous year.
+                value_type: int
+                min: 1900
+                max: 2100
+                step: 1
+              - { label: Conference, name: name, widget: string }
+              - { label: Role, name: role, widget: string, default: Area Chair }
+              - { label: URL, name: url, widget: string, required: false }
       - name: conference-reviewers
         label: Conference Reviewers
         file: _data/content/service/conference-reviewers.yml
@@ -98,9 +122,10 @@ collections:
             collapsed: true
             summary: "{{fields.year}} - {{fields.name}}"
             fields:
-              - label: Year
+              - label: Conference year
                 name: year
                 widget: number
+                hint: Use the year of the conference edition, not the calendar year when reviews were written. For example, ICLR 2027 service is listed under 2027 even if reviewing starts in 2026.
                 value_type: int
                 min: 1900
                 max: 2100
@@ -450,7 +475,6 @@ collections:
         file: _data/content/home.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
-          - { label: Hero research line, name: eyebrow, widget: string }
           - label: Research directions
             name: directions
             widget: list
@@ -458,11 +482,21 @@ collections:
             fields:
               - { label: Stable ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
-              - label: Publication citation keys
-                name: publications
+              - { label: Short introduction, name: description, widget: text }
+              - { label: Diagram icon, name: illustration, widget: select, options: [data, models, agents] }
+              - { label: Diagram caption, name: stage_label, widget: string }
+              - { label: Diagram accessible description, name: illustration_description, widget: text }
+              - label: Subcategories
+                name: subcategories
                 widget: list
-                hint: Conference/arXiv badges link to these papers on the Publications page; venue labels come from the shared publication data.
-                field: { label: Citation key, name: key, widget: string }
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - label: Publication citation keys
+                    name: publications
+                    widget: list
+                    hint: Use keys from the Publications editor; venue labels and links are generated automatically.
+                    field: { label: Citation key, name: key, widget: string }
           - label: Selected honors
             name: honors
             widget: list
@@ -477,7 +511,7 @@ collections:
                 widget: string
                 required: false
                 hint: Explain how selective the honor is, using verified counts or approximate rates where available.
-          - { label: Working with me, name: working_with_me, widget: text }
+          - { label: Homepage recruitment, name: working_with_me, widget: markdown }
       - name: profile
         label: Website Profile & Identity
         file: _data/content/profile.yml
@@ -501,10 +535,10 @@ collections:
                 name: position
                 widget: string
                 required: false
-              - label: Email
+              - label: Contact email
                 name: email
                 widget: string
-                required: false
+                hint: Shared by the homepage, applications, social links, HTML CV, and PDF CV.
               - label: Phone
                 name: phone
                 widget: string
@@ -549,6 +583,7 @@ collections:
             widget: object
             collapsed: true
             fields:
+              - { label: Local-language name, name: name_local, widget: string, required: false }
               - label: Subtitle
                 name: subtitle
                 widget: string
@@ -580,10 +615,6 @@ collections:
                 name: dblp_url
                 widget: string
                 required: false
-              - label: Email
-                name: email
-                widget: string
-                required: false
               - label: GitHub username
                 name: github_username
                 widget: string
@@ -608,6 +639,126 @@ collections:
   - name: site_settings
     label: Site Settings
     files:
+      - name: pages
+        label: Page Titles, Navigation & Labels
+        file: _data/content/pages.yml
+        fields:
+          - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - label: Home
+            name: home
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Email label, name: email_label, widget: string }
+              - { label: Scholar label, name: scholar_label, widget: string }
+              - { label: Cv label, name: cv_label, widget: string }
+              - { label: Cv open label, name: cv_open_label, widget: string }
+              - { label: Hiring heading, name: hiring_heading, widget: string }
+              - { label: Openings label, name: openings_label, widget: string }
+              - { label: Research heading, name: research_heading, widget: string }
+              - { label: Publications label, name: publications_label, widget: string }
+              - { label: News heading, name: news_heading, widget: string }
+              - { label: News limit, name: news_limit, widget: number }
+              - { label: News link label, name: news_link_label, widget: string }
+              - { label: Honors heading, name: honors_heading, widget: string }
+          - label: Publications
+            name: publications
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Nav order, name: nav_order, widget: number, required: false }
+              - { label: Selected heading, name: selected_heading, widget: string }
+              - { label: Full list label, name: full_list_label, widget: string }
+              - { label: All heading, name: all_heading, widget: string }
+              - { label: Role label, name: role_label, widget: string }
+              - { label: All role label, name: all_role_label, widget: string }
+              - { label: First role label, name: first_role_label, widget: string }
+              - { label: Corresponding role label, name: corresponding_role_label, widget: string }
+              - { label: Other role label, name: other_role_label, widget: string }
+              - { label: Author note, name: author_note, widget: string }
+              - { label: Reviewed heading, name: reviewed_heading, widget: string }
+              - { label: Preprints heading, name: preprints_heading, widget: string }
+              - { label: Reviewed empty, name: reviewed_empty, widget: string }
+              - { label: Preprints empty, name: preprints_empty, widget: string }
+              - { label: Paper label, name: paper_label, widget: string }
+              - { label: Code label, name: code_label, widget: string }
+              - { label: Website label, name: website_label, widget: string }
+              - { label: Bib label, name: bib_label, widget: string }
+              - { label: Reviewed singular, name: reviewed_singular, widget: string }
+              - { label: Reviewed plural, name: reviewed_plural, widget: string }
+              - { label: Preprint singular, name: preprint_singular, widget: string }
+              - { label: Preprint plural, name: preprint_plural, widget: string }
+          - label: Supervision
+            name: supervision
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Nav order, name: nav_order, widget: number, required: false }
+              - { label: Openings heading, name: openings_heading, widget: string }
+              - { label: Principles heading, name: principles_heading, widget: string }
+              - { label: Qualities heading, name: qualities_heading, widget: string }
+              - { label: Requirements heading, name: requirements_heading, widget: string }
+              - { label: Inquiry heading, name: inquiry_heading, widget: string }
+              - { label: Questions intro, name: questions_intro, widget: string }
+              - { label: Mentoring heading, name: mentoring_heading, widget: string }
+              - { label: Outcome label, name: outcome_label, widget: string }
+          - label: Teaching
+            name: teaching
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Nav order, name: nav_order, widget: number, required: false }
+              - { label: Courses heading, name: courses_heading, widget: string }
+              - { label: Course link label, name: course_link_label, widget: string }
+              - { label: Empty message, name: empty_message, widget: string }
+              - { label: Inquiry message, name: inquiry_message, widget: string }
+          - label: Service
+            name: service
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Nav order, name: nav_order, widget: number, required: false }
+          - label: Cv
+            name: cv
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Nav order, name: nav_order, widget: number, required: false }
+          - label: Talk
+            name: talk
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+          - label: News
+            name: news
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string, required: false }
+              - { label: Nav, name: nav, widget: boolean }
+              - { label: Expand label, name: expand_label, widget: string }
+              - { label: Collapse label, name: collapse_label, widget: string }
       - name: site
         label: Site Settings
         file: _data/content/site.yml
@@ -616,6 +767,14 @@ collections:
             name: schema_version
             widget: hidden
             default: 1
+          - label: Shared page links
+            name: links
+            widget: object
+            fields:
+              - { label: CV PDF, name: cv, widget: string }
+              - { label: Openings, name: openings, widget: string }
+              - { label: Publications, name: publications, widget: string }
+              - { label: News, name: news, widget: string }
           - label: SEO
             name: seo
             widget: object

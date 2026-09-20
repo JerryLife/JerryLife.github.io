@@ -4,8 +4,8 @@ openings_summary: >-
   and **Research Assistants (RAs)** at Hong Kong Baptist University.
 requirements:
   - '**Location:** Work onsite at HKBU.'
-  - '**Duration:** At least 6 months for RAs and 2 years for postdocs.'
-  - '**English:** professional work efficiency ([HKBU admission requirements](https://gs.hkbu.edu.hk/admission/research-postgraduate-programmes/application/admission-requirements)).'
+  - '**English:** Professional work efficiency ([HKBU admission requirements](https://gs.hkbu.edu.hk/admission/research-postgraduate-programmes/application/admission-requirements)).'
+  - '**Skills:** Solid foundations in programming, mathematics, systems, machine learning, and algorithms.'
 principles:
   - A professor's success is measured primarily by their students' success, beyond publications and grants.
   - Students work with their supervisors, not for them, as partners in research.
@@ -19,13 +19,13 @@ criteria:
   - title: Curious
     description: An eagerness to explore the unknown and understand why.
 contact:
-  subject: 'HKBU Application - [Position] Name'
+  subject: 'HKBU [Position] Application - [Name]'
   introduction: |
     Please email me your **CV**, **academic transcript**, and a **research description (under 100 words)**. Include your research area, intended start date, and expected duration in the email.
 
-    Subject format: **HKBU Application - [Position] Name**. Use PhD, RA, or Postdoc for the position.
+    Subject format: **HKBU [Position] Application - [Name]**. Use PhD, RA, or Postdoc for the position.
 
-    Example: HKBU Application - [PhD] Alex Chen
+    Example: HKBU PhD Application - Alex Chen
   questions:
     - Briefly describe your research background (if any) and your favorite work (a paper, thesis, or project).
     - Why would you like to work with me?

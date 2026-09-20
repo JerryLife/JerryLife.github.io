@@ -2,6 +2,9 @@ schema_version: 1
 directions:
   - id: learning
     title: Federated Learning
+    illustration: data
+    stage_label: Connect data silos
+    illustration_description: Separate databases connected for federated learning
     description: Learning from private data without sharing it.
     subcategories:
       - title: Effective learning
@@ -26,6 +29,9 @@ directions:
           - li2020ppgbdt
   - id: ai-systems
     title: Multi-Agent Systems
+    illustration: models
+    stage_label: Connect models
+    illustration_description: A network of models sharing and combining knowledge
     description: Helping AI agents work together safely.
     subcategories:
       - title: Model indexing
@@ -40,6 +46,9 @@ directions:
           - zhao2026reasoning
   - id: ai-x
     title: AI + X
+    illustration: agents
+    stage_label: Agents in action
+    illustration_description: Agents communicating and working toward shared applications in psychology and finance
     description: Using AI to understand behavior and finance.
     subcategories:
       - title: Psychology

@@ -7,12 +7,8 @@ layout: default
       {{ page.title }}
       {% if page.cv_pdf %}
         <a
-          {% if page.cv_pdf contains '://' %}
-            href="{{ page.cv_pdf }}"
-          {% else %}
-            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-          {% endif %}
-          aria-label="Open CV (PDF) in a new tab"
+          href="{{ page.cv_pdf | relative_url }}"
+          aria-label="{{ site.data.content.pages.home.cv_open_label | escape }}"
           target="_blank"
           rel="noopener noreferrer"
           class="float-right"

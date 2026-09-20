@@ -111,6 +111,9 @@ jobs:
       - name: Validate editable content
         run: python3 scripts/build_cv_content.py validate
 
+      - name: Check content configuration and CMS coverage
+        run: python3 -m unittest discover -s scripts -p test_faculty_content.py
+
       - name: Render derived CV content
         run: python3 scripts/build_cv_content.py build
 

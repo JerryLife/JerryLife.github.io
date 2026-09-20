@@ -1,4 +1,9 @@
 schema_version: 1
+links:
+  cv: /assets/pdf/ZhaominWu.pdf
+  openings: /supervision/#openings-heading
+  publications: /publications/
+  news: /news/
 seo:
   description: >-
     Zhaomin Wu is an incoming tenure-track Assistant Professor at Hong Kong Baptist University (January 2027)

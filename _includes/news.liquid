@@ -13,7 +13,7 @@
               <details class="faculty-news-disclosure">
                 <summary>
                   <span>{{ news_intro | remove: '<p>' | remove: '</p>' }}</span>
-                  <span class="faculty-news-toggle" aria-hidden="true"><span class="faculty-news-expand">Show details</span><span class="faculty-news-collapse">Hide details</span></span>
+                  <span class="faculty-news-toggle" aria-hidden="true"><span class="faculty-news-expand">{{ site.data.content.pages.news.expand_label | escape }}</span><span class="faculty-news-collapse">{{ site.data.content.pages.news.collapse_label | escape }}</span></span>
                 </summary>
                 <div class="faculty-news-details">{{ news_details }}</div>
               </details>

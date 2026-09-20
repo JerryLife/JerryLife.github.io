@@ -1,0 +1,7 @@
+schema_version: 1
+title: Area Chair
+# Use the conference edition year, even when reviewing takes place a year earlier.
+entries:
+  - year: 2027
+    name: ICLR
+    role: Area Chair

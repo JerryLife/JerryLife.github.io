@@ -1,11 +1,8 @@
 ---
 layout: page
 permalink: /teaching/
-title: Teaching
-description: Courses and learning resources.
-nav: false
 published: false
-nav_order: 3
+content_key: teaching
 ---
 
 {% assign course_sections = site.data.content.teaching.sections | where: 'kind', 'instructor' %}
@@ -16,7 +13,7 @@ nav_order: 3
 
 <div class="faculty-teaching">
   <section aria-labelledby="courses-heading">
-    <h2 id="courses-heading">Courses</h2>
+    <h2 id="courses-heading">{{ page.copy.courses_heading | escape }}</h2>
     {% if course_count > 0 %}
       {% for section in course_sections %}
         {% if section.entries.size > 0 %}
@@ -33,7 +30,7 @@ nav_order: 3
                       {% for note in course.notes %}<li>{{ note | markdownify }}</li>{% endfor %}
                     </ul>
                   {% endif %}
-                  {% if course.url and course.url != '' %}<a class="faculty-text-link" href="{{ course.url | escape }}">Course website <span aria-hidden="true">↗</span></a>{% endif %}
+                  {% if course.url and course.url != '' %}<a class="faculty-text-link" href="{{ course.url | escape }}">{{ page.copy.course_link_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
                 </div>
               </article>
             {% endfor %}
@@ -42,8 +39,8 @@ nav_order: 3
       {% endfor %}
     {% else %}
       <div class="faculty-teaching-note">
-        <p>Course information and learning resources will be posted here when teaching assignments are confirmed.</p>
-        <p>For research interests, prospective student inquiries, and my mentoring experience, please visit <a href="{{ '/supervision/' | relative_url }}">Supervision <span aria-hidden="true">→</span></a>.</p>
+        <p>{{ page.copy.empty_message | escape }}</p>
+        <p>{{ page.copy.inquiry_message | escape }} <a href="{{ site.data.content.site.links.openings | relative_url }}">{{ site.data.content.pages.supervision.title | escape }} <span aria-hidden="true">→</span></a>.</p>
       </div>
     {% endif %}
   </section>

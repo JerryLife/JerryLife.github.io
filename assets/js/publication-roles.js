@@ -6,7 +6,7 @@
   const buttons = [...filter.querySelectorAll('button')];
   const collections = [...list.querySelectorAll('.publication-collection')];
   const status = list.querySelector('.publication-filter-status');
-  const labels = { all: 'All roles', first: 'First / co-first author', corresponding: 'Corresponding author', other: 'Other author roles' };
+  const labels = Object.fromEntries(buttons.map(button => [button.dataset.publicationRole, button.textContent.trim()]));
 
   const matches = (entry, role) => {
     const first = entry.classList.contains('first-author');
@@ -33,7 +33,9 @@
       return count;
     });
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.publicationRole === role)));
-    status.textContent = `${labels[role]} · ${counts[0]} peer-reviewed publication${counts[0] === 1 ? '' : 's'} · ${counts[1]} preprint${counts[1] === 1 ? '' : 's'}`;
+    const reviewedLabel = counts[0] === 1 ? status.dataset.reviewedSingular : status.dataset.reviewedPlural;
+    const preprintLabel = counts[1] === 1 ? status.dataset.preprintSingular : status.dataset.preprintPlural;
+    status.textContent = `${labels[role]} · ${counts[0]} ${reviewedLabel} · ${counts[1]} ${preprintLabel}`;
   };
 
   buttons.forEach(button => button.addEventListener('click', () => applyRole(button.dataset.publicationRole)));

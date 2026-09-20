@@ -1,8 +1,7 @@
 ---
 layout: page
-title: News
-description: Research updates, talks, and recognition.
 permalink: /news/
+content_key: news
 ---
 
 {% include news.liquid %}

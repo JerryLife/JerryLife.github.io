@@ -1,10 +1,7 @@
 ---
 layout: page
 permalink: /service/
-title: Service
-description: Professional services in academic communities
-nav: true
-nav_order: 4
+content_key: service
 ---
 
 {% assign service_sections = site.data.generated.content.service.groups %}
@@ -13,12 +10,14 @@ nav_order: 4
   {% if service_sections and service_sections.size > 0 %}
     {% for section in service_sections %}
       {% assign repeated_role = '' %}
-      {% if section.kind == 'conference-reviewers' or section.kind == 'journal-reviewers' %}
+      {% if section.kind == 'area-chairs' %}
+        {% assign repeated_role = 'Area Chair' %}
+      {% elsif section.kind == 'conference-reviewers' or section.kind == 'journal-reviewers' %}
         {% assign repeated_role = 'Reviewer' %}
       {% elsif section.kind == 'tutorial' %}
         {% assign repeated_role = 'Tutorial Speaker' %}
       {% endif %}
-      <section class="service-section" aria-labelledby="service-{{ section.kind }}">
+      <section class="service-section service-section-{{ section.kind }}" aria-labelledby="service-{{ section.kind }}">
         <h2 id="service-{{ section.kind }}">{{ section.title | escape }}</h2>
         <dl class="service-list">
           {% for group in section.years %}

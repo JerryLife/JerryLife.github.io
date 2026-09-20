@@ -3,7 +3,7 @@ profile:
   basics:
     name: Zhaomin Wu
     label: Research Fellow in National University of Singapore
-    email: zhaominwu1@gmail.com
+    email: zhaomin@hkbu.edu.hk
     url: https://www.zhaominwu.com
     image: avatar.jpg
     summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
@@ -11,6 +11,7 @@ profile:
     - network: Google Scholar
       url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
   web_about:
+    name_local: 吴肇敏
     subtitle: Incoming Assistant Professor (tenure-track) · January 2027<br>Department
       of Computer Science<br><a href='https://www.hkbu.edu.hk/'>Hong Kong Baptist
       University</a>
@@ -29,8 +30,12 @@ profile:
       Science from NUS in 2024, advised by [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/),
       and my B.Eng. from Huazhong University of Science and Technology in 2019. My
       work has appeared at leading venues in machine learning, databases, and data
-      mining, such as NeurIPS, ICLR, SIGMOD, KDD, and ACL. I will join Hong Kong Baptist
-      University (HKBU) as a tenure-track Assistant Professor in **January 2027**.
+      mining, such as NeurIPS, ICLR, SIGMOD, KDD, and ACL. I serve as an Area Chair
+      (AC) for premier machine learning conferences such as ICLR.
+
+
+      I will join Hong Kong Baptist University (HKBU) as a **tenure-track Assistant
+      Professor** in **January 2027**.
 
       '
     image: avatar.jpg
@@ -38,12 +43,12 @@ profile:
     image_circular: false
   socials:
     dblp_url: https://dblp.org/pid/254/0918
-    email: zhaominwu1@gmail.com
     github_username: JerryLife
     linkedin_username: zhaomin-wu-958159258
     orcid_id: 0000-0002-6463-0031
     rss_icon: true
     scholar_userid: QjehmgkAAAAJ
+    email: zhaomin@hkbu.edu.hk
 site:
   seo:
     description: Zhaomin Wu is an incoming tenure-track Assistant Professor at Hong
@@ -119,11 +124,22 @@ site:
       color: '#10b981'
 service:
   groups:
+  - title: Area Chair
+    kind: area-chairs
+    years:
+    - year: '2027'
+      items:
+      - name: ICLR
+        role: Area Chair
+        url: ''
   - title: Conference Reviewers
     kind: conference-reviewers
     years:
     - year: '2026'
       items:
+      - name: AAAI
+        role: Reviewer
+        url: ''
       - name: ICLR
         role: Reviewer
         url: ''
@@ -135,7 +151,7 @@ service:
         url: ''
     - year: '2025'
       items:
-      - name: AAAI
+      - name: AISTATS
         role: Reviewer
         url: ''
       - name: EMNLP
@@ -152,12 +168,6 @@ service:
         url: ''
     - year: '2024'
       items:
-      - name: AISTATS
-        role: Reviewer
-        url: ''
-      - name: ICLR
-        role: Reviewer
-        url: ''
       - name: KDD
         role: Reviewer
         url: ''
@@ -169,15 +179,13 @@ service:
       - name: NeurIPS
         role: Reviewer
         url: ''
+      - name: PAKDD
+        role: Reviewer
+        url: ''
       - name: SIGMOD (artifact)
         role: Reviewer
         url: ''
     - year: '2022'
-      items:
-      - name: PAKDD
-        role: Reviewer
-        url: ''
-    - year: '2021'
       items:
       - name: PAKDD
         role: Reviewer
@@ -390,7 +398,8 @@ cv:
       learning, machine unlearning, multi-agent systems, and AI for Psychology. My
       work has appeared in ICLR, NeurIPS, SIGMOD, ACL, KDD, and related venues, including
       two ICLR 2026 Oral papers and a SIGMOD 2023 Honorable Mention for Best Artifact.
-      My work has received 3000+ citations on Google Scholar.
+      My work has received 3000+ citations on Google Scholar. I serve as an Area Chair
+      (AC) for premier machine learning conferences such as ICLR.
 
       '
   research_impact:
@@ -974,11 +983,22 @@ cv:
   service:
     title: Professional Service & Recognition
     groups:
+    - title: Area Chair
+      kind: area-chairs
+      years:
+      - year: '2027'
+        items:
+        - name: ICLR
+          role: Area Chair
+          url: ''
     - title: Conference Reviewers
       kind: conference-reviewers
       years:
       - year: '2026'
         items:
+        - name: AAAI
+          role: Reviewer
+          url: ''
         - name: ICLR
           role: Reviewer
           url: ''
@@ -990,7 +1010,7 @@ cv:
           url: ''
       - year: '2025'
         items:
-        - name: AAAI
+        - name: AISTATS
           role: Reviewer
           url: ''
         - name: EMNLP
@@ -1007,12 +1027,6 @@ cv:
           url: ''
       - year: '2024'
         items:
-        - name: AISTATS
-          role: Reviewer
-          url: ''
-        - name: ICLR
-          role: Reviewer
-          url: ''
         - name: KDD
           role: Reviewer
           url: ''
@@ -1024,15 +1038,13 @@ cv:
         - name: NeurIPS
           role: Reviewer
           url: ''
+        - name: PAKDD
+          role: Reviewer
+          url: ''
         - name: SIGMOD (artifact)
           role: Reviewer
           url: ''
       - year: '2022'
-        items:
-        - name: PAKDD
-          role: Reviewer
-          url: ''
-      - year: '2021'
         items:
         - name: PAKDD
           role: Reviewer

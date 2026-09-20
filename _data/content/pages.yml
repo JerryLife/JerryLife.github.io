@@ -1,0 +1,84 @@
+schema_version: 1
+home:
+  title: Home
+  nav: false
+  email_label: 'Email:'
+  scholar_label: Google Scholar
+  cv_label: CV
+  cv_open_label: Open CV (PDF) in a new tab
+  hiring_heading: We are hiring!
+  openings_label: Openings
+  research_heading: Research Directions
+  publications_label: Explore publications
+  news_heading: Recent News
+  news_limit: 10
+  news_link_label: View all news
+  honors_heading: Selected Honors
+publications:
+  title: Publications
+  description: Selected work and a complete publication record.
+  nav: true
+  nav_order: 1
+  selected_heading: Selected Publications
+  full_list_label: View full list
+  all_heading: All Publications
+  role_label: Role
+  all_role_label: All
+  first_role_label: First / Co-first
+  corresponding_role_label: Corresponding
+  other_role_label: Other
+  author_note: '* Equal contribution · † Corresponding author'
+  reviewed_heading: Peer-reviewed Publications
+  preprints_heading: Preprints & Ongoing Work
+  reviewed_empty: No peer-reviewed publications match this role.
+  preprints_empty: No preprints match this role.
+  paper_label: Paper
+  code_label: Code
+  website_label: Website
+  bib_label: Bib
+  reviewed_singular: peer-reviewed publication
+  reviewed_plural: peer-reviewed publications
+  preprint_singular: preprint
+  preprint_plural: preprints
+supervision:
+  title: Group
+  description: I have been fortunate to work with many wonderful students and look forward to meeting more.
+  nav: true
+  nav_order: 2
+  openings_heading: Current openings
+  principles_heading: My guiding principles
+  qualities_heading: What I look for
+  requirements_heading: Basic requirements
+  inquiry_heading: How to apply
+  questions_intro: 'In your research description, briefly address:'
+  mentoring_heading: Mentoring at NUS
+  outcome_label: 'Outcome:'
+teaching:
+  title: Teaching
+  description: Courses and learning resources.
+  nav: false
+  nav_order: 3
+  courses_heading: Courses
+  course_link_label: Course website
+  empty_message: Course information and learning resources will be posted here when teaching assignments are confirmed.
+  inquiry_message: For research interests, prospective student inquiries, and my mentoring experience, please visit
+service:
+  title: Service
+  description: Professional services in academic communities
+  nav: true
+  nav_order: 4
+cv:
+  title: CV
+  description: Curriculum Vitae
+  nav: true
+  nav_order: 5
+talk:
+  title: Talk
+  description: Invited talks, keynotes, and seminars.
+  nav: false
+news:
+  title: News
+  description: Research updates, talks, and recognition.
+  nav: false
+  expand_label: Show details
+  collapse_label: Hide details

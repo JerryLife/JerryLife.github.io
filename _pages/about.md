@@ -1,6 +1,5 @@
 ---
 layout: about
-title: Home
 permalink: /
 
 selected_papers: false
@@ -10,4 +9,5 @@ announcements:
   enabled: true # includes a list of news items
   scrollable: false
   limit: 10
+content_key: home
 ---

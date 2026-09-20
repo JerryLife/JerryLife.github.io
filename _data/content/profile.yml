@@ -2,7 +2,7 @@ schema_version: 1
 basics:
   name: Zhaomin Wu
   label: Research Fellow in National University of Singapore
-  email: zhaominwu1@gmail.com
+  email: zhaomin@hkbu.edu.hk
   url: https://www.zhaominwu.com
   image: avatar.jpg
   summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
@@ -10,18 +10,21 @@ basics:
   - network: Google Scholar
     url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
 web_about:
+  name_local: 吴肇敏
   subtitle: >-
     Incoming Assistant Professor (tenure-track) · January 2027<br>Department of Computer Science<br><a href='https://www.hkbu.edu.hk/'>Hong Kong Baptist University</a>
   body: |
     My research connects fragmented knowledge to solve real-world problems. I use benchmarking to identify practical challenges, then design methods, algorithms, and systems to address them and deploy the solutions in practice. This approach underpins my work on federated learning across data silos and multi-agent systems that connect knowledge distributed across models. I see future AI agents as individuals whose behavior and social interactions deserve study. I aim to use psychology to understand agents and their communities, and in turn use agents to advance psychology and social science research.
 
-    I am a Research Fellow at the National University of Singapore (NUS) and a recipient of the Singapore NRF Postdoctoral Award (2026). I received my Ph.D. in Computer Science from NUS in 2024, advised by [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/), and my B.Eng. from Huazhong University of Science and Technology in 2019. My work has appeared at leading venues in machine learning, databases, and data mining, such as NeurIPS, ICLR, SIGMOD, KDD, and ACL. I will join Hong Kong Baptist University (HKBU) as a tenure-track Assistant Professor in **January 2027**.
+    I am a Research Fellow at the National University of Singapore (NUS) and a recipient of the Singapore NRF Postdoctoral Award (2026). I received my Ph.D. in Computer Science from NUS in 2024, advised by [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/), and my B.Eng. from Huazhong University of Science and Technology in 2019. My work has appeared at leading venues in machine learning, databases, and data mining, such as NeurIPS, ICLR, SIGMOD, KDD, and ACL. I serve as an Area Chair (AC) for premier machine learning conferences such as ICLR.
+
+    I will join Hong Kong Baptist University (HKBU) as a **tenure-track Assistant Professor** in **January 2027**.
+
   image: avatar.jpg
   align: top
   image_circular: false
 socials:
   dblp_url: https://dblp.org/pid/254/0918
-  email: zhaominwu1@gmail.com
   github_username: JerryLife
   linkedin_username: zhaomin-wu-958159258
   orcid_id: 0000-0002-6463-0031

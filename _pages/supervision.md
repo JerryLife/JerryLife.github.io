@@ -1,35 +1,32 @@
 ---
 layout: page
 permalink: /supervision/
-title: Supervision
-description: I have been fortunate to work with many wonderful students and look forward to meeting more.
-nav: true
-nav_order: 2
+content_key: supervision
 ---
 
 {% assign supervision = site.data.content.supervision %}
 {% assign mentoring = site.data.content.mentoring %}
-{% assign contact_email = site.data.content.profile.socials.email %}
+{% assign contact_email = site.data.content.profile.basics.email %}
 
 <div class="faculty-supervision">
   <section class="faculty-supervision-intro" aria-labelledby="openings-heading">
-    <h2 id="openings-heading">Current openings</h2>
+    <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
     <div class="faculty-lead">{{ supervision.openings_summary | markdownify }}</div>
-    <a class="faculty-text-link" href="#inquiry-heading">How to apply <span aria-hidden="true">→</span></a>
+    <a class="faculty-text-link" href="#inquiry-heading">{{ page.copy.inquiry_heading | escape }} <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="faculty-supervision-section" aria-labelledby="principles-heading">
-    <h2 id="principles-heading">My guiding principles</h2>
+    <h2 id="principles-heading">{{ page.copy.principles_heading | escape }}</h2>
     <ul class="faculty-supervision-principles">
       {% for principle in supervision.principles %}<li>{{ principle | escape }}</li>{% endfor %}
     </ul>
   </section>
 
   <section class="faculty-supervision-section" aria-labelledby="qualities-heading">
-    <h2 id="qualities-heading">What I look for</h2>
+    <h2 id="qualities-heading">{{ page.copy.qualities_heading | escape }}</h2>
     {% if supervision.requirements.size > 0 %}
       <div class="faculty-requirements">
-        <h3>Basic requirements</h3>
+        <h3>{{ page.copy.requirements_heading | escape }}</h3>
         <ul>
           {% for requirement in supervision.requirements %}<li>{{ requirement | markdownify }}</li>{% endfor %}
         </ul>
@@ -47,12 +44,12 @@ nav_order: 2
 
   <section class="faculty-supervision-section faculty-inquiry" aria-labelledby="inquiry-heading">
     <div class="faculty-inquiry-title">
-      <h2 id="inquiry-heading">How to apply</h2>
+      <h2 id="inquiry-heading">{{ page.copy.inquiry_heading | escape }}</h2>
       <a class="faculty-contact-email" href="mailto:{{ contact_email | escape }}?subject={{ supervision.contact.subject | url_encode }}">{{ contact_email | escape }}</a>
     </div>
     <div class="faculty-inquiry-details">
       <div class="faculty-application-materials">{{ supervision.contact.introduction | markdownify }}</div>
-      <p>In your research description, briefly address:</p>
+      <p>{{ page.copy.questions_intro | escape }}</p>
       <ol>
         {% for question in supervision.contact.questions %}<li>{{ question | escape }}</li>{% endfor %}
       </ol>
@@ -62,7 +59,7 @@ nav_order: 2
   {% if mentoring.entries.size > 0 %}
     <section class="faculty-supervision-section" aria-labelledby="mentoring-heading">
       <div class="faculty-section-heading">
-        <h2 id="mentoring-heading">Mentoring at NUS</h2>
+        <h2 id="mentoring-heading">{{ page.copy.mentoring_heading | escape }}</h2>
       </div>
       <p class="faculty-mentoring-intro">{{ supervision.mentoring_intro | escape }}</p>
       <ul class="faculty-mentee-list">
@@ -74,7 +71,7 @@ nav_order: 2
               <p class="faculty-mentee-meta">{{ mentee.role | replace: 'Master Student', "Master's student" | replace: 'Undergraduate Student', 'Undergraduate student' | replace: 'Visiting Ph.D. Student', 'Visiting Ph.D. student' | escape }} <span aria-hidden="true">·</span> {{ mentee.institution | replace: 'Zhe Jiang University', 'Zhejiang University' | escape }}</p>
               {% if mentee.topic != blank %}<p class="faculty-mentee-topic">{{ mentee.topic | escape }}</p>{% endif %}
               {% if mentee.outcome != blank %}
-                <p class="faculty-mentee-outcome"><span>Outcome:</span> {{ mentee.outcome | escape }}</p>
+                <p class="faculty-mentee-outcome"><span>{{ page.copy.outcome_label | escape }}</span> {{ mentee.outcome | escape }}</p>
               {% elsif mentee.notes.size > 0 %}
                 {% for note in mentee.notes %}<div class="faculty-mentee-outcome">{{ note | markdownify }}</div>{% endfor %}
               {% endif %}

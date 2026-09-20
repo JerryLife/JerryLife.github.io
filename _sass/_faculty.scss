@@ -110,8 +110,8 @@ html[data-theme="dark"] {
 .faculty-section-heading h2 { margin: 0; }
 .faculty-text-link { font-size: 13px; font-weight: 500; }
 .faculty-text-link span { color: inherit; margin-left: 6px; }
-.faculty-research-map { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 0 0 24px; }
-.faculty-research-map::before { content: ""; position: absolute; top: 56px; left: calc((100% - 36px) / 6); right: calc((100% - 36px) / 6); height: 1px; background: var(--faculty-line); }
+.faculty-research-map { position: relative; display: grid; grid-template-columns: repeat(var(--faculty-direction-count), minmax(0, 1fr)); gap: 18px; margin: 0 0 24px; }
+.faculty-research-map::before { content: ""; position: absolute; top: 56px; left: calc(50% / var(--faculty-direction-count)); right: calc(50% / var(--faculty-direction-count)); height: 1px; background: var(--faculty-line); }
 .faculty-research-stage { position: relative; min-width: 0; text-align: center; color: var(--faculty-accent); }
 .faculty-research-stage:not(:last-child)::after { content: ""; position: absolute; right: -12px; top: 52px; width: 8px; height: 8px; border-top: 1px solid var(--faculty-accent); border-right: 1px solid var(--faculty-accent); transform: rotate(45deg); }
 .faculty-research-stage svg { position: relative; display: block; width: 200px; max-width: 100%; height: 112px; margin: 0 auto; background: var(--global-bg-color); }
@@ -120,7 +120,7 @@ html[data-theme="dark"] {
 .faculty-research-agents { color: var(--faculty-agent-accent); }
 .faculty-research-edges { stroke: currentColor; stroke-width: 1.5; fill: none; opacity: .5; stroke-linecap: round; stroke-linejoin: round; }
 .faculty-research-glyph { fill: var(--global-bg-color); stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.faculty-directions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.faculty-directions { display: grid; grid-template-columns: repeat(var(--faculty-direction-count), minmax(0, 1fr)); gap: 18px; }
 .faculty-direction { display: flex; flex-direction: column; padding: 25px 25px 22px; background: var(--faculty-surface); border: 1px solid var(--faculty-line); border-radius: 7px; }
 .faculty-direction h3 { font-size: 22px; letter-spacing: -.5px; margin-bottom: 12px; }
 .faculty-direction-description { color: var(--faculty-muted); font-size: 14px; line-height: 1.6; margin: 0; min-height: 3.2em; text-wrap: balance; }

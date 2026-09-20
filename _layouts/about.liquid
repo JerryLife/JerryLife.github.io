@@ -4,16 +4,16 @@ layout: default
 {% assign profile = site.data.content.profile %}
 {% assign home = site.data.content.home %}
 {% assign research_publications = site.data.generated.content.cv.publications.entries %}
-<article class="faculty-home">
+<article class="faculty-home" style="--faculty-direction-count: {{ home.directions.size }}">
   <header class="faculty-hero">
     <div class="faculty-hero-copy">
-      <h1>{{ profile.basics.name }} <span class="faculty-chinese" lang="zh">吴肇敏</span></h1>
+      <h1>{{ profile.basics.name }} {% if profile.web_about.name_local != blank %}<span class="faculty-chinese" lang="zh">{{ profile.web_about.name_local | escape }}</span>{% endif %}</h1>
       <div class="faculty-affiliation">{{ profile.web_about.subtitle }}</div>
       <div class="faculty-bio">{{ profile.web_about.body | markdownify }}</div>
       <div class="faculty-contact" aria-label="Contact and profiles">
-        <span class="faculty-email">Email: {{ profile.socials.email }}</span>
-        <a href="https://scholar.google.com/citations?user={{ profile.socials.scholar_userid }}">Google Scholar <span aria-hidden="true">↗</span></a>
-        <a href="{{ '/assets/pdf/ZhaominWu.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open CV (PDF) in a new tab">CV <span class="faculty-file-type">PDF</span> <span aria-hidden="true">↗</span></a>
+        <span class="faculty-email">{{ page.copy.email_label | escape }} {{ profile.basics.email | escape }}</span>
+        <a href="https://scholar.google.com/citations?user={{ profile.socials.scholar_userid }}">{{ page.copy.scholar_label | escape }} <span aria-hidden="true">↗</span></a>
+        <a href="{{ site.data.content.site.links.cv | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ page.copy.cv_open_label | escape }}">{{ page.copy.cv_label | escape }} <span class="faculty-file-type">PDF</span> <span aria-hidden="true">↗</span></a>
       </div>
     </div>
     <figure class="faculty-portrait">
@@ -23,16 +23,16 @@ layout: default
 
   <section class="faculty-working" aria-labelledby="working-heading">
     <div class="faculty-working-heading">
-      <h2 id="working-heading">We are hiring!</h2>
-      <a class="faculty-button" href="{{ '/supervision/#openings-heading' | relative_url }}">Openings <span aria-hidden="true">→</span></a>
+      <h2 id="working-heading">{{ page.copy.hiring_heading | escape }}</h2>
+      <a class="faculty-button" href="{{ site.data.content.site.links.openings | relative_url }}">{{ page.copy.openings_label | escape }} <span aria-hidden="true">→</span></a>
     </div>
     {{ home.working_with_me | markdownify }}
   </section>
 
   <section class="faculty-section faculty-research" aria-labelledby="research-heading">
     <div class="faculty-section-heading">
-      <h2 id="research-heading">Research Directions</h2>
-      <a class="faculty-text-link" href="{{ '/publications/' | relative_url }}">Explore publications <span aria-hidden="true">→</span></a>
+      <h2 id="research-heading">{{ page.copy.research_heading | escape }}</h2>
+      <a class="faculty-text-link" href="{{ site.data.content.site.links.publications | relative_url }}">{{ page.copy.publications_label | escape }} <span aria-hidden="true">→</span></a>
     </div>
     {% include research_path.liquid %}
     <div class="faculty-directions">
@@ -47,7 +47,7 @@ layout: default
                 {% for publication_key in subcategory.publications %}
                   {% assign research_paper = research_publications | where: 'key', publication_key | first %}
                   {% if research_paper %}
-                    <a class="faculty-publication-badge" href="{{ '/publications/' | relative_url }}#{{ research_paper.key }}" title="{{ research_paper.title | escape }}" aria-label="{{ research_paper.venue | escape }}: {{ research_paper.title | escape }}">{{ research_paper.venue }} <span aria-hidden="true">↗</span></a>
+                    <a class="faculty-publication-badge" href="{{ site.data.content.site.links.publications | relative_url }}#{{ research_paper.key }}" title="{{ research_paper.title | escape }}" aria-label="{{ research_paper.venue | escape }}: {{ research_paper.title | escape }}">{{ research_paper.venue }} <span aria-hidden="true">↗</span></a>
                   {% endif %}
                 {% endfor %}
               </div>
@@ -59,13 +59,13 @@ layout: default
   </section>
 
   <section class="faculty-section" aria-labelledby="recent-news-heading">
-    <div class="faculty-section-heading"><h2 id="recent-news-heading">Recent News</h2></div>
-    {% include news.liquid limit=10 compact=true %}
-    <a class="faculty-text-link faculty-section-link" href="{{ '/news/' | relative_url }}">View all news <span aria-hidden="true">→</span></a>
+    <div class="faculty-section-heading"><h2 id="recent-news-heading">{{ page.copy.news_heading | escape }}</h2></div>
+    {% include news.liquid limit=page.copy.news_limit compact=true %}
+    <a class="faculty-text-link faculty-section-link" href="{{ site.data.content.site.links.news | relative_url }}">{{ page.copy.news_link_label | escape }} <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="faculty-section" aria-labelledby="honors-heading">
-    <div class="faculty-section-heading"><h2 id="honors-heading">Selected Honors</h2></div>
+    <div class="faculty-section-heading"><h2 id="honors-heading">{{ page.copy.honors_heading | escape }}</h2></div>
     <ul class="faculty-honors">
       {% for honor in home.honors %}
         {% if honor.source_title %}

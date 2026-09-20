@@ -1,11 +1,11 @@
 .service-page {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px 36px;
-  align-items: start;
+  column-count: 2;
+  column-gap: 36px;
 }
 
 .service-section {
+  break-inside: avoid;
+  margin-bottom: 28px;
   min-width: 0;
 
   h2 {
@@ -54,5 +54,6 @@
 .service-role { color: var(--faculty-muted); }
 
 @media (max-width: 767px) {
-  .service-page { grid-template-columns: 1fr; gap: 24px; }
+  .service-page { column-count: 1; }
+  .service-section { margin-bottom: 24px; }
 }
