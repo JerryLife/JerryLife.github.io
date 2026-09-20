@@ -5,16 +5,16 @@ entries:
       - Python
       - C
       - C++
-    level: ''
-    icon: ''
+    level: ""
+    icon: ""
   - name: Tools (Familiar)
     keywords:
       - PyTorch
       - Linux Command Line
       - LaTeX
       - Microsoft Office
-    level: ''
-    icon: ''
+    level: ""
+    icon: ""
   - name: Programming Languages (Used)
     keywords:
       - Java
@@ -25,8 +25,8 @@ entries:
       - JavaScript
       - Standard ML
       - CUDA
-    level: ''
-    icon: ''
+    level: ""
+    icon: ""
   - name: Tools (Used)
     keywords:
       - TensorFlow
@@ -37,5 +37,5 @@ entries:
       - Win32 API
       - Apache Cassandra
       - MongoDB
-    level: ''
-    icon: ''
+    level: ""
+    icon: ""

@@ -11,7 +11,11 @@
 <!-- Bootsrap & MDB scripts -->
 <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
 {% unless faculty_core_page %}
-  <script src="{{ site.third_party_libraries.mdb.url.js }}" integrity="{{ site.third_party_libraries.mdb.integrity.js }}" crossorigin="anonymous"></script>
+  <script
+    src="{{ site.third_party_libraries.mdb.url.js }}"
+    integrity="{{ site.third_party_libraries.mdb.integrity.js }}"
+    crossorigin="anonymous"
+  ></script>
 {% endunless %}
 
 {% if site.enable_masonry and faculty_core_page == false %}

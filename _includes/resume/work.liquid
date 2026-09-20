@@ -50,7 +50,10 @@
                 {% assign subjob_date = '' %}
               {% endif %}
               <h6 class="font-weight-bold mb-1" style="font-size: 0.95rem">
-                {{ subjob.position }}{% if subjob_date != '' %}<span class="font-weight-normal text-muted"> | {{ subjob_date }}</span>{% endif %}
+                {{ subjob.position -}}
+                {%- if subjob_date != '' -%}
+                  <span class="font-weight-normal text-muted"> | {{ subjob_date }}</span>
+                {%- endif %}
               </h6>
               {% if subjob.summary != blank %}
                 <div style="font-size: 0.95rem; font-style: italic">{{ subjob.summary | markdownify | remove: '<p>' | remove: '</p>' }}</div>

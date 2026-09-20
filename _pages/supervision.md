@@ -56,7 +56,7 @@ content_key: supervision
     </div>
   </section>
 
-  {% if mentoring.entries.size > 0 %}
+{% if mentoring.entries.size > 0 %}
     <section class="faculty-supervision-section" aria-labelledby="mentoring-heading">
       <div class="faculty-section-heading">
         <h2 id="mentoring-heading">{{ page.copy.mentoring_heading | escape }}</h2>
@@ -80,5 +80,5 @@ content_key: supervision
         {% endfor %}
       </ul>
     </section>
-  {% endif %}
+{% endif %}
 </div>

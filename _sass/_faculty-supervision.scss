@@ -44,9 +44,16 @@
     margin-bottom: 0.6rem;
   }
 
-  ul { margin: 0; padding-left: 1.2rem; }
-  li > p { margin: 0; }
-  li + li { margin-top: 0.35rem; }
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  li > p {
+    margin: 0;
+  }
+  li + li {
+    margin-top: 0.35rem;
+  }
 }
 
 .faculty-supervision-section {
@@ -60,8 +67,12 @@
   padding-left: 1.2rem;
   color: var(--faculty-muted);
 
-  li { padding-left: 0.25rem; }
-  li + li { margin-top: 0.7rem; }
+  li {
+    padding-left: 0.25rem;
+  }
+  li + li {
+    margin-top: 0.7rem;
+  }
 }
 
 .faculty-mentoring-values {

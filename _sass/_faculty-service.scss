@@ -18,7 +18,9 @@
   }
 }
 
-.service-list { margin: 0; }
+.service-list {
+  margin: 0;
+}
 
 .service-row {
   display: grid;
@@ -28,8 +30,13 @@
   font-size: 14px;
   line-height: 1.65;
 
-  dd { margin: 0; min-width: 0; }
-  + .service-row { border-top: 1px solid var(--faculty-line); }
+  dd {
+    margin: 0;
+    min-width: 0;
+  }
+  + .service-row {
+    border-top: 1px solid var(--faculty-line);
+  }
 }
 
 .service-year {
@@ -39,7 +46,11 @@
   font-variant-numeric: tabular-nums;
 }
 
-.service-items { margin: 0; padding: 0; list-style: none; }
+.service-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .service-item {
   display: inline;
   overflow-wrap: anywhere;
@@ -50,10 +61,18 @@
     padding: 0 5px;
   }
 }
-.service-name { font-weight: 500; }
-.service-role { color: var(--faculty-muted); }
+.service-name {
+  font-weight: 500;
+}
+.service-role {
+  color: var(--faculty-muted);
+}
 
 @media (max-width: 767px) {
-  .service-page { column-count: 1; }
-  .service-section { margin-bottom: 24px; }
+  .service-page {
+    column-count: 1;
+  }
+  .service-section {
+    margin-bottom: 24px;
+  }
 }

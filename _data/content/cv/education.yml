@@ -17,6 +17,6 @@ entries:
     study_type: B.Eng.
     start_date: 2015-09
     end_date: 2019-06
-    score: 'GPA: 3.92/4.0, Rank: 10/281'
+    score: "GPA: 3.92/4.0, Rank: 10/281"
     credential_note: ACM class
     courses: []

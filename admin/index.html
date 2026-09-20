@@ -161,9 +161,7 @@
               throw new Error("Enter exactly one complete BibTeX publication entry.");
             }
             if (!citationKeyPattern.test(parsed.citationKey)) {
-              throw new Error(
-                "Use a lowercase firstauthorYYYYshorttitle citation key without underscores or punctuation, for example wu2026llmdna."
-              );
+              throw new Error("Use a lowercase firstauthorYYYYshorttitle citation key without underscores or punctuation, for example wu2026llmdna.");
             }
             return entry.get("data").set("citation_key", parsed.citationKey);
           },

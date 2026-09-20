@@ -25,8 +25,12 @@
             </h6>
             <div class="small">{{ publication.short_authors }}</div>
             <div class="small font-italic">{{ publication.venue }} ({{ publication.year }})</div>
-            {% if publication.highlight %}<div class="small text-danger">{{ publication.highlight }}</div>{% endif %}
-            {% if publication.summary %}<div class="small text-muted">{{ publication.summary | markdownify }}</div>{% endif %}
+            {% if publication.highlight %}
+              <div class="small text-danger">{{ publication.highlight }}</div>
+            {% endif %}
+            {% if publication.summary %}
+              <div class="small text-muted">{{ publication.summary | markdownify }}</div>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>
@@ -45,9 +49,19 @@
         <ul class="card-text font-weight-light mb-0">
           {% for item in group.items %}
             <li>
-              {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"><strong>{{ item.name }}</strong></a>{% else %}<strong>{{ item.name }}</strong>{% endif %}
-              {% if item.venue %}<span class="font-italic">({{ item.venue }})</span>{% endif %}
-              {% if item.description %}<div class="small text-muted">{{ item.description | markdownify }}</div>{% endif %}
+              {% if item.url -%}
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"
+                  ><strong>{{ item.name }}</strong></a
+                >
+              {%- else -%}
+                <strong>{{ item.name }}</strong>
+              {%- endif %}
+              {% if item.venue -%}
+                <span class="font-italic">({{ item.venue }})</span>
+              {%- endif %}
+              {% if item.description %}
+                <div class="small text-muted">{{ item.description | markdownify }}</div>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
@@ -66,10 +80,16 @@
         {% for talk in semantic_cv.talks.entries %}
           <li class="list-group-item">
             <div class="font-weight-bold">
-              {% if talk.url %}<a href="{{ talk.url }}" target="_blank" rel="noopener noreferrer">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}
+              {% if talk.url -%}
+                <a href="{{ talk.url }}" target="_blank" rel="noopener noreferrer">{{ talk.title }}</a>
+              {%- else -%}
+                {{- talk.title -}}
+              {%- endif %}
             </div>
             <div class="small">{{ talk.type }} at {{ talk.venue }} | {{ talk.date | date: '%b %Y' }}</div>
-            {% if talk.note %}<div class="small text-muted">{{ talk.note | markdownify }}</div>{% endif %}
+            {% if talk.note %}
+              <div class="small text-muted">{{ talk.note | markdownify }}</div>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>
@@ -82,21 +102,46 @@
       <h3 class="card-title font-weight-medium">{{ semantic_cv.teaching.title }}</h3>
       {% for section in semantic_cv.teaching.sections %}
         <h6 class="font-weight-bold mt-3">{{ section.title }}</h6>
-        {% if section.intro %}<div class="small text-muted mb-2">{{ section.intro | markdownify }}</div>{% endif %}
+        {% if section.intro %}
+          <div class="small text-muted mb-2">{{ section.intro | markdownify }}</div>
+        {% endif %}
         <ul class="card-text font-weight-light list-group list-group-flush">
           {% for item in section.entries %}
             <li class="list-group-item">
               {% if section.kind == 'mentoring' %}
-                <div class="font-weight-bold">{% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</div>
-                <div class="small">{{ item.role }}{% if item.institution %}, {{ item.institution }}{% endif %} | {{ item.period }}</div>
-                {% if item.outcome %}<div class="small text-muted">{{ item.outcome | markdownify }}</div>{% endif %}
-                {% if item.notes %}<ul class="small text-muted mb-0">{% for note in item.notes %}<li>{{ note | markdownify }}</li>{% endfor %}</ul>{% endif %}
+                <div class="font-weight-bold">
+                  {% if item.url -%}
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+                  {%- else -%}
+                    {{- item.name -}}
+                  {%- endif %}
+                </div>
+                <div class="small">
+                  {{ item.role -}}
+                  {%- if item.institution %}, {{ item.institution }}{% endif %} | {{ item.period }}
+                </div>
+                {% if item.outcome %}
+                  <div class="small text-muted">{{ item.outcome | markdownify }}</div>
+                {% endif %}
+                {% if item.notes %}
+                  <ul class="small text-muted mb-0">
+                    {% for note in item.notes %}
+                      <li>{{ note | markdownify }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               {% elsif section.kind == 'other' %}
                 <div class="font-weight-bold">{{ item.title }}</div>
                 <div class="small">{{ item.period }}</div>
               {% else %}
-                <div class="font-weight-bold">{{ item.course }}{% if item.code %} ({{ item.code }}){% endif %}</div>
-                <div class="small">{{ item.role | default: section.title }}{% if item.institution %}, {{ item.institution }}{% endif %} | {{ item.term }}</div>
+                <div class="font-weight-bold">
+                  {{ item.course -}}
+                  {%- if item.code %} ({{ item.code }}){% endif %}
+                </div>
+                <div class="small">
+                  {{ item.role | default: section.title -}}
+                  {%- if item.institution %}, {{ item.institution }}{% endif %} | {{ item.term }}
+                </div>
               {% endif %}
             </li>
           {% endfor %}
@@ -116,7 +161,15 @@
             <li class="list-group-item">
               <strong>{{ year.year }}</strong>:
               {% for item in year.items %}
-                {% if item.url and item.url != '' %}<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}{% if item.role %} <span class="text-muted">({{ item.role }})</span>{% endif %}{% unless forloop.last %}; {% endunless %}
+                {% if item.url and item.url != '' -%}
+                  <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+                {%- else -%}
+                  {{- item.name -}}
+                {%- endif -%}
+                {%- if item.role %}
+                  <span class="text-muted">({{ item.role }})</span>
+                {%- endif -%}
+                {%- unless forloop.last %}; {% endunless %}
               {% endfor %}
             </li>
           {% endfor %}

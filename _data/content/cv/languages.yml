@@ -2,7 +2,7 @@ schema_version: 1
 entries:
   - language: Chinese
     fluency: Native speaker
-    icon: ''
+    icon: ""
   - language: English
     fluency: Professional working proficiency
-    icon: ''
+    icon: ""

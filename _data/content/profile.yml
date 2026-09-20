@@ -7,8 +7,8 @@ basics:
   image: avatar.jpg
   summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
   profiles:
-  - network: Google Scholar
-    url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
+    - network: Google Scholar
+      url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
 web_about:
   name_local: 吴肇敏
   subtitle: >-

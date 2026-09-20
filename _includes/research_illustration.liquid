@@ -1,6 +1,6 @@
 {% case include.icon %}
-{% when 'data' %}
-<svg viewBox="0 0 200 112" role="img" aria-labelledby="{{ include.id | escape }}-diagram-title" focusable="false">
+  {% when 'data' %}
+    <svg viewBox="0 0 200 112" role="img" aria-labelledby="{{ include.id | escape }}-diagram-title" focusable="false">
       <title id="{{ include.id | escape }}-diagram-title">{{ include.description | escape }}</title>
       <defs>
         <g id="{{ include.id | escape }}-database" class="faculty-research-glyph">
@@ -14,8 +14,8 @@
       <use href="#{{ include.id | escape }}-database" x="84" y="13" />
       <use href="#{{ include.id | escape }}-database" x="146" y="53" />
     </svg>
-{% when 'models' %}
-<svg viewBox="0 0 200 112" role="img" aria-labelledby="{{ include.id | escape }}-diagram-title" focusable="false">
+  {% when 'models' %}
+    <svg viewBox="0 0 200 112" role="img" aria-labelledby="{{ include.id | escape }}-diagram-title" focusable="false">
       <title id="{{ include.id | escape }}-diagram-title">{{ include.description | escape }}</title>
       <defs>
         <g id="{{ include.id | escape }}-model" class="faculty-research-glyph">
@@ -35,8 +35,8 @@
       <use href="#{{ include.id | escape }}-model" x="78" y="14" />
       <use href="#{{ include.id | escape }}-model" x="138" y="56" />
     </svg>
-{% when 'agents' %}
-<svg viewBox="0 0 200 112" role="img" aria-labelledby="{{ include.id | escape }}-diagram-title" focusable="false">
+  {% when 'agents' %}
+    <svg viewBox="0 0 200 112" role="img" aria-labelledby="{{ include.id | escape }}-diagram-title" focusable="false">
       <title id="{{ include.id | escape }}-diagram-title">{{ include.description | escape }}</title>
       <defs>
         <g id="{{ include.id | escape }}-agent" class="faculty-research-glyph">

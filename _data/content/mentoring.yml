@@ -56,7 +56,7 @@ entries:
     url: https://scholar.google.com/citations?user=fcBDdsYAAAAJ
     role: Undergraduate Student
     institution: Shanghai Jiao Tong University
-    period: '2024'
+    period: "2024"
     notes:
       - Researcher at Rednote
     outcome: Researcher at Rednote
@@ -72,4 +72,4 @@ entries:
     url: https://jzhu.xyz/
     role: Master Student
     institution: NUS
-    period: '2022'
+    period: "2022"

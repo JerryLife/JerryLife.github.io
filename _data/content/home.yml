@@ -61,7 +61,7 @@ directions:
 honors:
   - source_title: Singapore NRF Postdoctoral Award
     detail: Highly selective national award in Singapore
-  - year: '2026'
+  - year: "2026"
     title: Two ICLR Oral Presentations
     # ICLR's final fact sheet reports 224 orals / 19,525 submissions (~1.15%).
     # https://media.iclr.cc/Conferences/ICLR2026/ICLR2026_Fact_Sheet.pdf

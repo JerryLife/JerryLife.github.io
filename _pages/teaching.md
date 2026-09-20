@@ -8,7 +8,7 @@ content_key: teaching
 {% assign course_sections = site.data.content.teaching.sections | where: 'kind', 'instructor' %}
 {% assign course_count = 0 %}
 {% for section in course_sections %}
-  {% assign course_count = course_count | plus: section.entries.size %}
+{% assign course_count = course_count | plus: section.entries.size %}
 {% endfor %}
 
 <div class="faculty-teaching">

@@ -2,7 +2,7 @@ schema_version: 1
 entries:
   - organization: Teaching in Underprivileged Areas
     location: Hunan, China
-    url: ''
+    url: ""
     position: Teacher
     start_date: 2016-07
     end_date: 2016-08
@@ -10,7 +10,7 @@ entries:
     highlights: []
   - organization: Department of Computer Science and Technology, Huazhong University of Science and Technology
     location: Wuhan, China
-    url: ''
+    url: ""
     position: President of Student Union
     start_date: 2017-04
     end_date: 2018-04

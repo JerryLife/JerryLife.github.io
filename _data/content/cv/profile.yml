@@ -1,6 +1,6 @@
 schema_version: 1
 title: Research Profile
-body: 'I am an NRF Postdoctoral Fellow in Computer Science at the National University
+body: "I am an NRF Postdoctoral Fellow in Computer Science at the National University
   of Singapore. My research develops trustworthy AI systems, with a focus on federated
   learning, machine unlearning, multi-agent systems, and AI for Psychology. My work
   has appeared in ICLR, NeurIPS, SIGMOD, ACL, KDD, and related venues, including
@@ -8,4 +8,4 @@ body: 'I am an NRF Postdoctoral Fellow in Computer Science at the National Unive
   My work has received 3000+ citations on Google Scholar. I serve as an Area Chair
   (AC) for premier machine learning conferences such as ICLR.
 
-  '
+  "

@@ -81,10 +81,7 @@ function textResponse(message: string, status = 200, extraHeaders?: HeadersInit)
 function htmlResponse(html: string, extraHeaders?: HeadersInit): Response {
   const headers = securityHeaders("text/html; charset=utf-8");
   // The callback must use a small inline script for Decap's popup handshake.
-  headers.set(
-    "Content-Security-Policy",
-    "default-src 'none'; script-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'"
-  );
+  headers.set("Content-Security-Policy", "default-src 'none'; script-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'");
   if (extraHeaders) {
     for (const [name, value] of new Headers(extraHeaders)) {
       headers.append(name, value);
@@ -95,10 +92,7 @@ function htmlResponse(html: string, extraHeaders?: HeadersInit): Response {
 }
 
 function isLocalHttpOrigin(url: URL): boolean {
-  return (
-    url.protocol === "http:" &&
-    (url.hostname === "localhost" || url.hostname === "127.0.0.1" || url.hostname === "[::1]")
-  );
+  return url.protocol === "http:" && (url.hostname === "localhost" || url.hostname === "127.0.0.1" || url.hostname === "[::1]");
 }
 
 function parseOrigin(value: string, variableName: string): string {
@@ -109,14 +103,7 @@ function parseOrigin(value: string, variableName: string): string {
     throw new Error(`${variableName} must contain valid origins.`);
   }
 
-  if (
-    url.username ||
-    url.password ||
-    url.pathname !== "/" ||
-    url.search ||
-    url.hash ||
-    (url.protocol !== "https:" && !isLocalHttpOrigin(url))
-  ) {
+  if (url.username || url.password || url.pathname !== "/" || url.search || url.hash || (url.protocol !== "https:" && !isLocalHttpOrigin(url))) {
     throw new Error(`${variableName} must contain HTTPS origins only.`);
   }
 
@@ -125,7 +112,7 @@ function parseOrigin(value: string, variableName: string): string {
 
 function parseRepository(value: string): string {
   const parts = value.trim().split("/");
-  if (parts.length !== 2 || parts.some(part => !/^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$/.test(part))) {
+  if (parts.length !== 2 || parts.some((part) => !/^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$/.test(part))) {
     throw new Error("CMS_REPOSITORY must be in owner/repository format.");
   }
 
@@ -144,13 +131,13 @@ function validateConfig(env: Env): Config {
   }
 
   const origins = env.CMS_ALLOWED_ORIGINS?.split(",")
-    .map(origin => origin.trim())
+    .map((origin) => origin.trim())
     .filter(Boolean);
   if (!origins?.length) {
     throw new Error("CMS_ALLOWED_ORIGINS is required.");
   }
 
-  const allowedCmsOrigins = new Set(origins.map(origin => parseOrigin(origin, "CMS_ALLOWED_ORIGINS")));
+  const allowedCmsOrigins = new Set(origins.map((origin) => parseOrigin(origin, "CMS_ALLOWED_ORIGINS")));
   if (!env.GITHUB_CLIENT_ID?.trim() || !env.GITHUB_CLIENT_SECRET?.trim()) {
     throw new Error("GitHub OAuth credentials are not configured.");
   }
@@ -183,7 +170,7 @@ function base64UrlToBytes(value: string): Uint8Array | null {
   try {
     const padded = value.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - (value.length % 4)) % 4);
     const binary = atob(padded);
-    return Uint8Array.from(binary, character => character.charCodeAt(0));
+    return Uint8Array.from(binary, (character) => character.charCodeAt(0));
   } catch {
     return null;
   }
@@ -202,13 +189,7 @@ function toArrayBuffer(bytes: Uint8Array): ArrayBuffer {
 }
 
 async function getStateKey(secret: string): Promise<CryptoKey> {
-  return crypto.subtle.importKey(
-    "raw",
-    TEXT_ENCODER.encode(secret),
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign", "verify"]
-  );
+  return crypto.subtle.importKey("raw", TEXT_ENCODER.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign", "verify"]);
 }
 
 async function createSignedState(state: OAuthState, secret: string): Promise<string> {

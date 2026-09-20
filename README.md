@@ -21,19 +21,19 @@ This public repository uses Decap CMS, a Cloudflare Worker, and GitHub Actions t
 
 Sign in to the [site CMS](https://www.zhaominwu.com/admin/) with the permitted GitHub account. Each Publish operation commits directly to `main`; GitHub Actions validates the data, generates derived artifacts, compiles the PDF, and deploys the site.
 
-| CMS area | Editable content | Source file |
-| --- | --- | --- |
-| `News` | Markdown news items | `_news/*.md` |
-| `Website Profile` | Name, website biography, avatar, social links, and shared identity information | `_data/content/profile.yml` |
-| `Homepage Research & Honors` | Research directions, selected honors, and the supervision introduction | `_data/content/home.yml` |
-| `Supervision` | Confirmed openings, mentoring approach, and application guidance | `_data/content/supervision.yml` |
-| `Publications` | One complete `.bib` record per publication | `_data/content/publications/*.bib` |
-| `Service` | Area Chair, Conference Reviewers, Journal Reviewers, Recognition, and Tutorial Speaker; each is edited independently | `_data/content/service/*.yml` |
-| `Teaching & Mentoring` | One entry containing separate Teaching and Mentoring editors for courses and student lists | `_data/content/teaching.yml`, `_data/content/mentoring.yml` |
-| `Talks` | Invited talks, keynotes, tutorials, and seminars | `_data/content/talks.yml` |
-| `Site Settings` | SEO, footer text, and publication venue badges | `_data/content/site.yml` |
-| `Page Titles, Navigation & Labels` | Page titles, descriptions, navigation visibility/order, section headings, and display labels | `_data/content/pages.yml` |
-| `CV` | CV Profile, main jobs and subjobs, education, awards, skills, languages, volunteer work, Publication Display, Research Impact, and custom CV sections; each is an independent second-level entry | `_data/content/cv/*.yml` |
+| CMS area                           | Editable content                                                                                                                                                                                 | Source file                                                 |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| `News`                             | Markdown news items                                                                                                                                                                              | `_news/*.md`                                                |
+| `Website Profile`                  | Name, website biography, avatar, social links, and shared identity information                                                                                                                   | `_data/content/profile.yml`                                 |
+| `Homepage Research & Honors`       | Research directions, selected honors, and the supervision introduction                                                                                                                           | `_data/content/home.yml`                                    |
+| `Supervision`                      | Confirmed openings, mentoring approach, and application guidance                                                                                                                                 | `_data/content/supervision.yml`                             |
+| `Publications`                     | One complete `.bib` record per publication                                                                                                                                                       | `_data/content/publications/*.bib`                          |
+| `Service`                          | Area Chair, Conference Reviewers, Journal Reviewers, Recognition, and Tutorial Speaker; each is edited independently                                                                             | `_data/content/service/*.yml`                               |
+| `Teaching & Mentoring`             | One entry containing separate Teaching and Mentoring editors for courses and student lists                                                                                                       | `_data/content/teaching.yml`, `_data/content/mentoring.yml` |
+| `Talks`                            | Invited talks, keynotes, tutorials, and seminars                                                                                                                                                 | `_data/content/talks.yml`                                   |
+| `Site Settings`                    | SEO, footer text, and publication venue badges                                                                                                                                                   | `_data/content/site.yml`                                    |
+| `Page Titles, Navigation & Labels` | Page titles, descriptions, navigation visibility/order, section headings, and display labels                                                                                                     | `_data/content/pages.yml`                                   |
+| `CV`                               | CV Profile, main jobs and subjobs, education, awards, skills, languages, volunteer work, Publication Display, Research Impact, and custom CV sections; each is an independent second-level entry | `_data/content/cv/*.yml`                                    |
 
 Conference Service uses the conference edition year, even when reviews are written in the preceding calendar year. For example, reviewing in late 2024 for ICLR 2025 belongs under 2025. For conferences with multiple review cycles, confirm the edition rather than automatically adding one year. Journal service remains grouped by the calendar year of service. The website and both CV formats share these records.
 
@@ -77,13 +77,13 @@ The watcher rebuilds the website data and PDF whenever `_data/content/` or a pub
 
 ### Generated Artifacts
 
-| Generated output | Purpose |
-| --- | --- |
-| `_data/generated/content.yml` | Jekyll view model for About, Service, Teaching, Talks, and CV |
+| Generated output                                                                                                          | Purpose                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `_data/generated/content.yml`                                                                                             | Jekyll view model for About, Service, Teaching, Talks, and CV                                          |
 | `_bibliography/papers.bib`, `_bibliography/publications.bib`, `_bibliography/preprints.bib`, `_bibliography/selected.bib` | Automatically generated bibliographies for Jekyll Scholar; Selected uses the CV selection and ordering |
-| `assets/json/resume.json` | JSON Resume data for the retained HTML CV page |
-| `assets/latex/generated/*.tex` | Generated LaTeX fragments for the PDF CV |
-| `assets/pdf/ZhaominWu.pdf` | Public downloadable PDF |
+| `assets/json/resume.json`                                                                                                 | JSON Resume data for the retained HTML CV page                                                         |
+| `assets/latex/generated/*.tex`                                                                                            | Generated LaTeX fragments for the PDF CV                                                               |
+| `assets/pdf/ZhaominWu.pdf`                                                                                                | Public downloadable PDF                                                                                |
 
 Do not edit these derived artifacts manually. For a one-off local validation and build, run:
 

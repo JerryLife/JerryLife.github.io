@@ -26,7 +26,7 @@ groups:
         description: a benchmark suite for characterizing federated learning systems; it provides reusable workloads for system-level FL comparison.
   - title: Publicity and Public Outreach
     items:
-      - name: 'LLM DNA: Tracing Model Evolution via Functional Representations'
+      - name: "LLM DNA: Tracing Model Evolution via Functional Representations"
         url: https://openreview.net/forum?id=UIxHaAqFqQ
         venue: ICLR'26 Oral
         description: >-
@@ -39,7 +39,7 @@ groups:
           [NICE Academic](https://www.bilibili.com/video/BV1ysZeBjEnS/) (NICE学术) on Bilibili:
           "Doing Paternity Testing for Large Models: LLM DNA and Model Evolution Graph"
           (给大模型做亲子鉴定：LLM 的 DNA 与模型演化图谱).
-      - name: 'Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts'
+      - name: "Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts"
         url: https://openreview.net/forum?id=PDBBYwd1LY
         venue: ICLR'26 Oral
         description: >-

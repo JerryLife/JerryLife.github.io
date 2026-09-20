@@ -36,6 +36,7 @@ content_key: publications
       {% bibliography --file preprints.bib %}
       <p class="publication-empty" hidden>{{ page.copy.preprints_empty | escape }}</p>
     </section>
+
   </section>
 </div>
 

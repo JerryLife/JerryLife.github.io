@@ -110,9 +110,9 @@ content_key: talk
 
 {% assign generated_talks = site.data.generated.content.talks.entries %}
 {% if generated_talks and generated_talks.size > 0 %}
-  {% assign talks = generated_talks %}
+{% assign talks = generated_talks %}
 {% else %}
-  {% assign talks = site.data.content.talks.entries | sort: "date" | reverse %}
+{% assign talks = site.data.content.talks.entries | sort: "date" | reverse %}
 {% endif %}
 
 {% if talks and talks.size > 0 %}

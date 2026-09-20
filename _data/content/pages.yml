@@ -2,7 +2,7 @@ schema_version: 1
 home:
   title: Home
   nav: false
-  email_label: 'Email:'
+  email_label: "Email:"
   scholar_label: Google Scholar
   cv_label: CV
   cv_open_label: Open CV (PDF) in a new tab
@@ -27,7 +27,7 @@ publications:
   first_role_label: First / Co-first
   corresponding_role_label: Corresponding
   other_role_label: Other
-  author_note: '* Equal contribution · † Corresponding author'
+  author_note: "* Equal contribution · † Corresponding author"
   reviewed_heading: Peer-reviewed Publications
   preprints_heading: Preprints & Ongoing Work
   reviewed_empty: No peer-reviewed publications match this role.
@@ -50,9 +50,9 @@ supervision:
   qualities_heading: What I look for
   requirements_heading: Basic requirements
   inquiry_heading: How to apply
-  questions_intro: 'In your research description, briefly address:'
+  questions_intro: "In your research description, briefly address:"
   mentoring_heading: Mentoring at NUS
-  outcome_label: 'Outcome:'
+  outcome_label: "Outcome:"
 teaching:
   title: Teaching
   description: Courses and learning resources.
