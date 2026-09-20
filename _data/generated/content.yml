@@ -819,6 +819,34 @@ cv:
   preprints:
     title: Preprints
     entries:
+    - key: li2026longcounsel8
+      title: 'LongCounsel-8: A Benchmark Suite for Longitudinal Depression Tracking
+        from Multi-Session Counseling Dialogues'
+      authors: Jiayi Li, Zhaomin Wu, Bingsheng He
+      short_authors: J. Li, Z. Wu, B. He
+      year: '2026'
+      venue: arXiv 2026
+      details: arXiv preprint arXiv:2609.03507
+      url: https://arxiv.org/abs/2609.03507
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
+    - key: wu2026emotrack
+      title: 'EmoTrack: Clinical-Semantic Modeling for Text-Based Depression Severity
+        Estimation'
+      authors: Zhaomin Wu, Jiayi Li, Bingsheng He
+      short_authors: Z. Wu, J. Li, B. He
+      year: '2026'
+      venue: arXiv 2026
+      details: arXiv preprint arXiv:2605.22286
+      url: https://arxiv.org/abs/2605.22286
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: true
     - key: zhao2026protegofed
       title: 'ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed
         Poisoned Data'
