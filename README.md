@@ -1,17 +1,18 @@
 # Zhaomin Wu Website
 
-## Faculty Redesign Backup
+## Website Update Workflow
 
-The faculty redesign is maintained on `faculty-website-redesign`. Pushing this branch backs up the source on GitHub without updating the existing website. The deployment job only runs for `main`, including manual workflow runs. A source branch does not provide a separately hosted preview website.
+The current website is maintained on `main`. Validate changes, then commit and push directly to `origin/main`; GitHub Actions builds and deploys the website. A feature branch or pull request is not required for routine updates. The deployment job only runs for `main`, including manual workflow runs.
 
-To continue the redesign from another existing checkout:
+To update an existing checkout before making changes:
 
 ```sh
 git fetch origin
-git switch --track origin/faculty-website-redesign
+git switch main
+git pull --ff-only origin main
 ```
 
-After the branch is set up locally, use `git pull --ff-only` to receive its latest changes. Commit and push edits to this same branch; publishing the redesign still requires a separate decision to merge it into `main`.
+The `faculty-website-redesign` branch is retained as a historical backup. Pushing a source branch other than `main` does not update the live website or provide a separately hosted preview.
 
 ## Content CMS and CV Generation
 
