@@ -47,7 +47,7 @@ directions:
   - id: ai-x
     title: AI + X
     illustration: agents
-    stage_label: Agents in action
+    stage_label: Connect agents
     illustration_description: Agents communicating and working toward shared applications in psychology and finance
     description: Using AI to understand behavior and finance.
     subcategories:

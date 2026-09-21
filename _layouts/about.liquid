@@ -65,10 +65,13 @@ layout: default
         <span aria-hidden="true">→</span></a
       >
     </div>
-    {% include research_path.liquid %}
     <div class="faculty-directions">
       {% for direction in home.directions %}
         <article class="faculty-direction" id="{{ direction.id }}">
+          <div class="faculty-research-stage faculty-research-{{ direction.illustration | escape }}">
+            {% include research_illustration.liquid icon=direction.illustration id=direction.id description=direction.illustration_description %}
+            <p>{{ direction.stage_label | escape }}</p>
+          </div>
           <h3>{{ direction.title }}</h3>
           <p class="faculty-direction-description">{{ direction.description | escape }}</p>
           {% for subcategory in direction.subcategories %}
