@@ -1,11 +1,25 @@
 schema_version: 1
 openings_summary: >-
   I have openings for **Postdocs**, **Ph.D. students**,
-  and **Research Assistants (RAs)** at Hong Kong Baptist University.
+  and **Research Assistants (RAs)** to join and shape my new research group at Hong Kong Baptist University.
+start_note: I will join HKBU in January 2027. Start dates can be discussed individually.
+opportunities:
+  - title: Founding Member
+    description: Join and shape a new research group from day one.
+  - title: Hands-on Mentorship
+    description: Hands-on guidance and close collaboration throughout your research.
+  - title: Top-Tier Research
+    description: Target publications at top-tier venues through rigorous, practical research.
+  - title: Competitive Funding
+    description: Funded PhD · HK$19K+/month. HKPFS application support for strong applicants.
+funding_details: |
+  Regular PhD studentship: **HK$19,310/month** at the published 2026/27 rate; tuition fees apply. See [HKBU studentship and fee details](https://gs.hkbu.edu.hk/fees-scholarships-and-financial-aid) for current terms.
+
+  Strong applicants will be supported in applying for **HKPFS**. Successful awardees in HKBU Computer Science receive a combined RGC, HKBU, and departmental stipend of **HK$50,000/month**, plus tuition waiver. Continued support and tuition waivers are subject to satisfactory performance and university terms. See the [HKBU Computer Science fellowship package](https://www.comp.hkbu.edu.hk/v1/?page=hkpfs-info).
 requirements:
   - "**Location:** Work onsite at HKBU."
   - "**English:** Professional work efficiency ([HKBU admission requirements](https://gs.hkbu.edu.hk/admission/research-postgraduate-programmes/application/admission-requirements))."
-  - "**Skills:** Solid foundations in programming, mathematics, systems, machine learning, and algorithms."
+  - "**Skills:** Strong foundations in programming, machine learning, systems, algorithms, or mathematics; interdisciplinary experience is a plus."
 principles:
   - A professor's success is measured primarily by their students' success, beyond publications and grants.
   - Students work with their supervisors, not for them, as partners in research.

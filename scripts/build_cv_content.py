@@ -1523,7 +1523,8 @@ def validate_faculty_content(home: Any, supervision: Any, pages: Any, publicatio
     for name, document in (("home", home), ("supervision", supervision), ("pages", pages)):
         require_schema(mapping(document, name), name, 1)
 
-    text(home.get("working_with_me"), "home.working_with_me", required=True)
+    for key in ("working_with_me", "research_slogan", "research_intro"):
+        text(home.get(key), f"home.{key}", required=True)
     directions = list_value(home.get("directions"), "home.directions")
     if not directions:
         validation_error("home.directions", "must contain at least one direction")
@@ -1548,8 +1549,13 @@ def validate_faculty_content(home: Any, supervision: Any, pages: Any, publicatio
                 if key not in published_keys:
                     validation_error(f"{subpath}.publications", f"'{key}' must refer to a peer-reviewed publication")
 
-    for key in ("openings_summary", "mentoring_intro"):
+    for key in ("openings_summary", "mentoring_intro", "start_note", "funding_details"):
         text(supervision.get(key), f"supervision.{key}", required=True)
+    for index, value in enumerate(list_value(supervision.get("opportunities"), "supervision.opportunities")):
+        path = f"supervision.opportunities[{index}]"
+        opportunity = mapping(value, path)
+        for key in ("title", "description"):
+            text(opportunity.get(key), f"{path}.{key}", required=True)
     for key in ("requirements", "principles"):
         validate_string_list(supervision.get(key), f"supervision.{key}")
     for index, criterion in enumerate(list_value(supervision.get("criteria"), "supervision.criteria")):

@@ -6,7 +6,8 @@ profile:
     email: zhaomin@hkbu.edu.hk
     url: https://www.zhaominwu.com
     image: avatar.jpg
-    summary: Researcher in trustworthy AI, federated learning, and machine unlearning.
+    summary: Bridging divides across data, models, and people through federated learning,
+      multi-agent systems, and AI + X.
     profiles:
     - network: Google Scholar
       url: https://scholar.google.com/citations?user=QjehmgkAAAAJ
@@ -15,25 +16,12 @@ profile:
     subtitle: Incoming Assistant Professor (tenure-track) · January 2027<br>Department
       of Computer Science<br><a href='https://www.hkbu.edu.hk/'>Hong Kong Baptist
       University</a>
-    body: 'I will join Hong Kong Baptist University (HKBU) as a **tenure-track Assistant
-      Professor** in **January 2027**. I am a Research Fellow at the National University
-      of Singapore (NUS) and a recipient of the Singapore NRF Postdoctoral Award (2026).
-      I received my Ph.D. in Computer Science from NUS in 2024, advised by [Bingsheng
-      He](https://www.comp.nus.edu.sg/~hebs/), and my B.Eng. from Huazhong University
-      of Science and Technology in 2019. My work has appeared at leading venues in
-      machine learning, databases, and data mining, such as NeurIPS, ICLR, SIGMOD,
-      KDD, and ACL. I serve as an Area Chair (AC) for premier machine learning conferences
-      such as ICLR.
-
-
-      My research connects fragmented knowledge to solve real-world problems. I use
-      benchmarking to identify practical challenges, then design methods, algorithms,
-      and systems to address them and deploy the solutions in practice. This approach
-      underpins my work on federated learning across data silos and multi-agent systems
-      that connect knowledge distributed across models. I see future AI agents as
-      individuals whose behavior and social interactions deserve study. I aim to use
-      psychology to understand agents and their communities, and in turn use agents
-      to advance psychology and social science research.
+    body: 'I am a Research Fellow at the National University of Singapore (NUS) and
+      a recipient of the **Singapore NRF Postdoctoral Award (2026)**. I received my
+      Ph.D. in Computer Science from NUS in 2024, advised by [Bingsheng He](https://www.comp.nus.edu.sg/~hebs/),
+      and my B.Eng. from Huazhong University of Science and Technology in 2019. My
+      work spans machine learning, databases, and data mining, with publications at
+      NeurIPS, ICLR, SIGMOD, KDD, and ACL. I serve as an Area Chair for ICLR.
 
       '
     image: avatar.jpg
@@ -51,8 +39,8 @@ site:
   seo:
     description: Zhaomin Wu is an incoming tenure-track Assistant Professor at Hong
       Kong Baptist University (January 2027) and a Research Fellow at NUS. His research
-      connects fragmented knowledge through federated learning and multi-agent systems,
-      with a focus on the relationship between AI agents and psychology.
+      bridges divides across data, models, and people through federated learning,
+      multi-agent systems, and the two-way relationship between AI and psychology.
     keywords: Zhaomin Wu, HKBU, federated learning, machine unlearning, multi-agent
       systems, AI and psychology, psychology of AI agents, AI and finance
   footer_text: Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
@@ -392,12 +380,14 @@ cv:
     schema_version: 1
     title: Research Profile
     body: 'I am an NRF Postdoctoral Fellow in Computer Science at the National University
-      of Singapore. My research develops trustworthy AI systems, with a focus on federated
-      learning, machine unlearning, multi-agent systems, and AI for Psychology. My
-      work has appeared in ICLR, NeurIPS, SIGMOD, ACL, KDD, and related venues, including
-      two ICLR 2026 Oral papers and a SIGMOD 2023 Honorable Mention for Best Artifact.
-      My work has received 3000+ citations on Google Scholar. I serve as an Area Chair
-      (AC) for premier machine learning conferences such as ICLR.
+      of Singapore. My research bridges divides across data, models, and people to
+      solve real-world problems. I develop trustworthy AI systems spanning federated
+      learning, machine unlearning, multi-agent systems, and the two-way relationship
+      between AI and psychology. My work has appeared in ICLR, NeurIPS, SIGMOD, ACL,
+      KDD, and related venues, including two ICLR 2026 Oral papers and a SIGMOD 2023
+      Honorable Mention for Best Artifact. My work has received 3000+ citations on
+      Google Scholar. I serve as an Area Chair (AC) for premier machine learning conferences
+      such as ICLR.
 
       '
   research_impact:

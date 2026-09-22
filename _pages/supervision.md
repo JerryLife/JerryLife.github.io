@@ -11,10 +11,24 @@ content_key: supervision
   <section class="faculty-supervision-intro" aria-labelledby="openings-heading">
     <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
     <div class="faculty-lead">{{ supervision.openings_summary | markdownify }}</div>
+    <p>{{ supervision.start_note | escape }}</p>
     <a class="faculty-text-link" href="#inquiry-heading">
       {{- page.copy.inquiry_heading | escape }}
       <span aria-hidden="true">→</span></a
     >
+  </section>
+
+  <section class="faculty-supervision-section" aria-labelledby="opportunities-heading">
+    <h2 id="opportunities-heading">{{ page.copy.opportunities_heading | escape }}</h2>
+    <dl class="faculty-opportunities">
+      {% for opportunity in supervision.opportunities %}
+        <div>
+          <dt>{{ opportunity.title | escape }}</dt>
+          <dd>{{ opportunity.description | escape }}</dd>
+        </div>
+      {% endfor %}
+    </dl>
+    <div class="faculty-funding-details">{{ supervision.funding_details | markdownify }}</div>
   </section>
 
   <section class="faculty-supervision-section" aria-labelledby="principles-heading">

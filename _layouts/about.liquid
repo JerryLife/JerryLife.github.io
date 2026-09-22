@@ -14,6 +14,7 @@ layout: default
         {%- endif %}
       </h1>
       <div class="faculty-affiliation">{{ profile.web_about.subtitle }}</div>
+      <p class="faculty-research-slogan">{{ home.research_slogan | escape }}</p>
       <div class="faculty-bio">{{ profile.web_about.body | markdownify }}</div>
       <div class="faculty-contact" aria-label="Contact and profiles">
         <span class="faculty-email">
@@ -65,6 +66,7 @@ layout: default
         <span aria-hidden="true">→</span></a
       >
     </div>
+    <p class="faculty-research-intro">{{ home.research_intro | escape }}</p>
     <div class="faculty-directions">
       {% for direction in home.directions %}
         <article class="faculty-direction" id="{{ direction.id }}">

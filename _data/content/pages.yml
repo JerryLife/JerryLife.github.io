@@ -42,10 +42,11 @@ publications:
   preprint_plural: preprints
 supervision:
   title: Group
-  description: I have been fortunate to work with many wonderful students and look forward to meeting more.
+  description: Join a new research group bridging divides across data, models, and people.
   nav: true
   nav_order: 2
   openings_heading: Current openings
+  opportunities_heading: Why Join
   principles_heading: My guiding principles
   qualities_heading: What I look for
   requirements_heading: Basic requirements

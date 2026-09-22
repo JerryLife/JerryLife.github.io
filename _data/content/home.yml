@@ -1,11 +1,17 @@
 schema_version: 1
+research_slogan: Bridging divides across data, models, and people to solve real-world problems.
+research_intro: >-
+  My research bridges barriers posed by private and heterogeneous data, knowledge
+  distributed across models, and the gap between AI and human understanding.
+  I use benchmarks to identify practical challenges, then develop methods,
+  algorithms, and systems to address them in real-world settings.
 directions:
   - id: learning
     title: Federated Learning
     illustration: data
-    stage_label: Connect data silos
-    illustration_description: Separate databases connected for federated learning
-    description: Learning from private data without sharing it.
+    stage_label: Bridge data silos
+    illustration_description: Bridging separate databases for federated learning
+    description: Learning across private, heterogeneous data without sharing it.
     subcategories:
       - title: Effective learning
         publications:
@@ -30,9 +36,9 @@ directions:
   - id: ai-systems
     title: Multi-Agent Systems
     illustration: models
-    stage_label: Connect models
-    illustration_description: A network of models sharing and combining knowledge
-    description: Helping AI agents work together safely.
+    stage_label: Bridge models
+    illustration_description: Bridging knowledge distributed across different models
+    description: Understanding and reusing model capabilities for safe collaboration.
     subcategories:
       - title: Model indexing
         publications:
@@ -47,9 +53,9 @@ directions:
   - id: ai-x
     title: AI + X
     illustration: agents
-    stage_label: Connect agents
-    illustration_description: Agents communicating and working toward shared applications in psychology and finance
-    description: Using AI to understand behavior and finance.
+    stage_label: Bridge AI & people
+    illustration_description: An AI agent and a person linked by two arrows, representing AI for psychology and psychology for AI
+    description: Using AI to study human behavior—and psychology to understand AI agents.
     subcategories:
       - title: Psychology
         publications:
@@ -78,4 +84,4 @@ honors:
     detail: Top ~7% (10 of ~150)
 working_with_me: >-
   I am recruiting **Postdocs**, **Ph.D. Students**, and **Research Assistants**
-  to work onsite at HKBU in relevant fields.
+  to join and shape my new research group onsite at HKBU.
