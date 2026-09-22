@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /supervision/
+nav: false
+sitemap: false
+---
+
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Group</title>
+    <link rel="canonical" href="{{ '/group/' | absolute_url }}" />
+    <meta http-equiv="refresh" content="0; url={{ '/group/' | relative_url }}" />
+    <script>
+      window.location.replace({{ '/group/' | relative_url | jsonify }} + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ '/group/' | relative_url }}">Group</a>.</p>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-{% assign faculty_routes = '/|/publications/|/supervision/|/teaching/|/service/|/cv/|/news/|/talk/' | split: '|' %}
+{% assign faculty_routes = '/|/publications/|/group/|/teaching/|/service/|/cv/|/news/|/talk/' | split: '|' %}
 {% assign faculty_core_page = false %}
 {% if faculty_routes contains page.permalink %}{% assign faculty_core_page = true %}{% endif %}
 <!doctype html>

@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /supervision/
+permalink: /group/
 content_key: supervision
 ---
 {% assign supervision = site.data.content.supervision %}

@@ -1,7 +1,7 @@
 schema_version: 1
 links:
   cv: /assets/pdf/ZhaominWu.pdf
-  openings: /supervision/#openings-heading
+  openings: /group/#openings-heading
   publications: /publications/
   news: /news/
 seo:
