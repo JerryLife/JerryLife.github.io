@@ -383,10 +383,19 @@ collections:
             name: openings_summary
             widget: markdown
             hint: Summarize confirmed vacancies and institution in one paragraph.
+          - { label: Start dates, name: start_note, widget: text }
+          - label: Reasons to join
+            name: opportunities
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - { label: Funding details and official sources, name: funding_details, widget: markdown }
           - label: Basic requirements
             name: requirements
             widget: list
-            hint: Keep three concise items for all applicants covering onsite work, minimum duration by role, and English proficiency linked to the university requirements.
+            hint: Cover onsite work, English proficiency, and relevant technical foundations. Interdisciplinary experience is a plus across the group.
             field: { label: Requirement, name: requirement, widget: markdown }
           - label: Guiding principles
             name: principles
@@ -475,6 +484,8 @@ collections:
         file: _data/content/home.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - { label: Research slogan, name: research_slogan, widget: string }
+          - { label: Research introduction, name: research_intro, widget: text }
           - label: Research directions
             name: directions
             widget: list
@@ -703,6 +714,7 @@ collections:
               - { label: Nav, name: nav, widget: boolean }
               - { label: Nav order, name: nav_order, widget: number, required: false }
               - { label: Openings heading, name: openings_heading, widget: string }
+              - { label: Opportunities heading, name: opportunities_heading, widget: string }
               - { label: Principles heading, name: principles_heading, widget: string }
               - { label: Qualities heading, name: qualities_heading, widget: string }
               - { label: Requirements heading, name: requirements_heading, widget: string }
