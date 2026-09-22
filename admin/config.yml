@@ -485,7 +485,6 @@ collections:
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
           - { label: Research slogan, name: research_slogan, widget: string }
-          - { label: Research introduction, name: research_intro, widget: text }
           - label: Research directions
             name: directions
             widget: list

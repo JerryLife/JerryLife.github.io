@@ -1,10 +1,5 @@
 schema_version: 1
 research_slogan: Bridging divides across data, models, and people to solve real-world problems.
-research_intro: >-
-  My research bridges barriers posed by private and heterogeneous data, knowledge
-  distributed across models, and the gap between AI and human understanding.
-  I use benchmarks to identify practical challenges, then develop methods,
-  algorithms, and systems to address them in real-world settings.
 directions:
   - id: learning
     title: Federated Learning

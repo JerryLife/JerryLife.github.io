@@ -1523,7 +1523,7 @@ def validate_faculty_content(home: Any, supervision: Any, pages: Any, publicatio
     for name, document in (("home", home), ("supervision", supervision), ("pages", pages)):
         require_schema(mapping(document, name), name, 1)
 
-    for key in ("working_with_me", "research_slogan", "research_intro"):
+    for key in ("working_with_me", "research_slogan"):
         text(home.get(key), f"home.{key}", required=True)
     directions = list_value(home.get("directions"), "home.directions")
     if not directions:

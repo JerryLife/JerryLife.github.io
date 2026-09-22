@@ -252,15 +252,6 @@ html[data-theme="dark"] {
 .faculty-affiliation a {
   color: inherit;
 }
-.faculty-research-slogan {
-  color: var(--faculty-ink);
-  font-size: clamp(24px, 2.5vw, 29px);
-  font-weight: 500;
-  letter-spacing: -0.7px;
-  line-height: 1.4;
-  margin: 0 0 24px;
-  text-wrap: balance;
-}
 .faculty-bio p {
   margin-bottom: 14px;
   font-size: 17px;
@@ -337,8 +328,9 @@ html[data-theme="dark"] {
 }
 .faculty-research-intro {
   max-width: 900px;
-  color: var(--faculty-muted);
-  font-size: 16px;
+  color: var(--faculty-ink);
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.75;
   margin: -4px 0 26px;
 }
@@ -755,24 +747,20 @@ html[data-theme="dark"] {
     margin-bottom: 0;
   }
   .faculty-portrait {
-    grid-row: 4;
-    width: 180px;
-  }
-  .faculty-research-slogan {
     grid-row: 3;
-    margin: 0;
+    width: 180px;
   }
   .faculty-portrait img {
     height: 205px;
   }
   .faculty-bio {
-    grid-row: 5;
+    grid-row: 4;
   }
   .faculty-bio p:last-child {
     margin-bottom: 0;
   }
   .faculty-contact {
-    grid-row: 6;
+    grid-row: 5;
     margin-top: -5px;
   }
   .faculty-news-item,
