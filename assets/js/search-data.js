@@ -21,7 +21,7 @@ ninja.data = [{
           description: "I have been fortunate to work with many wonderful students and look forward to meeting more.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/supervision/";
+            window.location.href = "/group/";
           },
         },{id: "nav-service",
           title: "Service",
