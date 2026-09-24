@@ -1549,6 +1549,17 @@ def validate_faculty_content(home: Any, supervision: Any, pages: Any, publicatio
                 if key not in published_keys:
                     validation_error(f"{subpath}.publications", f"'{key}' must refer to a peer-reviewed publication")
 
+    for index, value in enumerate(optional_list(supervision.get("members"), "supervision.members")):
+        path = f"supervision.members[{index}]"
+        member = mapping(value, path)
+        for key in ("name", "role"):
+            text(member.get(key), f"{path}.{key}", required=True)
+        for education_index, education_value in enumerate(list_value(member.get("education"), f"{path}.education")):
+            education_path = f"{path}.education[{education_index}]"
+            education = mapping(education_value, education_path)
+            for key in ("degree", "institution"):
+                text(education.get(key), f"{education_path}.{key}", required=True)
+
     for key in ("openings_summary", "mentoring_intro", "start_note", "funding_details"):
         text(supervision.get(key), f"supervision.{key}", required=True)
     for index, value in enumerate(list_value(supervision.get("opportunities"), "supervision.opportunities")):

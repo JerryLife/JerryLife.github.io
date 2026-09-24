@@ -45,6 +45,7 @@ supervision:
   description: Join a new research group bridging divides across data, models, and people.
   nav: true
   nav_order: 2
+  members_heading: Current members
   openings_heading: Current openings
   opportunities_heading: Why Join
   principles_heading: My guiding principles

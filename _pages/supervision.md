@@ -8,6 +8,25 @@ content_key: supervision
 {% assign contact_email = site.data.content.profile.basics.email %}
 
 <div class="faculty-supervision">
+  {% if supervision.members.size > 0 %}
+    <section class="faculty-current-members" aria-labelledby="members-heading">
+      <h2 id="members-heading">{{ page.copy.members_heading | escape }}</h2>
+      <ul class="faculty-member-list" tabindex="0" aria-labelledby="members-heading">
+        {% for member in supervision.members %}
+          <li class="faculty-member">
+            <strong>{{ member.name | escape }}</strong>
+            <span class="faculty-member-separator" aria-hidden="true">·</span>
+            <span class="faculty-member-role">{{ member.role | escape }}</span>
+            {% for education in member.education %}
+              <span class="faculty-member-separator" aria-hidden="true">·</span>
+              <span class="faculty-member-education">{{ education.institution | escape }} ({{ education.degree | escape }})</span>
+            {% endfor %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
   <section class="faculty-supervision-intro" aria-labelledby="openings-heading">
     <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
     <div class="faculty-lead">{{ supervision.openings_summary | markdownify }}</div>

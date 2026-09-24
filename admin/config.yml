@@ -375,10 +375,25 @@ collections:
                 required: false
 
       - name: supervision
-        label: Research Inquiries & Opportunities
+        label: Group Members & Opportunities
         file: _data/content/supervision.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - label: Current members
+            name: members
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - label: Education
+                name: education
+                widget: list
+                summary: "{{fields.degree}} · {{fields.institution}}"
+                fields:
+                  - { label: Degree, name: degree, widget: string }
+                  - { label: Institution, name: institution, widget: string }
           - label: Current openings
             name: openings_summary
             widget: markdown
@@ -712,6 +727,7 @@ collections:
               - { label: Description, name: description, widget: string, required: false }
               - { label: Nav, name: nav, widget: boolean }
               - { label: Nav order, name: nav_order, widget: number, required: false }
+              - { label: Members heading, name: members_heading, widget: string }
               - { label: Openings heading, name: openings_heading, widget: string }
               - { label: Opportunities heading, name: opportunities_heading, widget: string }
               - { label: Principles heading, name: principles_heading, widget: string }
