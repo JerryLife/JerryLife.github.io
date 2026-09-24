@@ -379,7 +379,7 @@ collections:
         file: _data/content/supervision.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
-          - label: Current members
+          - label: Members
             name: members
             widget: list
             required: false
