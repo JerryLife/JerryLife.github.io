@@ -1,11 +1,11 @@
 schema_version: 1
 members:
-  - name: Ms. Jiayi Li
+  - name: Jiayi Li
     role: Senior RA
     education:
-      - degree: MComp
+      - degree: M.Sc.
         institution: NUS
-      - degree: BSc Hons
+      - degree: B.Sc. Hons
         institution: Univ. of Nottingham
 openings_summary: >-
   I have openings for **Postdocs**, **Ph.D. students**,
