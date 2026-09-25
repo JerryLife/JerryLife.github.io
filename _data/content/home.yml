@@ -54,6 +54,7 @@ directions:
     subcategories:
       - title: Psychology
         publications:
+          - wu2026emotrack
           - wu2026deception
           - zhao2026reasoning
       - title: Finance
