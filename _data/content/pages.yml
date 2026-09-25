@@ -25,7 +25,7 @@ publications:
   role_label: Role
   all_role_label: All
   first_role_label: First / Co-first
-  corresponding_role_label: Corresponding
+  corresponding_role_label: Corresponding / Last
   other_role_label: Other
   author_note: "* Equal contribution · † Corresponding author"
   reviewed_heading: Peer-reviewed Publications

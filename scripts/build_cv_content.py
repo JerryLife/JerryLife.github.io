@@ -1036,6 +1036,26 @@ def sorted_publications(publications: list[dict[str, Any]]) -> list[dict[str, An
     return sorted(publications, key=lambda item: (-int(item["year"]), item["key"].lower()))
 
 
+def publication_role_priority(publication: dict[str, Any], author_aliases: set[str]) -> int:
+    """First/co-first, then corresponding/last, then other collaborators."""
+    priority = 2
+    authors = publication["author_names"]
+    for index, author in enumerate(authors):
+        clean_name = re.sub(r"[*∗†‡§¶‖&^]", "", author).strip()
+        if clean_name not in author_aliases:
+            continue
+        if index == 0 or "*" in author or "∗" in author:
+            return 0
+        if "†" in author or index == len(authors) - 1:
+            priority = 1
+    return priority
+
+
+def sorted_website_publications(publications: list[dict[str, Any]], scholar: dict[str, Any]) -> list[dict[str, Any]]:
+    author_aliases = {f"{first} {last}" for first in scholar["first_name"] for last in scholar["last_name"]}
+    return sorted(publications, key=lambda item: (-int(item["year"]), publication_role_priority(item, author_aliases), item["key"].lower()))
+
+
 def render_selected_publications(config: dict[str, Any], publications: list[dict[str, Any]]) -> str:
     selected = sorted((item for item in publications if item["cv_selected"]), key=lambda item: (item["cv_order"], -int(item["year"]), item["key"].lower()))
     lines = [
@@ -1453,6 +1473,7 @@ def write_if_changed(path: Path, content: str) -> bool:
 
 def build(profile: dict[str, Any], settings: dict[str, Any], cv_profile: dict[str, Any], cv: dict[str, Any], service: dict[str, Any], teaching: dict[str, Any], mentoring: dict[str, Any], talks: dict[str, Any], publications: list[dict[str, Any]]) -> list[Path]:
     changed: list[Path] = []
+    website_publications = sorted_website_publications(publications, load_yaml(REPOSITORY_ROOT / "_config.yml")["scholar"])
     outputs = {
         RESUME_JSON_OUTPUT: json.dumps(to_json_resume(profile, cv, publications), indent=2, ensure_ascii=False) + "\n",
         SITE_VIEW_OUTPUT: yaml.dump(
@@ -1463,8 +1484,8 @@ def build(profile: dict[str, Any], settings: dict[str, Any], cv_profile: dict[st
             sort_keys=False,
         ),
         MERGED_BIBLIOGRAPHY_OUTPUT: merged_bibliography(publications),
-        PUBLICATIONS_BIBLIOGRAPHY_OUTPUT: merged_bibliography([item for item in publications if not item["is_preprint"]]),
-        PREPRINTS_BIBLIOGRAPHY_OUTPUT: merged_bibliography([item for item in publications if item["is_preprint"]]),
+        PUBLICATIONS_BIBLIOGRAPHY_OUTPUT: merged_bibliography([item for item in website_publications if not item["is_preprint"]]),
+        PREPRINTS_BIBLIOGRAPHY_OUTPUT: merged_bibliography([item for item in website_publications if item["is_preprint"]]),
         SELECTED_BIBLIOGRAPHY_OUTPUT: merged_bibliography(
             sorted(
                 (item for item in publications if item["cv_selected"]),

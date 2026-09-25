@@ -27,13 +27,13 @@ content_key: publications
 
     <section id="publication-list" class="publication-collection" aria-labelledby="peer-reviewed-title">
       <h3 id="peer-reviewed-title" class="publication-collection-title">{{ page.copy.reviewed_heading | escape }}</h3>
-      {% bibliography --file publications.bib %}
+      {% bibliography --file publications.bib --sort_by none %}
       <p class="publication-empty" hidden>{{ page.copy.reviewed_empty | escape }}</p>
     </section>
 
     <section id="preprints" class="publication-collection" aria-labelledby="preprints-title">
       <h3 id="preprints-title" class="publication-collection-title">{{ page.copy.preprints_heading | escape }}</h3>
-      {% bibliography --file preprints.bib %}
+      {% bibliography --file preprints.bib --sort_by none %}
       <p class="publication-empty" hidden>{{ page.copy.preprints_empty | escape }}</p>
     </section>
 

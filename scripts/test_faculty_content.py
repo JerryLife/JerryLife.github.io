@@ -18,6 +18,40 @@ class FacultyContentTests(unittest.TestCase):
     def test_current_content(self):
         self.validate()
 
+    def test_publication_author_role_priority(self):
+        aliases = {"Zhaomin Wu", "Z. Wu"}
+        cases = [
+            (["Zhaomin Wu", "Other Author"], 0),
+            (["First Author*", "Zhaomin Wu*", "Last Author"], 0),
+            (["First Author∗", "Z. Wu∗†", "Last Author"], 0),
+            (["Zhaomin Wu†"], 0),
+            (["First Author", "Zhaomin Wu†", "Last Author"], 1),
+            (["First Author", "Z. Wu"], 1),
+            (["First Author", "Zhaomin Wu", "Last Author"], 2),
+            (["First Author*", "Zhaomin Wu", "Last Author†"], 2),
+            (["Another Wu", "Other Author"], 2),
+        ]
+        for authors, expected in cases:
+            with self.subTest(authors=authors):
+                self.assertEqual(content.publication_role_priority({"author_names": authors}, aliases), expected)
+
+    def test_website_publication_order_keeps_years_and_prioritizes_roles(self):
+        scholar = {"first_name": ["Zhaomin", "Z."], "last_name": ["Wu"]}
+        papers = [
+            {"key": "a2026other", "year": "2026", "author_names": ["First Author", "Zhaomin Wu", "Last Author"]},
+            {"key": "c2026last", "year": "2026", "author_names": ["First Author", "Zhaomin Wu"]},
+            {"key": "z2026first", "year": "2026", "author_names": ["Zhaomin Wu", "Last Author"]},
+            {"key": "a2025first", "year": "2025", "author_names": ["Zhaomin Wu", "Last Author"]},
+            {"key": "b2026corresponding", "year": "2026", "author_names": ["First Author", "Zhaomin Wu†", "Last Author"]},
+            {"key": "y2026cofirst", "year": "2026", "author_names": ["First Author*", "Z. Wu*†", "Last Author"]},
+        ]
+        original = copy.deepcopy(papers)
+        ordered = content.sorted_website_publications(papers, scholar)
+        self.assertEqual([paper["key"] for paper in ordered], [
+            "y2026cofirst", "z2026first", "b2026corresponding", "c2026last", "a2026other", "a2025first",
+        ])
+        self.assertEqual(papers, original)
+
     def test_additional_research_direction_needs_no_template_change(self):
         direction = copy.deepcopy(self.home["directions"][0])
         direction.update(id="additional-direction", title="Additional research")

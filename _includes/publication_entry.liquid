@@ -1,6 +1,7 @@
 {%- assign paper = include.entry -%}
 {%- assign is_first_author = false -%}
 {%- assign is_corresponding_author = false -%}
+{%- assign is_last_author = false -%}
 {%- for author in paper.author_array -%}
   {%- assign clean_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
   {%- if site.scholar.last_name contains clean_last and site.scholar.first_name contains author.first -%}
@@ -9,6 +10,9 @@
     {%- endif -%}
     {%- if author.last contains '†' -%}
       {%- assign is_corresponding_author = true -%}
+    {%- endif -%}
+    {%- if forloop.last -%}
+      {%- assign is_last_author = true -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -36,7 +40,7 @@
 {%- endif -%}
 <article
   id="{{ paper_id }}"
-  class="publication-entry{% if include.selected %} publication-entry-selected{% endif %}{% if is_first_author %} first-author{% endif %}{% if is_corresponding_author %} corresponding-author{% endif %}"
+  class="publication-entry{% if include.selected %} publication-entry-selected{% endif %}{% if is_first_author %} first-author{% endif %}{% if is_corresponding_author %} corresponding-author{% endif %}{% if is_last_author %} last-author{% endif %}"
   aria-labelledby="{{ paper_id }}-title"
 >
   {% if include.selected and paper.preview %}

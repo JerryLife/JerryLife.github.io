@@ -10,9 +10,12 @@
 
   const matches = (entry, role) => {
     const first = entry.classList.contains("first-author");
-    const corresponding = entry.classList.contains("corresponding-author");
+    const correspondingOrLast = entry.classList.contains("corresponding-author") || entry.classList.contains("last-author");
     return (
-      role === "all" || (role === "first" && first) || (role === "corresponding" && corresponding) || (role === "other" && !first && !corresponding)
+      role === "all" ||
+      (role === "first" && first) ||
+      (role === "corresponding" && correspondingOrLast) ||
+      (role === "other" && !first && !correspondingOrLast)
     );
   };
 
