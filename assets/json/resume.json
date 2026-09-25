@@ -286,6 +286,13 @@
       "summary": "Zhaomin Wu, Mingzhe Du, See-Kiong Ng, Bingsheng He. In The Fourteenth International Conference on Learning Representations (ICLR). Oral presentation, top 1% of submissions."
     },
     {
+      "name": "EmoTrack: Clinical-Semantic Modeling for Text-Based Depression Severity Estimation",
+      "publisher": "NeurIPS 2026",
+      "releaseDate": "2026-01-01",
+      "url": "https://arxiv.org/abs/2605.22286",
+      "summary": "Zhaomin Wu, Jiayi Li, Bingsheng He. In Advances in Neural Information Processing Systems"
+    },
+    {
       "name": "LLM DNA: Tracing Model Evolution via Functional Representations",
       "publisher": "ICLR 2026",
       "releaseDate": "2026-01-01",
@@ -398,13 +405,6 @@
       "releaseDate": "2026-01-01",
       "url": "https://arxiv.org/abs/2609.03507",
       "summary": "Jiayi Li, Zhaomin Wu, Bingsheng He. arXiv preprint arXiv:2609.03507"
-    },
-    {
-      "name": "EmoTrack: Clinical-Semantic Modeling for Text-Based Depression Severity Estimation",
-      "publisher": "arXiv 2026",
-      "releaseDate": "2026-01-01",
-      "url": "https://arxiv.org/abs/2605.22286",
-      "summary": "Zhaomin Wu, Jiayi Li, Bingsheng He. arXiv preprint arXiv:2605.22286"
     },
     {
       "name": "ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed Poisoned Data",
