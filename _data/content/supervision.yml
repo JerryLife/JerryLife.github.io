@@ -35,15 +35,16 @@ criteria:
 contact:
   subject: "HKBU [Position] Application - [Name]"
   introduction: |
-    Please email me your **CV**, **academic transcript**, and a **research description (under 100 words)**. Include your research area, intended start date, and expected duration in the email.
+    Please email me your **CV**, **academic transcript**, and a **one-page personal statement (no word limit)**. Include your research area, intended start date, and expected duration in the email.
 
     Subject format: **HKBU [Position] Application - [Name]**. Use PhD, RA, or Postdoc for the position.
 
     Example: HKBU PhD Application - Alex Chen
   questions:
     - Briefly describe your research background (if any) and your favorite work (a paper, thesis, or project).
-    - Why would you like to work with me?
+    - Why are you applying for this position, and why would you like to work with me?
     - Which of my research directions or papers connects most closely with your interests?
+    - What are your future research and career plans, and how would this opportunity help you achieve them?
 mentoring_intro: >-
   I have mentored undergraduate, master's, and visiting Ph.D. students
   at the National University of Singapore.
