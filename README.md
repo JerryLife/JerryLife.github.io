@@ -2,7 +2,7 @@
 
 ## Website Update Workflow
 
-The current website is maintained on `main`. Validate changes, then commit and push directly to `origin/main`; GitHub Actions builds and deploys the website. A feature branch or pull request is not required for routine updates. The deployment job only runs for `main`, including manual workflow runs.
+The current website is maintained on `main`. Before every deployment, validate the changes, generate a local website preview, and obtain the user's explicit approval of that preview. Only then commit and push the approved changes directly to `origin/main`; GitHub Actions builds and deploys the website. If the website changes after approval, regenerate the local preview and obtain approval again. A feature branch or pull request is not required for routine updates. The deployment job only runs for `main`, including manual workflow runs.
 
 Every new paper or publication metadata/status update must also update the CV through the shared publication source. Regenerate the derived bibliography, JSON Resume, LaTeX fragments, and downloadable PDF. Before reporting the update complete, verify the paper's CV metadata (title, authors, venue, and year) and confirm that the rebuilt PDF has been deployed.
 

@@ -35,7 +35,7 @@ criteria:
 contact:
   subject: "HKBU [Position] Application - [Name]"
   introduction: |
-    Please email me your **CV**, **academic transcript**, and a **one-page personal statement (no word limit)**. Include your research area, intended start date, and expected duration in the email.
+    Please email me your **CV**, **academic transcript**, and a **one-page personal statement**.
 
     Subject format: **HKBU [Position] Application - [Name]**. Use PhD, RA, or Postdoc for the position.
 
@@ -45,6 +45,7 @@ contact:
     - Why are you applying for this position, and why would you like to work with me?
     - Which of my research directions or papers connects most closely with your interests?
     - What are your future research and career plans, and how would this opportunity help you achieve them?
+    - Include your research area, intended start date, and expected duration in the email.
 mentoring_intro: >-
   I have mentored undergraduate, master's, and visiting Ph.D. students
   at the National University of Singapore.
