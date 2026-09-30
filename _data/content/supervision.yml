@@ -1,4 +1,12 @@
 schema_version: 1
+members:
+  - name: Jiayi Li
+    role: Senior RA
+    education:
+      - degree: Master
+        institution: NUS
+      - degree: Bachelor, Hons
+        institution: Univ. of Nottingham
 openings_summary: >-
   I have openings for **Postdocs**, **Ph.D. students**,
   and **Research Assistants (RAs)** to join and shape my new research group at Hong Kong Baptist University.

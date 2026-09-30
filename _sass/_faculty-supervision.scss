@@ -16,6 +16,44 @@
   }
 }
 
+.faculty-current-members {
+  margin-bottom: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.faculty-member-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  border-top: 1px solid var(--faculty-line);
+  border-bottom: 1px solid var(--faculty-line);
+}
+
+.faculty-member {
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.faculty-member-role {
+  color: var(--faculty-accent);
+  font-weight: 600;
+}
+
+.faculty-member-education {
+  color: var(--faculty-ink);
+}
+
+.faculty-member-separator {
+  color: var(--faculty-muted);
+  margin: 0 0.5rem;
+}
+
 .faculty-supervision-intro {
   padding: 25px 30px;
   border-left: 3px solid #b2995f;
