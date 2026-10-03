@@ -68,6 +68,8 @@ honors:
     # ICLR's final fact sheet reports 224 orals / 19,525 submissions (~1.15%).
     # https://media.iclr.cc/Conferences/ICLR2026/ICLR2026_Fact_Sheet.pdf
     detail: Top ~1% of 19,525 submissions
+  - source_title: Best Research Staff Award
+    detail: NUS Institute of Data Science (2/∼50).
   - source_title: Honorable Mention for Best Ph.D. Thesis Award
     # Approximate selection pool retained from cv/awards.yml (5/~150).
     detail: Top ~3% (5 of ~150)

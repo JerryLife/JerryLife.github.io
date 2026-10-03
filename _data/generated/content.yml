@@ -569,6 +569,21 @@ cv:
       selected: false
       cv_selected: false
       is_preprint: false
+    - key: li2026longcounsel8
+      title: 'LongCounsel-8: A Benchmark Suite for Longitudinal Depression Tracking
+        from Multi-Session Counseling Dialogues'
+      authors: Jiayi Li, Zhaomin Wu, Bingsheng He
+      short_authors: J. Li, Z. Wu, B. He
+      year: '2026'
+      venue: GenAI4Health @ NeurIPS 2026
+      details: 'The Third Workshop on GenAI for Health: Agentic Systems, Clinical
+        Trust, and Future Potential'
+      url: https://arxiv.org/abs/2609.03507
+      highlight: ''
+      summary: ''
+      selected: false
+      cv_selected: false
+      is_preprint: false
     - key: wang2026crossalpha
       title: 'CrossAlpha: An Annual-Report Benchmark for Cross-Market Factor Research'
       authors: Qian Wang, Zhongyi Tong, Nuo Chen, Zhaomin Wu, Bingsheng He
@@ -833,20 +848,6 @@ cv:
   preprints:
     title: Preprints
     entries:
-    - key: li2026longcounsel8
-      title: 'LongCounsel-8: A Benchmark Suite for Longitudinal Depression Tracking
-        from Multi-Session Counseling Dialogues'
-      authors: Jiayi Li, Zhaomin Wu, Bingsheng He
-      short_authors: J. Li, Z. Wu, B. He
-      year: '2026'
-      venue: arXiv 2026
-      details: arXiv preprint arXiv:2609.03507
-      url: https://arxiv.org/abs/2609.03507
-      highlight: ''
-      summary: ''
-      selected: false
-      cv_selected: false
-      is_preprint: true
     - key: zhao2026protegofed
       title: 'ProtegoFed: Backdoor-Free Federated Instruction Tuning with Interspersed
         Poisoned Data'
