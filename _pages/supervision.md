@@ -8,15 +8,81 @@ content_key: supervision
 {% assign contact_email = site.data.content.profile.basics.email %}
 
 <div class="faculty-supervision">
-  <section class="faculty-supervision-intro" aria-labelledby="openings-heading">
-    <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
-    <div class="faculty-lead">{{ supervision.openings_summary | markdownify }}</div>
-    <p>{{ supervision.start_note | escape }}</p>
-    <a class="faculty-text-link" href="#inquiry-heading">
-      {{- page.copy.inquiry_heading | escape }}
-      <span aria-hidden="true">→</span></a
-    >
-  </section>
+  <div class="faculty-group-overview">
+    <section class="faculty-supervision-intro" aria-labelledby="openings-heading">
+      <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
+      <div class="faculty-lead">{{ supervision.openings_summary | markdownify }}</div>
+      <p>{{ supervision.start_note | escape }}</p>
+      <a class="faculty-text-link" href="#inquiry-heading">
+        {{- page.copy.inquiry_heading | escape }}
+        <span aria-hidden="true">→</span></a
+      >
+    </section>
+    {% if supervision.member_groups.size > 0 %}
+      <section class="faculty-group-members mt-5" aria-labelledby="members-heading">
+        <h2 id="members-heading">{{ page.copy.members_heading | escape }}</h2>
+        {% for group in supervision.member_groups %}
+          {% if group.members.size > 0 %}
+            <section class="faculty-member-group" aria-labelledby="member-group-{{ forloop.index }}">
+              <h3 id="member-group-{{ forloop.index }}">{{ group.title | escape }}</h3>
+              <ul class="faculty-member-grid row list-unstyled mb-0">
+                {% for member in group.members %}
+                  <li class="col-12 col-md-6 col-xl-4 mb-4">
+                    <div class="faculty-member card h-100">
+                      <div class="card-body p-3">
+                        <div class="media align-items-center">
+                          <div class="faculty-member-photo flex-shrink-0 mr-3 rounded-circle overflow-hidden">
+                            <img
+                              class="d-block w-100 h-100"
+                              src="{{ member.photo | relative_url }}"
+                              alt="{{ member.photo_alt | escape }}"
+                              width="80"
+                              height="80"
+                            >
+                          </div>
+                          <div class="faculty-member-details media-body">
+                            <h4 class="mb-1">
+                              <a href="{{ member.url | escape }}">
+                                {{- member.name | escape }}
+                                <span aria-hidden="true">↗</span>
+                              </a>
+                            </h4>
+                            <p class="faculty-member-role mb-0">{{ member.role | escape }}</p>
+                            <dl class="faculty-member-education mt-2 mb-0">
+                              {% for education in member.education %}
+                                <div class="d-flex flex-wrap">
+                                  <dt class="font-weight-normal text-nowrap mr-1">
+                                    {{ education.level | escape }}
+                                    <span aria-hidden="true">·</span>
+                                  </dt>
+                                  <dd class="mb-0">
+                                    {% if education.institution_short != blank %}
+                                      <abbr title="{{ education.institution | escape }}">{{ education.institution_short | escape }}</abbr>
+                                    {% else %}
+                                      {{ education.institution | escape }}
+                                    {% endif %}
+                                  </dd>
+                                </div>
+                              {% endfor %}
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                      {% if member.research_interests != blank %}
+                        <div class="faculty-member-research card-footer px-3 py-2">
+                          <p class="mb-0">{{ member.research_interests | escape }}</p>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
+        {% endfor %}
+      </section>
+    {% endif %}
+  </div>
 
   <section class="faculty-supervision-section" aria-labelledby="opportunities-heading">
     <h2 id="opportunities-heading">{{ page.copy.opportunities_heading | escape }}</h2>

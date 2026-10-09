@@ -246,12 +246,24 @@
     margin-bottom: 1.5rem;
   }
   h2.bibliography {
-    color: var(--faculty-ink);
-    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--faculty-accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.25;
     text-align: left;
-    margin: 1.7rem 0 0;
+    margin: 2.5rem 0 0.5rem;
     padding: 0;
     border: 0;
+
+    &::after {
+      content: "";
+      flex: 1;
+      border-top: 2px solid var(--faculty-line);
+    }
   }
   #preprints {
     margin-top: 4.5rem;

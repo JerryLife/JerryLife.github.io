@@ -375,10 +375,37 @@ collections:
                 required: false
 
       - name: supervision
-        label: Research Inquiries & Opportunities
+        label: Group Members & Opportunities
         file: _data/content/supervision.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - label: Group members
+            name: member_groups
+            widget: list
+            summary: "{{fields.title}}"
+            hint: Only list confirmed members. Previous mentees are maintained separately.
+            fields:
+              - { label: Category, name: title, widget: string }
+              - label: Members
+                name: members
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Position, name: role, widget: string }
+                  - { label: Research interests, name: research_interests, widget: string, required: false }
+                  - { label: Personal homepage, name: url, widget: string }
+                  - { label: Photo, name: photo, widget: image }
+                  - { label: Photo description, name: photo_alt, widget: string }
+                  - label: Education
+                    name: education
+                    widget: list
+                    summary: "{{fields.level}} · {{fields.institution}}"
+                    fields:
+                      - { label: Level, name: level, widget: string }
+                      - { label: Institution, name: institution, widget: string }
+                      - { label: Short institution name, name: institution_short, widget: string, required: false }
+                      - { label: Degree, name: degree, widget: string }
           - label: Current openings
             name: openings_summary
             widget: markdown
@@ -713,6 +740,7 @@ collections:
               - { label: Nav, name: nav, widget: boolean }
               - { label: Nav order, name: nav_order, widget: number, required: false }
               - { label: Openings heading, name: openings_heading, widget: string }
+              - { label: Members heading, name: members_heading, widget: string }
               - { label: Opportunities heading, name: opportunities_heading, widget: string }
               - { label: Principles heading, name: principles_heading, widget: string }
               - { label: Qualities heading, name: qualities_heading, widget: string }

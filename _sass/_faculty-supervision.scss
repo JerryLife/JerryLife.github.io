@@ -16,6 +16,90 @@
   }
 }
 
+.faculty-group-members > h2 {
+  margin: 0 0 1.3rem;
+}
+
+.faculty-member-group {
+  + .faculty-member-group {
+    margin-top: 2rem;
+  }
+
+  > h3 {
+    color: var(--faculty-ink);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+}
+
+.faculty-member {
+  h4 {
+    font-size: 1rem;
+    letter-spacing: -0.025em;
+
+    a {
+      color: var(--faculty-ink);
+
+      &:hover {
+        color: var(--faculty-accent);
+      }
+    }
+
+    span {
+      color: var(--faculty-accent);
+      font-size: 0.8em;
+      margin-left: 0.3rem;
+    }
+  }
+}
+
+.faculty-member-details {
+  min-width: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.faculty-member-photo {
+  width: 5rem;
+  height: 5rem;
+
+  img {
+    object-fit: cover;
+  }
+
+  // Frame Jiayi's face within the original homepage photograph.
+  img[src$="jiayi-li.webp"] {
+    object-position: 28% 24%;
+    transform: scale(2.8);
+    transform-origin: 27% 16%;
+  }
+}
+
+.faculty-member-role {
+  color: var(--faculty-accent);
+}
+
+.faculty-member-research {
+  background: var(--faculty-warm);
+  border-top-color: var(--faculty-line);
+  color: var(--faculty-accent);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.faculty-member-education {
+  dt {
+    color: var(--faculty-muted);
+  }
+
+  abbr {
+    text-decoration: none;
+    cursor: help;
+  }
+}
+
 .faculty-supervision-intro {
   padding: 25px 30px;
   border-left: 3px solid #b2995f;

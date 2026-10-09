@@ -1,11 +1,29 @@
 schema_version: 1
+member_groups:
+  - title: Research Assistants
+    members:
+      - name: Jiayi Li
+        role: Senior Research Assistant
+        research_interests: AI + Psychology
+        url: https://i.hiddensev.com/
+        photo: /assets/img/jiayi-li.webp
+        photo_alt: Jiayi Li
+        education:
+          - level: Master
+            institution: National University of Singapore
+            institution_short: NUS
+            degree: MComp in Artificial Intelligence
+          - level: Undergrad
+            institution: University of Nottingham
+            institution_short: Univ. of Nottingham
+            degree: BSc in Computer Science with AI
 openings_summary: >-
   I have openings for **Postdocs**, **Ph.D. students**,
-  and **Research Assistants (RAs)** to join and shape my new research group at Hong Kong Baptist University.
-start_note: I will join HKBU in January 2027. Start dates can be discussed individually.
+  and **Research Assistants (RAs)** to join my new research group at Hong Kong Baptist University.
+start_note: I will join HKBU in January 2027. Start dates can be discussed case by case.
 opportunities:
   - title: Founding Member
-    description: Join and shape a new research group from day one.
+    description: Join a new research group from day one.
   - title: Hands-on Mentorship
     description: Hands-on guidance and close collaboration throughout your research.
   - title: Top-Tier Research
