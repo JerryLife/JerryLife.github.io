@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-group",
           title: "Group",
-          description: "Join a new research group bridging divides across data, models, and people.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/group/";
