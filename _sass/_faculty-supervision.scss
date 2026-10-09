@@ -70,7 +70,7 @@
   }
 
   // Frame Jiayi's face within the original homepage photograph.
-  img[src$="jiayi-li.webp"] {
+  &--jiayi-li img {
     object-position: 28% 24%;
     transform: scale(2.8);
     transform-origin: 27% 16%;

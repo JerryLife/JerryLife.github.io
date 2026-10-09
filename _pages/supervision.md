@@ -31,7 +31,7 @@ content_key: supervision
                     <div class="faculty-member card h-100">
                       <div class="card-body p-3">
                         <div class="media align-items-center">
-                          <div class="faculty-member-photo flex-shrink-0 mr-3 rounded-circle overflow-hidden">
+                          <div class="faculty-member-photo faculty-member-photo--{{ member.name | slugify }} flex-shrink-0 mr-3 rounded-circle overflow-hidden">
                             <img
                               class="d-block w-100 h-100"
                               src="{{ member.photo | relative_url }}"
