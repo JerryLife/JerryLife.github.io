@@ -16,9 +16,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-group",
-          title: "Group",
-          description: "",
+        },{id: "nav-across-lab",
+          title: "ACROSS Lab",
+          description: "Aligned, Collaborative, Reliable, Open, and Scalable Systems",
           section: "Navigation",
           handler: () => {
             window.location.href = "/group/";
