@@ -1,4 +1,8 @@
 schema_version: 1
+lab_meaning: |
+  - **Across data.** Learn across different data sources without sharing the raw data.
+  - **Across models.** Bring together the strengths of different models to work as a team.
+  - **Across agents and humans.** Use human insights to understand agents, and agents to better understand people.
 member_groups:
   - title: Research Assistants
     members:
@@ -19,7 +23,7 @@ member_groups:
             degree: BSc in Computer Science with AI
 openings_summary: >-
   I have openings for **Postdocs**, **Ph.D. students**,
-  and **Research Assistants (RAs)** to join my new research group at Hong Kong Baptist University.
+  and **Research Assistants (RAs)** to join ACROSS Lab at Hong Kong Baptist University.
 start_note: I will join HKBU in January 2027. Start dates can be discussed case by case.
 opportunities:
   - title: Founding Member

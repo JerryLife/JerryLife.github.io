@@ -16,6 +16,25 @@
   }
 }
 
+.faculty-supervision .faculty-lab-about > h2 {
+  font-size: 1.375rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.faculty-lab-about {
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--faculty-line);
+
+  li + li {
+    margin-top: 12px;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .faculty-group-members > h2 {
   margin: 0 0 1.3rem;
 }
@@ -105,9 +124,19 @@
   border-left: 3px solid #b2995f;
   background: var(--faculty-warm);
 
-  h2 {
-    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  .faculty-section-heading {
     margin-bottom: 1.3rem;
+
+    h2 {
+      margin: 0;
+    }
+
+    .faculty-text-link {
+      margin-left: auto;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
   }
 
   .faculty-lead {
@@ -117,6 +146,7 @@
 
   > p {
     color: var(--faculty-muted);
+    margin-bottom: 0;
   }
 }
 

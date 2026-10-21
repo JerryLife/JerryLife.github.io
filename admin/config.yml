@@ -379,6 +379,7 @@ collections:
         file: _data/content/supervision.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - { label: Lab name explanation, name: lab_meaning, widget: markdown }
           - label: Group members
             name: member_groups
             widget: list
@@ -511,6 +512,7 @@ collections:
         file: _data/content/home.yml
         fields:
           - { label: Schema version, name: schema_version, widget: hidden, default: 1 }
+          - { label: Lab introduction, name: lab_summary, widget: text }
           - { label: Research slogan, name: research_slogan, widget: string }
           - label: Research directions
             name: directions
@@ -692,6 +694,7 @@ collections:
               - { label: Scholar label, name: scholar_label, widget: string }
               - { label: Cv label, name: cv_label, widget: string }
               - { label: Cv open label, name: cv_open_label, widget: string }
+              - { label: Lab link label, name: lab_link_label, widget: string }
               - { label: Hiring heading, name: hiring_heading, widget: string }
               - { label: Openings label, name: openings_label, widget: string }
               - { label: Research heading, name: research_heading, widget: string }
@@ -736,9 +739,11 @@ collections:
             collapsed: true
             fields:
               - { label: Title, name: title, widget: string }
+              - { label: Navigation label, name: nav_title, widget: string, required: false }
               - { label: Description, name: description, widget: string, required: false }
               - { label: Nav, name: nav, widget: boolean }
               - { label: Nav order, name: nav_order, widget: number, required: false }
+              - { label: Lab introduction heading, name: about_heading, widget: string }
               - { label: Openings heading, name: openings_heading, widget: string }
               - { label: Members heading, name: members_heading, widget: string }
               - { label: Opportunities heading, name: opportunities_heading, widget: string }

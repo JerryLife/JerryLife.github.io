@@ -15,6 +15,16 @@ layout: default
       </h1>
       <div class="faculty-affiliation">{{ profile.web_about.subtitle }}</div>
       <div class="faculty-bio">{{ profile.web_about.body | markdownify }}</div>
+      <div class="faculty-hiring-note">
+        <div class="faculty-hiring-heading">
+          <strong class="faculty-hiring-label">{{ page.copy.hiring_heading | escape }}</strong>
+          <a class="faculty-text-link" href="{{ site.data.content.site.links.openings | relative_url }}">
+            {{- page.copy.openings_label | escape }}
+            <span aria-hidden="true">→</span></a
+          >
+        </div>
+        {{ home.working_with_me | markdownify }}
+      </div>
       <div class="faculty-contact" aria-label="Contact and profiles">
         <span class="faculty-email">
           {{- page.copy.email_label | escape }}
@@ -46,15 +56,16 @@ layout: default
     </figure>
   </header>
 
-  <section class="faculty-working" aria-labelledby="working-heading">
-    <div class="faculty-working-heading">
-      <h2 id="working-heading">{{ page.copy.hiring_heading | escape }}</h2>
-      <a class="faculty-button" href="{{ site.data.content.site.links.openings | relative_url }}">
-        {{- page.copy.openings_label | escape }}
+  <section class="faculty-section faculty-lab-intro" aria-labelledby="lab-heading">
+    <div class="faculty-section-heading">
+      <h2 id="lab-heading">{{ site.data.content.pages.supervision.title | escape }}</h2>
+      <a class="faculty-text-link" href="{{ '/group/#about-across' | relative_url }}">
+        {{- page.copy.lab_link_label | escape }}
         <span aria-hidden="true">→</span></a
       >
     </div>
-    {{ home.working_with_me | markdownify }}
+    <p class="faculty-lab-full-name">{{ site.data.content.pages.supervision.description | escape }}</p>
+    <p>{{ home.lab_summary | escape }}</p>
   </section>
 
   <section class="faculty-section faculty-research" aria-labelledby="research-heading">

@@ -212,6 +212,22 @@ html[data-theme="dark"] {
 .faculty-skip-link:focus {
   top: 10px;
 }
+.faculty-home {
+  --faculty-home-body-size: 17px;
+}
+.faculty-bio p,
+.faculty-contact,
+.faculty-hiring-note,
+.faculty-lab-intro > p,
+.faculty-research-intro,
+.faculty-home .faculty-text-link {
+  font-size: var(--faculty-home-body-size);
+  line-height: 1.75;
+}
+.faculty-home .faculty-section-heading .faculty-text-link,
+.faculty-home .faculty-hiring-heading .faculty-text-link {
+  font-size: calc(var(--faculty-home-body-size) - 2px);
+}
 .faculty-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 266px;
@@ -254,8 +270,6 @@ html[data-theme="dark"] {
 }
 .faculty-bio p {
   margin-bottom: 14px;
-  font-size: 17px;
-  line-height: 1.75;
   text-align: left;
 }
 .faculty-bio strong {
@@ -269,12 +283,12 @@ html[data-theme="dark"] {
   margin-top: 25px;
 }
 .faculty-contact a {
-  font-size: 13px;
+  font-size: inherit;
   font-weight: 600;
   white-space: nowrap;
 }
 .faculty-email {
-  font-size: 14px;
+  font-size: inherit;
   font-weight: 500;
   overflow-wrap: anywhere;
   user-select: text;
@@ -283,7 +297,7 @@ html[data-theme="dark"] {
   color: inherit;
 }
 .faculty-contact .faculty-file-type {
-  font-size: 9px;
+  font-size: 0.75em;
   letter-spacing: 0.4px;
   font-weight: 500;
 }
@@ -329,9 +343,7 @@ html[data-theme="dark"] {
 .faculty-research-intro {
   max-width: 900px;
   color: var(--faculty-ink);
-  font-size: 18px;
   font-weight: 500;
-  line-height: 1.75;
   margin: -4px 0 26px;
 }
 .faculty-research-stage {
@@ -350,7 +362,7 @@ html[data-theme="dark"] {
   margin: 0 auto;
 }
 .faculty-research-stage p {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   margin: 4px 0 0;
   line-height: 1.5;
@@ -555,31 +567,54 @@ html[data-theme="dark"] {
   font-size: 12px;
   margin-left: 12px;
 }
-.faculty-working {
-  margin-top: 32px;
-  padding: 25px 30px;
-  border-left: 3px solid #b2995f;
+.faculty-hiring-note {
+  margin: 22px 0 0;
+  padding: 16px 20px;
+  border: 1px solid var(--faculty-line);
+  border-left: 3px solid var(--faculty-agent-accent);
+  border-radius: 6px;
   background: var(--faculty-warm);
-}
-.faculty-working-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 14px;
-}
-.faculty-working h2 {
-  margin: 0;
-}
-.faculty-working p:last-child {
-  color: var(--faculty-muted);
-  margin-bottom: 0;
-  font-size: 16px;
-  white-space: nowrap;
-}
-.faculty-working strong {
   color: var(--faculty-ink);
-  font-weight: 600;
+
+  p {
+    margin: 0;
+  }
+  strong {
+    color: var(--faculty-ink);
+    font-weight: 600;
+  }
+  .faculty-hiring-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px 16px;
+    margin-bottom: 5px;
+  }
+  .faculty-hiring-label {
+    font-size: inherit;
+  }
+  .faculty-text-link {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}
+.faculty-lab-intro {
+  .faculty-section-heading {
+    margin-bottom: 14px;
+  }
+  p {
+    max-width: 900px;
+    color: var(--faculty-muted);
+    margin: 0 0 10px;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .faculty-lab-full-name {
+    color: var(--faculty-ink);
+    font-weight: 500;
+  }
 }
 .faculty-button {
   display: inline-flex;
@@ -620,9 +655,6 @@ html[data-theme="dark"] {
   }
   .faculty-direction {
     padding: 22px 18px;
-  }
-  .faculty-working p:last-child {
-    white-space: normal;
   }
   .faculty-button {
     justify-self: start;
@@ -680,8 +712,8 @@ html[data-theme="dark"] {
   .faculty-portrait img {
     height: 230px;
   }
-  .faculty-bio p {
-    font-size: 15px;
+  .faculty-home {
+    --faculty-home-body-size: 15px;
   }
   .faculty-contact {
     gap: 12px 18px;
@@ -759,8 +791,12 @@ html[data-theme="dark"] {
   .faculty-bio p:last-child {
     margin-bottom: 0;
   }
-  .faculty-contact {
+  .faculty-hiring-note {
     grid-row: 5;
+    margin: 0;
+  }
+  .faculty-contact {
+    grid-row: 6;
     margin-top: -5px;
   }
   .faculty-news-item,
@@ -777,13 +813,6 @@ html[data-theme="dark"] {
   }
   .faculty-news-item time {
     font-size: 11px;
-  }
-  .faculty-working {
-    padding: 25px 22px;
-  }
-  .faculty-working-heading {
-    flex-wrap: wrap;
-    gap: 14px;
   }
   .faculty-honors strong {
     font-size: 13px;

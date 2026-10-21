@@ -6,6 +6,7 @@ home:
   scholar_label: Google Scholar
   cv_label: CV
   cv_open_label: Open CV (PDF) in a new tab
+  lab_link_label: Why ACROSS?
   hiring_heading: We are hiring!
   openings_label: Openings
   research_heading: Research Directions
@@ -41,7 +42,10 @@ publications:
   preprint_singular: preprint
   preprint_plural: preprints
 supervision:
-  title: Group
+  title: ACROSS Lab
+  nav_title: Group
+  description: Aligned, Collaborative, Reliable, Open, and Scalable Systems
+  about_heading: Why ACROSS?
   nav: true
   nav_order: 2
   members_heading: Group members

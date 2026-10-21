@@ -1,4 +1,6 @@
 schema_version: 1
+lab_summary: >-
+  We connect data, models, and people to build better AI systems.
 research_slogan: Bridging divides across data, models, and people to solve real-world problems.
 directions:
   - id: learning
@@ -82,4 +84,4 @@ honors:
     detail: Top ~7% (10 of ~150)
 working_with_me: >-
   I am recruiting **Postdocs**, **Ph.D. Students**, and **Research Assistants**
-  to join and shape my new research group onsite at HKBU.
+  to join and shape ACROSS Lab onsite at HKBU.

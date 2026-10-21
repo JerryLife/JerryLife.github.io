@@ -8,15 +8,21 @@ content_key: supervision
 {% assign contact_email = site.data.content.profile.basics.email %}
 
 <div class="faculty-supervision">
+  <section class="faculty-lab-about" aria-labelledby="about-across">
+    <h2 id="about-across">{{ page.copy.about_heading | escape }}</h2>
+    {{ supervision.lab_meaning | markdownify }}
+  </section>
   <div class="faculty-group-overview">
     <section class="faculty-supervision-intro" aria-labelledby="openings-heading">
-      <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
+      <div class="faculty-section-heading">
+        <h2 id="openings-heading">{{ page.copy.openings_heading | escape }}</h2>
+        <a class="faculty-text-link" href="#inquiry-heading">
+          {{- page.copy.inquiry_heading | escape }}
+          <span aria-hidden="true">→</span></a
+        >
+      </div>
       <div class="faculty-lead">{{ supervision.openings_summary | markdownify }}</div>
       <p>{{ supervision.start_note | escape }}</p>
-      <a class="faculty-text-link" href="#inquiry-heading">
-        {{- page.copy.inquiry_heading | escape }}
-        <span aria-hidden="true">→</span></a
-      >
     </section>
     {% if supervision.member_groups.size > 0 %}
       <section class="faculty-group-members mt-5" aria-labelledby="members-heading">

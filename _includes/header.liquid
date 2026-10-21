@@ -45,7 +45,7 @@
                     target="_blank" rel="noopener noreferrer" aria-label="{{ site.data.content.pages.home.cv_open_label | escape }}"
                   {% endif %}
                 >
-                  {{- item.title -}}
+                  {{- item.copy.nav_title | default: item.title | escape -}}
                 </a>
               </li>
             {% endif %}
