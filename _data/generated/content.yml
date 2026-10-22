@@ -23,8 +23,8 @@ profile:
       He](https://www.comp.nus.edu.sg/~hebs/), and my B.Eng. from Huazhong University
       of Science and Technology in 2019. My work has appeared at leading venues in
       machine learning, databases, and data mining, such as NeurIPS, ICLR, SIGMOD,
-      KDD, and ACL. I serve as an Area Chair (AC) for premier machine learning conferences
-      such as ICLR.
+      KDD, and ACL. I serve as an Area Chair (AC) for ICLR and ACL Rolling Review
+      (ARR).
 
 
       My research focuses on federated learning across data silos and multi-agent
@@ -127,6 +127,11 @@ service:
     - year: '2027'
       items:
       - name: ICLR
+        role: Area Chair
+        url: ''
+    - year: '2026'
+      items:
+      - name: ACL Rolling Review (ARR)
         role: Area Chair
         url: ''
   - title: Conference Reviewers
@@ -397,8 +402,8 @@ cv:
       between AI and psychology. My work has appeared in ICLR, NeurIPS, SIGMOD, ACL,
       KDD, and related venues, including two ICLR 2026 Oral papers and a SIGMOD 2023
       Honorable Mention for Best Artifact. My work has received 3000+ citations on
-      Google Scholar. I serve as an Area Chair (AC) for premier machine learning conferences
-      such as ICLR.
+      Google Scholar. I serve as an Area Chair (AC) for ICLR and ACL Rolling Review
+      (ARR).
 
       '
   research_impact:
@@ -1017,6 +1022,11 @@ cv:
       - year: '2027'
         items:
         - name: ICLR
+          role: Area Chair
+          url: ''
+      - year: '2026'
+        items:
+        - name: ACL Rolling Review (ARR)
           role: Area Chair
           url: ''
     - title: Conference Reviewers
