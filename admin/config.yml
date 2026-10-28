@@ -904,6 +904,7 @@ collections:
                   - { label: Position, name: position, widget: string }
                   - { label: Start date, name: start_date, widget: string, required: false }
                   - { label: End date, name: end_date, widget: string, required: false }
+                  - { label: Incoming appointment, name: incoming, widget: boolean, default: false, required: false }
                   - { label: Summary, name: summary, widget: markdown, required: false }
                   - label: Highlights
                     name: highlights

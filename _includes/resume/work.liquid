@@ -9,6 +9,9 @@
             {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
             {% assign date = startDate | append: ' - ' %}
             {% assign date = date | append: endDate %}
+            {% if content.incoming %}
+              {% assign date = startDate | prepend: 'From ' %}
+            {% endif %}
           {% else %}
             {% assign date = '' %}
           {% endif %}
@@ -46,6 +49,9 @@
                 {% assign subjob_start = subjob.startDate | split: '-' | slice: 0, 2 | join: '.' %}
                 {% assign subjob_end = subjob.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
                 {% assign subjob_date = subjob_start | append: ' - ' | append: subjob_end %}
+                {% if subjob.incoming %}
+                  {% assign subjob_date = subjob_start | prepend: 'From ' %}
+                {% endif %}
               {% else %}
                 {% assign subjob_date = '' %}
               {% endif %}

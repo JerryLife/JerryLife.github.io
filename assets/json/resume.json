@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Zhaomin Wu",
-    "position": "Research Fellow in National University of Singapore",
+    "position": "Incoming tenure-track Assistant Professor at Hong Kong Baptist University (January 2027)",
     "image": "avatar.jpg",
     "email": "zhaomin@hkbu.edu.hk",
     "url": "https://www.zhaominwu.com",
@@ -14,6 +14,24 @@
     ]
   },
   "work": [
+    {
+      "name": "Hong Kong Baptist University (HKBU)",
+      "location": "Hong Kong",
+      "url": "https://www.hkbu.edu.hk/",
+      "startDate": "2027-01-01",
+      "endDate": "",
+      "incoming": true,
+      "subjobs": [
+        {
+          "position": "Assistant Professor (tenure-track, incoming)",
+          "startDate": "2027-01-01",
+          "endDate": "",
+          "summary": "Department of Computer Science.",
+          "highlights": [],
+          "incoming": true
+        }
+      ]
+    },
     {
       "name": "National University of Singapore (NUS)",
       "location": "Singapore",

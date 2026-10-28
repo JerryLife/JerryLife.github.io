@@ -130,6 +130,22 @@
   \end{list}
 }
 
+% Employment and education share compact institution blocks, with a larger
+% gap only between institutions. Keep each heading with its details.
+\newenvironment{cvInstitution}[2]{%
+  \par\noindent
+  \begin{minipage}[t]{\linewidth}
+    \setlength{\parskip}{0pt}%
+    \noindent\textbf{#1}\hfill #2\par
+}{%
+  \end{minipage}\par
+}
+\newcommand{\cvInstitutionGap}{\vspace{0.3em}}
+\newcommand{\cvPosition}[1]{%
+  \noindent\hangindent=1.5em\hangafter=1
+  \makebox[1.5em][l]{\hspace{0.3em}\textbullet}#1\par
+}
+
 \newenvironment{rSubsection}[4]{
   {\bf #1} \hfill {#2}
   \ifthenelse{\equal{#3}{}}{}{

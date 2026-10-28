@@ -66,12 +66,17 @@
   \begin{CJK*}{UTF8}{gbsn}
 \fi
 
+  % Keep the opening profile, appointments, and selected papers on one page.
+  \begingroup
+  \setlength{\parskip}{0.3em}
+  \def\sectionskip{\smallskip}
   \input{generated/bio}
   \input{generated/employment}
   \input{generated/education}
   \input{generated/grants}
   \input{generated/honors}
   \input{generated/selected_publications}
+  \endgroup
   \ifcvhascjk
     \input{generated/research_impact_cjk}
   \else

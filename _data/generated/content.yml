@@ -2,7 +2,8 @@ profile:
   schema_version: 1
   basics:
     name: Zhaomin Wu
-    label: Research Fellow in National University of Singapore
+    label: Incoming tenure-track Assistant Professor at Hong Kong Baptist University
+      (January 2027)
     email: zhaomin@hkbu.edu.hk
     url: https://www.zhaominwu.com
     image: avatar.jpg
@@ -395,17 +396,14 @@ cv:
   profile:
     schema_version: 1
     title: Research Profile
-    body: 'I am an NRF Postdoctoral Fellow in Computer Science at the National University
-      of Singapore. My research bridges divides across data, models, and people to
-      solve real-world problems. I develop trustworthy AI systems spanning federated
-      learning, machine unlearning, multi-agent systems, and the two-way relationship
-      between AI and psychology. My work has appeared in ICLR, NeurIPS, SIGMOD, ACL,
-      KDD, and related venues, including two ICLR 2026 Oral papers and a SIGMOD 2023
-      Honorable Mention for Best Artifact. My work has received 3000+ citations on
-      Google Scholar. I serve as an Area Chair (AC) for ICLR and ACL Rolling Review
+    body: I am an incoming tenure-track Assistant Professor at Hong Kong Baptist University
+      (HKBU), starting in January 2027. I am currently an NRF Postdoctoral Fellow
+      at the National University of Singapore (NUS). My research focuses on federated
+      learning, multi-agent systems, and the two-way relationship between AI and psychology.
+      My work has appeared in NeurIPS, ICLR, SIGMOD, KDD, and ACL, with two ICLR 2026
+      Oral papers, a SIGMOD 2023 Honorable Mention for Best Artifact, and 3000+ Google
+      Scholar citations. I serve as an Area Chair for ICLR 2027 and ACL Rolling Review
       (ARR).
-
-      '
   research_impact:
     schema_version: 1
     title: Research Impact

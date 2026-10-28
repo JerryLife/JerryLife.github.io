@@ -1,6 +1,17 @@
 schema_version: 2
 entries:
   - main_job:
+      name: Hong Kong Baptist University (HKBU)
+      location: Hong Kong
+      url: https://www.hkbu.edu.hk/
+    subjobs:
+      - position: Assistant Professor (tenure-track, incoming)
+        start_date: 2027-01
+        end_date: ""
+        incoming: true
+        summary: Department of Computer Science.
+        highlights: []
+  - main_job:
       name: National University of Singapore (NUS)
       location: Singapore
       url: https://www.nus.edu.sg/
